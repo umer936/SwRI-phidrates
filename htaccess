@@ -1,0 +1,9 @@
+<LIMIT GET POST>
+order deny,allow
+deny from .edu
+deny from .mil
+deny from .gov
+deny from .com
+allow from swri.edu
+</LIMIT>
+

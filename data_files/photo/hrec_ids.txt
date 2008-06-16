@@ -1,0 +1,260 @@
+H- Hi H- + v -> H + e  
+H Hpi H + v -> H+ + e  
+he hei He + v -> He+ + e  
+c3p ci C(3P) + v -> C+ + e  
+c1d c1di C(1D) + v -> C+ + e  
+c1s c1si C(1S) + v -> C+ + e  
+n ni N + v -> N+ + e  
+o3p oi O(3P) + v -> O+ + e  
+o1d o1di O(1D) + v -> O+ + e  
+o1s o1si O(1S) + v -> O+ + e  
+f fi F + v -> F+ + e  
+na nai Na + v -> Na+ + e  
+na nai Na + v -> Na+ + e  
+s3p s3pi S(3P) + v -> S+ + e  
+s1d s1di S(1D) + v -> S+ + e  
+s1s s1si S(1S) + v -> S+ + e  
+cl cli Cl + v -> Cl+ + e  
+k ki K + v -> K+ + e  
+h2 total H2 total       
+h2 h1dh2 H2 + v -> H(1s) + H[2s,2p]  
+h2 hdh H2 + v -> H(1s) + H[1s]  
+h2 h2i H2 + v -> H2+ + e  
+h2 hih H2 + v -> H+ + H + e
+ch total CH total       
+ch chi CH + v -> CH+ + e  
+ch c1sdh CH + v -> C(1S) + H  
+ch c1ddh CH + v -> C(1D) + H  
+ch cdh CH + v -> C(3P) + H  
+oh total OH total       
+oh o3pdh OH + v -> O(3P) + H  
+oh o1sdh OH + v -> O(1S) + H  
+oh ohi OH + v -> OH+ + e  
+oh o1ddh OH + v -> O(1D) + H  
+oh total OH total       
+oh o3pdh OH + v -> O(3P) + H  
+oh o1sdh OH + v -> O(1S) + H  
+oh ohi OH + v -> OH+ + e  
+oh o1ddh OH + v -> O(1D) + H  
+hf total HF total       
+hf hfi HF + v -> HF+ + e  
+hf hif HF + v -> H+ + F + e
+hf hdf HF + v -> H + F  
+hf fih HF + v -> F+ + H + e
+cn cdn CN + v -> C + N  
+c2 total C2 total       
+c2 c1ddc1d C2 + v -> C(1D) + C(1D)  
+c2 c2i C2 + v -> C2+ + e  
+co total CO(X1$+) total       
+co coi CO(X1$+) + v -> CO+ + e  
+co cio CO(X1$+) + v -> C+ + O + e
+co oic CO(X1$+) + v -> O+ + C + e
+co cdo CO(X1$+) + v -> C + O  
+co c1ddo1d CO(X1$+) + v -> C(1D) + O(1D)  
+tco total CO(a3#) total       
+tco tcoi CO(a3#) + v -> CO+ + e  
+tco tcio CO(a3#) + v -> C+ + O + e
+tco toic CO(a3#) + v -> O+ + C + e
+tco tcdo CO(a3#) + v -> C + O  
+n2 total N2 total       
+n2 ndn N2 + v -> N + N  
+n2 nin N2 + v -> N+ + N + e
+n2 n2i N2 + v -> N2+ + e  
+no total NO total       
+no noi NO + v -> NO+ + e  
+no oin NO + v -> O+ + N + e
+no nio NO + v -> N+ + O + e
+no ndo NO + v -> N + O  
+o2 total O2 total       
+o2 odo O2 + v -> O(3P) + O(3P)  
+o2 odo1d O2 + v -> O(3P) + O(1D)  
+o2 oio O2 + v -> O+ + O + e
+o2 o1sdo1s O2 + v -> O(1S) + O(1S)  
+o2 o2i O2 + v -> O2+ + e  
+hcl hdcl HCl + v -> H + Cl  
+f2 fdf F2 + v -> F + F  
+so total SO total       
+so sdo SO + v -> S + O  
+so soi SO + v -> SO+ + e  
+cl2 cldcl Cl2 + v -> Cl + Cl  
+bro total BrO total       
+bro brdo BrO + v -> Br + O(3P)  
+bro brdo1d BrO + v -> Br + O(1D)  
+nh2 nhdh NH2 + v -> NH + H  
+h2o total H2O total       
+h2o hdoh H2O + v -> H + OH  
+h2o h2do1d H2O + v -> H2 + O(1D)  
+h2o odhdh H2O + v -> O + H + H
+h2o ohih H2O + v -> OH+ + H + e
+h2o oih2 H2O + v -> O+ + H2 + e
+h2o hioh H2O + v -> H+ + OH + e
+h2o h2oi H2O + v -> H2O+ + e  
+hcn total HCN total       
+hcn hdcn(*) HCN + v -> H + CN(A2#1)  
+hcn hcni HCN + v -> HCN+ + e  
+ho2 ohdo HO2 + v -> OH + O  
+h2s total H2S total       
+h2s hsdh H2S + v -> HS + H  
+h2s h2si H2S + v -> H2S+ + e  
+h2s sih2 H2S + v -> S+ + H2 + e
+h2s hsih H2S + v -> HS+ + H + e
+co2 total CO2 total       
+co2 codo1d CO2 + v -> CO(X1$+) + O(1D)  
+co2 co2i CO2 + v -> CO2+ + e  
+co2 coio CO2 + v -> CO+ + O + e
+co2 oico CO2 + v -> O+ + CO + e
+co2 cio2 CO2 + v -> C+ + O2 + e
+co2 codo CO2 + v -> CO(X1$+) + O(3P)  
+co2 cotdo CO2 + v -> CO(a3#) + O(3P)  
+n2o total N2O total       
+n2o n2do1s N2O + v -> N2(1$)+ O(1S)   
+n2o n2do1d N2O + v -> N2(1$) + O(1D)  
+no2 total NO2 total       
+no2 no2i NO2 + v -> NO2+ + e  
+no2 nodod NO2 + v -> NO(X2#) + O(1D)  
+no2 nodo NO2 + v -> NO(X2#) + O(3P)  
+o3 total O3 total       
+o3 odo2 O3 + v -> O(3P) + O2(3$g-)  
+o3 o1ddo2d O3 + v -> O(1D) + O2(a1^g)  
+hocl ohdcl HOCl + v -> OH + Cl  
+ocs total OCS total       
+ocs ciso OCS + v -> C+ + SO + e
+ocs oics OCS + v -> O+ + CS + e
+ocs cois OCS + v -> CO+ + S + e
+ocs sico OCS + v -> S+ + CO + e
+ocs csio OCS + v -> CS+ + O + e
+ocs cosi OCS + v -> OCS+ + e  
+ocs cods1s OCS + v -> CO + S(1S)  
+ocs csdo OCS + v -> CS + O(3P)  
+ocs cods1d OCS + v -> CO + S(1D)  
+ocs csdo1d OCS + v -> CS + O(1D)  
+ocs cods OCS + v -> CO + S(3P)  
+so2 total SO2 total       
+so2 sodo SO2 + v -> SO + O  
+so2 sdo2 SO2 + v -> S + O2  
+so2 so2band SO2 + v -> SO2*    
+so2 so2i SO2 + v -> SO2+ + e  
+clno cldno ClNO + v -> Cl + NO  
+oclo total OClO total       
+oclo clodo OClO + v -> ClO + O(3P)  
+oclo clodo1d OclO + v -> ClO + O(1D)  
+cloo clodo ClOO + v -> ClO + O  
+cs2 total CS2 total       
+cs2 cis2 CS2 + v -> C+ + S2 + e
+cs2 sics CS2 + v -> S+ + CS + e
+cs2 csis CS2 + v -> CS+ + S + e
+cs2 s2ic CS2 + v -> S2+ + C + e
+cs2 cs2i CS2 + v -> CS2+ + e  
+cs2 csds CS2 + v -> CS(X1$+) + S(3P)  
+cs2 csds1d CS2 + v -> CS(X1$+) + S(1D)  
+cs2 tcsds CS2 + v -> CS(a3#) + S(3P)  
+cs2 a1scds CS2 + v -> CS(A1#) + S(3P)  
+hobr ohdbr HOBr + v -> OH + Br  
+hoi ohdi HOI + v -> OH + I  
+ino idno INO + v -> I + NO  
+nh3 total NH3 total       
+nh3 nh2dh NH3 + v -> NH2(X2B1) + H  
+nh3 snhdh2 NH3 + v -> NH(a1^) + H2  
+nh3 nhdhdh NH3 + v -> NH(X3$-) + H + H
+nh3 nh3i NH3 + v -> NH3+ + e  
+nh3 nh2ih NH3 + v -> NH2+ + H + e
+nh3 nhih2 NH3 + v -> NH+ + H2 + e
+nh3 nih2dh NH3 + v -> N+ + H2 + H
+nh3 hinh2 NH3 + v -> H+ + NH2 + e
+c2h2 total C2H2 total       
+c2h2 c2h2i C2H2 + v -> C2H2+ + e  
+c2h2 c2hih C2H2 + v -> C2H+ + H + e
+c2h2 c2dh2 C2H2 + v -> C2 + H2  
+c2h2 c2hdh C2H2 + v -> C2H + H  
+c2h2 c2h2** C2H2 + v -> C2H2*    
+h2co total H2CO total       
+h2co hcodh H2CO + v -> HCO + H  
+h2co codh2 H2CO + v -> CO + H2  
+h2co codhdh H2CO + v -> CO + H + H
+h2co h2coi H2CO + v -> H2CO+ + e  
+h2co hcoih H2CO + v -> HCO+ + H + e
+h2co coih2 H2CO + v -> CO+ + H2 + e
+ph3 ph2dh PH3 + v -> PH2 + H  
+h2o2 ohdoh H2O2 + v -> OH + OH  
+hnco total HNCO total       
+hnco nhdco HNCO + v -> NH(c1#) + CO  
+hnco hdnco HNCO + v -> H + NCO(A2$)  
+hono ohdno HONO + v -> OH + NO  
+no3 total NO3 total       
+no3 no2do NO3 + v -> NO2 + O  
+no3 nodo2 NO3 + v -> NO + O2  
+cof2 cofdf COF2 + v -> COF + F  
+clno2 cldno2 ClNO2 + v -> Cl + NO2  
+clono cldno2 ClONO + v -> Cl + NO2  
+cofcl cofdcl COFCl + v -> COF + Cl  
+clo3 clo2do ClO3 + v -> ClO2 + O  
+cocl2 cocldcl COCl2 + v -> COCl + Cl  
+ch4 total CH4 total       
+ch4 sch2dh2 CH4 + v -> CH2(ã1A1) + H2  
+ch4 ch3dh CH4 + v -> CH3 + H  
+ch4 ch2dhdh CH4 + v -> CH2 + H + H
+ch4 ch4i CH4 + v -> CH4+ + e  
+ch4 ch3ih CH4 + v -> CH3+ + H + e
+ch4 ch2ih2 CH4 + v -> CH2+ + H2 + e
+ch4 chih2dh CH4 + v -> CH+ + H2 + H
+ch4 hich3 CH4 + v -> H+ + CH3 + e
+ch4 chdh2dh CH4 + v -> CH + H2 + H
+h2co2 total HCOOH total       
+h2co2 co2dh2 HCOOH + v -> CO2 + H2  
+h2co2 h2co2i HCOOH + v -> H2CO2+ + e  
+h2co2 hcoioh HCOOH + v -> HCO+ + OH + e
+h2co2 hcodoh HCOOH + v -> HCO + OH  
+ch3cl ch3dcl CH3Cl + v -> CH3 + Cl  
+hc3n cndc2h HC3N + v -> CN + C2H  
+hno3 ohdno2 HNO3 + v -> OH + NO2  
+chf2cl chf2dcl CHF2Cl + v -> CHF2 + Cl  
+clono2 total ClONO2 total       
+clono2 clonodo ClONO2 + v -> ClONO + O  
+clono2 cldno3 ClONO2 + v -> Cl + NO3  
+cf2cl2 total CF2Cl2 total       
+cf2cl2 cf2cldcl CF2Cl2 + v -> CF2Cl + Cl  
+cf2cl2 cf2d2cl CF2Cl2 + v -> CF2 + Cl + Cl
+cfcl3 total CFCl3 total       
+cfcl3 cfcl2dcl CFCl3 + v -> CFCl2 + Cl  
+cfcl3 cfcld2cl CFCl3 + v -> CFCl + Cl + Cl
+brono2 brodno2 BrONO2 + v -> BrO + NO2  
+ccl4 total CCl4 total       
+ccl4 ccl3dcl CCl4 + v -> CCl3 + Cl  
+ccl4 ccl2d2cl CCl4 + v -> CCl2 + Cl + Cl
+iono2 iodno2 IONO2 + v -> IO + NO2  
+c2h4 total C2H4 total       
+c2h4 c2h4i C2H4 + v -> C2H4+ + e  
+c2h4 c2h2ih2 C2H4 + v -> C2H2+ + H2 + e
+c2h4 c2h3ih C2H4 + v -> C2H3+ + H + e
+c2h4 c2h2d2h C2H4 + v -> C2H2 + H2  
+ch3oh total CH3OH total       
+ch3oh ch3doh CH3OH + v -> CH3 + OH  
+ch3oh ch3ohi CH3OH + v -> CH3OH+ + e  
+ch3oh ch3oih CH3OH + v -> CH3O+ + H + e
+ch3oh h2coih2 CH3OH + v -> H2CO+ + H2 + e
+ch3oh h2codh2 CH3OH + v -> H2CO + H2  
+ho2no2 total HO2NO2 total       
+ho2no2 hodno3 HO2NO2 + v -> OH + NO3  
+ho2no2 ho2dno2 HO2NO2 + v -> HO2 + NO2  
+ch3cho total CH3CHO total       
+ch3cho ch4dco CH3CHO + v -> CH4 + CO  
+ch3cho ch3dhco CH3CHO + v -> CH3 + HCO  
+ch3cho tch3cho CH3CHO + v -> (3)CH3CHO    
+ch3ooh ch3odoh CH3CHO + v -> CH3O + OH  
+n2o5 2no2do N2O5 + v -> NO2 + NO2 + O
+c2h6 total C2H6 total       
+c2h6 ch3dch3 C2H6 + v -> CH3 + CH3  
+c2h6 c2h5dh C2H6 + v -> C2H5 + H  
+c2h6 (1)ch2dch4 C2H6 + v -> 1CH2 + CH4  
+c2h6 c2h6i C2H6 + v -> C2H6+ + e  
+c2h6 c2h4dh2 C2H6 + v -> C2H4 + H2  
+ch3ccl3 ..cl2dcl CH3CCl3 + v -> CH3CCl2 + Cl  
+ch3o2no2 total CH3O2NO2 total       
+ch3o2no2 ..o2dno2 CH3O2NO2 + v -> CH3O2 + NO2  
+ch3o2no2 ch3odno3 CH3O2NO2 + v -> CH3O + NO3  
+ch3ssch3 total CH3SSCH3 total       
+ch3ssch3 mssdm CH3SSCH3 + v -> CH3SS + CH3  
+ch3ssch3 2(ch3s) CH3SSCH3 + v -> CH3S + CH3S  
+ch3cno5 total CH3CO3NO2 total       
+ch3cno5 mco3dno2 CH3CO3NO2 + v -> CH3CO3 + NO2  
+ch3cno5 mco2dno3 CH3CO3NO2 + v -> CH3CO2 + NO3  
