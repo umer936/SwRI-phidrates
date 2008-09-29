@@ -29,13 +29,20 @@ while ($line = <INF>) {
         print "\";\n";
     } 
 }
+print "\nsub ConvertCanonicalBranchName {\n";
+print "    local (\$branch) = \$_ [0];\n";
+print "    return \$eleLUT {\$branch};\n";
+print "}\n";
 
 sub convert_real_element {
 
     $element = $_ [0];
 
-    $element =~ s/\-/<sup>-<\/sup>/g;
-    $element =~ s/\+/<sup>+<\/sup>/g;
+# Walter should be doing this now!
+#    $element =~ s/\-/<sup>-<\/sup>/g;
+#    $element =~ s/\+/<sup>+<\/sup>/g;
+
+    $element =~ s/\$/\\\$/g;
     $element =~ s/[^(]([A-Z][a-z]*)([0-9])/$1<sub>$2<\/sub>/g;
     $element =~ s/([0-9])\)/<sub>$1<\/sub>)/g;
     $element =~ s/\(([0-9])/(<sup>$1<\/sup>/g;

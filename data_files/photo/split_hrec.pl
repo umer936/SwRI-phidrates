@@ -2,6 +2,7 @@
 
 
 @filenames = ("hrec1.dat", "hrec2.dat", "hrec3.dat", "hrec4.dat", "hrec5.dat");
+@filenames = ("HRec1Sup.dat");
 
 foreach $file (@filenames) {
 

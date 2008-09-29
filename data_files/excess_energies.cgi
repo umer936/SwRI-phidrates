@@ -1,5 +1,6 @@
 #!/bin/perl -w
 
+require "vars.pl";
 require "eleLUT.pl";
 
 use IO::File;
@@ -35,33 +36,33 @@ sub PrintResults {
     local ($nice_name);
 
     print "Content-type: text/html\n\n";
-    print "<HTML><HEAD><TITLE>Cross Sections of $molecule</TITLE></HEAD>\n";
+    print "<HTML><HEAD><TITLE>Excess Energies of $molecule</TITLE></HEAD>\n";
     print "<BODY BGCOLOR=\"#000000\" TEXT=\"#00ff00\" LINK=\"#00ffff\" VLINK=\"#33ff00\">";
     print "<CENTER>";
+#    print "Temp Dir = $temp_dir   Input = $input\n";
     $nice_name = ConvertCanonicalBranchName ($molecule);
-    print "<H1>Cross Sections of $nice_name\n</H1>";
-#    print "Temp Dir = $temp_dir\n Input = $input\n";
+    print "<H1>Excess Energies of $nice_name</H1>\n";
     print "\n";
     print "<P>";
     chdir ($temp_dir);
     $num_branches = &GenerateBranches ();
-    $bnum = 0;
+    $bnum = 1;
     while ($bnum <= $num_branches) {
-        if ($branches[$bnum+2] eq "Sigma") {
-            $branches[$bnum+2] = "Total";
+        if ($branches[$bnum] eq "Lambda") {
+            $branches[$bnum] = "Total";
         }
-        $gifname = &GeneratePlot ("branch.$bnum", $branches[$bnum+2]);
-        $nice_name = ConvertCanonicalBranchName ($branches[$bnum+2]);
+        $gifname = &GeneratePlot ("branch_r.$bnum", $branches[$bnum+1]);
+        $nice_name = ConvertCanonicalBranchName ($branches[$bnum+1]);
         print "<H2>$nice_name</H2>";
         print "<IMG SRC = \"$gifname\" BORDER=4>\n";
         print "<P><P>";
-        unlink ("branch.$bnum");
+        unlink ("branch_r.$bnum");
         $bnum++;
     }
     print "</CENTER>";
 
-    print "<A HREF=\"$temp_dir/BRNOUT\">Click to view or shift-click to download \
-           the data file used to create this plot!</A>\n";
+    print "<A HREF=\"$temp_dir/EEOUT\">Click to view or shift-click to \
+           download the data wavelength-integrated over each bin!</A>\n";
     print "</BODY></HTML>";
 }
 
@@ -70,14 +71,14 @@ sub RunPhotoRat {
     local ($molecule, $temp_dir) = @_;
 
     chdir ($temp_dir);
-    `/opt/share/cgi-bin/amop/photo/photo`;
+    `$amop_cgi_bin_dir/photo/photo`;
 }
 
 sub CopyMolecule {
 
     local ($molecule, $temp_dir) = @_;
 
-    `cp /opt/share/cgi-bin/amop/photo/hrecs/$molecule.dat $temp_dir/HREC`;
+    `cp $amop_cgi_bin_dir/photo/hrecs/$molecule.dat $temp_dir/HREC`;
 }
 
 sub MakeTempDirectory {
@@ -103,8 +104,8 @@ sub ComputeSpectrum {
 # compute the new data
 
     open (NEWDATAFILE, "> $temp_dir/PHFLUX.DAT") || die ("Location: error.gif\n\n");
-    open (AQRATIO, "< /opt/share/cgi-bin/amop/photo/aqratio.dat") || die ("Location: error.gif\n\n");
-    open (SUNQFLUX, "< /opt/share/cgi-bin/amop/photo/sunqflux.dat") || die ("Location: error.gif\n\n");
+    open (AQRATIO, "< $amop_cgi_bin_dir/photo/aqratio.dat") || die ("Location: error.gif\n\n");
+    open (SUNQFLUX, "< $amop_cgi_bin_dir/photo/sunqflux.dat") || die ("Location: error.gif\n\n");
 
     $i = 0;
     while ($sunqflux_line = <SUNQFLUX>) {
@@ -128,7 +129,13 @@ sub ComputeSpectrum {
 sub GenerateBranches {
     local ($num_branches, $num_values, $line, $i, $bnum, $val);
 
-    open (INPUT_FILE, "< BRNOUT") || die ("Can't open BRNOUT\n");
+    open (INPUT_FILE, "< EEOUT") || die ("Can't open EEOUT\n");
+
+    $line = <INPUT_FILE>;
+    $line =~ /^ (\d+)/;
+    $num_branches = $1;
+    $header = <INPUT_FILE>;
+    @branches = split (/\s+/, $header);
 
     $ref_count = 0;
     $ref_count = 0;
@@ -136,49 +143,37 @@ sub GenerateBranches {
  
     do {
         $line = <INPUT_FILE>;
-        if ($line =~ /^0.*References/) {
-            if ($ref_count != 0) {
-                $ref_list [$ref_count-1] = @refs;
-            }
-            $ref_count++;
-            @refs = {};
-            $read_refs = 1;
-        } elsif ($line =~ /^0.*Branching.* (\d+) Branches/) {
-            $read_refs = 0;
-            $num_branches = $1;
-            $header = <INPUT_FILE>;
-            @branches = split (/\s+/, $header);
+        if ($line =~ /Rate/) {
+            # ignore this line
         } else {
-            if ($read_refs) {
-                push (@refs, $line);
-            } else {    # read branches
-                $line =~ s/^\s+//g;
-                $line =~ s/\s+$//g;
-                $line =~ s/\s+/ /g;
-                @values = split (/ /, $line);
-                if ($#values > $num_branches) {
-                    $i = 0;
-                    foreach $val (@values) {
-                        if (($i == 0) && ($use_electron_volts eq "true")) {
-                            $items{0,$num_values} = 12398.42 / $val;
-                        } else {
-                            $items{$i,$num_values} = $val;
-                        }
-                        $i++;
-                    }
-                    $num_values++;
-                }
+            $line =~ s/^\s+//g;
+            $line =~ s/\s+$//g;
+            $line =~ s/\s+/ /g;
+            @values = split (/ /, $line);
+            $i = 0;
+            foreach $val (@values) {
+                $items{$i,$num_values} = $val;
+                $i++;
             }
+            $num_values++;
         }
     } while (!eof (INPUT_FILE));
     close (INPUT_FILE);
-
-    $bnum = 0;
+    $bnum = 1;
     while ($bnum <= $num_branches) {
-        open (OUTPUT_FILE, "> branch.$bnum") || die ("Couldn't open branch.$bnum\n");
-        $i = 0;
+        open (OUTPUT_FILE, "> branch_r.$bnum") || die ("Couldn't open branch_r.$bnum\n");
+        $i = 1;
+        $last_x = $items{0,0};
+        $last_y = $items{$bnum,0};
         while ($i < $num_values) {
-            print OUTPUT_FILE "$items{0,$i} $items{$bnum + 1,$i}\n";
+
+# add the divide back in to show per angstrom
+#            $new_y = $last_y; # / ($items{0,$i} - $last_x);
+
+            $new_y = $last_y / ($items{0,$i} - $last_x);
+            print OUTPUT_FILE "$last_x $new_y\n";
+            $last_x = $items{0,$i};
+            $last_y = $items{$bnum,$i};
             $i++;
         }
         close (OUTPUT_FILE);
@@ -191,33 +186,28 @@ sub GeneratePlot {
 
     local ($filename) = $_ [0];
     local ($branch) = $_ [1];
-    local ($gifname);
+    local ($gifname, $rootname);
 
-    open (TMP_FILE, "> /tmp/gnuplot.info");
+    $rootname = tmpnam ();
+    $rootname =~ s/var/image2\/amop/;
+    open (TMP_FILE, "> $rootname.info");
     print TMP_FILE "set terminal gif\n";
     print TMP_FILE "set size 0.7,0.7\n";
     print TMP_FILE "set title \"Southwest Research Institute\\nBranch: $branch\"\n";
-    if ($use_electron_volts eq "true") {
-        print TMP_FILE "set xlabel \"Energy [eV]\"\n";
-    } else {
-        print TMP_FILE "set xlabel \"Wavelength\"\n";
-    }
-    print TMP_FILE "set ylabel \"Cross Section [cm**2]\"\n";
+    print TMP_FILE "set xlabel \"Wavelength [A]\"\n";
+    print TMP_FILE "set ylabel \"Excess Energies [eV A**-1 s**-1]\"\n";
     if ($use_semi_log eq "false") {
         print TMP_FILE "set logscale xy\n";
     } else {
         print TMP_FILE "set logscale y\n";
     }
     print TMP_FILE "set mytics 5\n";
-    print TMP_FILE "set mxtics 10\n";
-    print TMP_FILE "plot \"$filename\" title \"\" with lines\n";
+    print TMP_FILE "plot \"$filename\" title \"\" with steps\n";
     close (TMP_FILE);
-    $gifname = tmpnam ();
-    $gifname =~ s/var/image2\/amop/;
-    $gifname .= ".gif";
-    `/opt/local/bin/gnuplot /tmp/gnuplot.info > $gifname`;
+    $gifname = $rootname.".gif";
+    `/opt/local/bin/gnuplot $rootname.info > $gifname`;
 
-    unlink ("/tmp/gnuplot.info");
+    unlink ("$rootname.info");
     $gifname =~ s/\/image2\/amop\//http:\/\/amop.space.swri.edu\//g;
     return ($gifname);
 }

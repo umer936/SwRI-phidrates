@@ -3,6 +3,8 @@
 use IO::File;
 use POSIX qw(tmpnam);
 
+require "vars.pl";
+
 ################################################################
 #  parse QUERY_STRING -> filename; display file
 ################################################################
@@ -55,8 +57,8 @@ sub ComputeSpectrum {
 # compute the new data
 
     open (NEWDATAFILE, "> $temp_dir/PHFLUX.DAT") || die ("Location: error.gif\n\n");
-    open (AQRATIO, "< /opt/share/cgi-bin/amop/photo/aqratio.dat") || die ("Location: error.gif\n\n");
-    open (SUNQFLUX, "< /opt/share/cgi-bin/amop/photo/sunqflux_plot.dat") || die ("Location: error.gif\n\n");
+    open (AQRATIO, "< $amop_cgi_bin_dir/photo/aqratio.dat") || die ("Location: error.gif\n\n");
+    open (SUNQFLUX, "< $amop_cgi_bin_dir/photo/sunqflux_plot.dat") || die ("Location: error.gif\n\n");
 
     $i = 0;
     while ($sunqflux_line = <SUNQFLUX>) {

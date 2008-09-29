@@ -1,5 +1,6 @@
 #!/bin/perl -w
 
+require "vars.pl";
 require "eleLUT.pl";
 
 use IO::File;
@@ -50,7 +51,7 @@ sub PrintResults {
     $line =~ s/^\s+//g;
 ##    print "<P>$line<P>\n";
     @sections = split (/\s+/, $line);
-    while (!($line =~ /Rate Coeff/)) {
+    while (!eof && !($line =~ /Rate Coeff/)) {
         $line = <EEOUT>;
     }
     $line2 = <EEOUT>;
@@ -82,14 +83,14 @@ sub RunPhotoRat {
     local ($molecule, $temp_dir) = @_;
 
     chdir ($temp_dir);
-    `/opt/share/cgi-bin/amop/photo/photo`;
+    `$amop_cgi_bin_dir/photo/photo`;
 }
 
 sub CopyMolecule {
 
     local ($molecule, $temp_dir) = @_;
 
-    `cp /opt/share/cgi-bin/amop/photo/hrecs/$molecule.dat $temp_dir/HREC`;
+    `cp $amop_cgi_bin_dir/photo/hrecs/$molecule.dat $temp_dir/HREC`;
 }
 
 sub MakeTempDirectory {
@@ -113,11 +114,11 @@ sub ComputeSpectrum {
     my ($i, $x, $y, $sunqflux_line, $sunqflux, $aqratio_line, $aqratio);
 
 # compute the new data
-    `cp /opt/share/cgi-bin/amop/photo/hrecs/$molecule.dat $temp_dir/HREC`;
+    `cp $amop_cgi_bin_dir/photo/hrecs/$molecule.dat $temp_dir/HREC`;
 
     open (NEWDATAFILE, "> $temp_dir/PHFLUX.DAT") || die ("Location: error.gif\n\n");
-    open (AQRATIO, "< /opt/share/cgi-bin/amop/photo/aqratio.dat") || die ("Location: error.gif\n\n");
-    open (SUNQFLUX, "< /opt/share/cgi-bin/amop/photo/sunqflux.dat") || die ("Location: error.gif\n\n");
+    open (AQRATIO, "< $amop_cgi_bin_dir/photo/aqratio.dat") || die ("Location: error.gif\n\n");
+    open (SUNQFLUX, "< $amop_cgi_bin_dir/photo/sunqflux.dat") || die ("Location: error.gif\n\n");
 
     $i = 0;
     while ($sunqflux_line = <SUNQFLUX>) {

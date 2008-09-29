@@ -1,21 +1,70 @@
 H- Hi H- + v -> H + e  
 H Hpi H + v -> H+ + e  
 he hei He + v -> He+ + e  
+He+ He2+ He<sup>+</sup> + v -> He<sup>2+</sup> + e  
+Li Li+ Li + v -> Li<sup>+</sup> + e  
+Li+ Li2+ Li<sup>+</sup> + v -> Li<sup>2+</sup> + e  
+Be Be+ Be + v -> Be<sup>+</sup> + e  
+Be+ Be2+ Be<sup>+</sup> + v -> Be<sup>2+</sup> + e  
+B B+ B + v -> B<sup>+</sup> + e  
+B+ B2+ B<sup>+</sup> + v -> B<sup>2+</sup> + e
 c3p ci C(3P) + v -> C+ + e  
 c1d c1di C(1D) + v -> C+ + e  
 c1s c1si C(1S) + v -> C+ + e  
+C+ C2+ C<sup>+</sup> + v -> C<sup>2+</sup> + e  
 n ni N + v -> N+ + e  
+N+ N2+ N<sup>+</sup> + v -> N<sup>2+</sup> + e  
 o3p oi O(3P) + v -> O+ + e  
 o1d o1di O(1D) + v -> O+ + e  
 o1s o1si O(1S) + v -> O+ + e  
-f fi F + v -> F+ + e  
+O+ O2+ O<sup>+</sup> + v -> O<sup>2+</sup> + e  
+f fi F + v -> F<sup>+</sup> + e  
+F+ F2+ F<sup>+</sup> + v -> F<sup>2+</sup> + e  
+Ne Ne+ Ne + v -> Ne<sup>+</sup> + e  
+Ne+ Ne2+ Ne<sup>+</sup> + v -> Ne<sup>2+</sup> + e  
 na nai Na + v -> Na+ + e  
 na nai Na + v -> Na+ + e  
+Na+ Na2+ Na<sup>+</sup> + v -> Na<sup>2+</sup> + e  
+Mg Mg+ Mg + v -> Mg<sup>+</sup> + e  
+Mg+ Mg2+ Mg<sup>+</sup> + v -> Mg<sup>2+</sup> + e  
+Al Al+ Al + v -> Al<sup>+</sup> + e  
+Al+ Al2+ Al<sup>+</sup> + v -> Al<sup>2+</sup> + e  
+Si Si+ Si + v -> Si<sup>+</sup> + e  
+Si+ Si2+ Si<sup>+</sup> + v -> Si<sup>2+</sup> + e  
+P P+ P + v -> P<sup>+</sup> + e  
+P+ P2+ P<sup>+</sup> + v P<sup>2+</sup> + e  
 s3p s3pi S(3P) + v -> S+ + e  
 s1d s1di S(1D) + v -> S+ + e  
 s1s s1si S(1S) + v -> S+ + e  
+S+ S2+ S<sup>+</sup> + v S<sup>2+</sup> + e  
 cl cli Cl + v -> Cl+ + e  
-k ki K + v -> K+ + e  
+Cl+ Cl2+ Cl<sup>+</sup> + v -> Cl<sup>2+</sup> + e  
+Ar Ar+ Ar + v -> Ar<sup>+</sup> + e  
+Ar+ Ar2+ Ar<sup>+</sup> + v -> Ar<sup>2+</sup> + e  
+k ki K + v -> K<sup>+</sup> + e  
+K+ K2+ K<sup>+</sup> + v -> K<sup>2+</sup> + e  
+Ca Ca+ Ca + v -> Ca<sup>+</sup> + e  
+Ca+ Ca2+ Ca<sup>+</sup> + v -> Ca<sup>2+</sup> + e  
+Sc Sc+ Sc + v -> Sc<sup>+</sup> + e  
+Sc+ Sc2+ Sc<sup>+</sup> + v -> Sc<sup>2+</sup> + e  
+Ti Ti+ Ti + v -> Ti<sup>+</sup> + e  
+Ti+ Ti2+ Ti<sup>+</sup> + v -> Ti<sup>2+</sup> + e  
+V V+ V + v -> V<sup>+</sup> + e  
+V+ V2+ V<sup>+</sup> + v -> V<sup>2+</sup> + e  
+Cr Cr+ Cr + v -> Cr<sup>+</sup> + e  
+Cr+ Cr2+ Cr<sup>+</sup> + v -> Cr<sup>2+</sup> + e  
+Mn Mn+ Mn + v -> Mn<sup>+</sup> + e  
+Mn+ Mn2+ Mn<sup>+</sup> + v -> Mn<sup>2+</sup> + e  
+Fe Fe+ Fe + v -> Fe<sup>+</sup> + e  
+Fe+ Fe2+ Fe<sup>+</sup> + v -> Fe<sup>2+</sup> + e  
+Co Co+ Co + v -> Co<sup>+</sup> + e  
+Co+ Co2+ Co<sup>+</sup> + v -> Co<sup>2+</sup> + e  
+Ni Ni+ Ni + v -> Ni<sup>+</sup> + e  
+Ni+ Ni2+ Ni<sup>+</sup> + v -> Ni<sup>2+</sup> + e  
+Cu Cu+ Cu + v -> Cu<sup>+</sup> + e  
+Cu+ Cu2+ Cu<sup>+</sup> + v -> Cu<sup>2+</sup> + e  
+Zn Zn+ Zn + v -> Zn<sup>+</sup> + e  
+Zn+ Zn2+ Zn<sup>+</sup> + v -> Zn<sup>2+</sup> + e  
 h2 total H2 total       
 h2 h1dh2 H2 + v -> H(1s) + H[2s,2p]  
 h2 hdh H2 + v -> H(1s) + H[1s]  
@@ -190,7 +239,7 @@ cofcl cofdcl COFCl + v -> COF + Cl
 clo3 clo2do ClO3 + v -> ClO2 + O  
 cocl2 cocldcl COCl2 + v -> COCl + Cl  
 ch4 total CH4 total       
-ch4 sch2dh2 CH4 + v -> CH2(ã1A1) + H2  
+ch4 sch2dh2 CH4 + v -> CH2(‹1A1) + H2  
 ch4 ch3dh CH4 + v -> CH3 + H  
 ch4 ch2dhdh CH4 + v -> CH2 + H + H
 ch4 ch4i CH4 + v -> CH4+ + e  
@@ -258,3 +307,4 @@ ch3ssch3 2(ch3s) CH3SSCH3 + v -> CH3S + CH3S
 ch3cno5 total CH3CO3NO2 total       
 ch3cno5 mco3dno2 CH3CO3NO2 + v -> CH3CO3 + NO2  
 ch3cno5 mco2dno3 CH3CO3NO2 + v -> CH3CO2 + NO3  
+

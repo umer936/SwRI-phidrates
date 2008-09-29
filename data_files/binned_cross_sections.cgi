@@ -1,5 +1,6 @@
 #!/bin/perl -w
 
+require "vars.pl";
 require "eleLUT.pl";
 
 use IO::File;
@@ -35,12 +36,12 @@ sub PrintResults {
     local ($nice_name);
 
     print "Content-type: text/html\n\n";
-    print "<HTML><HEAD><TITLE>Excess Energies of $molecule</TITLE></HEAD>\n";
+    print "<HTML><HEAD><TITLE>Binned Cross Sections of $molecule</TITLE></HEAD>\n";
     print "<BODY BGCOLOR=\"#000000\" TEXT=\"#00ff00\" LINK=\"#00ffff\" VLINK=\"#33ff00\">";
     print "<CENTER>";
 #    print "Temp Dir = $temp_dir   Input = $input\n";
-    $nice_name = ConvertCanonicalBranchName ($molecule);
-    print "<H1>Excess Energies of $nice_name</H1>\n";
+    $nice_name = &ConvertCanonicalBranchName ($molecule);
+    print "<H1>Binned Cross Sections of $nice_name</H1>\n";
     print "\n";
     print "<P>";
     chdir ($temp_dir);
@@ -50,18 +51,21 @@ sub PrintResults {
         if ($branches[$bnum] eq "Lambda") {
             $branches[$bnum] = "Total";
         }
-        $gifname = &GeneratePlot ("branch_r.$bnum", $branches[$bnum+1]);
-        $nice_name = ConvertCanonicalBranchName ($branches[$bnum+1]);
+        $gifname = &GeneratePlot ("branch.$bnum", $branches[$bnum+1]);
+
+# convert the $branches[$bnum+1] to a nice name
+
+        $nice_name = &ConvertCanonicalBranchName ($branches[$bnum+1]);
         print "<H2>$nice_name</H2>";
         print "<IMG SRC = \"$gifname\" BORDER=4>\n";
         print "<P><P>";
-        unlink ("branch_r.$bnum");
+        unlink ("branch.$bnum");
         $bnum++;
     }
     print "</CENTER>";
 
-    print "<A HREF=\"$temp_dir/EEOUT\">Click to view or shift-click to \
-           download the data wavelength-integrated over each bin!</A>\n";
+    print "<A HREF=\"$temp_dir/FOTOUT\">Click to view or shift-click to \
+           download the data file used to create this plot!</A>\n";
     print "</BODY></HTML>";
 }
 
@@ -70,14 +74,14 @@ sub RunPhotoRat {
     local ($molecule, $temp_dir) = @_;
 
     chdir ($temp_dir);
-    `/opt/share/cgi-bin/amop/photo/photo`;
+    `$amop_cgi_bin_dir/photo/photo`;
 }
 
 sub CopyMolecule {
 
     local ($molecule, $temp_dir) = @_;
 
-    `cp /opt/share/cgi-bin/amop/photo/hrecs/$molecule.dat $temp_dir/HREC`;
+    `cp $amop_cgi_bin_dir/photo/hrecs/$molecule.dat $temp_dir/HREC`;
 }
 
 sub MakeTempDirectory {
@@ -103,8 +107,8 @@ sub ComputeSpectrum {
 # compute the new data
 
     open (NEWDATAFILE, "> $temp_dir/PHFLUX.DAT") || die ("Location: error.gif\n\n");
-    open (AQRATIO, "< /opt/share/cgi-bin/amop/photo/aqratio.dat") || die ("Location: error.gif\n\n");
-    open (SUNQFLUX, "< /opt/share/cgi-bin/amop/photo/sunqflux.dat") || die ("Location: error.gif\n\n");
+    open (AQRATIO, "< $amop_cgi_bin_dir/photo/aqratio.dat") || die ("Location: error.gif\n\n");
+    open (SUNQFLUX, "< $amop_cgi_bin_dir/photo/sunqflux.dat") || die ("Location: error.gif\n\n");
 
     $i = 0;
     while ($sunqflux_line = <SUNQFLUX>) {
@@ -128,7 +132,7 @@ sub ComputeSpectrum {
 sub GenerateBranches {
     local ($num_branches, $num_values, $line, $i, $bnum, $val);
 
-    open (INPUT_FILE, "< EEOUT") || die ("Can't open EEOUT\n");
+    open (INPUT_FILE, "< FOTOUT") || die ("Can't open FOTOUT\n");
 
     $line = <INPUT_FILE>;
     $line =~ /^ (\d+)/;
@@ -160,16 +164,12 @@ sub GenerateBranches {
     close (INPUT_FILE);
     $bnum = 1;
     while ($bnum <= $num_branches) {
-        open (OUTPUT_FILE, "> branch_r.$bnum") || die ("Couldn't open branch_r.$bnum\n");
+        open (OUTPUT_FILE, "> branch.$bnum") || die ("Couldn't open branch.$bnum\n");
         $i = 1;
         $last_x = $items{0,0};
         $last_y = $items{$bnum,0};
         while ($i < $num_values) {
-
-# add the divide back in to show per angstrom
-#            $new_y = $last_y; # / ($items{0,$i} - $last_x);
-
-            $new_y = $last_y / ($items{0,$i} - $last_x);
+            $new_y = $last_y; # / ($items{0,$i} - $last_x);
             print OUTPUT_FILE "$last_x $new_y\n";
             $last_x = $items{0,$i};
             $last_y = $items{$bnum,$i};
@@ -185,16 +185,16 @@ sub GeneratePlot {
 
     local ($filename) = $_ [0];
     local ($branch) = $_ [1];
-    local ($gifname, $rootname);
+    local ($rootname, $gifname);
 
     $rootname = tmpnam ();
-    $rootname =~ s/var/image2\/amop/;
+#     $rootname =~ s/var/image2\/amop/;
     open (TMP_FILE, "> $rootname.info");
     print TMP_FILE "set terminal gif\n";
     print TMP_FILE "set size 0.7,0.7\n";
     print TMP_FILE "set title \"Southwest Research Institute\\nBranch: $branch\"\n";
     print TMP_FILE "set xlabel \"Wavelength [A]\"\n";
-    print TMP_FILE "set ylabel \"Excess Energies [eV A**-1 s**-1]\"\n";
+    print TMP_FILE "set ylabel \"Cross Section [cm**2/A]\"\n";
     if ($use_semi_log eq "false") {
         print TMP_FILE "set logscale xy\n";
     } else {
@@ -207,7 +207,9 @@ sub GeneratePlot {
     `/opt/local/bin/gnuplot $rootname.info > $gifname`;
 
     unlink ("$rootname.info");
-    $gifname =~ s/\/image2\/amop\//http:\/\/amop.space.swri.edu\//g;
+
+#    $gifname =~ s/\/image2\/amop\//http:\/\/amop.space.swri.edu\//g;
+
     return ($gifname);
 }
 
