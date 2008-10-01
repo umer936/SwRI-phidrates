@@ -1,5 +1,5 @@
-H- Hi H- + v -> H + e  
-H Hpi H + v -> H+ + e  
+H- H H- + v -> H<sup>-</sup> + e  
+H H+ H + v -> H<sup>+</sup> + e  
 he hei He + v -> He+ + e  
 He+ He2+ He<sup>+</sup> + v -> He<sup>2+</sup> + e  
 Li Li+ Li + v -> Li<sup>+</sup> + e  
