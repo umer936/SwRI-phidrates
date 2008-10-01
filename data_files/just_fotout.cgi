@@ -67,6 +67,7 @@ sub PrintResults {
     @energy_val = split (/\s+/, $line2);
     $i = 0;
     foreach $section (@sections) { 
+        $section =~ s/\^//g;
         $nice_name = &ConvertCanonicalBranchName ($section);
         print "<TD>$nice_name</TD>\n";
         print "<TD>$rates_val[$i]</TD>\n";

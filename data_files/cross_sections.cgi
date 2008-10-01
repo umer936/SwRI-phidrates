@@ -76,7 +76,8 @@ sub PrintResults {
     }
     print "</CENTER>";
 
-    print "<A HREF=\"$temp_dir/BRNOUT\">Click to view or shift-click to download \
+    $temp_dir =~ s/\/tmp\/joey/amop_data_files/g;
+    print "<A HREF=\"/$temp_dir/BRNOUT\">Click to view or shift-click to download \
            the data file used to create this plot!</A>\n";
     print "</BODY></HTML>";
 }
