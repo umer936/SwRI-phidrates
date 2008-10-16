@@ -1,4 +1,4 @@
-        96      0.00    845.74  V^+      V^2+        2
+        96      0.00    845.74 V+       V^2+         2
 Cross section:
 Lambda = 0.1-845.74 A
    Verner, D. A., Yakovlev, D. G., Band, I. M., Trzhaskovskaya, M. B. (1993)
@@ -7,7 +7,7 @@ Lambda = 0.1-845.74 A
    Astron. Astrophys. Suppl. 109, 125
    Verner, D. A., Ferland, G. J., Korista, K. T., Yakovlev, D. G. (1996)
    Astrophys. J. 465, 487
-        
+
       0.10  5.72E-24
       2.26  4.77E-20
       2.27  5.97E-21

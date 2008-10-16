@@ -1,4 +1,4 @@
-        90      0.00    824.37 Mg^+     Mg^2+        2
+        90      0.00    824.37 Mg+      Mg^2+        2
 Cross section:
 Lambda = 0.1-824.37 A
    Verner, D. A., Yakovlev, D. G., Band, I. M., Trzhaskovskaya, M. B. (1993)
@@ -7,7 +7,7 @@ Lambda = 0.1-824.37 A
    Astron. Astrophys. Suppl. 109, 125
    Verner, D. A., Ferland, G. J., Korista, K. T., Yakovlev, D. G. (1996)
    Astrophys. J. 465, 487
-        
+
       0.10  5.64E-25
       9.39  2.13E-19
       9.40  1.91E-20

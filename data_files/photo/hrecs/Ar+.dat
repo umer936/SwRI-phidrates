@@ -1,4 +1,4 @@
-        54      0.00    448.73 Ar^+     Ar^2+        2
+        54      0.00    448.73 Ar+      Ar^2+        2
 Cross section:
 Lambda = 0.1-448.73 A
    Verner, D. A., Yakovlev, D. G., Band, I. M., Trzhaskovskaya, M. B. (1993)
@@ -7,7 +7,7 @@ Lambda = 0.1-448.73 A
    Astron. Astrophys. Suppl. 109, 125
    Verner, D. A., Ferland, G. J., Korista, K. T., Yakovlev, D. G. (1996)
    Astrophys. J. 465, 487
-        
+
       0.10  1.90E-24
       3.86  8.64E-20
       3.87  9.38E-21

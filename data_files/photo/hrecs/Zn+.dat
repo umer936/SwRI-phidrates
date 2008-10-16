@@ -1,4 +1,4 @@
-        83      0.00    690.34 Zn^+     Zn^2+        2
+        83      0.00    690.34 Zn+      Zn^2+        2
 Cross section:
 Lambda = 0.1-690.34 A
    Verner, D. A., Yakovlev, D. G., Band, I. M., Trzhaskovskaya, M. B. (1993)
@@ -7,7 +7,7 @@ Lambda = 0.1-690.34 A
    Astron. Astrophys. Suppl. 109, 125
    Verner, D. A., Ferland, G. J., Korista, K. T., Yakovlev, D. G. (1996)
    Astrophys. J. 465, 487
-        
+
       0.10  1.79E-23
       1.28  2.74E-20
       1.29  3.67E-21

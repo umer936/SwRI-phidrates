@@ -1,4 +1,4 @@
-        90      0.00    766.28 Fe^+     Fe^2+        2
+        90      0.00    766.28 Fe+      Fe^2+        2
 Cross section:
 Lambda = 0.1-766.28 A
    Verner, D. A., Yakovlev, D. G., Band, I. M., Trzhaskovskaya, M. B. (1993)
@@ -7,7 +7,7 @@ Lambda = 0.1-766.28 A
    Astron. Astrophys. Suppl. 109, 125
    Verner, D. A., Ferland, G. J., Korista, K. T., Yakovlev, D. G. (1996)
    Astrophys. J. 465, 487
-        
+
       0.10  9.65E-24
       1.74  3.77E-20
       1.75  4.80E-21

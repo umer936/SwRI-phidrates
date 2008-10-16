@@ -1,4 +1,4 @@
-        41      0.00    353.03  O^+      O^2+        2
+        41      0.00    353.03 O+       O^2+         2
 Cross section:
 Lambda = 0.1-353.03 A
    Verner, D. A., Yakovlev, D. G., Band, I. M., Trzhaskovskaya, M. B. (1993)
@@ -7,7 +7,7 @@ Lambda = 0.1-353.03 A
    Astron. Astrophys. Suppl. 109, 125
    Verner, D. A., Ferland, G. J., Korista, K. T., Yakovlev, D. G. (1996)
    Astrophys. J. 465, 487
-        
+
       0.10  4.74E-26
      10.00  6.92E-20
      20.00  3.94E-19

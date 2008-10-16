@@ -1,4 +1,4 @@
-        73      0.00    611.06 Cu^+     Cu^2+        2
+        73      0.00    611.06 Cu+      Cu^2+        2
 Cross section:
 Lambda = 0.1-611.06 A
    Verner, D. A., Yakovlev, D. G., Band, I. M., Trzhaskovskaya, M. B. (1993)
@@ -7,7 +7,7 @@ Lambda = 0.1-611.06 A
    Astron. Astrophys. Suppl. 109, 125
    Verner, D. A., Ferland, G. J., Korista, K. T., Yakovlev, D. G. (1996)
    Astrophys. J. 465, 487
-        
+
       0.10  1.57E-23
       1.38  2.84E-20
       1.39  3.88E-21

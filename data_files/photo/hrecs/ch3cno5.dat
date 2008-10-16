@@ -1,8 +1,10 @@
-        25      0.00   7350.   ch3cno5  total
+        25      0.00   7350.   CH3CNO5  total
  cross section:
- lambda=0.6-770.a  synthesized from constituents (=8*o)
- lambda=2200.-2700.a  j. phys. chem. ref. data, 11, 2 (1982)
-
+ lambda=0.6-770. A
+ Synthesized from constituents (=8*o)
+ lambda=2200.-2700. A
+ J. Phys. Chem. Ref. Data, 11, 2 (1982)
+ 
       0.61  1.20e-22
       1.12  1.10e-21
       2.44  9.20e-20
@@ -29,12 +31,13 @@
    5000.00  1.00e-30
    7300.00  1.00e-35
   1
-         4      0.00  10860.   ch3cno5  mco3dno2    26
- branching ratio not known, assumed 0.5
-
+         4      0.00  10860.   CH3CNO5    CH3CO3 + NO2    26
+ Branching ratio not known, assumed 0.5
+ 
       0.60  5.00e-01
    9140.00  5.00e-01
    9141.00  1.00e 00
   10860.00  1.00e 00
-         0      0.00   9140.   ch3cno5  mco2dno3    26
+         0      0.00   9140.   CH3CNO5    CH3CO2 + NO3    26
 ***
+

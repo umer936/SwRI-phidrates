@@ -1,10 +1,12 @@
         89      0.00  16640.00 H-       H            2
- Lambda=500.00-16000.00A  Geltman, S. (1962)
-    Ap. J. 136, 935
- Lambda=180.00-16640.00A  Broad, J. T. and Reinhardt W. R.
-    (1976)
-    Phys. Rev. A14, 2159
-
+Cross section:
+Lambda = 500.00-16000.00 A
+   Geltman, S. (1962)
+   Astrophys. J. 136, 935
+Lambda = 180.00-16640.00 A
+   Broad, J. T., Reinhardt W. R. (1976)
+   Phys. Rev. A14, 2159
+ 
       1.00  2.00e-27
       5.20  6.11e-25
      10.00  5.60e-24

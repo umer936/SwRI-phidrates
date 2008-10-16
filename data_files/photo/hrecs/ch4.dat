@@ -1,15 +1,21 @@
-       137      0.00   2770.00 ch4      total
-lambda=23.6a-250a  lukirskii, a. p., brytov, i. a. and zimkina, t. m. (1964)
-    opt. spektr. (engl. trans.) 17, 234
- lambda=160a-1000a  rustgi, o. p. (1964)
-    j. opt. soc. am. 54, 464
- lambda=773.a-1370.a  ditchburn, r. w. (1955)
-    proc. roy. soc. london 229a, 44
- lambda=951.9a-1306.0a  sun, h. and weissler, g. l. (1955)
-    j. chem. phys. 23, 1160
- lambda=1380a-1600a  mount, g. h. and moos, h. w. (1978)
-    astrophys. j. (letters) 224, l35
-
+       137      0.00   2770.00 CH4      Total
+Cross section:
+Lambda = 23.6-250 A  
+   Lukirskii, A. P., Brytov, I. A., Zimkina, T. M. (1964)
+   Opt. Spektr. (Engl. Trans.) 17, 234
+Lambda = 160-1000 A
+   Rustgi, O. P. (1964)
+   J. Opt. Soc. Am. 54, 464
+Lambda = 773.-1370. A
+   Ditchburn, R. W. (1955)
+   Proc. Roy. Soc. London 229a, 44 
+Lambda = 951.9-1306.0 A
+   Sun, H., Weissler, G. L. (1955)
+   J. Chem. Phys. 23, 1160 
+Lambda = 1380.-1600. A
+   Mount, G. H., Moos, H. W. (1978)
+   Astrophys. J. (Lett.) 224, l35
+  
       1.00  1.00e-21
      23.60  2.60e-19
      31.60  5.30e-19
@@ -148,23 +154,26 @@ lambda=23.6a-250a  lukirskii, a. p., brytov, i. a. and zimkina, t. m. (1964)
    2373.00  3.00e-26
    2770.00  1.00e-28
   8
-        28      0.00   2373.00 ch4      sch2dh2  51 26
- lambda=773.a-1513.a  ditchburn, r. w. (1955)
-    proc. roy. soc. london 229a, 44
- lambda=951.9a-1306.0a  sun, h. and weissler, g. l. (1955)
-    j. chem. phys. 23, 1160
- lambda=1236a  branching ratio ch2 + h2  gordon, j. r. and ausloos, p. (1967)
-    j. chem. phys. 46, 4823. also
-    calvert, j. g. and pitts, j. n. (1966)
-    photochemistry, john wiley + sons , inc., n. y.  also
-    stief, l. j.  donn, b., glicker, s., gentieu, e. p. and mentall, j.
-e.(1972)
-    astrophys. j. 171, 21.
- lambda=2373.a   from heat of formation (dissociation threshold)
-    hayden, c. c., neumark, d. m., shobatake, k., sparks, r. k., and
-    lee, y. t. (1982)
-    j. chem. phys. 76, 3607
-
+        28      0.00   2373.00 CH4      ^1CH2/H2 51 26
+Lambda = 773.-1513. A
+   Ditchburn, R. W. (1955) 
+   Proc. Roy. Soc. London 229a, 44 
+Lambda = 951.9-1306.0 A
+   Sun, H., Weissler, G. L. (1955)
+   J. Chem. Phys. 23, 1160 
+Branching ratios:  CH2 + H2
+Lambda = 1236. A
+   Gordon, J. R., Ausloos, P. (1967) 
+   J. Chem. Phys. 46, 4823 
+   Calvert, J. G., Pitts, J. N. (1966)
+   Photochemistry, John Wiley & Sons, Inc., N. Y. 
+   Stief, L. J.  Donn, B., Glicker, S., Gentieu, E. P., Mentall, J. E. (1972)
+   Astrophys. J. 171, 21.
+Lambda = 2373. A
+   Dissociation threshold from heat of formation
+   Hayden, C. C., Neumark, D. M., Shobatake, K., Sparks, R. K., Lee, Y. T. (1982)
+   J. Chem. Phys. 76, 3607
+  
       1.00  0.00e 00
     769.30  0.00e 00
     773.00  6.89e-03
@@ -193,20 +202,26 @@ e.(1972)
    1513.00  8.50e-01
    2373.00  0.00e 00
    2770.00  0.00e 00
-        28      0.00   2770.00 ch4      ch3dh    50 26
- lambda=773.a-1513.a  ditchburn, r. w. (1955)
-    proc. roy. soc. london 229a, 44
- lambda=951.9a-1306.0a  sun, h. and weissler, g. l. (1955)
-    j. chem. phys. 23, 1160
- lambda=1057.5a and 1236.a  branching ratio ch + h2 + h  gordon, j. r. and
-    ausloos, p. (1967)
-    j. chem. phys. 46, 4823
-lambda=1215.7a  (branching ratio)  slanger, t. (1981)
-   planetary atmospheres principal invest. conf. nasa/gsfc, p.xiv-6
- lambda=2770.a  from heats of formation
- lambda=2800.a  threshold for dissoc. into ch3 + h  ditchburn, r. w. (1955)
-    proc. roy. soc. london 229a, 44
-
+        28      0.00   2770.00 CH4      CH3/H    50 26
+Lambda = 773.-1513.  A
+   Ditchburn, R. W. (1955) 
+   Proc. Roy. Soc. London 229a, 44 
+Lambda = 951.9-1306.0 A
+   Sun, H., Weissler, G. L. (1955)
+   J. Chem. Phys. 23, 1160
+Branching Ratio: 
+Lambda = 1057.5 A and 1236. A  CH + H2 + H
+   Gordon, J. R., Ausloos, P. (1967)
+   J. Chem. Phys. 46, 4823
+Lambda = 1215.7 A
+   Slanger, T. (1981)
+   Planetary Atmospheres Principal Invest. Conf. NASA/GSFC, p. xiv-6
+Threshold: 
+Lambda = 2770. A  from heats of formation
+Lambda = 2800. A  into CH3 + H
+   Ditchburn, R. W. (1955)
+   Proc. Roy. Soc. London 229a, 44 
+  
       1.00  0.00e 00
     769.30  0.00e 00
     773.00  1.36e-03
@@ -235,8 +250,8 @@ lambda=1215.7a  (branching ratio)  slanger, t. (1981)
    1513.00  1.50e-01
    2373.00  1.00e+00
    2770.00  1.00e+00
-        10      0.00   1322.00 ch4      ch2dhdh     26
-
+        10      0.00   1322.00 CH4      CH2/H/H     26
+ 
       1.00  0.00e 00
     769.30  0.00e 00
     773.00  2.00e-03
@@ -247,14 +262,17 @@ lambda=1215.7a  (branching ratio)  slanger, t. (1981)
    1236.00  1.10e-01
    1322.00  0.00e 00
    2770.00  0.00e 00
-        36      0.00    945.00 ch4      ch4i     40  2
- lambda=23.6a-250.a  lukirskii, a. p., brytov, i. a. and zimkina, t. m. (1964)
-    opt. spektr. (engl. trans.) 17, 234
- lambda=278.a-932.1a  ditchburn, r. w. (1955)
-    proc. roy. soc. london 229a, 44
-lambda=304.a-875.a  kronebusch, p. l. and berkowitz, j. (1976)
-   int. j. mass spectry. and ion phys. 22,283(1976)
-
+        36      0.00    945.00 CH4      CH4+     40  2
+Lambda = 23.6-250. A
+   Lukirskii, A. P., Brytov, I. A., Zimkina, T. M. (1964)
+   Opt. Spektr. (Engl. Trans.) 17, 234 
+Lambda = 278.-932.1 A
+   Ditchburn, R. W. (1955) 
+   Proc. Roy. Soc. London 229a, 44 
+Lambda = 304.-875. A
+   Kronebusch, P. L., Berkowitz, J. (1976)
+   Int. J. Mass Spectry. Ion Phys. 22, 283 
+  
       1.00  2.00e-01
     304.00  3.59e-01
     379.00  4.22e-01
@@ -291,10 +309,11 @@ lambda=304.a-875.a  kronebusch, p. l. and berkowitz, j. (1976)
     932.10  1.91e-01
     945.00  0.00e 00
    2770.00  0.00e 00
-        27      0.00    866.00 ch4      ch3ih    40 40
-lambda=304.a-875.a  kronebusch, p. l. and berkowitz, j. (1976)
-   int. j. mass spectry. and ion phys. 22,283(1976)
-
+        27      0.00    866.00 CH4      CH3+H    40 40
+Lambda = 304.-875. A
+   Kronebusch, P. L., Berkowitz, J. (1976)
+   Int. J. Mass Spectry. Ion Phys. 22, 283
+  
       1.00  2.00e-01
     304.0   3.51e-01
     379.0   4.22e-01
@@ -322,10 +341,11 @@ lambda=304.a-875.a  kronebusch, p. l. and berkowitz, j. (1976)
     860.0   1.72e-01
     871.1   0.00e 00
    2770.0   0.00
-        20      0.00    822.00 ch4      ch2ih2   41 40
-lambda=304.a-875.a  kronebusch, p. l. and berkowitz, j. (1976)
-   int. j. mass spectry. and ion phys. 22,283(1976)
-
+        20      0.00    822.00 CH4      CH2+H2   41 40
+Lambda = 304.-875. A
+   Kronebusch, P. L., Berkowitz, J. (1976)
+   Int. J. Mass Spectry. Ion Phys. 22, 283
+  
       1.00  2.00e-01
     304.0   1.46e-01
     379.0   8.80e-02
@@ -346,10 +366,11 @@ lambda=304.a-875.a  kronebusch, p. l. and berkowitz, j. (1976)
     806.0   1.01e-02
     827.0   0.00e 00
    2770.0   0.00
-        13      0.00    630.00 ch4      chih2dh  42 40
-lambda=304.a-875.a  kronebusch, p. l. and berkowitz, j. (1976)
-   int. j. mass spectry. and ion phys. 22,283(1976)
-
+        13      0.00    630.00 CH4      CH+H2/H  42 40
+Lambda = 304.-875. A
+   Kronebusch, P. L., Berkowitz, J. (1976)
+   Int. J. Mass Spectry. Ion Phys. 22, 283
+  
       1.00  2.00e-01
     304.0   3.70e-02
     379.0   2.10e-02
@@ -363,10 +384,11 @@ lambda=304.a-875.a  kronebusch, p. l. and berkowitz, j. (1976)
     584.00  1.00e-03
     629.30  0.00e 00
    2770.00  0.00e 00
-        14      0.00    686.00 ch4      hich3    43 40
-lambda=304.a-875.a  kronebusch, p. l. and berkowitz, j. (1976)
-   int. j. mass spectry and ion phys. 22,283(1976)
-
+        14      0.00    686.00 CH4      H+CH3    43 40
+Lambda = 304.-875. A
+   Kronebusch, P. L., Berkowitz, J. (1976)
+   Int. J. Mass Spectry. Ion Phys. 22, 283
+  
       1.00  2.00e-01
     304.0   1.07e-01
     379.0   4.70e-02
@@ -381,5 +403,5 @@ lambda=304.a-875.a  kronebusch, p. l. and berkowitz, j. (1976)
     629.30  2.00e-03
     685.80  0.00e 00
    2770.00  0.00e 00
-         0      0.00   1370.00 ch4      chdh2dh  52 26
-***
+         0      0.00   1370.00 CH4      CH/H2/H  52 26
+*** 
