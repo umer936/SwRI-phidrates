@@ -1,0 +1,12 @@
+#!/bin/tcsh
+
+foreach file (*.dat)
+   set awklc = `awk '{print NR}' $file | tail -1` 
+   set wclc = `wc -l $file | awk '{print $1}'`
+   if $awklc != $wclc then
+      echo $file needs newline
+      echo "" >> $file
+   else 
+#      echo $file does not need newline
+   endif
+end
