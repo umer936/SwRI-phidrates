@@ -1,10 +1,11 @@
-</html>
+<html>
 <head>
 <script>
 
 function runMolecule (value) {
     if (testNumbers () != 0) return;
 
+    var URL = 'http://elmer.space.swri.edu/~joey/amop/data_files/';
     var programToUse;
     var useSolarActivity = parent.left_frame.useSolarActivity;
     var justCrossSections = parent.left_frame.justCrossSections;
@@ -14,8 +15,8 @@ function runMolecule (value) {
 
     if (justCrossSections == true) {
         use_electron_volts = document.options.x_axis_unit[1].checked;
-        var cross_sections = 'http://amop.space.swri.edu/sh-cgi-bin/amop/'
-            + 'cross_sections.pl'
+        var cross_sections = URL
+            + 'cross_sections.cgi'
             + '?molecule=' + value
             + '?use_electron_volts=' + use_electron_volts 
             + '?use_semi_log=false' 
@@ -29,8 +30,8 @@ function runMolecule (value) {
             solar_activity = document.options.solar_activity.value;
         }
 
-        var rate_numbers = 'http://amop.space.swri.edu/sh-cgi-bin/amop/'
-            + 'just_fotout.pl'
+        var rate_numbers = URL
+            + 'just_fotout.cgi'
             + '?molecule=' + value
             + '?use_electron_volts=' + use_electron_volts 
             + '?use_semi_log=' + use_semi_log
@@ -38,16 +39,16 @@ function runMolecule (value) {
         rate_numbers_window = window.open (rate_numbers, "rate_numbers",
             "menubar=yes,resizable=yes,scrollbars=yes,width=600,height=500");
         if (document.options.plots_desired[0].checked == true) {
-            var solar_spectrum = 'http://amop.space.swri.edu/sh-cgi-bin/amop/'
-                + 'gp_spectrum.pl'
+            var solar_spectrum = URL
+                + 'gp_spectrum.cgi'
                 + '?use_semi_log=' + use_semi_log
                 + '?solar_activity=' + solar_activity;
             solar_spectrum = window.open (solar_spectrum, "solar_spectrum",
                 "menubar=yes,resizable=yes,scrollbars=yes,width=600,height=500");
         } 
         if (document.options.plots_desired[1].checked == true) {
-            var cross_sections = 'http://amop.space.swri.edu/sh-cgi-bin/amop/'
-                + 'binned_cross_sections.pl'
+            var cross_sections = URL
+                + 'binned_cross_sections.cgi'
                 + '?molecule=' + value
                 + '?use_electron_volts=' + use_electron_volts 
                 + '?use_semi_log=' + use_semi_log
@@ -57,8 +58,8 @@ function runMolecule (value) {
                 "menubar=yes,resizable=yes,scrollbars=yes,width=600,height=500");
         } 
         if (document.options.plots_desired[2].checked == true) {
-            var rate_coeff = 'http://amop.space.swri.edu/sh-cgi-bin/amop/'
-                + 'binned_rate_coeff.pl'
+            var rate_coeff = URL
+                + 'binned_rate_coeff.cgi'
                 + '?molecule=' + value
                 + '?use_electron_volts=' + use_electron_volts 
                 + '?use_semi_log=' + use_semi_log
@@ -68,8 +69,8 @@ function runMolecule (value) {
                 "menubar=yes,resizable=yes,scrollbars=yes,width=600,height=500");
         } 
         if (document.options.plots_desired[3].checked == true) {
-            var excess_energies = 'http://amop.space.swri.edu/sh-cgi-bin/amop/'
-                + 'excess_energies.pl'
+            var excess_energies = URL
+                + 'excess_energies.cgi'
                 + '?molecule=' + value
                 + '?use_electron_volts=' + use_electron_volts 
                 + '?use_semi_log=' + use_semi_log
@@ -214,12 +215,13 @@ function isNumberString (InString) {
 <CENTER>
 <TABLE BORDER=4 CELLPADDING=5>
 <TR>
-<TH COLSPAN=6 ALIGN=CENTER>
+<TH COLSPAN=7 ALIGN=CENTER>
 Molecule Selection
 </TH>
 </TR>
 <TR>
-<TH>Monatomics</TH>
+<TH>Monatomic Neutrals</TH>
+<TH>Monatomic Ions</TH>
 <TH>Diatomics</TH>
 <TH>Triatomics</TH>
 <TH>Tetratomics</TH>
@@ -228,32 +230,83 @@ Molecule Selection
 </TR>
 <TR>
 <TD ALIGN=CENTER>
+<A HREF="JavaScript:runMolecule ('Al')">Al</A><BR>
+<A HREF="JavaScript:runMolecule ('Ar')">Ar</A><BR>
+<A HREF="JavaScript:runMolecule ('B')">B</A><BR>
+<A HREF="JavaScript:runMolecule ('Be')">Be</A><BR>
 <A HREF="JavaScript:runMolecule ('c3p')">C(<sup>3</sup>P)</A><BR>
 <A HREF="JavaScript:runMolecule ('c1d')">C(<sup>1</sup>D)</A><BR>
 <A HREF="JavaScript:runMolecule ('c1s')">C(<sup>1</sup>S)</A><BR>
+<A HREF="JavaScript:runMolecule ('Ca')">Ca</A><BR>
 <A HREF="JavaScript:runMolecule ('cl')">Cl</A><BR>
+<A HREF="JavaScript:runMolecule ('Co')">Co</A><BR>
+<A HREF="JavaScript:runMolecule ('Cr')">Cr</A><BR>
+<A HREF="JavaScript:runMolecule ('Cu')">Cu</A><BR>
 <A HREF="JavaScript:runMolecule ('f')">F</A><BR>
+<A HREF="JavaScript:runMolecule ('Fe')">Fe</A><BR>
 <A HREF="JavaScript:runMolecule ('H')">H</A><BR>
-<A HREF="JavaScript:runMolecule ('H-')">H<sup>-</sup></A><BR>
 <A HREF="JavaScript:runMolecule ('he')">He</A><BR>
 <A HREF="JavaScript:runMolecule ('k')">K</A><BR>
+<A HREF="JavaScript:runMolecule ('Li')">Li</A><BR>
+<A HREF="JavaScript:runMolecule ('Mg')">Mg</A><BR>
+<A HREF="JavaScript:runMolecule ('Mn')">Mn</A><BR>
 <A HREF="JavaScript:runMolecule ('n')">N</A><BR>
 <A HREF="JavaScript:runMolecule ('na')">Na(theor)</A><BR>
 <A HREF="JavaScript:runMolecule ('nae')">Na(exp)</A><BR>
+<A HREF="JavaScript:runMolecule ('Ne')">Ne</A><BR>
+<A HREF="JavaScript:runMolecule ('Ni')">Ni</A><BR>
 <A HREF="JavaScript:runMolecule ('o3p')">O(<sup>3</sup>P)</A><BR>
 <A HREF="JavaScript:runMolecule ('o1d')">O(<sup>1</sup>D)</A><BR>
 <A HREF="JavaScript:runMolecule ('o1s')">O(<sup>1</sup>S)</A><BR>
+<A HREF="JavaScript:runMolecule ('P')">P</A><BR>
 <A HREF="JavaScript:runMolecule ('s3p')">S(<sup>3</sup>P)</A><BR>
 <A HREF="JavaScript:runMolecule ('s1d')">S(<sup>1</sup>D)</A><BR>
 <A HREF="JavaScript:runMolecule ('s1s')">S(<sup>1</sup>S)</A><BR>
+<A HREF="JavaScript:runMolecule ('Sc')">Sc</A><BR>
+<A HREF="JavaScript:runMolecule ('Si')">Si</A><BR>
+<A HREF="JavaScript:runMolecule ('Ti')">Ti</A><BR>
+<A HREF="JavaScript:runMolecule ('V')">V</A><BR>
+<A HREF="JavaScript:runMolecule ('Zn')">Zn</A><BR>
 </TD>
 
 <TD ALIGN=CENTER>
-<A HREF="JavaScript:runMolecule ('bro')">BrO</A><BR>
+<A HREF="JavaScript:runMolecule ('H-')">H<sup>-</sup></A><BR>
+<A HREF="JavaScript:runMolecule ('Al+')">Al+</A><BR>
+<A HREF="JavaScript:runMolecule ('Ar+')">Ar+</A><BR>
+<A HREF="JavaScript:runMolecule ('B+')">B+</A><BR>
+<A HREF="JavaScript:runMolecule ('Be+')">Be+</A><BR>
+<A HREF="JavaScript:runMolecule ('C+')">C+</A><BR>
+<A HREF="JavaScript:runMolecule ('Ca+')">Ca+</A><BR>
+<A HREF="JavaScript:runMolecule ('Cl+')">Cl+</A><BR>
+<A HREF="JavaScript:runMolecule ('Co+')">Co+</A><BR>
+<A HREF="JavaScript:runMolecule ('Cr+')">Cr+</A><BR>
+<A HREF="JavaScript:runMolecule ('Cu+')">Cu+</A><BR>
+<A HREF="JavaScript:runMolecule ('F+')">F+</A><BR>
+<A HREF="JavaScript:runMolecule ('Fe+')">Fe+</A><BR>
+<A HREF="JavaScript:runMolecule ('He+')">He+</A><BR>
+<A HREF="JavaScript:runMolecule ('K+')">K+</A><BR>
+<A HREF="JavaScript:runMolecule ('Li+')">Li+</A><BR>
+<A HREF="JavaScript:runMolecule ('Mg+')">Mg+</A><BR>
+<A HREF="JavaScript:runMolecule ('Mn+')">Mn+</A><BR>
+<A HREF="JavaScript:runMolecule ('N+')">N+</A><BR>
+<A HREF="JavaScript:runMolecule ('Na+')">Na+</A><BR>
+<A HREF="JavaScript:runMolecule ('Ne+')">Ne+</A><BR>
+<A HREF="JavaScript:runMolecule ('Ni+')">Ni+</A><BR>
+<A HREF="JavaScript:runMolecule ('O+')">O+</A><BR>
+<A HREF="JavaScript:runMolecule ('P+')">P+</A><BR>
+<A HREF="JavaScript:runMolecule ('S+')">S+</A><BR>
+<A HREF="JavaScript:runMolecule ('Sc+')">Sc+</A><BR>
+<A HREF="JavaScript:runMolecule ('Si+')">Si+</A><BR>
+<A HREF="JavaScript:runMolecule ('Ti+')">Ti+</A><BR>
+<A HREF="JavaScript:runMolecule ('V+')">V+</A><BR>
+<A HREF="JavaScript:runMolecule ('Zn+')">Zn+</A><BR>
+</TD>
+<TD ALIGN=CENTER>
+<A HREF="JavaScript:runMolecule ('BrO')">BrO</A><BR>
 <A HREF="JavaScript:runMolecule ('c2')">C<sub>2</sub></A><BR>
 <A HREF="JavaScript:runMolecule ('ch')">CH</A><BR>
 <A HREF="JavaScript:runMolecule ('cn')">CN</A><BR>
-<A HREF="JavaScript:runMolecule ('co')">CO</A><BR>
+<A HREF="JavaScript:runMolecule ('sCO')">CO</A><BR>
 <A HREF="JavaScript:runMolecule ('tco')">CO(a<sup>3</sup>)</A><BR>
 <A HREF="JavaScript:runMolecule ('cl2')">Cl<sub>2</sub></A><BR>
 <A HREF="JavaScript:runMolecule ('f2')">F<sub>2</sub></A><BR>
