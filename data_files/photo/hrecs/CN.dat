@@ -1,17 +1,12 @@
-        36      0.00   1590.   CN       C/N         26
-Cross section:
-Lambda = .61-626.8 A
-   Barfield, W. D., Koontz, G. D., Huebner, W. F. (1972)
-   J. Quant. Spectr. Rad. Trans. 12, 1409
-Lambda = 905.8-926.1 A
-   Lavendy, H., Gandara, G., Robbe, J. M.
-   J. Mol. Spectr. 106, 395-410 (1984)
-Lambda = 1128.-1171. A
-   Lavendy, H., Gandara, G., Robbe, J. M.
-   J. Phys. B: Atom. Mol. Phys. 20, 3067-3074 (1987)
-Lambda = 912.-1108. A
-   Lavendy, H., Robbe, J. M., Gandara, G.
-   J. Mol. Spectr. 106, 395-410 (1984)
+        36      0.00   1590.   cn       cdn         26
+ cross section:
+ lambda=.61-626.8a  barfield et al.
+ lambda=905.8-926.1a  lavendy, h., gandara, g., and robbe, j. m.
+    j. mol. spectrosc. 106, 395-410 (1984)
+ lambda=1128.-1171.a  lavendy, h., gandara, g., and robbe, j. m.
+    j. phys. b: at. mol. phys. 20, 3067-3074 (1987)
+ lambda=912.-1108.a  lavendy, h., robbe, j. m., gandara, g.
+    j. mol. spectrosc. 106, 395-410 (1984)
 
       0.61  1.19e-23
       1.24  1.20e-22

@@ -1,76 +1,65 @@
-      2579      0.00   2423.70 O2       Total
-Lambda = 1.-295 A
-   Barfield, W. D., Koontz, G. D., Huebner, W. F. (1972)
-   J. Quant. Spectr. Rad. Trans. 12, 1409
+      2579      0.00   2423.70 o2       total
+lambda=1.a-295a  barfield, w. d., koontz, g. d. and huebner, w. f. (1972)
+   j. quant. spectrosc. radiat. transfer 12, 1409
    (two times cross section for atomic oxygen)
-Lambda = 9.9-247.2 A
-   Bortner, M. H., Baurer, T. (1978)
-   Defense Nuclear Agency Reaction Rate Handbook, DNA 1948h, 2nd ed., rev. Nr. 7
-Lambda = 41.33-1771.2 A
-   Brion, C. E., Tan, K. H. (1979)
-   J. Electron Spectr. Related Phenom. 17, 101
-Lambda = 209.3-1037.6 A
-   Samson, J. A. R., Cairns, R. B. (1964, 1965)
-   J. Geophys. Res. 69, 4583
-   J. Opt. Soc. Am. 55, 1035
-Lambda = 600-912 A
-   Cook, G. R., Metzger, P. H. (1964)
-   J. Chem. Phys. 41, 321
-Lambda = 580-1077 A
-   Matsunaga, F. M., Watanabe, K. (1967)
-   Science of Light 16, 31
-Lambda = 1062-1751 A
-   Watanabe, K. (1958)
-   Adv. Geophys. 5, 153
-Lambda = 1163-2000 A
-   Ackerman, M. (1971)
-   Ultraviolet Solar Radiation Related to Mesospheric Processes, in
-   Mesospheric Models and Related Experiments, G. Fiocco (ed.), Proc.
-   4th ESRIN-ESLAB Symp., Frascati, Italy (Reidel Dordrecht-Holland)
-Lambda = 1163-2000 A
-   Ackerman, M., Biaume, F., Kockarts, G. (1970)
-   Planet. Space Sci. 18, 1639
-Lambda = 140.3-1740.0 A
-   Gibson, S. T., Gies, H. P. F., Blake, A. J., Mccoy, D. G., Rogers, P. J. (1983)
-   J. Quant. Spectr. Rad. Trans. 30, 385
-Lambda = 2000-2200 A
-   Herman, J. R., Mentall, J. E. (1982)
-   J. Geophys. Res. 87, 8967
-Lambda = 2250-2423.7 A
-   Shardanand, Rao, A. D. P. (1976)
-   J. Quant. Spectr. Rad. Trans. 17, 433
-Threshold (dissociation):
-Lambda = 2423.7 A
-   Huber, K.-P., Herzberg, G. (1979)
-   Molecular Spectra & Molecular Structure, Vol. 4, Van Nostrand Reinhold, New York
-Lambda = 1792.3-1998.0 A
-   (1,0) - (12,0) Schumann-Runge bands
-   Yoshino, K., Freeman, D. E., Esmond, J. R., Parkinson, W. H. (1982?)
-   Plan. Space Sci.   ,   
-   band 12,0; O2b12x0c
-Lambda = 1792.13-1803.41 A
-   band 11,0; O2b11x0c
-Lambda = 1803.45-1816.19 A
-   band 10,0; O2b10x0c
-Lambda = 1816.20-1830.59 A
-   band 9,0; O2b9x0c
-Lambda = 1830.60-1846.04 A
-   band 8,0; O2b8x0c
-Lambda = 1846.07-1862.86 A
-   band 7,0; O2b7x0c
-Lambda = 1862.90-1882.15 A
-   band 6,0; O2b6x0c
-Lambda = 1882.19-1902.40 A
-   band 5,0; O2b5x0c
-Lambda = 1902.41-1923.79 A
-   band 4,0; O2b4x0c
-Lambda = 1923.84-1946.64 A
-   band 3,0; O2b3x0c
-Lambda = 1946.66-1971.60 A
-   band 2,0; O2b2x0c
-Lambda = 1971.61-1997.99 A
-   band 1,0; O2b1x0c
-Lambda = 1998.00-2015.19 A
+lambda=9.9a-247.2a  bortner, m. h. and baurer, t. (1978)
+   defense nuclear agency reaction rate handbook, dna 1948h, 2nd ed.,
+   revision nr. 7
+lambda=41.33a-1771.2a  brion, c. e. and tan, k. h. (1979)
+   j. electr.on spectr. related phenom. 17, 101
+lambda=209.3a-1037.6a  samson, j. a. r. and cairns, r. b. (1964,1965)
+   j. geophys. res. 69, 4583
+   j. opt. soc. am. 55, 1035
+lamda=600a-912a  cook, g. r. and metzger, p. h. (1964)
+   j. chem. phys. 41, 321
+lambda=580a-1077a  matsunaga, f. m. and watanabe, k. (1967)
+   science of light 16, 31
+lambda=1062a-1751a  watanabe, k. (1958)
+   adv. geophys. 5, 153
+lambda=1163a-2000a  ackerman, m. (1971)
+   ultraviolet solar radiation related to mesospheric processes, in
+   mesospheric models and related experiments, g. fiocco, ed., proc.
+   4th esrin-eslab symp., frascati, italy (reidel dordrecht-holland)
+lambda=1163a-2000a  ackerman, m., biaume, f. and kockarts, g. (1970)
+   planet. space sci. 18, 1639
+lambda=140.3a-1740.0a  gibson, s. t., gies, h. p. f., blake, a. j.,
+   mccoy, d. g., and rogers, p. j. (1983)
+   j. quant. spectrosc. radiat. transfer 30, 385
+lambda=2000a-2200a  herman, j. r. and mentall, j. e. (1982)
+   j. geophys. res. 87, 8967
+lambda=2250a-2423.7a  shardanand and rao, a. d. p. (1976)
+   j. quant. spectrosc. radiat. transfer 17, 433
+   dissociation threshold:
+lambda=2423.7a  huber, k.-p. and herzberg, g. (1979)
+   molecular spectra & molecular structure, vol. 4, van nostr& reinhold,
+   new york
+ lambda=1792.3a-1998.0a (1,0) - (12,0) schumann-runge bands
+   K. Yoshino, D. e. freeman, j. r. esmond, and w. h. parkinson
+   plan. space sci.   ,   (1982?)
+  band 12,0; o2b12x0c
+ lambda = 1792.13a - 1803.41a
+  band 11,0; o2b11x0c
+ lambda = 1803.45a - 1816.19a
+  band 10,0; o2b10x0c
+ lambda = 1816.20a - 1830.59a
+  band 9,0; o2b9x0c
+ lambda = 1830.60a - 1846.04a
+  band 8,0; o2b8x0c
+ lambda = 1846.07a - 1862.86a
+  band 7,0; o2b7x0c
+ lambda = 1862.90a - 1882.15
+  band 6,0; o2b6x0c
+ lambda = 1882.19a - 1902.40a
+  band 5,0; o2b5x0c
+ lambda = 1902.41a - 1923.79a
+  band 4,0; o2b4x0c
+ lambda = 1923.84a - 1946.64a
+  band 3,0; o2b3x0c
+ lambda = 1946.66a - 1971.60a
+  band 2,0; o2b2x0c
+ lambda = 1971.61a - 1997.99a
+  band 1,0; o2b1x0c
+ lambda = 1998.00a - 2015.19a
 
       1.00  2.00e-22
       4.00  1.20e-20
@@ -2652,25 +2641,24 @@ Lambda = 1998.00-2015.19 A
    2400.00  1.40e-24
    2423.70  9.50e-25
   4
-        20      0.00   2423.70 O2       O/O       9 26
-Cross section:
-   Huffman, R. E. (1969)
-   Can. J. Chem. 47, 1823
-   Samson, J. A. R., Cairns, R. B. (1964)
-   J. Geophys. Res. 69, 4583
-   Cook, G. R., Metzger, P. H. (1964)
-   J. Chem. Phys. 41, 321
-   Matsunaga, F. M., Watanabe, K. (1967)
-   Science of Light 16, 31
+        20      0.00   2423.70 o2       odo       9 26
+huffman, r. e. (1969)
+   can. j. chem. 47, 1823
+samson, j. a. r. and cairns, r. b. (1964)
+   j. geophys. res. 69, 4583
+cook, g. r. and metzger, p. h. (1964)
+   j. chem. phys. 41, 321
+matsunaga, f. m. and watanabe, k. (1967)
+   science of light 16, 31
    (branching ratios for dissociation and ionization)
-   Lee, L. C., Slanger, T. G., Black, G., Sharpless, R. L. (1977)
-   J. Chem. Phys. 67, 5602
+lee, l. c., slanger, t. g., black, g. and sharpless, r. l. (1977)
+   j. chem. phys. 67, 5602
    (branching ratio for dissociation into o(3p) and o(1d))
-   Ackerman, M., Biaume, F., Kockarts, G. (1970)
-   Planet. Space Sci. 18, 1639
+ackerman, m., biaume, f. and kockarts, g. (1970)
+   planet. space sci. 18, 1639
    (branching ratio for dissociation into o(3p) and o(1d))
-   Hudson, R. D. (1971)
-   Rev. Geophys. Space Phys. 9, 305
+hudson, r. d. (1971)
+   rev. geophys. space phys. 9, 305
    (branching ratio for dissociation into o(3p) and o(1s))
 
       1.00  0.00e 00
@@ -2693,11 +2681,9 @@ Cross section:
    1750.00  3.00e-04
    1759.00  1.00e+00
    2423.70  1.00e+00
-        24      0.00   1759.00 O2       O/O1D    10 26
-Cross section:
-Lambda = 686.3-920.0 A
-   Matsunaga, F. M., Watanabe, K. (1967)
-   Science of Light 16, 31
+        24      0.00   1759.00 o2       odo1d    10 26
+lambda=686.3a-920.0a  f.m. matsunaga and k. watanabe
+   science of light 16,31(1967)
 
       1.00  0.00e 00
     686.30  0.00e 00
@@ -2723,14 +2709,12 @@ Lambda = 686.3-920.0 A
    1750.00 9.997e-01
    1759.00  0.00e 00
    2423.70  0.00e 00
-        58      0.00    585.00 O2       O+O       5 40
-Threshold (ionization):
-Lambda = 304. A
-   Kronebusch, P. L. Berkowitz, J. (1976)
-   Int. J. Mass Spectr. Ion Phys. 22, 283
-Lambda = 165.3-563.6 A
-   Brion, C. E., Tan, K. H. (1979)
-   J. Electron Spectr. Related Phenom. 17, 101
+        58      0.00    585.00 o2       oio       5 40
+ionization threshold:
+lambda=304.a  kronebusch, p. l. and berkowitz, j. (1976)
+   int. j. mass spectry. and ion phys. 22,283(1976)
+lambda=165.3a-563.6a  brion, c. e. and tan, k. h. (1979)
+   j. electron spectr. related phenom. 17, 101
 
       1.00  5.00e-01
     165.30  4.90e-01
@@ -2790,10 +2774,9 @@ Lambda = 165.3-563.6 A
     584.0   1.50e-01
     585.0   0.00e 00
    2423.7   0.00e 00
-         9      0.00    923.00 O2       O1S/O1S  11 26
-Lambda = 686.3-920.0 A
-   Matsunaga, F. M., Watanabe, K. (1967)
-   Science of Light 16, 31
+         9      0.00    923.00 o2       o1sdo1s  11 26
+lambda=686.3a-920.0a  f.m. matsunaga and k. watanabe
+   science of light 16,31(1967)
 
       1.00  0.00e 00
     823.00  0.00e 00
@@ -2804,5 +2787,5 @@ Lambda = 686.3-920.0 A
     920.00  3.80e-01
     923.00  0.00e 00
    2423.70  0.00e 00
-         0      0.00   1027.80 O2       O2+      16  2
+         0      0.00   1027.80 o2       o2i      16  2
 ***

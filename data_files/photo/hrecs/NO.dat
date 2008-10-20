@@ -1,16 +1,14 @@
-       995      0.00   1910.00 NO       Total
-Cross section:
-Lambda = 1.-180. A
-   Cross section synthesized from the atomic cross section of N and O
-Lambda = 180.-580. A
-   Lee, L. C., Carlson, R. W., Judge, D. L., Ogawa, M. (1973)
-   J. Quant. Spectr. Rad. Trans. 13, 1023
-Lambda = 580.-1350. A
-   Watanabe, K., Matsunaga, F. M., Sakai, H. (1967)
-   Appl. Opt. 6, 391
-Lambda = 1350.-1910. A
-   Marmo, F. F. (1953)
-   J. Opt. Soc. Am. 43, 1186
+       995      0.00   1910.00 no       total
+cross section:
+lambda=1.-180.a  cross section synthesized from the atomic cross
+   section of n and o
+lambda=180.-580.a  lee, l.c., carlson, r. w., judge, d. l., and
+   ogawa, m. (1973)
+   j. quant. spectrosc. radiat. transfer 13, 1023
+lambda=580.-1350.a  watanabe, k., matsunaga, f. m., and sakai, h. (1967)
+   appl. opt. 6, 391
+lambda=1350.-1910.a  marmo, f. f. (1953)
+   j. opt. soc. am. 43, 1186
 
       1.00  1.10e-22
       5.00  1.57e-20
@@ -1008,20 +1006,17 @@ Lambda = 1350.-1910. A
    1894.00  3.72e-20
    1910.00  8.11e-19
   3
-       531      0.00   1340.00 NO       NO+      19  2
-Branching ratios:
-Lambda = 580.-1350. A
-   Watanabe, K., Matsunaga, F. M., Sakai, H. (1967)
-   Appl. Opt. 6, 391
+       531      0.00   1340.00 no       noi      19  2
+branching ratios:
+lambda=580.-1350.a  watanabe, k., matsunaga, f. m., and sakai, h. (1967)
+   appl. opt. 6, 391
    (branching for all ionization)
-Lambda = 0.-620. A
-   Kronebusch, P. L., Berkowitz, J. (1976)
-   Int. J. Mass Spectr. Ion Phys. 22, 283
+lambda=0.-620.a  kronebusch, p. l. and berkowitz, j.
+   int. j. mass spectry. ion phys. 22,283 (1976)
    (branching within total ionization branch)
-Threshold:
-Lambda = 1340. A
-   Watanabe, K., Matsunaga, F. M., Sakai, H. (1967)
-   Appl. Opt. 6, 391
+threshold:
+lambda=1340.a  watanabe, k., matsunaga, f. m., and sakai, h. (1967)
+   appl. opt. 6, 391
 
       0.00  7.57e-01
     304.00  8.42e-01
@@ -1554,11 +1549,10 @@ Lambda = 1340. A
    1338.30  1.65e-01
    1340.00  0.00e 00
    1910.00  0.00e 00
-        15      0.00    616.20 NO       O+N      15 40
-Branching ratio and threshold:
-Lambda = 304.-616.2 A
-   Kronebusch, P. L., Berkowitz, J. (1976)
-   Int. J. Mass Spectr. Ion Phys. 22, 283
+        15      0.00    616.20 no       oin      15 40
+branching ratio and threshold:
+lambda=304.-616.2a  kronebusch, p.l. and berkowitz, j. (1976)
+   int. j. mass spectry. ion phys. 22, 283
 
       0.00  5.00e-03
     304.00  5.39e-03
@@ -1575,11 +1569,10 @@ Lambda = 304.-616.2 A
     612.50  1.30e-03
     616.20  0.00e 00
    1910.00  0.00e 00
-        11      0.00    589.30 NO       N+O      16 40
-Branching ratio and threshold:
-Lambda = 304.-589.3 A
-   Kronebusch, P. L., Berkowitz, J. (1976)
-   Int. J. Mass Spectr. Ion Phys. 22, 283
+        11      0.00    589.30 no       nio      16 40
+branching ratio and threshold:
+lambda=304.-589.3a kronebusch, p. l. and berkowitz, j. (1976)
+   int. j. mass spectry. ion phys. 22, 283
 
       0.00  2.38e-01
     304.00  1.22e-01
@@ -1592,5 +1585,5 @@ Lambda = 304.-589.3 A
     584.00  2.70e-03
     589.30  0.00e 00
    1910.00  0.00e 00
-         0      0.00   1910.00 NO       N/O      20 26
+         0      0.00   1910.00 no       ndo      20 26
 ***

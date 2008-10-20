@@ -1,9 +1,6 @@
-        69      0.00   5000.69 Cl2      Cl/Cl       26
-Cross section:
-Lambda = 0.6-878. A
-   Barfield, W. D., Koontz, G. D., Huebner, W. F. (1972)
-   J. Quant. Spectr. Rad. Trans. 12, 1409
-   From atomic cross sections of S and O
+        69      0.00   5000.69 cl2      cldcl       26
+ cross section:
+ lambda=0.6-878.a  two times atomic cross section from barfield et al.
 
       0.61  8.05e-22
       1.24  6.71e-21

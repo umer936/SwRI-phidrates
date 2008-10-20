@@ -1,17 +1,14 @@
-       111      0.00   3589.90 CH       Total
-Cross section:
-Lambda = 12.-617. A
-   Walker, T. E. H., Kelly, H. P. (1972)
-   Chem. Phys. Lett. 16, 511
-Lambda = 827.-1170. A
-   Barsuhn, J., Nesbet, R. K. (1978)
-   J. Chem. Phys. 68, 2783
-Lambda = 1000. A
-   Supplemented for predissociation line from Vandishoeck (1987)
-   J. Chem. Phys. 86, 196
-Lambda = 1200.-3589.9 A
-   Vandishoeck (1987)
-   J. Chem. Phys. 86, 196
+       111      0.00   3589.90 ch       total
+ cross section
+ lambda=12.a-617.a  walker, t. e. h. and kelly, h. p. (1972)
+   chem. phys. letters 16, 511
+ lambda=827.a-1170.a  barsuhn, j. and nesbet, r. k. (1978)
+   j. chem. phys. 68, 2783
+ lambda=1000.a  supplemented for predissociation line from
+    vandishoeck (1987)
+    j. chem. phys. 86, 196
+ lambda=1200.-3589.9a  vandishoeck (1987)
+    j. chem. phys. 86, 196
 
       0.00  1.00e-23
      12.00  4.00e-20
@@ -125,7 +122,7 @@ Lambda = 1200.-3589.9 A
    3583.00  1.50e-19
    3589.90  5.00e-20
   3
-        16      0.00   1170.00 CH       CH+      11  2
+        16      0.00   1170.00 ch       chi      11  2
 
       0.00  1.00e 00
     800.00  1.00e 00
@@ -143,7 +140,7 @@ Lambda = 1200.-3589.9 A
    1170.00  2.41e-01
    1171.00  0.00e 00
    3589.90  0.00e 00
-         7      0.00   2005.30 CH       C(^1S)/H    26
+         7      0.00   2005.30 ch       c1sdh       26
 
       0.00  0.00e 00
    1698.00  0.00e 00
@@ -152,23 +149,19 @@ Lambda = 1200.-3589.9 A
    2005.40  0.00e 00
    3589.90  0.00e 00
    2005.40  0.00e 00
-        18      0.00   2603.30 CH       C(^1D)/H  2 26
-Branching ratio:
-Lambda = 911.-1170. A
-   Barsuhn, J., Nesbet, R. K. (1978)
-   J. Chem. Phys. 68, 2783
-Thresholds:
-Lambda = 1240. A
-   Bates, D. R., Spitzer, L. (1951)
-   Astrophys. J. 113, 441
+        18      0.00   2603.30 ch       c1ddh     2 26
+branching ratio:
+lambda=911.a-1170.a  barsuhn, j. nesbet, r. k. (1978)
+   j. chem. phys. 68, 2783
+thresholds:
+lambda=1240.a  bates, d. r. and spitzer, l. (1951)
+   astrophys. j. 113, 441
    (dissociation continuum)
-Lambda = 1170. A
-   Barsuhn, J., Nesbet, R. K. (1978)
-   J. Chem. Phys. 68, 2783
+lambda=1170.a  barsuhn, j. and nesbet, r. k. (1978)
+   j. chem. phys. 68, 2783
    (ionization limit)
-Lambda = 3589.9 A
-   Herzberg, G., Johns, J. W. C. (1969)
-   Astrophys. J. 158, 399
+lambda=3589.9a  herzberg, g. and johns, j. w. c. (1969)
+   astrophys. j. 158, 399
    (predissociation limit)
 
       0.00  0.00
@@ -189,5 +182,5 @@ Lambda = 3589.9 A
    1698.00  1.00e 00
    1700.00  0.00e 00
    3589.90  0.00e 00
-         0      0.00   3589.90 CH       C/H         26
+         0      0.00   3589.90 ch       cdh         26
 ***

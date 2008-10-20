@@ -1,67 +1,51 @@
-       372      0.00   1270.40 N2       Total
-Lambda = 9.9-247.2 A
-   Huffman, R. E. (1969)
-   Can. J. Chem. 47, 1823
-Lambda = 303.8-1037.6 A
-   Samson, J. A. R., Cairns, R. B. (1964)
-   J. Geophys. Res. 69, 4583
-Lambda = 600.-978. A  
-   Cook, G. R., Metzger, P. H. (1964)
-   J. Chem. Phys. 41, 321
-Lambda = 798.-1000. A
-   Huffman, R. E., Tanaka, Y., Larrabee, J. C. (1963)
-   J. Chem. Phys. 39, 910
-Lambda = 796. A
-   Lofthus, A., Krupenie, P. H. (1977)
-   J. Phys. Chem. Ref. Data 6, 113
+       372      0.00   1270.40 n2       total
+lambda=9.9a-247.2a  huffman, r. e. (1969)
+   can. j. chem. 47, 1823
+lambda=303.8a-1037.6a  samson, j. a. r. and cairns, r. b. (1964)
+   j. geophys. res. 69, 4583
+lambda=600.a-978.a  cook, g. r. and metzger, p. h. (1964)
+   j. chem. phys. 41, 321
+lambda798.a-1000.a  huffman, r. e., tanaka, y. and larrabee, j. c. (1963)
+   j. chem. phys. 39, 910
+lambda=796.a  lofthus, a. and krupenie, p. h. (1977)
+   j. phys. chem. ref. data 6, 113
    (ionization threshold)
-Lambda = 1270.4 A
-   Huber, K.-P., Herzberg, G. (1979)
-   Molecular Spectra and Molecular Structure, Vol. 4, Van Nostrand Reinhold, New York
+lambda=1270.4a  huber, k.-p. and herzberg, g. (1979)
+   molecular spectra and molecular structure, vol. 4, van nostrand reinhold,
+   new york
    (dissociation threshold)
-Lambda = 972.5 A  
-   Clark, K. C. (1952)
-   Phys. Rev. 87, 271
-   sigma = 1.45E-16
-Lambda = 972.5 A
-   Watanabe, K., Marmo, F. F. (1956)
-   J. Chem. Phys. 25, 965
-   sigma = 1.12E-17
-Lambda = 972.5 A
-   Itamoto, F. K., Jr., Mcallister, H. C. (1961)
-   Contribution Nr. 29, Hawaii Institute of Geophysics, U. Hawaii
-   sigma = 3.72E-16
-Lambda = 972.5 A
-   Cook, G. R., Metzger (1964)
-   J. Chem. Phys. 41, 321
-   sigma = 1.94E-16
-Lambda = 972.5 A
-   Huffman, R. E., Tanaka, Y., Larrabee, J. C. (1963)
-   J. Chem. Phys. 39, 910
-   sigma = 3.02E-16
-Lambda = 972.5 A
-   Samson, J. A. R., Cairns, R. B. (1964)
-   J. Geophys. Res. 69, 4583
-   sigma = 3.59E-16
-Lambda = 972.5 A
-   Guertler, P., Saile, V., Koch, E. E. (1977)
-   Chem. Phys. Lett. 48, 245
-   sigma = 3.57E-16
-Lambda = 972.5 A
-   Huffman, R. E. (1969)
-   Can. J. Chem. 47, 1823
-   sigma = 3.70E-16
-Lambda = 972.5 A
-   Geiger, J., Schroeder, B. (1969)
-   J. Chem. Phys. 50, 7
-   sigma = 1.51E-16
-Lambda = 972.5 A
-   Guertler, P., Saile, V., Koch, E. E. (1977)
-   Chem. Phys. Lett. 48, 245
-   (X singlet sigma g+ to b singlet pi u, v' = 3)
-Lambda = 972.5 A
-   Lofthus, A., Krupenie, P. H. (1977)
-   J. Chem. Phys. Ref. Data 6, 130
+lambda=972.5a  clark, k. c. (1952)
+   phys. rev. 87, 271
+   sigma=1.45e-16
+lambda=972.5a  watanabe, k. and marmo, f. f. (1956)
+   j. chem. phys. 25, 965
+   sigma=1.12e-17
+lambda=972.5a  itamoto, f. k., jr. and mcallister, h. c. (1961)
+   contribution nr. 29, hawaii institute of geophysics, u. hawaii
+   sigma=3.72e-16
+lambda=972.5a  cook, g. r. and metzger (1964)
+   j. chem. phys. 41, 321
+   sigma=1.94e-16
+lambda=972.5a  huffman, r. e., tanaka, y. and larrabee, j. c. (1963)
+   j. chem. phys. 39, 910
+   sigma=3.02e-16
+lambda=972.5a  samson, j. a. r. and cairns, r. b. (1964)
+   j. geophys. res. 69, 4583
+   sigma=3.59e-16
+lambda=972.5a  guertler, p., saile, v. and koch, e. e. (1977)
+   chem. phys. letters 48, 245
+   sigma=3.57e-16
+lambda=972.5a  huffman, r. e. (1969)
+   can. j. chem. 47, 1823
+   sigma=3.70e-16
+lambda=972.5a  geiger, j. and schroeder, b. (1969)
+   j. chem. phys. 50, 7
+   sigma=1.51e-16
+lambda=972.5a  guertler, p., saile, v. and koch, e. e. (1977)
+   chem. phys. letters 48, 245
+   (x singlet sigma g + to small b sinlet pi u, v prime = 3)
+lambda=972.5a  lofthus, a. and krupenie, p. h. (1977)
+   j. chem. phys. ref. data 6, 130
    (line predissociates)
 
       1.00  8.00e-23
@@ -437,18 +421,15 @@ Lambda = 972.5 A
    1038.00  1.00e-35
    1270.40  1.00e-35
   2
-       109      0.00   1270.40 N2       N/N       8 26
-Lambda = 522.2-790.2 A
-   Huffman, R. E. (1969)
-   Can. J. Chem. 47, 1823
+       109      0.00   1270.40 n2       ndn       8 26
+lambda=522.2a-790.2a  huffman, r. e. (1969)
+   can. j. chem. 47, 1823
    (branching ratio for dissociation and ionization)
-Lambda = 303.8-790.1 A
-   Samson, J. A. R., Cairns, R. B. (1964)
-   J. Geophys. Res. 69, 4583
+lambda=303.8a-790.1a  samson, j. a. r. and cairns, r. b. (1964)
+   j. geophys. res. 69, 4583
    (branching ratio for dissociation and ionization)
-Lambda = 600.-795. A
-   Cook, G. R., Metzger (1964)
-   J. Chem. Phys. 41, 321
+lambda=600.a-795.a  cook, g. r. and metzger, p. h. (1964)
+   j. chem. phys. 41, 321
    (branching ratio for dissociation and ionization)
 
       1.00  0.00e+00
@@ -560,10 +541,9 @@ Lambda = 600.-795. A
     795.00  8.68e-01
     796.00  1.00e+00
    1270.40  1.00e+00
-         9      0.00    510.40 N2       N+N       4 40
-Lambda = 304.-510.4 A
-   Kronebusch, P. L., Berkowitz, J. (1976)
-   Int. J. Mass Spectr. Ion Phys. 22, 283
+         9      0.00    510.40 n2       nin       4 40
+lambda=304.a-510.4a  kronebusch, p. l. and berkowitz, j. (1976)
+   int. j. mass spectry. and ion phys. 22, 283
    (branching ratio for ionization and dissociative ionization)
 
       1.00  5.00e-01
@@ -575,5 +555,5 @@ Lambda = 304.-510.4 A
     490.00  2.35e-03
     510.40  0.00e 00
    1270.40  0.00e+00
-         0      0.00    796.00 N2       N2+      18  2
+         0      0.00    796.00 n2       n2i      18  2
 ***

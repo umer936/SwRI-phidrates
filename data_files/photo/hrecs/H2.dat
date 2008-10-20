@@ -1,16 +1,14 @@
-       103      0.00   2768.85 H2       Total
-Cross section:
-Lambda = 1.-200. A
-   Cross section approximated by two times the cross section of atomic hydrogen
-Lambda = 209.3-452.2 A
-   Samson, J. A. R., Cairns, R. B. (1965)
-   J. Opt. Soc. Am. 55, 1035
-Lambda = 500.-844. A
-   Cook, G. R., Metzger, P. H. (1964)
-   J. Opt. Soc. Am. 54, 968
-Lambda = 584. A
-   Brolley, J. E., Porter, l. E., Sherman, R. H., Theobald, J. K., Fong, J. C. (1973)
-   J. Geophys. Res. 78, 1627
+       103      0.00   2768.85 h2       total
+cross section:
+lambda=1.-200.a  cross section approximated by two times
+   the cross section of atomic hydrogen
+lambda=209.3a-452.2a  samson, j. a. r. and cairns, r. b. (1965)
+   j. opt. soc. am. 55, 1035
+lambda=500.a-844.a  cook, g. r. and metzger, p. h. (1964)
+   j. opt. soc. am. 54, 968
+lambda=584.a  brolley, j. e., porter, l. e., sherman, r. h., theobald, j. k.
+   and fong, j. c. (1973)
+   j. geophys. res. 78, 1627
 
       1.00  4.00e-27
      10.00  1.12e-24
@@ -116,18 +114,16 @@ Lambda = 584. A
    1109.60  1.00e-35
    2768.85  1.00e-35
   3
-        17      0.00    844.79 H2       H/H(2)    1 26
-Branching ratio:
-Lambda = 770.-844. A
-   Cook, G. R., Metzger, P. H. (1964)
-   J. Opt. Soc. Am. 54, 968
+        17      0.00    844.79 h2       h1dh2     1 26
+branching ratio:
+lambda=770.a-844.a  cook, g. r. and metzger, p. h. (1964)
+   j. opt. soc. am. 54, 968
    (branching ratio for dissociation and ionization)
-Threshold:
-Lambda = 844.79 A
-   Herzberg, G., Monfils, A. (1960)
-   J. Mol. Spectr. 5, 482
-   (dissociation limit for production of H + H(2s, 2p))
-   (predissociation from lambda = 930.91-1109.60 A into H + H)
+threshold:
+ lambda=844.79a  herzberg, g. and monfils, a. (1960)
+    j. mol. spectrosc. 5, 482
+   (dissociation limit for production of h + h(2s,2p))
+   (predissociation from lambda=930.91-1109.60a into h + h)
 
       0.0   0.
     685.80  0.
@@ -146,26 +142,23 @@ Lambda = 844.79 A
     844.79  1.00e 00
     844.80  0.00e 00
    2768.85  0.00e 00
-         4      0.00   2768.85 H2       H/H         26
+         4      0.00   2768.85 h2       hdh         26
 
       0.00  0.00e 00
     844.79  0.00e 00
     844.80  1.00e 00
    2768.85  1.00e 00
-        38      0.00    803.67 H2       H2+      10  2
-Branching ratios:
-Lambda = 409.-685. A
-   Browning, R., Fryar, J. (1973)
-   J. Phys. B, Atom. Mol. Phys. 6, 364
+        38      0.00    803.67 h2       h2i      10  2
+branching ratios:
+lambda=409.a-685.a  browning, r. and fryar, j. (1973)
+   j. phys. b., atom. molec. phys. 6, 364
    (branching ratio for ionization and dissociative ionization)
-Thresholds:
-Lambda = 803.67 A
-   Beutler, H., Juenger, H. O. (1936)
-   Z. Physik 100, 80
-   (ionization threshold for J=0 - J=0)
-Lambda = 685.8 A
-   Browning, R., Fryar, J. (1973)
-   J. Phys. B, Atom. Mol. Phys. 6, 364
+thresholds:
+lambda=803.67a  beutler, h. and juenger, h. o. (1936)
+   z. physik 100, 80
+   (ionization threshold for j=0 - j=0)
+lambda=685.8a  browning, r. and fryar, j. (1973)
+   j. phys. b., atom. molec. phys. 6, 364
    (photodissociative ionization threshold)
 
       1.0   0.00
@@ -206,5 +199,5 @@ Lambda = 685.8 A
     794.6   3.99e-01
     802.0   3.17e-01
     803.67  1.22e-01
-         0      0.00    685.80 H2       H+H       1 40
+         0      0.00    685.80 h2       hih       1 40
 ***

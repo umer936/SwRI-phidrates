@@ -1,5 +1,5 @@
-H- H H- + v -> H<sup>-</sup> + e  
-H H+ H + v -> H<sup>+</sup> + e  
+H- H- H- + v -> H<sup>-</sup>
+H Hi H + v -> H+ + e  
 he hei He + v -> He+ + e  
 He+ He2+ He<sup>+</sup> + v -> He<sup>2+</sup> + e  
 Li Li+ Li + v -> Li<sup>+</sup> + e  
@@ -307,4 +307,3 @@ ch3ssch3 2(ch3s) CH3SSCH3 + v -> CH3S + CH3S
 ch3cno5 total CH3CO3NO2 total       
 ch3cno5 mco3dno2 CH3CO3NO2 + v -> CH3CO3 + NO2  
 ch3cno5 mco2dno3 CH3CO3NO2 + v -> CH3CO2 + NO3  
-

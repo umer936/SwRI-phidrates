@@ -1,15 +1,10 @@
-        96      0.00   2798.   HCl      H/Cl        26
-Cross section:
-Lambda = 0.61-877.46 A
-   Barfield, W. D., Koontz, G. D., Huebner, W. F. (1972)
-   J. Quant. Spectr. Rad. Trans. 12, 1409
-   from atomic cross sections of O
-Lambda = 1050.-1350. A
-   Myer, J. A., Samson J. A. R. (1970)
-   J. Chem. Phys., 52, 266
-Lambda = 1400.-2200. A
-   Inn, E. C. Y. (1975)
-   J. Atmos. Sci., 32, 2375
+        96      0.00   2798.   hcl      hdcl        26
+ cross section:
+ lambda=0.61-877.46a  from atomic cross sections from barfield et al.
+ lambda=1050.-1350.a  myer, j. a. and samson j. a. r. (1970)
+    j. chem. phys., 52, 266
+ lambda=1400.-2200.a  inn, e. c. y., (1975)
+    j. atmos. sci., 32, 2375-2377
 
       0.61  4.03e-22
       1.24  3.36e-21

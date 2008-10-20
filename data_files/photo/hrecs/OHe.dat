@@ -1,15 +1,9 @@
-        64      0.00  61320.00 OHe      Total
-(Experimental)
-Cross section:
-Lambda = .61-625.8 A
-   Barfield, W. D., Koontz, G. D., Huebner, W. F. (1972)
-   J. Quant. Spectr. Rad. Trans. 12, 1409
-Lambda = 1150.-1830. A
-   Nee, J. B., Lee, L. C.
-   J. Chem. Phys. 81, 31 (1984)
-Threshold:
-   Huber, K.-P., Herzberg, G. (1979)
-   Molecular Spectra and Molecular sStructure, Vol. 4, Van Nostrand Reinhold, New York
+        64      0.00  61320.00 ohe      total
+ cross section:
+ lambda=.61-625.8a  barfield et al.
+ lambda=1150.-1830.a  nee, j. b. and lee, l. c.
+    j. chem. phys. 81, 31 (1984)
+ threshold:  huber and herzberg
 
       0.61  1.50e-23
       1.24  1.45e-22
@@ -76,7 +70,7 @@ Threshold:
    5114.01  1.00e-35
   61320.00  1.00e-35
   3
-        13      0.00   2823.00 OHe      O/H         26
+        13      0.00   2823.00 ohe      o3pdh       26
 
       0.61  0.00e 00
    1240.00  0.00e 00
@@ -91,7 +85,7 @@ Threshold:
    2823.00  1.00e 00
    2823.01  0.00e 00
   61320.00  0.00e 00
-       109      0.00  61320.00 OHe      O(^1S)/H    26
+       109      0.00  61320.00 ohe      o1sdh       26
 
       0.61  0.00e 00
     989.50  0.00e 00
@@ -202,11 +196,11 @@ Threshold:
    5114.00  9.99e-01
    5114.01  1.00e 00
   61320.00  1.00e 00
-         4      0.00    928.00 OHe      OH+          2
+         4      0.00    928.00 ohe      ohi          2
 
       0.60  1.00e 00
     928.00  1.00e 00
     928.03  0.00e 00
   61320.00  0.00e 00
-         0      0.00   5114.00 OHe      O(^1D)/H    26
+         0      0.00   5114.00 ohe      o1ddh       26
 ***

@@ -13,8 +13,9 @@ while ($line = <INF>) {
 # 3, 4, 5 - + v ->
 # 6 - end real second element
 
-    $cnv = &convert_real_element ($vals [2]);
-    print "\$eleLUT {'$vals[0]'} = \"$cnv\";\n"; 
+#    $cnv = &convert_real_element ($vals [2]);
+#print "$cnv\n";
+#    print "\$eleLUT {'$vals[0]'} = \"$cnv\";\n"; 
     if ($vals [1] ne "total") {
         $cnv = &convert_real_element ($vals [6]);
         print "\$eleLUT {'$vals[1]'} = \"$cnv"; 

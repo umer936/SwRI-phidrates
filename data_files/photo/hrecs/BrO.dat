@@ -6,7 +6,8 @@ Lambda = 0.12-7.10 A
 Lambda = 12.40-1127. A
    Synthesized from cross sections of O and Br (Br from LANL T-4 data)
 Lambda = 3208. and 3383. A  
-   Baulch
+   Baulch, D. L., Cox, R. A., Hampson, Jr. R. F., Kerr, J. A., Troe, J., Watson, R. T. (1980)
+   J. Phys. Chem. Ref. Data 9, 295
 
       0.12  7.00e-23
       0.90  2.00e-20

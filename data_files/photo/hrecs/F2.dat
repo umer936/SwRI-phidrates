@@ -1,12 +1,8 @@
-        35      0.00   7950.   F2       F/F         26
-Cross section:
-Lambda = 0.61-653.60 A
-   Barfield, W. D., Koontz, G. D., Huebner, W. F. (1972)
-   J. Quant. Spectr. Rad. Trans. 12, 1409
-   From atomic cross section of F
-Lambda = 2100.-3700. A
-   Okabe, H. (1978)
-   Photochemistry of Small Molecules, Wiley-Interscience Pub., New York
+        35      0.00   7950.   f2       fdf         26
+ cross section:
+ lambda=.61-653.60a  barfield et al. (2*f)
+ lambda=2100.-3700.a  okabe, h. (1978)
+    photochemistry of small molecules, wiley-interscience pub., n.y.
 
       0.61  5.07e-23
       1.24  4.85e-22
