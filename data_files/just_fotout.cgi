@@ -1,7 +1,8 @@
 #!/bin/perl -w
 
 require "vars.pl";
-require "eleLUT.pl";
+require "LUTIn.txt";
+require "LUTOut.txt";
 
 use IO::File;
 use POSIX qw(tmpnam);
@@ -39,8 +40,12 @@ sub PrintResults {
 #    print "<BODY BGCOLOR=\"#000000\" TEXT=\"#00ff00\" LINK=\"#00ffff\" VLINK=\"#33ff00\">";
     print "<BODY><CENTER>";
 #    print "Temp Dir = $temp_dir   Input = $input\n";
-    $nice_name = &ConvertCanonicalBranchName ($molecule);
-    print "<H1>$nice_name</H1>\n";
+    $nice_name = &ConvertCanonicalInputName ($molecule);
+    if (defined ($nice_name)) {
+        print "<H1>$nice_name</H1>\n";
+    } else {
+        print "<H1>$molecule</H1>\n";
+    }
     print "\n";
     print "<P>";
     chdir ($temp_dir);
@@ -67,9 +72,13 @@ sub PrintResults {
     @energy_val = split (/\s+/, $line2);
     $i = 0;
     foreach $section (@sections) { 
-        $section =~ s/\^//g;
-        $nice_name = &ConvertCanonicalBranchName ($section);
-        print "<TD>$nice_name</TD>\n";
+#        $section =~ s/\^//g;
+        $nice_name = &ConvertCanonicalOutputName ($section);
+        if (defined ($nice_name)) {
+            print "<TD>$nice_name</TD>\n";
+        } else {
+            print "<TD>$section</TD>\n";
+        }
         print "<TD>$rates_val[$i]</TD>\n";
         print "<TD>$energy_val[$i]</TD></TR>\n";
         $i++;

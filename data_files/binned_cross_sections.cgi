@@ -1,7 +1,8 @@
 #!/bin/perl -w
 
 require "vars.pl";
-require "eleLUT.pl";
+require "LUTIn.txt";
+require "LUTOut.txt";
 
 use IO::File;
 use POSIX qw(tmpnam);
@@ -40,7 +41,7 @@ sub PrintResults {
     print "<BODY BGCOLOR=\"#000000\" TEXT=\"#00ff00\" LINK=\"#00ffff\" VLINK=\"#33ff00\">";
     print "<CENTER>";
 #    print "Temp Dir = $temp_dir   Input = $input\n";
-    $nice_name = &ConvertCanonicalBranchName ($molecule);
+    $nice_name = &ConvertCanonicalInputName ($molecule);
     print "<H1>Binned Cross Sections of $nice_name</H1>\n";
     print "\n";
     print "<P>";
@@ -55,7 +56,7 @@ sub PrintResults {
 
 # convert the $branches[$bnum+1] to a nice name
 
-        $nice_name = &ConvertCanonicalBranchName ($branches[$bnum+1]);
+        $nice_name = &ConvertCanonicalOutputName ($branches[$bnum+1]);
         print "<H2>$nice_name</H2>";
         print "<IMG SRC = \"$gifname\" BORDER=4>\n";
         print "<P><P>";

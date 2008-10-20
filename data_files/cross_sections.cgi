@@ -1,7 +1,8 @@
 #!/bin/perl -w
 
 require "vars.pl";
-require "eleLUT.pl";
+require "LUTIn.txt";
+require "LUTOut.txt";
 
 use IO::File;
 use POSIX qw(tmpnam);
@@ -46,9 +47,9 @@ sub PrintResults {
     print "<HTML><HEAD><TITLE>Cross Sections of $molecule</TITLE></HEAD>\n";
     print "<BODY BGCOLOR=\"#000000\" TEXT=\"#00ff00\" LINK=\"#00ffff\" VLINK=\"#33ff00\">";
     print "<CENTER>";
-    $nice_name = ConvertCanonicalBranchName ($molecule);
+    $nice_name = &ConvertCanonicalInputName ($molecule);
     if (!defined ($nice_name)) {
-        print "<H1>Cross Sections of UNKNOWN\n</H1>";
+        print "<H1>Cross Sections of $molecule\n</H1>";
     } else {
         print "<H1>Cross Sections of $nice_name\n</H1>";
     }
@@ -63,7 +64,7 @@ sub PrintResults {
             $branches[$bnum+2] = "Total";
         }
         $gifname = &GeneratePlot ("branch.$bnum", $branches[$bnum+2]);
-        $nice_name = ConvertCanonicalBranchName ($branches[$bnum+2]);
+        $nice_name = &ConvertCanonicalOutputName ($branches[$bnum+2]);
         if (!defined ($nice_name)) {
             print "<H2>$branches[$bnum + 2]</H2>";
         } else {

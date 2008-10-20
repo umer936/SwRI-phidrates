@@ -1,7 +1,8 @@
 #!/bin/perl -w
 
 require "vars.pl";
-require "eleLUT.pl";
+require "LUTIn.txt";
+require "LUTOut.txt";
 
 use IO::File;
 use POSIX qw(tmpnam);
@@ -40,7 +41,7 @@ sub PrintResults {
     print "<BODY BGCOLOR=\"#000000\" TEXT=\"#00ff00\" LINK=\"#00ffff\" VLINK=\"#33ff00\">";
     print "<CENTER>";
 #    print "Temp Dir = $temp_dir   Input = $input\n";
-    $nice_name = ConvertCanonicalBranchName ($molecule);
+    $nice_name = &ConvertCanonicalInputName ($molecule);
     print "<H1>Binned Rate Coefficients of $nice_name</H1>\n";
     print "\n";
     print "<P>";
@@ -52,7 +53,7 @@ sub PrintResults {
             $branches[$bnum] = "Total";
         }
         $gifname = &GeneratePlot ("branch_r.$bnum", $branches[$bnum+1]);
-        $nice_name = ConvertCanonicalBranchName ($branches[$bnum+1]);
+        $nice_name = &ConvertCanonicalOutputName ($branches[$bnum+1]);
         print "<H2>$nice_name</H2>";
         print "<IMG SRC = \"$gifname\" BORDER=4>\n";
         print "<P><P>";
