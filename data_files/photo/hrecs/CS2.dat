@@ -1,14 +1,14 @@
-       175      0.00   2778.00 CS2      total
+       175      0.00   2778.00 CS2      Total
 Cross sections:
 Lambda = 0.6-249. A
    Synthesized from atomic cross sections of C and 2*S
-   Barfield, W. D., Koontz, G. D., Huebner W. F. (1972) 
-   J. Quant. Spectr. Rad. Trans. 12, 1409 
+   Barfield, W. D., Koontz, G. D., Huebner W. F. (1972)
+   J. Quant. Spectr. Rad. Trans. 12, 1409
 Lambda = 310.-954. A
    Carnovale, F., Hitchcock, A. P., Cook, J. P. D., Brion, C. E. (1982)
    Chem. Phys. 66, 249
 Lambda = 1060.-1520. A
- 
+
       0.61  6.30E-22
       1.24  5.70E-21
       2.44  3.60E-20
@@ -187,15 +187,15 @@ Lambda = 1060.-1520. A
   8
         25      0.00    656.00 CS2      C+S2        40
 Cross sections:
-Lambda = 0.6-249. A 
+Lambda = 0.6-249. A
    Synthesized from atomic cross sections of C and 2*S
-   Barfield, W. D., Koontz, G. D., Huebner W. F. (1972) 
-   J. Quant. Spectr. Rad. Trans. 12, 1409 
+   Barfield, W. D., Koontz, G. D., Huebner W. F. (1972)
+   J. Quant. Spectr. Rad. Trans. 12, 1409
 Lambda = 310.-954. A
    Carnovale, F., Hitchcock, A. P., Cook, J. P. D., Brion, C. E. (1982)
    Chem. Phys. 66, 249
 Lambda = 1060.-1520. A
- 
+
       0.60  4.00E-02
     310.00  3.25E-02
     318.00  2.93E-02
@@ -225,13 +225,13 @@ Lambda = 1060.-1520. A
 Cross sections:
 Lambda = 0.6-249. A
    Synthesized from atomic cross sections of C and 2*S
-   Barfield, W. D., Koontz, G. D., Huebner W. F. (1972) 
-   J. Quant. Spectr. Rad. Trans. 12, 1409 
+   Barfield, W. D., Koontz, G. D., Huebner W. F. (1972)
+   J. Quant. Spectr. Rad. Trans. 12, 1409
 Lambda = 310.-954. A
    Carnovale, F., Hitchcock, A. P., Cook, J. P. D., Brion, C. E. (1982)
    Chem. Phys. 66, 249
 Lambda = 1060.-1520. A
- 
+
       0.60  4.00E-01
     310.00  3.26E-01
     318.00  3.14E-01
@@ -265,13 +265,13 @@ Lambda = 1060.-1520. A
 Cross sections:
 Lambda = 0.6-249. A
    Synthesized from atomic cross sections of C and 2*S
-   Barfield, W. D., Koontz, G. D., Huebner W. F. (1972) 
-   J. Quant. Spectr. Rad. Trans. 12, 1409 
+   Barfield, W. D., Koontz, G. D., Huebner W. F. (1972)
+   J. Quant. Spectr. Rad. Trans. 12, 1409
 Lambda = 310.-954. A
    Carnovale, F., Hitchcock, A. P., Cook, J. P. D., Brion, C. E. (1982)
    Chem. Phys. 66, 249
 Lambda = 1060.-1520. A
- 
+
       0.60  2.50E-01
     310.00  2.11E-01
     318.00  2.09E-01
@@ -304,13 +304,13 @@ Lambda = 1060.-1520. A
 Cross sections:
 Lambda = 0.6-249. A
    Synthesized from atomic cross sections of C and 2*S
-   Barfield, W. D., Koontz, G. D., Huebner W. F. (1972) 
-   J. Quant. Spectr. Rad. Trans. 12, 1409 
+   Barfield, W. D., Koontz, G. D., Huebner W. F. (1972)
+   J. Quant. Spectr. Rad. Trans. 12, 1409
 Lambda = 310.-954. A
    Carnovale, F., Hitchcock, A. P., Cook, J. P. D., Brion, C. E. (1982)
    Chem. Phys. 66, 249
 Lambda = 1060.-1520. A
- 
+
       0.60  1.00E-02
     310.00  9.50E-03
     318.00  8.37E-03
@@ -342,13 +342,13 @@ Lambda = 1060.-1520. A
 Cross sections:
 Lambda = 0.6-249. A
    Synthesized from atomic cross sections of C and 2*S
-   Barfield, W. D., Koontz, G. D., Huebner W. F. (1972) 
-   J. Quant. Spectr. Rad. Trans. 12, 1409 
+   Barfield, W. D., Koontz, G. D., Huebner W. F. (1972)
+   J. Quant. Spectr. Rad. Trans. 12, 1409
 Lambda = 310.-954. A
    Carnovale, F., Hitchcock, A. P., Cook, J. P. D., Brion, C. E. (1982)
    Chem. Phys. 66, 249
 Lambda = 1060.-1520. A
- 
+
       0.60  3.00E-01
     310.00  4.21E-01
     318.00  4.39E-01
@@ -381,7 +381,7 @@ Lambda = 1060.-1520. A
    1230.00  0.00E 00
    2778.00  0.00E 00
          6      0.00   2778.00 CS2      CS/S        26
- 
+
       0.00  0.00E 00
    1570.00  0.00E 00
    1572.00  6.67E-01
@@ -389,7 +389,7 @@ Lambda = 1060.-1520. A
    2211.00  1.00E 00
    2778.00  1.00E 00
          6      0.00   2211.00 CS2      CS/S1D      26
- 
+
       0.00  0.00E 00
    1570.00  0.00E 00
    1572.00  3.33E-01
@@ -397,7 +397,7 @@ Lambda = 1060.-1520. A
    2211.00  0.00E 00
    2778.00  0.00E 00
          8      0.00   1572.00 CS2      tCS/S       26
- 
+
       0.00  0.00E 00
    1229.00  0.00E 00
    1230.00  5.00E-01

@@ -1,15 +1,15 @@
        116      0.00   5910.00 HONO     OH/NO       26
 Cross sections:
 Lambda = 0.6-940. A
-   Barfield, W. D., Koontz, G. D., Huebner W. F. (1972) 
-   J. Quant. Spectr. Rad. Trans. 12, 1409 
+   Barfield, W. D., Koontz, G. D., Huebner W. F. (1972)
+   J. Quant. Spectr. Rad. Trans. 12, 1409
 Lambda = 2000.-4000. A (except 3120.-3900. A)
    Cox, R. A., Derwent, R. G. (1976)
    J. Photochem. 6, 23
 Lambda = 3120.-3900. A
    Stockwell, W. R., Calvert, J. G. (1978)
    J. Photochem. 8, 193
- 
+
       0.61  3.80E-23
       1.12  3.70E-22
       2.44  3.00E-21

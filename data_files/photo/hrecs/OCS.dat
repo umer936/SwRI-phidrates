@@ -1,9 +1,9 @@
-       254      0.00   3990.   OCS      total
+       254      0.00   3990.   OCS      Total
 Cross section:
 Lambda = 1.-122. A
    Synthesized from atomic cross sections of O, C, and S
-   Barfield, W. D., Koontz, G. D., Huebner W. F. (1972) 
-   J. Quant. Spectr. Rad. Trans. 12, 1409 
+   Barfield, W. D., Koontz, G. D., Huebner W. F. (1972)
+   J. Quant. Spectr. Rad. Trans. 12, 1409
 Lambda = 248.-954. A
    Carnovale, F., Hitchcock, A. P., Cook, J. P. D., Brion, C. E. (1982)
    Chem. Phys. 66, 249
@@ -16,7 +16,7 @@ Lambda = 1240.-1700. A
 Lambda = 1850.-3000. A
    Molina, L. T., Lamb, J. J., Molina, M. J. (1981)
    Geophys. Res. Lett. 8, 1008
- 
+
       0.61  3.30E-22
       1.12  2.80E-21
       2.44  1.90E-20
@@ -277,7 +277,7 @@ Branching ratios:
 Lambda = 248.-954. A
    Carnovale, F., Hitchcock, A. P., Cook, J. P. D., Brion, C. E. (1982)
    Chem. Phys. 66, 249
- 
+
       0.60  5.00E-02
     248.00  4.71E-02
     253.00  4.20E-02
@@ -314,7 +314,7 @@ Branching ratios:
 Lambda = 248.-954. A
    Carnovale, F., Hitchcock, A. P., Cook, J. P. D., Brion, C. E. (1982)
    Chem. Phys. 66, 249
- 
+
       0.60  1.50E-02
     248.00  1.66E-02
     253.00  1.90E-02
@@ -354,7 +354,7 @@ Branching ratios:
 Lambda = 248.-954. A
    Carnovale, F., Hitchcock, A. P., Cook, J. P. D., Brion, C. E. (1982)
    Chem. Phys. 66, 249
- 
+
       0.60  1.70E-01
     248.00  1.66E-01
     253.00  1.58E-01
@@ -396,7 +396,7 @@ Branching ratios:
 Lambda = 248.-954. A
    Carnovale, F., Hitchcock, A. P., Cook, J. P. D., Brion, C. E. (1982)
    Chem. Phys. 66, 249
- 
+
       0.60  6.00E-01
     248.00  6.20E-01
     253.00  6.31E-01
@@ -442,7 +442,7 @@ Branching ratios:
 Lambda = 248.-954. A
    Carnovale, F., Hitchcock, A. P., Cook, J. P. D., Brion, C. E. (1982)
    Chem. Phys. 66, 249
- 
+
       0.60  2.00E-02
     248.00  2.13E-02
     253.00  2.70E-02
@@ -482,7 +482,7 @@ Branching ratios:
 Lambda = 248.-954. A
    Carnovale, F., Hitchcock, A. P., Cook, J. P. D., Brion, C. E. (1982)
    Chem. Phys. 66, 249
- 
+
       0.60  1.45E-01
     248.00  1.29E-01
     253.00  1.23E-01
@@ -531,7 +531,7 @@ Branching ratios:
 Lambda = 1100.-1700. A
    Black, G., Sharpless, R. L., Slanger, T. G., Lorents, D. C.(1975)
    J. Chem. Phys 62,4274
- 
+
       0.60  0.00E 00
     954.00  0.00E 00
    1100.00  1.00E-01
@@ -553,7 +553,7 @@ Branching ratios:
    J. Chem. Phys 62, 4274
    Okabe, H. (1978)
    Photochemistry of Small Molecules, John Wiley & Sons, New York
- 
+
       0.60  0.00E 00
    1700.00  0.00E 00
    1820.00  1.00E-01
@@ -567,7 +567,7 @@ Lambda = 1600.-1820. A
 Lamda = 2288.-2537. A
    Okabe, H. (1978)
    Photochemistry of Small Molecules, John Wiley & Sons, New York
- 
+
       0.60  0.00E 00
    1600.00  0.00E 00
    1610.00  3.00E-01
@@ -585,7 +585,7 @@ Branching ratios:
 Lambda = 1100.-1410. A
    Black, G., Sharpless, R. L., Slanger, T. G., Lorents, D. C.(1975)
    J. Chem. Phys 62, 4274
- 
+
       0.60  0.00E 00
    1120.00  0.00E 00
    1200.00  8.00E-01

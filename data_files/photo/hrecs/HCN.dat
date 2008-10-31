@@ -1,4 +1,4 @@
-       262      0.00   1950.00 HCN      total       26
+       262      0.00   1950.00 HCN      Total       26
 Cross section:
 Lambda = 1.00-900.00 A
    (cross section synthesized from atomic cross sections of H, C, and N)
@@ -11,7 +11,7 @@ Lambda = 1950. A
 Lambda = 911.19 A
    Fridh, C., Asbrink, J. (1975)
    J. Electron Spectr. 7, 119
-  
+
       1.00  6.00E-23
      30.00  1.20E-18
      31.00  5.00E-19
@@ -276,7 +276,7 @@ Lambda = 911.19 A
    1950.00  1.79E-22
   1
          4      0.00   1950.00 HCN      H/CN(*)  32 26
- 
+
       0.00  0.00E 00
     911.19  0.00E 00
     912.00  1.00E 00

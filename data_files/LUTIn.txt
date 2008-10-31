@@ -10,14 +10,14 @@ $inputLUT {'Be+'} = "Be<sup>+</sup>";
 $inputLUT {'B'} = "B";
 $inputLUT {'B+'} = "B<sup>+</sup>";
 $inputLUT {'C'} = "C(<sup>3</sup>P)";
-$inputLUT {'C(^1D)'} = "C(<sup>1</sup>D)";
-$inputLUT {'C(^1S)'} = "C(<sup>1</sup>S)";
+$inputLUT {'C1D'} = "C(<sup>1</sup>D)";
+$inputLUT {'C1S'} = "C(<sup>1</sup>S)";
 $inputLUT {'C+'} = "C<sup>+</sup>";
 $inputLUT {'N'} = "N";
 $inputLUT {'N+'} = "N<sup>+</sup>";
 $inputLUT {'O'} = "O(<sup>3</sup>P)";
-$inputLUT {'O(^1D)'} = "O(<sup>1</sup>D)";
-$inputLUT {'O(^1S)'} = "O(<sup>1</sup>S)";
+$inputLUT {'O1D'} = "O(<sup>1</sup>D)";
+$inputLUT {'O1S'} = "O(<sup>1</sup>S)";
 $inputLUT {'O+'} = "O<sup>+</sup>";
 $inputLUT {'F'} = "F";
 $inputLUT {'F+'} = "F<sup>+</sup>";
@@ -35,8 +35,8 @@ $inputLUT {'Si+'} = "Si<sup>+</sup>";
 $inputLUT {'P'} = "P";
 $inputLUT {'P+'} = "P<sup>+</sup>";
 $inputLUT {'S'} = "S(<sup>3</sup>P)";
-$inputLUT {'S(^1D)'} = "S(<sup>1</sup>D)";
-$inputLUT {'S(^1S)'} = "S(<sup>1</sup>S)";
+$inputLUT {'S1D'} = "S(<sup>1</sup>D)";
+$inputLUT {'S1S'} = "S(<sup>1</sup>S)";
 $inputLUT {'S+'} = "S<sup>+</sup>";
 $inputLUT {'Cl'} = "Cl";
 $inputLUT {'Cl+'} = "Cl<sup>+</sup>";
@@ -145,3 +145,4 @@ sub ConvertCanonicalInputName {
     local ($branch) = $_ [0];
     return $inputLUT {$branch};
 }
+

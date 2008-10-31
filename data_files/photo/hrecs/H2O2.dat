@@ -1,14 +1,15 @@
-ross section:
+        63      0.00   5765.00 H2O2     OH/OH       26
+Cross section:
 Lambda = 1.-1000. A
-   Barfield, W. D., Koontz, G. D., Huebner W. F. (1972) 
-   J. Quant. Spectr. Rad. Trans. 12, 1409 
+   Barfield, W. D., Koontz, G. D., Huebner W. F. (1972)
+   J. Quant. Spectr. Rad. Trans. 12, 1409
 Lambda = 1200.-1950. A
    Lin, C. L., Rohatgi, N. K., Demore, W. B. (1978)
    Geophys. Res. Lett. 5, 113
 Lambda = 1950.-3500. A
    Schuergers, M., Welge, K. H. (1968)
    Z. Naturforsch. 23a, 1508
- 
+
       1.00  2.00E-22
       5.00  2.00E-20
      10.00  2.00E-19

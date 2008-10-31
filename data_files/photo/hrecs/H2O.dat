@@ -1,25 +1,25 @@
-       172      0.00   2424.60 H2O      total
-Cross section: 
+       172      0.00   2424.60 H2O      Total
+Cross section:
 Lambda = 1.-100.00 A
-   Barfield, W. D., Koontz, G. D., Huebner W. F. (1972) 
-   J. Quant. Spectr. Rad. Trans. 12, 1409 
-   (cross section of H2O = cross section of atomic O) 
+   Barfield, W. D., Koontz, G. D., Huebner W. F. (1972)
+   J. Quant. Spectr. Rad. Trans. 12, 1409
+   (cross section of H2O = cross section of atomic O)
 Lambda = 180.-720. A
    Phillips, E., Lee, L. C., Judge, D. L. (1977)
    J. Quant. Spectr. Rad. Trans. 18, 309
 Lambda = 600.-690. A
-   Dibler, V. H., Walker, J. A., Rosenstock, H. M. (1966) 
-   J. Res. NBS-A. Phys. Chem. 70, 459 
+   Dibler, V. H., Walker, J. A., Rosenstock, H. M. (1966)
+   J. Res. NBS-A. Phys. Chem. 70, 459
 Lambda = 700.-980.8 A
    Katayama, D. H., Huffman, R. E., O'Bryan, C. L. (1973)
    J. Chem. Phys. 59, 4309
 Lambda = 850.-1110. A
-   Watanabe, K., Jursa, A. S. (1964) 
+   Watanabe, K., Jursa, A. S. (1964)
    J. Chem. Phys. 41, 1650
 Lambda = 1060.-1860. A
    Watanabe, K., Zelikoff, M. (1953)
-   J. Opt. Soc. Am. 43, 753 
-  
+   J. Opt. Soc. Am. 43, 753
+
       1.00  1.00E-22
       5.00  1.00E-20
      10.00  6.80E-20
@@ -192,9 +192,9 @@ Lambda = 1060.-1860. A
    1860.00  1.00E-20
    1860.50  1.00E-35
    2424.60  1.00E-35
-  6 
+  6
         94      0.00   2424.60 H2O      H/OH     31 26
-  
+
       0.00  7.50E-02
     600.00  1.38E-01
     610.00  1.34E-01
@@ -290,14 +290,14 @@ Lambda = 1060.-1860. A
    1450.00  1.00E 00
    2424.60  1.00E 00
         96      0.00   1770.00 H2O      H2/O1D   30 26
-Lambda = 1.-1450. A 
+Lambda = 1.-1450. A
    McNesby, J. R., Tanaka, I., Okabe, H. (1962)
-   J. Chem. Phys. 36, 605 
+   J. Chem. Phys. 36, 605
 Lambda = 1216. A
     Slanger, T. G., Black, G. (1982)
     J. Chem. Phys. 77, 2432.
     (branching ratio)
-  
+
       0.00  2.50E-02
     600.00  4.60E-02
     610.00  4.48E-02
@@ -409,58 +409,58 @@ Lambda = 1216. A
         15      0.00    684.40 H2O      OH+H     21 40
 Lambda = 304.-690. A
    Kronebusch, P. L., Berkowitz, J. (1976)
-   Int. J. Mass Spectr. Ion phys. 22,283(1976) 
-  
+   Int. J. Mass Spectr. Ion phys. 22, 283
+
       0.00  2.50E-01
-    304.0   1.84E-01
-    354.0   1.89E-01
-    374.0   1.92E-01
-    413.0   1.94E-01
-    446.0   2.14E-01
-    460.0   2.19E-01
-    496.0   2.10E-01
-    537.0   2.10E-01
-    584.0   2.28E-01
-    620.0   2.04E-01
-    663.0   1.28E-01
-    584.4   2.35E-02
-    690.0   0.00E 00
-   2424.6   0.00E 00
+    304.00  1.84E-01
+    354.00  1.89E-01
+    374.00  1.92E-01
+    413.00  1.94E-01
+    446.00  2.14E-01
+    460.00  2.19E-01
+    496.00  2.10E-01
+    537.00  2.10E-01
+    584.00  2.28E-01
+    620.00  2.04E-01
+    663.00  1.28E-01
+    584.40  2.35E-02
+    690.00  0.00E 00
+   2424.60  0.00E 00
         13      0.00    664.80 H2O      O+H2     22 40
 Lambda = 304.-690. A
    Kronebusch, P. L., Berkowitz, J. (1976)
-   Int. J. Mass Spectr. Ion Phys. 22,283(1976) 
-  
+   Int. J. Mass Spectr. Ion Phys. 22, 283
+
       0.00  2.00E-01
-    304.0   1.63E-02
-    354.0   1.02E-02
-    374.0   7.63E-03
-    413.0   3.37E-03
-    446.0   1.93E-03
-    460.0   1.67E-03
-    496.0   1.50E-03
-    537.0   1.24E-03
-    584.0   8.18E-04
-    620.0   4.09E-04
-    665.0   0.00E 00
+    304.00  1.63E-02
+    354.00  1.02E-02
+    374.00  7.63E-03
+    413.00  3.37E-03
+    446.00  1.93E-03
+    460.00  1.67E-03
+    496.00  1.50E-03
+    537.00  1.24E-03
+    584.00  8.18E-04
+    620.00  4.09E-04
+    665.00  0.00E 00
    2424.60  0.00E 00
         13      0.00    662.30 H2O      H+OH     23 40
 Lambda = 304.-690. A
    Kronebusch, P. L., Berkowitz, J. (1976)
-   Int. J. Mass Spectr. Ion Phys. 22,283(1976) 
-  
+   Int. J. Mass Spectr. Ion Phys. 22, 283
+
       0.00  2.00E-01
-    304.0   4.37E-02
-    354.0   2.98E-02
-    374.0   2.63E-02
-    413.0   2.95E-02
-    446.0   3.08E-02
-    460.0   3.18E-02
-    496.0   3.43E-02
-    537.0   3.59E-02
-    584.0   3.93E-02
-    620.0   2.84E-02
-    663.0   0.00E 00
-   1860.0   0.00E 00
+    304.00  4.37E-02
+    354.00  2.98E-02
+    374.00  2.63E-02
+    413.00  2.95E-02
+    446.00  3.08E-02
+    460.00  3.18E-02
+    496.00  3.43E-02
+    537.00  3.59E-02
+    584.00  3.93E-02
+    620.00  2.84E-02
+    663.00  0.00E 00
+   1860.00  0.00E 00
          0      0.00    984.00 H2O      H2O+     20  2
 ***

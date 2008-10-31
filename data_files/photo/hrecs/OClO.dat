@@ -1,4 +1,4 @@
-       138      0.00   4960.00 OClO     total
+       138      0.00   4960.00 OClO     Total
 Cross section:
 Lambda = 1.-1450. A
    Assumed to be the same as ClNO
@@ -11,7 +11,7 @@ Lambda = 2980.-4225. A
 Lambda = 4404.-4758. A
    Coon, J. B., Dewames, R. E., Loyd, C. M. (1962)
    J. Mol. Spectr. 8, 285
- 
+
       1.00  3.47E-21
       5.00  2.56E-20
      12.00  3.52E-19
@@ -152,7 +152,7 @@ Lambda = 4404.-4758. A
    4960.00  1.00E-35
   1
          4      0.00   4960.00 OClO     ClO/O       26
- 
+
       1.00  0.00E 00
    2759.00  0.00E 00
    2760.00  1.00E 00

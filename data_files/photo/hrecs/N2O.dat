@@ -1,16 +1,16 @@
-       133      0.00   3407.00 N2O      total
+       133      0.00   3407.00 N2O      Total
 Cross section:
 Lambda = 0.61-625. A
    synthesized from atomic cross sections of N and O
-   Barfield, W. D., Koontz, G. D., Huebner W. F. (1972) 
-   J. Quant. Spectr. Rad. Trans. 12, 1409 
+   Barfield, W. D., Koontz, G. D., Huebner W. F. (1972)
+   J. Quant. Spectr. Rad. Trans. 12, 1409
 Lambda = 1080.-1700. A
    Zelikoff, M., Watanabe, K., Inn, E. C. Y. (1953)
    J. Chem. Phys. 21, 1643
 Lambda = 1730.-2400. A
    Selwyn, G., Podolske, J., Johnston, H. S. (1977)
    Geophys. Res. Lett. 4, 427
- 
+
       0.61  3.10E-23
       1.12  3.00E-22
       2.44  2.50E-21
@@ -150,7 +150,7 @@ Branching ratio:
 Lambda = 1200.-1400. A
    Okabe, H. (1978)
    Photochemistry of Small Molecules, John Wiley & Sons, New York, p. 2.
- 
+
       0.60  1.00E 00
    1400.00  1.00E 00
    2115.00  0.00E 00

@@ -1,8 +1,8 @@
-       786      0.00   2399.00 SO2      total
+       786      0.00   2399.00 SO2      Total
 Cross section:
 Lambda = 0.00-122. A
-   Barfield, W. D., Koontz, G. D., Huebner W. F. (1972) 
-   J. Quant. Spectr. Rad. Trans. 12, 1409 
+   Barfield, W. D., Koontz, G. D., Huebner W. F. (1972)
+   J. Quant. Spectr. Rad. Trans. 12, 1409
 Lambda = 170.-830. A
    Wu, C. Y. R., Judge, D. L. (1981)
    J. Chem. Phys. 74, 3804
@@ -16,7 +16,7 @@ Threshold:
 Lambda = 2179. A
    Freeman, D. E., Yoshino, K., Esmond, J., Parkinson, W. H. (1984)
    Planet Space Sci. 32, 1125
- 
+
       0.61  3.40E-22
       1.24  2.90E-21
       2.44  2.00E-20
@@ -805,7 +805,7 @@ Lambda = 2179. A
    2399.00  4.12E-20
   3
          8      0.00   2179.00 SO2      SO/O        26
- 
+
       0.00  0.00E 00
     835.00  0.00E 00
    1005.00  5.00E-01
@@ -815,7 +815,7 @@ Lambda = 2179. A
    2180.00  0.00E 00
    2399.00  0.00E 00
          6      0.00   2070.00 SO2      S/O2        26
- 
+
       0.00  0.00E 00
     835.00  0.00E 00
    1005.00  5.00E-01
@@ -823,7 +823,7 @@ Lambda = 2179. A
    2070.00  0.00E 00
    2399.00  0.00E 00
          4      0.00   2399.00 SO2      SO2band
- 
+
       0.00  0.00E 00
    2179.00  0.00E 00
    2180.00  1.00E 00

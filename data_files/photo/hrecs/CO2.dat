@@ -1,17 +1,17 @@
-       534      0.00   2275.00 CO2      total
+       534      0.00   2275.00 CO2      Total
 Cross section:
 Lambda = 2.-270. A
-   Henry, R. J. W., McElroy, M. B. (1968) 
-   Photoelectrons in Planetary Atmospheres, in The Atmospheres of Venus and Mars, 
-   Brandt, J. C., McElroy, M. B. (eds.), Gordon Breach Science Publishers, Inc., 
+   Henry, R. J. W., McElroy, M. B. (1968)
+   Photoelectrons in Planetary Atmospheres, in The Atmospheres of Venus and Mars,
+   Brandt, J. C., McElroy, M. B. (eds.), Gordon Breach Science Publishers, Inc.,
    New York, London, Paris
 Lambda = 303.78-555.26 A
-   Cairns, R. B., Samson, J. A. R. (1965) 
+   Cairns, R. B., Samson, J. A. R. (1965)
    J. Geophys. Res. 70, 99
 Lambda = 580.-1670. A
    Nakata, R. S., Watanabe, K., Matsunaga, F. M. (1965)
    Science of Light 14, 54
-  
+
       1.00  1.00E-21
       4.00  1.20E-20
       7.50  7.50E-20
@@ -554,11 +554,11 @@ Lambda = 582.7a-902.9 A
    Science of Light 14, 54
    (branching ratio for ionization and dissociation)
 Lambda = 851.0a-1090.0 A
-   Lawrence, G. M. (1972) 
+   Lawrence, G. M. (1972)
    J. Chem. Phys. 56, 3435
    (branching ratio for dissociation into singlet ground state and triplet
-   pi metastable state) 
-  
+   pi metastable state)
+
       0.00  0.00E 00
     497.00  0.00E 00
     582.70  4.70E-02
@@ -957,11 +957,11 @@ Lambda = 851.0a-1090.0 A
        260      0.00    899.22 CO2      CO2+     21  2
 Lambda = 304.-639. A
    Kronebusch, P. L., Berkowitz, J. (1976)
-   Int. J. Mass Spectr. Ion Phys. 22, 283 
+   Int. J. Mass Spectr. Ion Phys. 22, 283
 Lambda = 580.-1670. A
    Nakata, R. S., Watanabe, K., Matsunaga, F. M. (1965)
    Science of Light 14, 54
-  
+
       0.00  2.50E-01
     303.80  7.57E-01
     310.00  7.57E-01
@@ -1226,88 +1226,88 @@ Lambda = 580.-1670. A
 sCO is equivalent to (singlet) CO (ground state)
 Lambda = 304.-639. A
    Kronebusch, P. L., Berkowitz, J. (1976)
-   Int. J. Mass Spectr. Ion Phys. 22, 283 
-  
+   Int. J. Mass Spectr. Ion Phys. 22, 283
+
       0.00  2.50E-01
-    303.8   7.80E-02
-    310.0   8.00E-02
-    318.0   8.20E-02
-    326.0   8.40E-02
-    335.0   8.50E-02
-    344.0   8.70E-02
-    354.0   8.90E-02
-    365.0   9.10E-02
-    376.0   9.30E-02
-    387.0   9.60E-02
-    400.0   9.80E-02
-    413.0   9.50E-02
-    420.0   9.15E-02
-    428.0   9.00E-02
-    443.0   8.90E-02
-    459.0   8.70E-02
-    477.0   7.37E-02
-    479.0   7.20E-02
-    496.0   5.90E-02
-    517.0   6.66E-02
-    539.0   5.25E-02
-    564.0   3.89E-02
-    590.0   3.25E-02
-    620.0   2.57E-02
-    633.0   2.39E-02
+    303.80  7.80E-02
+    310.00  8.00E-02
+    318.00  8.20E-02
+    326.00  8.40E-02
+    335.00  8.50E-02
+    344.00  8.70E-02
+    354.00  8.90E-02
+    365.00  9.10E-02
+    376.00  9.30E-02
+    387.00  9.60E-02
+    400.00  9.80E-02
+    413.00  9.50E-02
+    420.00  9.15E-02
+    428.00  9.00E-02
+    443.00  8.90E-02
+    459.00  8.70E-02
+    477.00  7.37E-02
+    479.00  7.20E-02
+    496.00  5.90E-02
+    517.00  6.66E-02
+    539.00  5.25E-02
+    564.00  3.89E-02
+    590.00  3.25E-02
+    620.00  2.57E-02
+    633.00  2.39E-02
     636.90  0.00E 00
    2275.00  0.00E 00
         24      0.00    650.26 CO2     O+sCO     25 40
 Lambda = 304.-639. A
    Kronebusch, P. L., Berkowitz, J. (1976)
-   Int. J. Mass Spectr. Ion Phys. 22, 283 
-  
+   Int. J. Mass Spectr. Ion Phys. 22, 283
+
       0.00  2.50E-01
-    303.8   1.20E-01
-    326.0   1.20E-01
-    335.0   1.21E-01
-    354.0   1.21E-01
-    365.0   1.20E-01
-    376.0   1.17E-01
-    387.0   1.13E-01
-    400.0   1.13E-01
-    413.0   1.12E-01
-    420.0   1.11E-01
-    428.0   1.06E-01
-    443.0   9.80E-02
-    459.0   8.70E-02
-    477.0   8.20E-02
-    479.0   8.00E-02
-    496.0   7.60E-02
-    517.0   4.12E-02
-    539.0   3.15E-02
-    564.0   2.50E-02
-    590.0   1.90E-02
-    620.0   8.56E-03
+    303.80  1.20E-01
+    326.00  1.20E-01
+    335.00  1.21E-01
+    354.00  1.21E-01
+    365.00  1.20E-01
+    376.00  1.17E-01
+    387.00  1.13E-01
+    400.00  1.13E-01
+    413.00  1.12E-01
+    420.00  1.11E-01
+    428.00  1.06E-01
+    443.00  9.80E-02
+    459.00  8.70E-02
+    477.00  8.20E-02
+    479.00  8.00E-02
+    496.00  7.60E-02
+    517.00  4.12E-02
+    539.00  3.15E-02
+    564.00  2.50E-02
+    590.00  1.90E-02
+    620.00  8.56E-03
     651.00  0.00E 00
    2275.00  0.00E 00
         20      0.00    546.55 CO2      C+O2     26 40
 Lambda = 304.-639. A
    Kronebusch, P. L., Berkowitz, J. (1976)
-   Int. J. Mass Spectr. Ion Phys. 22, 283 
-  
+   Int. J. Mass Spectr. Ion Phys. 22, 283
+
       0.00  2.50E-01
-    303.8   4.50E-02
-    310.0   4.30E-02
-    318.0   4.10E-02
-    326.0   3.80E-02
-    335.0   3.60E-02
-    344.0   3.40E-02
-    354.0   3.10E-02
-    365.0   2.70E-02
-    376.0   2.20E-02
-    387.0   1.70E-02
-    400.0   1.00E-02
-    413.0   3.00E-03
-    420.0   1.50E-03
-    428.0   1.00E-03
-    443.0   1.00E-03
-    459.0   1.00E-03
-    477.0   3.00E-04
+    303.80  4.50E-02
+    310.00  4.30E-02
+    318.00  4.10E-02
+    326.00  3.80E-02
+    335.00  3.60E-02
+    344.00  3.40E-02
+    354.00  3.10E-02
+    365.00  2.70E-02
+    376.00  2.20E-02
+    387.00  1.70E-02
+    400.00  1.00E-02
+    413.00  3.00E-03
+    420.00  1.50E-03
+    428.00  1.00E-03
+    443.00  1.00E-03
+    459.00  1.00E-03
+    477.00  3.00E-04
     547.00  0.00E 00
    2275.00  0.00E 00
          4      0.00   2275.00 CO2     sCO/O     34 26

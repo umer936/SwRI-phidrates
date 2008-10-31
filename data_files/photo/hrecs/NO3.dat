@@ -1,15 +1,15 @@
-       403      0.00  90000.00 NO3      total
+       403      0.00  90000.00 NO3      Total
 Cross section:
 Lambda = 0.6-630. A
    Synthesized from atomic cross sections
-   Barfield, W. D., Koontz, G. D., Huebner W. F. (1972) 
-   J. Quant. Spectr. Rad. Trans. 12, 1409 
+   Barfield, W. D., Koontz, G. D., Huebner W. F. (1972)
+   J. Quant. Spectr. Rad. Trans. 12, 1409
 Lambda = 915.-3980. A
    Assumed to be the same cross section as NO2
 Lambda = 4000.-7030. A
    Graham, R. A., Johnston, H. S. (1978)
    J. Chem. Phys. 82, 254
- 
+
       0.61  5.30E-23
       1.12  5.10E-22
       2.44  4.20E-21
@@ -419,7 +419,7 @@ Branching ratio:
 Lambda = 5820.-6320. A
    Magnotta, F., Johnston, H. S. (1980)
    Geophys. Res. Lett. 7, 769
- 
+
       0.60  1.00E 00
    5800.00  1.00E 00
    5900.00  0.00E 00

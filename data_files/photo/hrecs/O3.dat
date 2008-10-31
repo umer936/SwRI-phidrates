@@ -1,9 +1,9 @@
-       167      0.00  11790.00 O3       total
+       167      0.00  11790.00 O3       Total
 Cross section:
 Lambda = 0.6-742. A
    Three times cross section for atomic oxygen
-   Barfield, W. D., Koontz, G. D., Huebner W. F. (1972) 
-   J. Quant. Spectr. Rad. Trans. 12, 1409 
+   Barfield, W. D., Koontz, G. D., Huebner W. F. (1972)
+   J. Quant. Spectr. Rad. Trans. 12, 1409
 Lambda = 1060.-1360. A
    Tanaka, Y., Inn, E. C. Y., Watanabe, K. (1953)
    J. Chem. Phys. 21, 1651
@@ -18,7 +18,7 @@ Lambda = 2000.-8500. A
    J. Chem. Phys. 49, 857
 Threshold:
 Lambda = 11790. A
- 
+
       0.61  4.50E-23
       1.12  4.30E-22
       2.44  3.50E-21
@@ -193,7 +193,7 @@ Branching ratios:
 Lambda = 3045.-3195. A
    Moortgat, G. K., Warneck, P. (1975)
    Z. Naturforsch. 30A, 835
- 
+
       0.00  0.00E 00
    3040.00  0.00E 00
    3045.00  1.00E-02

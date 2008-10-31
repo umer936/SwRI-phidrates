@@ -1,15 +1,15 @@
-        55      0.00   3540.   HNCO     total
+        55      0.00   3540.   HNCO     Total
 Cross section:
 Lambda = .61-627. A
-   Barfield, W. D., Koontz, G. D., Huebner W. F. (1972) 
-   J. Quant. Spectr. Rad. Trans. 12, 1409 
+   Barfield, W. D., Koontz, G. D., Huebner W. F. (1972)
+   J. Quant. Spectr. Rad. Trans. 12, 1409
 Lambda = 1200.-2000. A
    Okabe, H. (1970)
    J. Chem. Phys. 53, 9
 Lambda = 2100.-2550. A
    Dixon, R. N., Kirby, G. H. (1968)
    Transactions Faraday Soc. 64, 2002
- 
+
       0.61  2.69E-23
       1.24  2.64E-22
       2.44  2.15E-21
@@ -67,7 +67,7 @@ Lambda = 2100.-2550. A
    3540.00  1.00E-24
   1
          4      0.00   3540.   HNCO     NH/CO       26
- 
+
       0.60  5.00E-01
    2530.00  5.00E-01
    2531.00  1.00e+00

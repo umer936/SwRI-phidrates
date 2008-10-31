@@ -166,7 +166,8 @@ c     if there are no br. sets, mother molecule is the only "branch"
       WRITE(2, FMT2) (ANGSTS(I), SIGMA(I), (TABSIG(I,J),J=n2,n3),I=1,NS)
       GO TO 170
   160 CONTINUE
-      WRITE(2, '(''  Lambda   Sigma '')')
+c     WRITE(2, '(''  Lambda   Sigma '')')
+      WRITE(2, fmt = "(a8, 2x, a8)") "  Lambda", MOTHER(2)
       WRITE(2, 310) (ANGSTS(I), SIGMA(I),I=1,NS)
   170 continue
       RETURN

@@ -1,4 +1,4 @@
-      1750      0.00   3978.00 NO2      total
+      1750      0.00   3978.00 NO2      Total
 Cross section:
 Lambda = 0.6-940. A
    Assumed same cross section as HONO
@@ -12,7 +12,7 @@ Dissociation limit and energy:
 Lambda = 3978. A
    Jones, I. T. N., Bayes, K. D. (1973)
    J. Chem. Phys. 59, 4863
- 
+
       0.61  3.80E-23
       1.12  3.70E-22
       2.44  3.00E-21
@@ -1769,7 +1769,7 @@ Branching ratio:
 Lambda = 1080.-1270. A
    Nakayama, T., Kitamura, M. Y., Watanabe, K. (1959)
    J. Chem. Phys. 30, 1180
- 
+
       0.60  1.00E 00
     940.00  1.00E 00
    1080.00  2.30E-01
@@ -1785,7 +1785,7 @@ Lambda = 1080.-1270. A
    1270.00  0.00E-00
    3978.00  0.00E-00
         17      0.00   2439.00 NO2      NO/O1D      26
- 
+
       0.00  0.00E-01
     940.00  0.00E 00
    1080.00  2.70E-01

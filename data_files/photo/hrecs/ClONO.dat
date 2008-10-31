@@ -2,12 +2,12 @@
 Cross section:
 Lambda = 1.-622.50 A
    Synthesized from cross sections of ClNO and O
-Lambda = 2350a-4000 A
+Lambda = 2350a-4000. A
    Molina, L. A., Molina, M. J. (1977)
    Geophys. Res. Lett. 4, 83
 Threshold:
 Lambda = 17000. A
- 
+
       1.00  3.62E-21
       5.00  4.34E-20
      12.00  4.18E-19

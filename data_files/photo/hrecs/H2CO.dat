@@ -1,5 +1,24 @@
-       270      0.00   7000.00 H2CO     total
-  
+       270      0.00   7000.00 H2CO     Total         
+Cross section:
+Lambda = 0.-500. A
+   Barfield, W. D., Koontz, G. D., Huebner W. F. (1972)
+   J. Quant. Spectr. Rad. Trans. 12, 1409
+Lambda = 600.-1760. A
+   Mentall, J. E., Gentieu, E. P., Kraus, M., Neumann, D. (1971)
+   J. Chem. Phys. 55, 5471
+Lambda = 1760.-1850. A
+   Gentieu, E. P., Mentall, J. E. (1970)
+   Science 169, 681
+Lambda = 2000.-2634.7 A
+   Calvert, J. G., Pitts, Jr. J. N. (1966)
+   Photochemistry, John Wiley & sons, Inc., New York, NY.
+Lambda = 2634.7A-3531.7 A
+   Rogers   (1990)
+   J. Chem. Phys.
+Lambda = 3531.7A-3740. A
+   Calvert, J. G., Pitts, Jr. J. N. (1966)
+   Photochemistry, John Wiley & sons, Inc., New York, NY.
+
       1.00  9.00E-23
      10.00  9.10E-20
      22.50  7.60E-19
@@ -270,32 +289,20 @@
    3700.00  1.90E-21
    3740.00  1.00E-35
    7000.00  1.00E-35
-  5 
+  5
         58      0.00   3340.00 H2CO     HCO/H    44 26
-Lambda = 0.-500. A
-   Barfield, W. D., Koontz, G. D., Huebner W. F. (1972) 
-   J. Quant. Spectr. Rad. Trans. 12, 1409 
-Lambda = 600.-1760. A
-   Mentall, J. E., Gentieu, E. P., Kraus, M., Neumann, D. (1971)
-   J. Chem. Phys. 55, 5471 
-Lambda = 1760.-1850. A
-   Gentieu, E. P., Mentall, J. E. (1970) 
-   Science 169, 681
-Lambda = 2000.-2634.7A  calvert, j. g. and pitts, jr., j. n. (1966)
-   photochemistry, john wiley + sons, inc., n. y.
-Lambda = 2634.7A-3531.7A  Rogers   (1990)
-   J. Chem. Phys. 
-Lambda = 3531.7A-3740.a  calvert, j. g. and pitts, jr., j. n. (1966)
-   photochemistry, john wiley + sons, inc., n. y.
-predissociation  calvert, j. g. and pitts, jr., j. n. (1966) 
-   photochemistry, john wiley + sons, inc., n. y.
-Lambda = 3493.a  threshold  glicker, s. and stief, l. j. (1971)
-   j. chem. phys. 54, 2852
+Predissociation:
+   Calvert, J. G., Pitts, Jr. J. N. (1966)
+   Photochemistry, John Wiley & Sons, Inc., New York, NY.
+Threshold:
+Lambda = 3493. A
+   Glicker, S., Stief, L. J. (1971)
+   J. Chem. Phys. 54, 2852
 Branching ratio:
 Lambda = 2991.-3392. A
    Clark, J. H., Moore, C. B., Nogar, N. S. (1978)
    J. Chem. Phys. 68, 1264
-  
+
       1.00  0.00E 00
    1850.00  0.00E 00
    2000.00  1.41E-01
@@ -355,16 +362,20 @@ Lambda = 2991.-3392. A
    3341.00  0.00E 00
    7000.00  0.00E 00
         43      0.00   7000.00 H2CO     CO/H2    43 26
-Lambda = 2000.-3740.a  calvert, j. g. and pitts, jr., j. n. (1966)
-   photochemistry, john wiley + sons, inc., n. y.
-predissociation  calvert, j. g. and pitts, jr., j. n. (1966) 
-   photochemistry, john wiley + sons, inc., n. y.
+Lambda = 2000.-3740. A
+   Calvert, J. G., Pitts, Jr. J. N. (1966)
+   Photochemistry, John Wiley & Sons, Inc., New York, NY.
+Predissociation:
+Predissociation:
+   Calvert, J. G., Pitts, Jr. J. N. (1966)
+   Photochemistry, John Wiley & Sons, Inc., New York, NY.
 Branching ratio:
 Lambda = 2991.-3392. A
    Clark, J. H., Moore, C. B., Nogar, N. S. (1978)
    J. Chem. Phys. 68, 1264
-Lambda = 7000.a  guessed dissociation threshold (heat of formation is negative) 
-  
+Lambda = 7000. A
+   Guessed dissociation threshold (heat of formation is negative)
+
       1.00  0.00E 00
    2705.00  0.00E 00
    2730.00  1.40E-01
@@ -411,21 +422,21 @@ Lambda = 7000.a  guessed dissociation threshold (heat of formation is negative)
         95      0.00   2750.00 H2CO     CO/H/H   45 26
 Lambda = 600.-1760. A
    Mentall, J. E., Gentieu, E. P., Kraus, M., Neumann, D. (1971)
-   J. Chem. Phys. 55, 5471 
+   J. Chem. Phys. 55, 5471
 Lambda = 1760.-1850. A
-   Gentieu, E. P., Mentall, J. E. (1970) 
+   Gentieu, E. P., Mentall, J. E. (1970)
    Science 169, 681
 Branching ratio:
 Lambda = 600.-1141.6 A
    Mentall, J. E., Gentieu, E. P., Kraus, M., Neumann, D. (1971)
-   J. Chem. Phys. 55, 5471 
+   J. Chem. Phys. 55, 5471
 Lambda = 1470. A, 1236. A
    Stief, L. J., Donn, B., Glicker, S., Gentieu, E. P., Mentall, J. E. (1972)
    J. Chem. Phys. 54, 2852
    also
    Clark, J. H., Moore, C. B., Nogar, N. S. (1978)
    J. Chem. Phys. 68, 1264
-  
+
       1.00  1.00E-03
     600.00  5.00E-01
     615.00  5.61E-01
@@ -524,22 +535,22 @@ Lambda = 1470. A, 1236. A
         76      0.00   1141.60 H2CO     H2CO+    31  2
 Lambda = 600.-1760. A
    Mentall, J. E., Gentieu, E. P., Kraus, M., Neumann, D. (1971)
-   J. Chem. Phys. 55, 5471 
+   J. Chem. Phys. 55, 5471
 Lambda = 1760.-1850. A
-   Gentieu, E. P., Mentall, J. E. (1970) 
+   Gentieu, E. P., Mentall, J. E. (1970)
    Science 169, 681
 Threshold:
 Lambda = 1141.6 A
    Guyon, P. M., Chupka, W. A., Berkowitz, J. (1976)
-   J. Chem. Phys. 64, 1419 
+   J. Chem. Phys. 64, 1419
 Branching ratio:
 Lambda = 600.-1141.6 A
    Mentall, J. E., Gentieu, E. P., Kraus, M., Neumann, D. (1971)
-   J. Chem. Phys. 55, 5471 
+   J. Chem. Phys. 55, 5471
 Lambda = 680.-1043. A
    Guyon, P. M., Chupka, W. A., Berkowitz, J. (1976)
-   J. Chem. Phys. 64, 1419 
-  
+   J. Chem. Phys. 64, 1419
+
       1.00  0.00E 00
     600.00  1.05E-01
     615.00  9.70E-02
@@ -619,19 +630,19 @@ Lambda = 680.-1043. A
         76      0.00   1043.00 H2CO     HCO+H    31 40
 Lambda = 600.-1760. A
    Mentall, J. E., Gentieu, E. P., Kraus, M., Neumann, D. (1971)
-   J. Chem. Phys. 55, 5471 
+   J. Chem. Phys. 55, 5471
 Threshold:
 Lambda = 1043. A
    Guyon, P. M., Chupka, W. A., Berkowitz, J. (1976)
-   J. Chem. Phys. 64, 1419 
+   J. Chem. Phys. 64, 1419
 Branching ratio:
 Lambda = 600.-1141.6 A
    Mentall, J. E., Gentieu, E. P., Kraus, M., Neumann, D. (1971)
-   J. Chem. Phys. 55, 5471 
+   J. Chem. Phys. 55, 5471
 Lambda = 680.-1043. A
    Guyon, P. M., Chupka, W. A., Berkowitz, J. (1976)
-   J. Chem. Phys. 64, 1419 
-  
+   J. Chem. Phys. 64, 1419
+
       1.00  1.00E-03
     600.00  2.92E-01
     615.00  2.61E-01
