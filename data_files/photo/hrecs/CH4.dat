@@ -1,4 +1,4 @@
-       137      0.00   2770.00 CH4      total
+       137      0.00   2770.00 CH4      Total
 Cross section:
 Lambda = 23.6-250 A  
    Lukirskii, A. P., Brytov, I. A., Zimkina, T. M. (1964)
@@ -154,7 +154,7 @@ Lambda = 1380.-1600. A
    2373.00  3.00E-26
    2770.00  1.00E-28
   8
-        28      0.00   2373.00 CH4      ^1CH2/H2 51 26
+        28      0.00   2373.00 CH4      sCH2/H2  51 26
 1CH2 is equivalent to singlet state of CH2
 Lambda = 773.-1513. A
    Ditchburn, R. W. (1955) 

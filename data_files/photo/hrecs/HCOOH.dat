@@ -1,4 +1,4 @@
-        46      0.00   7000.00 H2CO2    total
+        46      0.00   7000.00 HCOOH    Total
 Lambda = 1.-600. A
    Synthesized from cross sections of constituent atoms 
 Lambda = 1100.-2500. A
@@ -57,7 +57,7 @@ Lambda = 7000. A
    2600.01  1.00E-35
    7000.00  1.00E-35
   3 
-        13      0.00   7000.00 H2CO2    CO2/H2   53 26
+        13      0.00   7000.00 HCOOH    CO2/H2   53 26
 Branching ratios:
    Gorden, R., Ausloos, P. (1961)
    J. Phys. Chem. 65, 1033 
@@ -75,7 +75,7 @@ Branching ratios:
    2600.00  3.60E-01
    2600.01  1.00E 00
    7000.00  1.00E 00
-        11      0.00   1094.40 H2CO2    H2CO2+   45  2
+        11      0.00   1094.40 HCOOH    HCOOH+   45  2
 Lambda = 0.-1100. A
    Extrapolated from H2CO cross section 
 Threshold:  
@@ -93,7 +93,7 @@ Threshold:
    1094.40  8.00E-01
    1095.00  0.00E 00
    7000.00  0.00E 00
-         8      0.00    902.00 H2CO2    HCO+OH   45 40
+         8      0.00    902.00 HCOOH    HCO+OH   45 40
 Lambda = 0.-902. A
    Extrapolated from H2CO cross section 
 Threshold:  
@@ -108,5 +108,5 @@ Threshold:
     900.00  1.50E-01
     902.00  0.00E 00
    7000.00  0.00E 00
-         0      0.00   2600.00 H2CO2    HCO/OH   54 26
+         0      0.00   2600.00 HCOOH    HCO/OH   54 26
 *** 

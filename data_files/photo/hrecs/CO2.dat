@@ -547,7 +547,7 @@ Lambda = 580.-1670. A
    1950.00  1.00E-23
    2275.00  1.00E-25
   6
-       395      0.00   1671.00 CO2     sCO/O1D   35 26
+       395      0.00   1671.00 CO2      sCO/O1D  35 26
 sCO is equivalent to (singlet) CO (ground state)
 Lambda = 582.7a-902.9 A
    Nakata, R. S., Watanabe, K., Matsunaga, F. M. (1965)
@@ -1222,7 +1222,7 @@ Lambda = 580.-1670. A
     899.00  4.41E-01
     900.30  0.00E 00
    2275.00  0.00E 00
-        28      0.00    636.93 CO2     sCO+O     24 40
+        28      0.00    636.93 CO2      sCO+O    24 40
 sCO is equivalent to (singlet) CO (ground state)
 Lambda = 304.-639. A
    Kronebusch, P. L., Berkowitz, J. (1976)
@@ -1256,7 +1256,7 @@ Lambda = 304.-639. A
     633.00  2.39E-02
     636.90  0.00E 00
    2275.00  0.00E 00
-        24      0.00    650.26 CO2     O+sCO     25 40
+        24      0.00    650.26 CO2      O+sCO    25 40
 Lambda = 304.-639. A
    Kronebusch, P. L., Berkowitz, J. (1976)
    Int. J. Mass Spectr. Ion Phys. 22, 283
@@ -1310,7 +1310,7 @@ Lambda = 304.-639. A
     477.00  3.00E-04
     547.00  0.00E 00
    2275.00  0.00E 00
-         4      0.00   2275.00 CO2     sCO/O     34 26
+         4      0.00   2275.00 CO2      sCO/O    34 26
 sCO is equivalent to (singlet) CO (ground state)
 tCO is equivalent to (triplet) CO (a^3Pi state)
 

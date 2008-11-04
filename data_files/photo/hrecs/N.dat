@@ -1,13 +1,15 @@
-       105      0.00    853.06 n        ni        5  2
-cross section:
-lambda=110.00a-853.06a   henry, r. j. w. (1970)
-   astrophys. j. 161, 1153
-lambda=0.00-110.00a  barfield, w. d., koontz, g. d., huebner, w. f. (1972)
-   j. quant. spectrosc. radiat. transfer 12, 1409
-threshold:
-lambda=853.06a  moore, c. e. (1970)
-   ionization potentials and ionization limits derived from the
-   analyses of optical spectra, nsrds-nbs 34
+       105      0.00    853.06 N        N+        5  2
+Cross section:
+Lambda = 110.00a-853.06 A
+   Henry, R. J. W. (1970) 
+   Astrophys. J. 161, 1153
+Lambda = 0.00-110.00 A
+   Barfield, W. D., Koontz, G. D., Huebner, W. F. (1972)
+   J. Quant. Spectr. Rad. Trans. 12, 1409
+Threshold:
+Lambda = 853.06 A
+   Moore, C. E. (1970)
+   Ionization Potentials and Ionization Limits Derived from the Analyses of Optical Spectra, NSRDS-NBS 34
 
       1.00  4.00e-23
       5.00  5.70e-21
