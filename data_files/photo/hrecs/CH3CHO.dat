@@ -1,4 +1,4 @@
-        34      0.00   7350.   CH3CHO   total
+        34      0.00   7350.00 CH3CHO   Total
 Cross sections:
 Lambda 2000.00-3450.0 A
    Baulch, D. L., Cox, R. A., Crutzen, P. J., Hampson, Jr., R. F.,Kerr, J. A., Troe, J., Watson, R. T. (1982)
@@ -39,7 +39,7 @@ Lambda 2000.00-3450.0 A
    3550.00  1.00E-24
    7350.00  1.00E-30
   2
-         9      0.00   7350.   CH3CHO   CH4/CO      26
+         9      0.00   7350.00 CH3CHO   CH4/CO      26
 Branching ratios:
 Lambda = 2900.0 3550.0 A
    Weaver, J., Meagher, J., Heicklen, H. (1976)
@@ -54,7 +54,7 @@ Lambda = 2900.0 3550.0 A
    3340.00  1.00E-03
    3125.00  5.00E-03
    7350.00  0.00E 00
-         8      0.00   3501.   CH3CHO   CH3/HCO     26
+         8      0.00   3501.00 CH3CHO   CH3/HCO     26
 Branching ratios:
 Lambda = 2900.0 3550.0 A
    Weaver, J., Meagher, J., Heicklen, H. (1976)
@@ -70,4 +70,3 @@ Lambda = 2900.0 3550.0 A
    7350.00  0.00E 00
          0      0.00   7350.   CH3CHO   tCH3CHO
 ***
-

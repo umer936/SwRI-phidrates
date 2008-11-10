@@ -1222,8 +1222,7 @@ Lambda = 580.-1670. A
     899.00  4.41E-01
     900.30  0.00E 00
    2275.00  0.00E 00
-        28      0.00    636.93 CO2      sCO+O    24 40
-sCO is equivalent to (singlet) CO (ground state)
+        28      0.00    636.93 CO2      CO+O     24 40
 Lambda = 304.-639. A
    Kronebusch, P. L., Berkowitz, J. (1976)
    Int. J. Mass Spectr. Ion Phys. 22, 283
@@ -1256,7 +1255,7 @@ Lambda = 304.-639. A
     633.00  2.39E-02
     636.90  0.00E 00
    2275.00  0.00E 00
-        24      0.00    650.26 CO2      O+sCO    25 40
+        24      0.00    650.26 CO2      O+CO     25 40
 Lambda = 304.-639. A
    Kronebusch, P. L., Berkowitz, J. (1976)
    Int. J. Mass Spectr. Ion Phys. 22, 283
