@@ -1,16 +1,167 @@
 <html>
-
+<link rel="stylesheet" type="text/css" href="/css/amopWeb.css" />
 <head>
 <title> Photo Rates and Cross Sections </title>
 </head>
+<script type="text/javascript" src="/prototype/prototype-1.6.0.3.js"></script>
+<script type="text/javascript" src="/scriptaculous-js-1.8.2/src/scriptaculous.js"></script>
 
-<frameset framespacing="0" border="false" frameborder="0" cols="30%,70%">
-  <frame SRC="buttons.html" NAME="left_frame" NORESIZE NOSCROLL scrolling="auto">
-  <frame SRC="directions.html" NAME="right_frame" NORESIZE NOSCROLL scrolling="auto">
-</frameset>
-<noframes>
-You must have frames to view this site!
-</noframes>
-
-</html>
-
+<body>
+<table style="width:100%" cellpadding="0" cellspacing="0">
+	<tr>
+		<td>
+			<div id="main_header">
+			</div>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<div class="main_tabs_div">
+				<ul>
+					<li>
+						<div class="main_tabs_link_div_sel">
+							<a href="" title="Home Page">
+								<span>Home</span>
+							</a>
+						</div>
+					</li>
+					<li>
+						<div class="main_tabs_link_div">
+							<a href="javascript:;" title="Photo Cross Sections" onClick="new Ajax.Updater('main_body', 'molecule.html', {evalScripts:true});">
+								<span>Photo&nbsp;Cross&nbsp;Sections</span>
+							</a>
+						</div>
+					</li>
+					<!-- <li><a href="/pages/help" title="Need help?  Read here." id="tab_help_a"><span id="tab_help_span">Help</span></a></li> -->
+					<li>
+						<div class="main_tabs_link_div">
+							<a href="/pages/share" title="Blackbody Radiation Field">
+								<span>Blackbody&nbsp;Radiation&nbsp;Field</span>
+							</a>
+						</div>
+					</li>
+					<li>
+						<div class="main_tabs_link_div">
+							<a href="/pages/share" title="Interstellar Radiation Field">
+								<span>Interstellar&nbsp;Radiation&nbsp;Field</span>
+							</a>
+						</div>
+					</li>
+					<li>
+						<div class="main_tabs_link_div">
+							<a href="/pages/share" title="Solar Radiation Field">
+								<span>Solar&nbsp;Radiation&nbsp;Field</span>
+							</a>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<div id="main_body">
+				<!--Home page content goes here for quick load-->
+				<table id="content_table" cellspacing="0" cellpadding="0">
+					<tr>
+						<td valign="top">
+							<div class="home_side_menu">
+									<ul>
+										<li>
+											<div class="home_side_menu_button_sel">
+											<a href="javascript:;" title="Get site information." id="side_menu_info"
+												onClick="new Ajax.Updater('home_main_content', 'home.html', {evalScripts:true});">
+												<span id="side_menu_info_span">Info</span>
+											</a>
+											<br>
+											</div>
+										</li>
+										<li>
+											<div class="home_side_menu_button">
+											<a href="javascript:;" title="Contact us." id="side_menu_contact"
+												onClick="new Ajax.Updater('home_main_content', 'contacts.html', {evalScripts:true});">
+												<span id="side_menu_contact_span">Contact</span>
+											</a>
+											<br>
+											</div>
+										</li>
+										<li>
+											<div class="home_side_menu_button">
+											<a href="javascript:;" title="Fill out a feedback quistionnaire." id="side_menu_questionnaire"
+												onClick="new Ajax.Updater('home_main_content', 'questionnaire.html', {evalScripts:true});">
+												<span id="side_menu_questionnaire_span">Questionnaire</span>
+											</a>
+											<br>
+											</div>
+										</li>
+									</ul>
+							</div>
+						</td>
+						<td id="main_content_td">
+							<div id="home_main_content">
+								<div bgcolor="#FFFFFF" text="#000000">
+									<FONT SIZE=3>
+									<CENTER>
+									<img src="/img/SunMolecules_Rings.png" alt="SunMolecules_Rings.png" height="300" width="400">
+									</CENTER>
+									
+									<P>
+									To obtain cross section data and plots, pick the
+									&quot;Photo Cross Sections&quot; button on the left.
+									</P>
+									<P>
+									To calculate photo rate coefficients and excess
+									energies in the solar radiation field, pick the appropiate
+									button on the left. This will also give you an option to obtain data and plots.
+									</P>
+									<P>
+									For more detailed information and comparisons with other data, see
+									"Solar Photo Rates for Planetary Atmospheres and Atmospheric Pollutants,"
+									W.F. Huebner, J.J. Keady, and S.P. Lyon, Astrophysics Space Sci. <b>195</b>, 1-294 (1992).
+									</P>
+									<P>
+									<!--
+									<A TARGET="_top" HREF="http://www.space.swri.edu/spacephysics/resrc/www.atomic.htm">
+									SwRI Atomic, Molecular, & Plasma Physics home page
+									</A>
+									-->
+									</P>
+									<P>
+									<FONT SIZE="-1">
+									(Interstellar and blackbody rate coefficients and excess energies under development)
+									</FONT>
+									</P>
+								</div>
+							</div>
+						</td>
+					</tr>
+				</table>
+			</div>
+		</td>
+	</tr>
+	<tr>
+		<td>
+    	<!-- Start Of Footer -->
+      <div id="main_footer" >
+      	<table> 
+    			<tr>                            
+        		<td width="65px;">              
+            	<a href="http://www.swri.org/" target="_new">
+                <img src="/img/swri_logo.gif" alt="Southwest Research Institute: Space Instrumentation Division" border="0" />            
+							</a>
+        		</td>                           
+        		<td>
+							<i>                             
+									To report any problems, email: <a href="mailto:joey@swri.edu" title="joey@swri.edu">Joey Mukherjee</a>
+							</i>
+            	<br />
+									Last Updated: 4/23/2008                              
+       			</td>                                                     
+     			</tr>                      
+				</table>
+			</div>
+			<!-- End Of Footer -->
+		</td>
+	</tr>
+</table>
+</body>
