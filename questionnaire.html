@@ -1,10 +1,7 @@
-<HTML>
-<HEAD>
-<TITLE>
+
+<!-- <TITLE>
 Atomic & Molecular Database Questionnaire
-</TITLE>
-</HEAD>
-<BODY BGCOLOR="#FFFFFF" TEXT="#000000">
+</TITLE> -->
 
 <FONT SIZE=6>
 Atomic & Molecular Database Questionnaire
@@ -32,7 +29,7 @@ Links to many web sites that you may find useful
 <P>
 If you are interested in using such a database, please help us define additional 
 quantities you would like to have available by filling out the questionnaire below.
-<FORM METHOD=POST ACTION="http://amop.space.swri.edu/sh-cgi-bin/amop/formmail.cgi?http://amop.space.swri.edu/thanks.html">
+<FORM id="AMOP_questionnaire_form" METHOD=POST action="http://amop.space.swri.edu/sh-cgi-bin/amop/formmail.cgi?http://amop.space.swri.edu/thanks.html" onsubmit="new Ajax.Updater('home_main_content','./thanks.html',{asynchronous:true,parameters:Form.serialize(this)}); return false;">
 <TABLE>
 <TR>
 <TD>
@@ -83,10 +80,7 @@ Additional features desired (e.g., electron collisional dissociation, ionization
 <TEXTAREA NAME="features" COLS=60 ROWS=4>
 </TEXTAREA>
 <CENTER>
-<INPUT TYPE="submit" VALUE="Submit Questionnaire">
+<INPUT id="AMOP_Questionnaire" TYPE="submit" VALUE="Submit Questionnaire test" />
 <INPUT TYPE="reset">
 </CENTER>
 </FORM>
-</FONT>
-</BODY>
-</HTML>

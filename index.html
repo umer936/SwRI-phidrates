@@ -5,7 +5,7 @@
 </head>
 <script type="text/javascript" src="./prototype/prototype-1.6.0.3.js"></script>
 <script type="text/javascript" src="./scriptaculous-js-1.8.2/src/scriptaculous.js"></script>
-
+<script type="text/javascript" src="./js/amopWeb.js"></script>
 <body>
 <table style="width:100%" cellpadding="0" cellspacing="0">
 	<tr>
@@ -14,97 +14,96 @@
 			</div>
 		</td>
 	</tr>
+	<!-- TOP TABS -->
 	<tr>
 		<td>
 			<div class="main_tabs_div">
-				<ul>
-					<li>
-						<div class="main_tabs_link_div_sel">
-							<a href="" title="Home Page">
-								<span>Home</span>
-							</a>
-						</div>
-					</li>
-					<li>
-						<div class="main_tabs_link_div">
-							<a href="javascript:;" title="Photo Cross Sections" onClick="new Ajax.Updater('main_body', './molecule.html', {evalScripts:true});">
-								<span>Photo&nbsp;Cross&nbsp;Sections</span>
-							</a>
-						</div>
-					</li>
-					<!-- <li><a href="/pages/help" title="Need help?  Read here." id="tab_help_a"><span id="tab_help_span">Help</span></a></li> -->
-					<li>
-						<div class="main_tabs_link_div">
-							<a href="/pages/share" title="Blackbody Radiation Field">
-								<span>Blackbody&nbsp;Radiation&nbsp;Field</span>
-							</a>
-						</div>
-					</li>
-					<li>
-						<div class="main_tabs_link_div">
-							<a href="/pages/share" title="Interstellar Radiation Field">
-								<span>Interstellar&nbsp;Radiation&nbsp;Field</span>
-							</a>
-						</div>
-					</li>
-					<li>
-						<div class="main_tabs_link_div">
-							<a href="/pages/share" title="Solar Radiation Field">
-								<span>Solar&nbsp;Radiation&nbsp;Field</span>
-							</a>
-						</div>
-					</li>
-				</ul>
+					<ul>
+						<!-- Solar Radiation Field -->
+						<li>
+							<div class="main_tabs_link_div" id="solar">
+								<a href="javascript:;" title="Solar Radiation Field" onClick="processLink ('solar');">
+									<span>Solar&nbsp;Radiation&nbsp;Field</span>
+								</a>
+							</div>
+						</li>
+						<!-- Interstellar Radiation Field -->
+						<li>
+							<div class="main_tabs_link_div" id="interstellar" onClick="processLink ('interstellar');">
+								<a href="javascript:;" title="Interstellar Radiation Field">
+									<span>Interstellar&nbsp;Radiation&nbsp;Field</span>
+								</a>
+							</div>
+						</li>
+						<!-- Blackbody Radiation Field -->
+						<li>
+							<div class="main_tabs_link_div" id="blackbody">
+								<a href="javascript:;" title="Blackbody Radiation Field" onClick="processLink ('blackbody');">
+									<span>Blackbody&nbsp;Radiation&nbsp;Field</span>
+								</a>
+							</div>
+						</li>
+						<!-- Photo Cross Sections -->
+						<li>
+							<div class="main_tabs_link_div" id="photo">
+								<a href="javascript:;" title="Photo Cross Sections" onClick="processLink ('photo');">
+									<span>Photo&nbsp;Cross&nbsp;Sections</span>
+								</a>
+							</div>
+						</li>
+						<!-- Home -->
+						<li>
+							<div class="main_tabs_link_div_sel" id="home">
+								<a href="javascript:;" title="Home Page" onClick="processLink ('home');">
+									<span>Home</span>
+								</a>
+							</div>
+						</li>
+					</ul>
 			</div>
 		</td>
 	</tr>
+	<!-- MAIN BODY -->
 	<tr>
 		<td>
 			<div id="main_body">
-				<!--Home page content goes here for quick load-->
 				<table id="content_table" cellspacing="0" cellpadding="0">
 					<tr>
+						<!-- HOME PAGE SIDE MENU -->
 						<td valign="top">
 							<div class="home_side_menu">
 									<ul>
 										<li>
-											<div class="home_side_menu_button_sel">
-											<a href="javascript:;" title="Get site information." id="side_menu_info"
-												onClick="new Ajax.Updater('home_main_content', 'home.html', {evalScripts:true});">
-												<span id="side_menu_info_span">Info</span>
-											</a>
-											<br>
+											<div class="home_side_menu_button_sel" id="side_menu_info_div">
+												<a href="javascript:;" title="Get site information."
+													onClick="homeSideMenuSelected('side_menu_info_div');">
+													<span>Info</span>
+												</a>
 											</div>
 										</li>
 										<li>
-											<div class="home_side_menu_button">
-											<a href="javascript:;" title="Contact us." id="side_menu_contact"
-												onClick="new Ajax.Updater('home_main_content', 'contacts.html', {evalScripts:true});">
-												<span id="side_menu_contact_span">Contact</span>
-											</a>
-											<br>
+											<div class="home_side_menu_button" id="side_menu_contact_div">
+												<a href="javascript:;" title="Contact us."
+													onClick="homeSideMenuSelected('side_menu_contact_div');">
+													<span>Contact</span>
+												</a>
 											</div>
 										</li>
 										<li>
-											<div class="home_side_menu_button">
-											<a href="javascript:;" title="Fill out a feedback quistionnaire." id="side_menu_questionnaire"
-												onClick="new Ajax.Updater('home_main_content', 'questionnaire.html', {evalScripts:true});">
-												<span id="side_menu_questionnaire_span">Questionnaire</span>
-											</a>
-											<br>
+											<div class="home_side_menu_button" id="side_menu_questionnaire_div">
+												<a href="javascript:;" title="Fill out a feedback quistionnaire."
+													onClick="homeSideMenuSelected('side_menu_questionnaire_div');">
+													<span>Questionnaire</span>
+												</a>
 											</div>
 										</li>
 									</ul>
 							</div>
 						</td>
+						<!-- HOME PAGE CONTENT AREA -->
 						<td id="main_content_td">
 							<div id="home_main_content">
-								<div bgcolor="#FFFFFF" text="#000000">
-									<FONT SIZE=3>
-									<CENTER>
-									<img src="./img/SunMolecules_Rings.png" alt="SunMolecules_Rings.png" height="300" width="400">
-									</CENTER>
-									
+									<center><img src="./img/SunMolecules_Rings.png" alt="SunMolecules_Rings.png" height="300" width="400"></center>					
 									<P>
 									To obtain cross section data and plots, pick the
 									&quot;Photo Cross Sections&quot; button on the left.
@@ -131,7 +130,6 @@
 									(Interstellar and blackbody rate coefficients and excess energies under development)
 									</FONT>
 									</P>
-								</div>
 							</div>
 						</td>
 					</tr>
