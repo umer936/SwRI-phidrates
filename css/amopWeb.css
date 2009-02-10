@@ -29,7 +29,7 @@ border: none;
   text-align: right;
   color: #222;
   float:left;
-	background-image: url(/img/AMOP_Header.jpg);
+	background-image: url(../img/AMOP_Header.jpg);
   background-repeat: no-repeat;
   padding: 12px 0px 0px 0px;
 }
