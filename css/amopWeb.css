@@ -12,6 +12,10 @@ p{
 font-family:Georgia, "Times New Roman", Times, serif;
 font-size:16px;
 }
+h2{
+font-weight:bold;
+font-size:27px;
+}
 
 img {
 border: none;
@@ -43,10 +47,15 @@ border:5px solid #181C25;
 border-top:0px;
 border-bottom:0px;
 }
-#home_main_content{
+#main_content{
 height:100%;
-padding:20px;
 background-color:#FFFFEA;
+}
+#home_text_area{
+padding:20px;
+}
+#mol_text_area{
+padding:20px;
 }
 #main_content_td{
 width:100%;
@@ -63,6 +72,25 @@ padding:10px;
 {
 	background-color: #181C25/*#24618E*/;
 	padding:7px;
+}
+
+#window_area{
+}
+.mol_menu_list
+{
+background-color: #FFFFEA/*#181C25;*/ ;
+width:85px; 
+text-align:center; 
+float:right;
+margin-top:0px;
+border-right:solid;
+border-right-width:7px;
+border-right-color:#181C25;
+border-bottom:solid;
+border-bottom-width:8px;
+border-bottom-color:#181C25;
+padding-top:5px;
+padding-bottom:5px;
 }
 #content_table
 {

@@ -1,11 +1,25 @@
 <html>
 <link rel="stylesheet" type="text/css" href="./css/amopWeb.css" />
+<link href="./css/default.css" rel="stylesheet" type="text/css" />
+<link href="./css/default.css" rel="stylesheet" type="text/css" />	
+<link href="./css/spread.css" rel="stylesheet" type="text/css" />	 
+<link href="./css/alert.css" rel="stylesheet" type="text/css" />	 
+<link href="./css/alert_lite.css" rel="stylesheet" type="text/css" />	
+<link href="./css/alphacube.css" rel="stylesheet" type="text/css" />
+<link href="./css/debug.css" rel="stylesheet" type="text/css" />	 
+
+
 <head>
 <title> Photo Rates and Cross Sections </title>
 </head>
 <script type="text/javascript" src="./prototype/prototype-1.6.0.3.js"></script>
 <script type="text/javascript" src="./scriptaculous-js-1.8.2/src/scriptaculous.js"></script>
 <script type="text/javascript" src="./js/amopWeb.js"></script>
+<script type="text/javascript" src="./js/window.js"></script>  	
+<script type="text/javascript" src="./js/effects.js"> </script>
+<script type="text/javascript" src="./js/window_effects.js"> </script>
+<script type="text/javascript" src="./js/debug.js"> </script>
+
 <body>
 <table style="width:100%" cellpadding="0" cellspacing="0">
 	<tr>
@@ -18,6 +32,7 @@
 	<tr>
 		<td>
 			<div class="main_tabs_div">
+				<span style="width:1050px; float:right;">
 					<ul>
 						<!-- Solar Radiation Field -->
 						<li>
@@ -59,7 +74,13 @@
 								</a>
 							</div>
 						</li>
+						<!-- Home -->
+						<li>
+							<div style="width:160px;">
+							</div>
+						</li>
 					</ul>
+				</span>
 			</div>
 		</td>
 	</tr>
@@ -70,66 +91,285 @@
 				<table id="content_table" cellspacing="0" cellpadding="0">
 					<tr>
 						<!-- HOME PAGE SIDE MENU -->
-						<td valign="top">
-							<div class="home_side_menu">
-									<ul>
-										<li>
-											<div class="home_side_menu_button_sel" id="side_menu_info_div">
-												<a href="javascript:;" title="Get site information."
-													onClick="homeSideMenuSelected('side_menu_info_div');">
-													<span>Info</span>
-												</a>
-											</div>
-										</li>
-										<li>
-											<div class="home_side_menu_button" id="side_menu_contact_div">
-												<a href="javascript:;" title="Contact us."
-													onClick="homeSideMenuSelected('side_menu_contact_div');">
-													<span>Contact</span>
-												</a>
-											</div>
-										</li>
-										<li>
-											<div class="home_side_menu_button" id="side_menu_questionnaire_div">
-												<a href="javascript:;" title="Fill out a feedback quistionnaire."
-													onClick="homeSideMenuSelected('side_menu_questionnaire_div');">
-													<span>Questionnaire</span>
-												</a>
-											</div>
-										</li>
-									</ul>
+						<td valign="top" width="160px">
+							<div class="home_side_menu" style="width:160px;">
+								<br>
+								<div id="side_menu_for_home_page" style="display:block;">
+									<div class="home_side_menu_button_sel" id="side_menu_info_div">
+										<a href="javascript:;" title="Get site information."
+											onClick="homeSideMenuSelected('side_menu_info_div');">
+											<span>Info</span>
+										</a>
+									</div>
+									<div class="home_side_menu_button" id="side_menu_contact_div">
+										<a href="javascript:;" title="Contact us."
+											onClick="homeSideMenuSelected('side_menu_contact_div');">
+											<span>Contact</span>
+										</a>
+									</div>
+									<div class="home_side_menu_button" id="side_menu_questionnaire_div">
+										<a href="javascript:;" title="Fill out a feedback quistionnaire."
+											onClick="homeSideMenuSelected('side_menu_questionnaire_div');">
+											<span>Questionnaire</span>
+										</a>
+									</div>
+								</div>
+								<div id="molecule_side_menu" style="width:160px; display:none;">
+									<br>
+									<span style="color:#FFFFFF; font-size:14px; font-weight:bold; text-align:center;"><center>Molecule&nbsp;Selection</center></span>
+									<hr>
+								<!-- Monatomic Neutrals -->
+									<div class="home_side_menu_button" id="mol_menu_mon_nuetrals">
+										<a href="javascript:;" id="mol_menu_mon_nuetrals_a" title="Click to expand."
+											onClick="moleculeMenuSelected('mol_menu_mon_nuetrals','mon_neutrals_table','mol_menu_mon_nuetrals_a');">
+											<span style="font-size:12px; height:16px;">Monatomic&nbsp;Neutrals</span>
+										</a>
+									</div>
+									<div class="mol_menu_list" id="mon_neutrals_table" style="display:none;">						
+										<A HREF="JavaScript:runMolecule ('Al')">Al</A><BR>
+										<A HREF="JavaScript:runMolecule ('Ar')">Ar</A><BR>
+										<A HREF="JavaScript:runMolecule ('B')">B</A><BR>
+										<A HREF="JavaScript:runMolecule ('Be')">Be</A><BR>
+										<A HREF="JavaScript:runMolecule ('C')">C(<sup>3</sup>P)</A><BR>
+										<A HREF="JavaScript:runMolecule ('C1D')">C(<sup>1</sup>D)</A><BR>
+										<A HREF="JavaScript:runMolecule ('C1S')">C(<sup>1</sup>S)</A><BR>
+										<A HREF="JavaScript:runMolecule ('Ca')">Ca</A><BR>
+										<A HREF="JavaScript:runMolecule ('Cl')">Cl</A><BR>
+										<A HREF="JavaScript:runMolecule ('Co')">Co</A><BR>
+										<A HREF="JavaScript:runMolecule ('Cr')">Cr</A><BR>
+										<A HREF="JavaScript:runMolecule ('Cu')">Cu</A><BR>
+										<A HREF="JavaScript:runMolecule ('F')">F</A><BR>
+										<A HREF="JavaScript:runMolecule ('Fe')">Fe</A><BR>
+										<A HREF="JavaScript:runMolecule ('H')">H</A><BR>
+										<A HREF="JavaScript:runMolecule ('He')">He</A><BR>
+										<A HREF="JavaScript:runMolecule ('K')">K</A><BR>
+										<A HREF="JavaScript:runMolecule ('Li')">Li</A><BR>
+										<A HREF="JavaScript:runMolecule ('Mg')">Mg</A><BR>
+										<A HREF="JavaScript:runMolecule ('Mn')">Mn</A><BR>
+										<A HREF="JavaScript:runMolecule ('N')">N</A><BR>
+										<A HREF="JavaScript:runMolecule ('Nat')">Na(theor)</A><BR>
+										<A HREF="JavaScript:runMolecule ('Nae')">Na(exp)</A><BR>
+										<A HREF="JavaScript:runMolecule ('Ne')">Ne</A><BR>
+										<A HREF="JavaScript:runMolecule ('Ni')">Ni</A><BR>
+										<A HREF="JavaScript:runMolecule ('O')">O(<sup>3</sup>P)</A><BR>
+										<A HREF="JavaScript:runMolecule ('O1D')">O(<sup>1</sup>D)</A><BR>
+										<A HREF="JavaScript:runMolecule ('O1S')">O(<sup>1</sup>S)</A><BR>
+										<A HREF="JavaScript:runMolecule ('P')">P</A><BR>
+										<A HREF="JavaScript:runMolecule ('S')">S(<sup>3</sup>P)</A><BR>
+										<A HREF="JavaScript:runMolecule ('S1D')">S(<sup>1</sup>D)</A><BR>
+										<A HREF="JavaScript:runMolecule ('S1S')">S(<sup>1</sup>S)</A><BR>
+										<A HREF="JavaScript:runMolecule ('Sc')">Sc</A><BR>
+										<A HREF="JavaScript:runMolecule ('Si')">Si</A><BR>
+										<A HREF="JavaScript:runMolecule ('Ti')">Ti</A><BR>
+										<A HREF="JavaScript:runMolecule ('V')">V</A><BR>
+										<A HREF="JavaScript:runMolecule ('Xe')">Xe</A><BR>
+										<A HREF="JavaScript:runMolecule ('Zn')">Zn</A><BR>
+									</div>
+								<!-- Monatomic Ions-->
+									<div class="home_side_menu_button" id="mol_menu_mon_ions">
+										<a href="javascript:;" id="mol_menu_mon_ions_a" title="Click to expand."
+											onClick="moleculeMenuSelected('mol_menu_mon_ions', 'mon_ions_table', 'mol_menu_mon_ions_a');">
+											<span style="font-size:12px; height:16px;">Monatomic&nbsp;Ions</span>
+										</a>
+									</div>
+									<div class="mol_menu_list" id="mon_ions_table" style="display:none;">
+										<A HREF="JavaScript:runMolecule ('H-')">H<sup>-</sup></A><BR>
+										<A HREF="JavaScript:runMolecule ('Al+')">Al<sup>+</sup></A><BR>
+										<A HREF="JavaScript:runMolecule ('Ar+')">Ar<sup>+</sup></A><BR>
+										<A HREF="JavaScript:runMolecule ('B+')">B<sup>+</sup></A><BR>
+										<A HREF="JavaScript:runMolecule ('Be+')">Be<sup>+</sup></A><BR>
+										<A HREF="JavaScript:runMolecule ('C+')">C<sup>+</sup></A><BR>
+										<A HREF="JavaScript:runMolecule ('Ca+')">Ca<sup>+</sup></A><BR>
+										<A HREF="JavaScript:runMolecule ('Cl+')">Cl<sup>+</sup></A><BR>
+										<A HREF="JavaScript:runMolecule ('Co+')">Co<sup>+</sup></A><BR>
+										<A HREF="JavaScript:runMolecule ('Cr+')">Cr<sup>+</sup></A><BR>
+										<A HREF="JavaScript:runMolecule ('Cu+')">Cu<sup>+</sup></A><BR>
+										<A HREF="JavaScript:runMolecule ('F+')">F<sup>+</sup></A><BR>
+										<A HREF="JavaScript:runMolecule ('Fe+')">Fe<sup>+</sup></A><BR>
+										<A HREF="JavaScript:runMolecule ('He+')">He<sup>+</sup></A><BR>
+										<A HREF="JavaScript:runMolecule ('K+')">K<sup>+</sup></A><BR>
+										<A HREF="JavaScript:runMolecule ('Li+')">Li<sup>+</sup></A><BR>
+										<A HREF="JavaScript:runMolecule ('Mg+')">Mg<sup>+</sup></A><BR>
+										<A HREF="JavaScript:runMolecule ('Mn+')">Mn<sup>+</sup></A><BR>
+										<A HREF="JavaScript:runMolecule ('N+')">N<sup>+</sup></A><BR>
+										<A HREF="JavaScript:runMolecule ('Na+')">Na<sup>+</sup></A><BR>
+										<A HREF="JavaScript:runMolecule ('Ne+')">Ne<sup>+</sup></A><BR>
+										<A HREF="JavaScript:runMolecule ('Ni+')">Ni<sup>+</sup></A><BR>
+										<A HREF="JavaScript:runMolecule ('O+')">O<sup>+</sup></A><BR>
+										<A HREF="JavaScript:runMolecule ('P+')">P<sup>+</sup></A><BR>
+										<A HREF="JavaScript:runMolecule ('S+')">S<sup>+</sup></A><BR>
+										<A HREF="JavaScript:runMolecule ('Sc+')">Sc<sup>+</sup></A><BR>
+										<A HREF="JavaScript:runMolecule ('Si+')">Si<sup>+</sup></A><BR>
+										<A HREF="JavaScript:runMolecule ('Ti+')">Ti<sup>+</sup></A><BR>
+										<A HREF="JavaScript:runMolecule ('V+')">V<sup>+</sup></A><BR>
+										<A HREF="JavaScript:runMolecule ('Zn+')">Zn<sup>+</sup></A><BR>
+									</div>
+								<!-- Diatomics -->
+									<div class="home_side_menu_button" id="mol_menu_diatomics">
+										<a href="javascript:;" id="mol_menu_diatomics_a" title="Click to expand."
+											onClick="moleculeMenuSelected('mol_menu_diatomics', 'diatomics_table', 'mol_menu_diatomics_a');">
+											<span style="font-size:12px; height:16px;">Diatomics</span>
+										</a>
+									</div>
+									<div class="mol_menu_list" id="diatomics_table" style="display:none;">
+										<A HREF="JavaScript:runMolecule ('BrO')">BrO</A><BR>
+										<A HREF="JavaScript:runMolecule ('C2')">C<sub>2</sub></A><BR>
+										<A HREF="JavaScript:runMolecule ('CH')">CH</A><BR>
+										<A HREF="JavaScript:runMolecule ('CN')">CN</A><BR>
+										<A HREF="JavaScript:runMolecule ('sCO')">CO(X<sup>1</sup>&Sigma;<sup>+</sup>)</A><BR>
+										<A HREF="JavaScript:runMolecule ('tCO')">CO(a<sup>3</sup>&Pi;)</A><BR>
+										<A HREF="JavaScript:runMolecule ('Cl2')">Cl<sub>2</sub></A><BR>
+										<A HREF="JavaScript:runMolecule ('F2')">F<sub>2</sub></A><BR>
+										<A HREF="JavaScript:runMolecule ('H2')">H<sub>2</sub></A><BR>
+										<A HREF="JavaScript:runMolecule ('HCl')">HCl</A><BR>
+										<A HREF="JavaScript:runMolecule ('HF')">HF</A><BR>
+										<A HREF="JavaScript:runMolecule ('N2')">N<sub>2</sub></A><BR>
+										<A HREF="JavaScript:runMolecule ('NO')">NO</A><BR>
+										<A HREF="JavaScript:runMolecule ('O2')">O<sub>2</sub></A><BR>
+										<A HREF="JavaScript:runMolecule ('OHt')">OH(theor)</A><BR>
+										<A HREF="JavaScript:runMolecule ('OHe')">OH(exp)</A><BR>
+									</div>
+								<!-- Triatomics -->
+									<div class="home_side_menu_button" id="mol_menu_triatomics">
+										<a href="javascript:;" id="mol_menu_triatomics_a" title="Click to expand."
+											onClick="moleculeMenuSelected('mol_menu_triatomics', 'triatomics_table', 'mol_menu_triatomics_a');">
+											<span style="font-size:12px; height:16px;">Triatomics</span>
+										</a>
+									</div>
+									<div class="mol_menu_list" id="triatomics_table" style="display:none;">
+										<A HREF="JavaScript:runMolecule ('CO2')">CO<sub>2</sub></A><BR>
+										<A HREF="JavaScript:runMolecule ('CS2')">CS<sub>2</sub></A><BR>
+										<A HREF="JavaScript:runMolecule ('ClNO')">ClNO</A><BR>
+										<A HREF="JavaScript:runMolecule ('ClOO')">ClOO</A><BR>
+										<A HREF="JavaScript:runMolecule ('H2O')">H<sub>2</sub>O</A><BR>
+										<A HREF="JavaScript:runMolecule ('H2S')">H<sub>2</sub>S</A><BR>
+										<A HREF="JavaScript:runMolecule ('HCN')">HCN</A><BR>
+										<A HREF="JavaScript:runMolecule ('HO2')">HO<sub>2</sub></A><BR>
+										<A HREF="JavaScript:runMolecule ('HOBr')">HOBr</A><BR>
+										<A HREF="JavaScript:runMolecule ('HOCl')">HOCl</A><BR>
+										<A HREF="JavaScript:runMolecule ('HOI')">HOI</A><BR>
+										<A HREF="JavaScript:runMolecule ('INO')">INO</A><BR>
+										<A HREF="JavaScript:runMolecule ('N2O')">N<sub>2</sub>O</A><BR>
+										<A HREF="JavaScript:runMolecule ('NH2')">NH<sub>2</sub></A><BR>
+										<A HREF="JavaScript:runMolecule ('NO2')">NO<sub>2</sub></A><BR>
+										<A HREF="JavaScript:runMolecule ('O3')">O<sub>3</sub></A><BR>
+										<A HREF="JavaScript:runMolecule ('OCS')">OCS</A><BR>
+										<A HREF="JavaScript:runMolecule ('OClO')">OClO</A><BR>
+										<A HREF="JavaScript:runMolecule ('SO2')">SO<sub>2</sub></A><BR>
+									</div>
+								<!-- Tetratomics -->
+									<div class="home_side_menu_button" id="mol_menu_tetratomics">
+										<a href="javascript:;" id="mol_menu_tetratomics_a" title="Click to expand."
+											onClick="moleculeMenuSelected('mol_menu_tetratomics', 'tetratomics_table', 'mol_menu_tetratomics_a');">
+											<span style="font-size:12px; height:16px;">Tetratomics</span>
+										</a>
+									</div>
+									<div class="mol_menu_list" id="tetratomics_table" style="display:none;">
+										<A HREF="JavaScript:runMolecule ('C2H2')">C<sub>2</sub>H<sub>2</sub></A><BR>
+										<A HREF="JavaScript:runMolecule ('ClO3')">ClO<sub>3</sub></A><BR>
+										<A HREF="JavaScript:runMolecule ('ClNO2')">ClNO<sub>2</sub></A><BR>
+										<A HREF="JavaScript:runMolecule ('ClONO')">ClONO</A><BR>
+										<A HREF="JavaScript:runMolecule ('COCl2')">COCl<sub>2</sub></A><BR>
+										<A HREF="JavaScript:runMolecule ('COF2')">COF<sub>2</sub></A><BR>
+										<A HREF="JavaScript:runMolecule ('COFCl')">COFCl</A><BR>
+										<A HREF="JavaScript:runMolecule ('H2CO')">H<sub>2</sub>CO</A><BR>
+										<A HREF="JavaScript:runMolecule ('H2O2')">H<sub>2</sub>O<sub>2</sub></A><BR>
+										<A HREF="JavaScript:runMolecule ('HNCO')">HNCO</A><BR>
+										<A HREF="JavaScript:runMolecule ('HONO')">HONO</A><BR>
+										<A HREF="JavaScript:runMolecule ('NH3')">NH<sub>3</sub></A><BR>
+										<A HREF="JavaScript:runMolecule ('NO3')">NO<sub>3</sub></A><BR>
+										<A HREF="JavaScript:runMolecule ('PH3')">PH<sub>3</sub></A><BR>
+									</div>
+								<!-- Pentatomics -->
+									<div class="home_side_menu_button" id="mol_menu_pentatomics">
+										<a href="javascript:;" id="mol_menu_pentatomics_a" title="Click to expand."
+											onClick="moleculeMenuSelected('mol_menu_pentatomics', 'pentatomics_table', 'mol_menu_pentatomics_a');">
+											<span style="font-size:12px; height:16px;">Pentatomics</span>
+										</a>
+									</div>
+									<div class="mol_menu_list" id="pentatomics_table" style="display:none;">
+										<A HREF="JavaScript:runMolecule ('BrONO2')">BrONO<sub>2</sub></A><BR>
+										<A HREF="JavaScript:runMolecule ('CCl4')">CCl<sub>4</sub></A><BR>
+										<A HREF="JavaScript:runMolecule ('CF2Cl2')">CF<sub>2</sub>Cl<sub>2</sub></A><BR>
+										<A HREF="JavaScript:runMolecule ('CFCl3')">CFCl<sub>3</sub></A><BR>
+										<A HREF="JavaScript:runMolecule ('CH4')">CH<sub>4</sub></A><BR>
+										<A HREF="JavaScript:runMolecule ('CH3Cl')">CH<sub>3</sub>Cl</A><BR>
+										<A HREF="JavaScript:runMolecule ('ClONO2')">ClONO<sub>2</sub></A><BR>
+										<A HREF="JavaScript:runMolecule ('HCOOH')">HCOOH</A><BR>
+										<A HREF="JavaScript:runMolecule ('HC3N')">HC<sub>3</sub>N</A><BR>
+										<A HREF="JavaScript:runMolecule ('HNO3')">HNO<sub>3</sub></A><BR>
+										<A HREF="JavaScript:runMolecule ('IONO2')">IONO<sub>2</sub></A><BR>
+									</div>
+								<!-- More than 5 Atoms -->
+									<div class="home_side_menu_button" id="mol_menu_atoms">
+										<a href="javascript:;" id="mol_menu_atoms_a" title="Click to expand."
+											onClick="moleculeMenuSelected('mol_menu_atoms', 'atoms_table', 'mol_menu_atoms_a');">
+											<span style="font-size:12px; height:16px;">&gt;&nbsp;5&nbsp;Atoms</span>
+										</a>
+									</div>
+									<div class="mol_menu_list" id="atoms_table" style="display:none;">
+										<A HREF="JavaScript:runMolecule ('C2H4')">C<sub>2</sub>H<sub>4</sub></A><BR>
+										<A HREF="JavaScript:runMolecule ('C2H6')">C<sub>2</sub>H<sub>6</sub></A><BR>
+										<A HREF="JavaScript:runMolecule ('CH3CCl3')">CH<sub>3</sub>CCl<sub>3</sub></A><BR>
+										<A HREF="JavaScript:runMolecule ('CH3CHO')">CH<sub>3</sub>CHO</A><BR>
+										<A HREF="JavaScript:runMolecule ('CH3CNO5')">CH<sub>3</sub>CNO<sub>5</sub></A><BR>
+										<A HREF="JavaScript:runMolecule ('CH3O2NO2')">CH<sub>3</sub>O<sub>2</sub>NO<sub>2</sub></A><BR>
+										<A HREF="JavaScript:runMolecule ('CH3OH')">CH<sub>3</sub>OH</A><BR>
+										<A HREF="JavaScript:runMolecule ('CH3OOH')">CH<sub>3</sub>OOH</A><BR>
+										<A HREF="JavaScript:runMolecule ('CH3SSCH3')">CH<sub>3</sub>SSCH<sub>3</sub></A><BR>
+										<A HREF="JavaScript:runMolecule ('CHF2Cl')">CHF<sub>2</sub>Cl</A><BR>
+										<A HREF="JavaScript:runMolecule ('HO2NO2')">HO<sub>2</sub>NO<sub>2</sub></A><BR>
+										<A HREF="JavaScript:runMolecule ('N2O5')">N<sub>2</sub>O<sub>5</sub></A><BR>
+									</div>
+								</div>
 							</div>
 						</td>
 						<!-- HOME PAGE CONTENT AREA -->
 						<td id="main_content_td">
-							<div id="home_main_content">
-									<center><img src="./img/SunMolecules_Rings.png" alt="SunMolecules_Rings.png" height="300" width="400"></center>					
-									<P>
-									To obtain cross section data and plots, pick the
-									&quot;Photo Cross Sections&quot; button on the left.
-									</P>
-									<P>
-									To calculate photo rate coefficients and excess
-									energies in the solar radiation field, pick the appropiate
-									button on the left. This will also give you an option to obtain data and plots.
-									</P>
-									<P>
-									For more detailed information and comparisons with other data, see
-									"Solar Photo Rates for Planetary Atmospheres and Atmospheric Pollutants,"
-									W.F. Huebner, J.J. Keady, and S.P. Lyon, Astrophysics Space Sci. <b>195</b>, 1-294 (1992).
-									</P>
-									<P>
-									<!--
-									<A TARGET="_top" HREF="http://www.space.swri.edu/spacephysics/resrc/www.atomic.htm">
-									SwRI Atomic, Molecular, & Plasma Physics home page
-									</A>
-									-->
-									</P>
-									<P>
-									<FONT SIZE="-1">
-									(Interstellar and blackbody rate coefficients and excess energies under development)
-									</FONT>
-									</P>
+							<div id="main_content">
+								<table width="100%">
+									<tr>
+										<td>
+											<div id="home_text_area" style="display:block;">
+												<center><img src="./img/SunMolecules_Rings.png" alt="SunMolecules_Rings.png" height="300" width="400"></center>					
+												<P>
+												To obtain cross section data and plots, pick the
+												&quot;Photo Cross Sections&quot; button on the left.
+												</P>
+												<P>
+												To calculate photo rate coefficients and excess
+												energies in the solar radiation field, pick the appropiate
+												button on the left. This will also give you an option to obtain data and plots.
+												</P>
+												<P>
+												For more detailed information and comparisons with other data, see
+												"Solar Photo Rates for Planetary Atmospheres and Atmospheric Pollutants,"
+												W.F. Huebner, J.J. Keady, and S.P. Lyon, Astrophysics Space Sci. <b>195</b>, 1-294 (1992).
+												</P>
+												<P>
+												<!--
+												<A TARGET="_top" HREF="http://www.space.swri.edu/spacephysics/resrc/www.atomic.htm">
+												SwRI Atomic, Molecular, & Plasma Physics home page
+												</A>
+												-->
+												</P>
+												<P>
+												<FONT SIZE="-1">
+												(Interstellar and blackbody rate coefficients and excess energies under development)
+												</FONT>
+												</P>
+											</div>
+											<div id="mol_text_area" style="display:none">
+											</div>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<div id="window_area" style="display:none">
+											</div>
+										</td>
+									</tr>
+								</table>
 							</div>
 						</td>
 					</tr>
