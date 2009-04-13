@@ -1,4 +1,4 @@
-#!/bin/perl -w
+#!/usr/bin/perl -w
 
 require "vars.pl";
 require "LUTIn.txt";
@@ -92,7 +92,7 @@ sub MakeTempDirectory {
 # make a temporary directory
 
     $temp_dir = tmpnam ();
-    $temp_dir =~ s/var\/tmp/tmp\/joey/;
+#    $temp_dir =~ s/var\/tmp/tmp\/joey/;
     if (!(-e "/tmp/joey")) {
         mkdir ("/tmp/joey", 0777);
     }
@@ -191,7 +191,7 @@ sub GeneratePlot {
     $rootname = tmpnam ();
 #     $rootname =~ s/var/image2\/amop/;
     open (TMP_FILE, "> $rootname.info");
-    print TMP_FILE "set terminal gif\n";
+    print TMP_FILE "set terminal png\n";
     print TMP_FILE "set size 0.7,0.7\n";
     print TMP_FILE "set title \"Southwest Research Institute\\nBranch: $branch\"\n";
     print TMP_FILE "set xlabel \"Wavelength [A]\"\n";
@@ -204,8 +204,8 @@ sub GeneratePlot {
     print TMP_FILE "set mytics 5\n";
     print TMP_FILE "plot \"$filename\" title \"\" with steps\n";
     close (TMP_FILE);
-    $gifname = $rootname.".gif";
-    `/opt/local/bin/gnuplot $rootname.info > $gifname`;
+    $gifname = $rootname.".png";
+    `/usr/bin/gnuplot $rootname.info > $gifname`;
 
     unlink ("$rootname.info");
 

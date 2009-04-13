@@ -1,4 +1,4 @@
-#!/bin/perl
+#!/usr/bin/perl
 ######################
 # General Mail Form To Work With Any Fields
 # Created 6/9/95                Last Modified 6/11/95

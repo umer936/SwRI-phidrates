@@ -1,4 +1,4 @@
-#!/bin/perl
+#!/usr/bin/perl
 
 use IO::File;
 use POSIX qw(tmpnam);
@@ -41,7 +41,7 @@ sub MakeTempDirectory {
 # make a temporary directory
 
     $temp_dir = tmpnam ();
-    $temp_dir =~ s/var\/tmp/tmp\/joey/;
+#    $temp_dir =~ s/var\/tmp/tmp\/joey/;
     if (!(-e "/tmp/joey")) {
         mkdir ("/tmp/joey", 0777);
     }
@@ -86,11 +86,10 @@ sub CreateGIF {
 
     $gnuplot_cmds = "$temp_dir/spectrum.gp";
     $gifname = tmpnam ();
-    $gifname =~ s/var/image2\/amop/;
-    $gifname .= ".gif";
+    $gifname .= ".png";
 
     open (DATAFILE, "> $gnuplot_cmds");
-    print DATAFILE "set terminal gif\n";
+    print DATAFILE "set terminal png\n";
     print DATAFILE "set output \"$gifname\"\n";
     if ($use_semi_log eq "false") {
         print DATAFILE "set logscale xy\n";
@@ -106,10 +105,10 @@ sub CreateGIF {
     print DATAFILE "plot \"$temp_dir/PHFLUX.DAT\" with steps\n";
     close (DATAFILE);
 
-    `/opt/local/bin/gnuplot $gnuplot_cmds`;
+    `/usr/bin/gnuplot $gnuplot_cmds`;
 
     unlink ($gnuplot_cmds);
-    $gifname =~ s/\/image2\/amop\//http:\/\/amop.space.swri.edu\//g;
+#    $gifname =~ s/\/tmp\//http:\/\/phirates.space.swri.edu\/amop_data_files\//g;
     return ($gifname);
 }
 

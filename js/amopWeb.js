@@ -161,7 +161,7 @@ function moleculeMenuSelected(divName, listName, anchorName)
 function runMolecule (value) {
     if (testNumbers () != 0) return;
 
-    var URL = 'http://elmer.space.swri.edu/~joey/amop/data_files/';
+    var URL = 'http://phidrates.space.swri.edu/data_files/';
     var programToUse;
     //var useSolarActivity = parent.left_frame.useSolarActivity;
     //var justCrossSections = parent.left_frame.justCrossSections;

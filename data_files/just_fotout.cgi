@@ -1,4 +1,4 @@
-#!/bin/perl -w
+#!/usr/bin/perl -w
 
 require "vars.pl";
 require "LUTIn.txt";
@@ -110,7 +110,7 @@ sub MakeTempDirectory {
 # make a temporary directory
 
     $temp_dir = tmpnam ();
-    $temp_dir =~ s/var\/tmp/tmp\/joey/;
+#    $temp_dir =~ s/var\/tmp/tmp\/joey/;
     if (!(-e "/tmp/joey")) {
         mkdir ("/tmp/joey", 0777);
     }

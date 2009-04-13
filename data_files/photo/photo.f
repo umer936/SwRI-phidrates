@@ -572,7 +572,7 @@ C   28 call wlcv (65,680,21,21hflux active/quiet sun)
       do 40 i=1,na
 C      call convrt (angpl(i),ndxx(i),xmin,xmax,150,950)
    40 continue
-      smax=-1.d100
+      smax=-1
       do 50 j=1,na
       if (sigpl(j).lt.ymin) go to 50
       sminp=ymax-sigpl(j)

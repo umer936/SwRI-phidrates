@@ -1,4 +1,4 @@
-#!/bin/perl -w
+#!/usr/bin/perl -w
 
 require "vars.pl";
 require "LUTIn.txt";
@@ -77,7 +77,7 @@ sub PrintResults {
     }
     print "</CENTER>";
 
-    $temp_dir =~ s/\/tmp\/joey/amop_data_files/g;
+    $temp_dir =~ s/tmp/\/\/phirates.space.swri.edu\/tmp/g;
     print "<A HREF=\"/$temp_dir/BRNOUT\">Click to view or shift-click to download \
            the data file used to create this plot!</A>\n";
     print "</BODY></HTML>";
@@ -113,7 +113,7 @@ sub MakeTempDirectory {
 # make a temporary directory
 
     $temp_dir = tmpnam ();
-    $temp_dir =~ s/var\/tmp/tmp\/joey/;
+#    $temp_dir =~ s/var\/tmp/tmp\/joey/;
     if (!(-e "/tmp/joey")) {
         mkdir ("/tmp/joey", 0777);
     }
@@ -220,7 +220,7 @@ sub GeneratePlot {
     local ($gifname);
 
     open (TMP_FILE, "> /tmp/gnuplot.info");
-    print TMP_FILE "set terminal gif\n";
+    print TMP_FILE "set terminal png\n";
     print TMP_FILE "set size 0.7,0.7\n";
     print TMP_FILE "set title \"Southwest Research Institute\\nBranch: $branch\"\n";
     if ($use_electron_volts eq "true") {
@@ -240,10 +240,10 @@ sub GeneratePlot {
     close (TMP_FILE);
     $gifname = tmpnam ();
 #    $gifname =~ s/var\/tmp/amop_images/;
-    $gifname .= ".gif";
-    `/opt/local/bin/gnuplot /tmp/gnuplot.info > $gifname`;
+    $gifname .= ".png";
+    `/usr/bin/gnuplot /tmp/gnuplot.info > $gifname`;
 
     unlink ("/tmp/gnuplot.info");
-    $gifname =~ s/\/var\/tmp/\/amop_images/g;
+    $gifname =~ s/\/tmp/\/amop_images/g;
     return ($gifname);
 }
