@@ -109,14 +109,14 @@ function homeSideMenuSelected(divName)
 	{
 		document.getElementById('side_menu_info_div').className='home_side_menu_button_sel';
 		document.getElementById('side_menu_contact_div').className='home_side_menu_button';
-		document.getElementById('side_menu_questionnaire_div').className='home_side_menu_button';
+//		document.getElementById('side_menu_questionnaire_div').className='home_side_menu_button';
 		new Ajax.Updater('home_text_area', './home_info.html', {evalScripts:true});
 	}
 	else if(divName == 'side_menu_contact_div')
 	{
 		document.getElementById('side_menu_contact_div').className='home_side_menu_button_sel';
 		document.getElementById('side_menu_info_div').className='home_side_menu_button';
-		document.getElementById('side_menu_questionnaire_div').className='home_side_menu_button';
+//		document.getElementById('side_menu_questionnaire_div').className='home_side_menu_button';
 		new Ajax.Updater('home_text_area', './contacts.html', {evalScripts:true});
 	}
 	else if(divName == 'side_menu_questionnaire_div')
