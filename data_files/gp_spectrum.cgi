@@ -108,7 +108,6 @@ sub CreateGIF {
     `/usr/bin/gnuplot $gnuplot_cmds`;
 
     unlink ($gnuplot_cmds);
-#    $gifname =~ s/\/tmp\//http:\/\/phirates.space.swri.edu\/amop_data_files\//g;
     return ($gifname);
 }
 
