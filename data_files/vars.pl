@@ -1,6 +1,6 @@
 # $amop_site = "http:\/\/amop.space.swri.edu\/";
 
-$amop_site = "http:\/\/phirates.space.swri.edu\/";
+$amop_site = "http:\/\/phidrates.space.swri.edu\/";
 
 $amop_cgi_bin_dir = "/web/phidrates/data_files";
 
