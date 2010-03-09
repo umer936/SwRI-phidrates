@@ -5,7 +5,7 @@ require "LUTIn.txt";
 require "LUTOut.txt";
 
 use IO::File;
-use POSIX qw(tmpnam);
+use File::Temp qw/ tempfile tempdir /;
 
 ################################################################
 #  parse QUERY_STRING -> filename; display file
@@ -16,6 +16,11 @@ use POSIX qw(tmpnam);
 $use_semi_log = "false";
 $solar_activity = "0.0";
 @ref_list = ();
+
+# this is where the aliases in httpd.conf is set and where the temp files will be written!
+
+$prefix = "/tmp/phidrates";
+$reg_exp_prefix = "\/tmp\/phidrates";
 
 # convert variables to a value
 
@@ -63,7 +68,7 @@ sub PrintResults {
         if ($branches[$bnum+2] eq "Sigma") {
             $branches[$bnum+2] = "Total";
         }
-        $gifname = &GeneratePlot ("branch.$bnum", $branches[$bnum+2]);
+        $gifname = &GeneratePlot ($temp_dir, "branch.$bnum", $branches[$bnum+2]);
         $nice_name = &ConvertCanonicalOutputName ($branches[$bnum+2]);
         if (!defined ($nice_name)) {
             print "<H2>$branches[$bnum + 2]</H2>";
@@ -77,8 +82,10 @@ sub PrintResults {
     }
     print "</CENTER>";
 
-    $temp_dir =~ s/tmp/\/\/phirates.space.swri.edu\/tmp/g;
-    print "<A HREF=\"/$temp_dir/BRNOUT\">Click to view or shift-click to download \
+    my $url_temp_dir = $temp_dir;
+    $url_temp_dir =~ s/$reg_exp_prefix/..\/amop_images/g;
+
+    print "<A HREF=\"/$url_temp_dir/BRNOUT\"> Click to view or shift-click to download \
            the data file used to create this plot!</A>\n";
     print "</BODY></HTML>";
 }
@@ -112,12 +119,14 @@ sub MakeTempDirectory {
 
 # make a temporary directory
 
-    $temp_dir = tmpnam ();
-#    $temp_dir =~ s/var\/tmp/tmp\/joey/;
-    if (!(-e "/tmp/joey")) {
-        mkdir ("/tmp/joey", 0777);
+    if (!(-e $prefix)) {
+        mkdir ($prefix, 0777);
     }
-    mkdir ($temp_dir, 0777);
+
+    $temp_dir = tempdir (TEMPLATE => 'fileXXXXXX',
+                         DIR => $prefix,
+                         CLEANUP => 0);
+    chmod (0755, $temp_dir);
     return ($temp_dir);
 }
 
@@ -215,11 +224,15 @@ sub GenerateBranches {
 
 sub GeneratePlot {
 
-    local ($filename) = $_ [0];
-    local ($branch) = $_ [1];
+    local ($tempdir) = $_ [0];
+    local ($filename) = $_ [1];
+    local ($branch) = $_ [2];
     local ($gifname);
 
-    open (TMP_FILE, "> /tmp/gnuplot.info");
+    my ($fh, $gnuinfo) = tempfile (TEMPLATE => 'gnu_XXXXXX',
+                                   DIR => $tempdir, CLEANUP => 1,
+                                   SUFFIX => '.info');
+    open (TMP_FILE, "> ".$gnuinfo) || die ("Can't open $gnuinfo\n");
     print TMP_FILE "set terminal png\n";
     print TMP_FILE "set size 0.7,0.7\n";
     print TMP_FILE "set title \"Southwest Research Institute\\nBranch: $branch\"\n";
@@ -238,12 +251,22 @@ sub GeneratePlot {
     print TMP_FILE "set mxtics 10\n";
     print TMP_FILE "plot \"$filename\" title \"\" with lines\n";
     close (TMP_FILE);
-    $gifname = tmpnam ();
-#    $gifname =~ s/var\/tmp/amop_images/;
-    $gifname .= ".png";
-    `/usr/bin/gnuplot /tmp/gnuplot.info > $gifname`;
+    my ($fh2, $gifname) = tempfile (TEMPLATE => 'XXXXXX',
+                                   DIR => $tempdir,
+                                   CLEANUP => 0,
+                                   SUFFIX => '.png');
+    system ("/usr/bin/gnuplot $gnuinfo > $gifname");
+    if ($? == -1) {
+        print "failed to execute: $!\n";
+    } elsif ($? & 127) {
+        printf "child died with signal %d, %s coredump\n",
+        ($? & 127),  ($? & 128) ? 'with' : 'without';
+    } else {
+#        printf "child exited with value %d\n", $? >> 8;
+    }
 
-    unlink ("/tmp/gnuplot.info");
-    $gifname =~ s/\/tmp/\/amop_images/g;
-    return ($gifname);
+    chmod (0644, $gifname);
+    $plotname = $gifname;
+    $plotname =~ s/$reg_exp_prefix/..\/amop_images/g;
+    return ($plotname);
 }
