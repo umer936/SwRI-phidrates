@@ -46,6 +46,10 @@ sub PrintResults {
     print "\n";
     print "<P>";
     chdir ($temp_dir);
+    print "</CENTER>";
+    print "<A HREF=\"$temp_dir/FOTOUT\">Click here to view or shift-click to \
+           download the data file used to create this plot!</A>\n";
+    print "<CENTER>";
     $num_branches = &GenerateBranches ();
     $bnum = 1;
     while ($bnum <= $num_branches) {
@@ -65,7 +69,7 @@ sub PrintResults {
     }
     print "</CENTER>";
 
-    print "<A HREF=\"$temp_dir/FOTOUT\">Click to view or shift-click to \
+    print "<A HREF=\"$temp_dir/FOTOUT\">Click here to view or shift-click to \
            download the data file used to create this plot!</A>\n";
     print "</BODY></HTML>";
 }

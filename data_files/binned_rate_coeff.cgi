@@ -46,6 +46,10 @@ sub PrintResults {
     print "\n";
     print "<P>";
     chdir ($temp_dir);
+    print "</CENTER>";
+    print "<A HREF=\"$temp_dir/RATOUT\">Click here to view or shift-click to \
+           download the data wavelength-integrated over each bin!</A>\n";
+    print "<CENTER>";
     $num_branches = &GenerateBranches ();
     $bnum = 1;
     while ($bnum <= $num_branches) {
@@ -61,8 +65,7 @@ sub PrintResults {
         $bnum++;
     }
     print "</CENTER>";
-
-    print "<A HREF=\"$temp_dir/RATOUT\">Click to view or shift-click to \
+    print "<A HREF=\"$temp_dir/RATOUT\">Click here to view or shift-click to \
            download the data wavelength-integrated over each bin!</A>\n";
     print "</BODY></HTML>";
 }
