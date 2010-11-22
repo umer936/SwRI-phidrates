@@ -63,10 +63,11 @@ sub PrintResults {
     print "<P>";
     chdir ($temp_dir);
     my $url_temp_dir = $temp_dir;
-    $url_temp_dir =~ s/$reg_exp_prefix/..\/amop_images/g;
+    $url_temp_dir =~ s/$reg_exp_prefix/\/amop_images/g;
+    $url_temp_dir =~ s/tmp//;
 
     print "</CENTER>";
-    print "<A HREF=\"/$url_temp_dir/BRNOUT\"> Click here to view or shift-click to download \
+    print "<A HREF=\"$url_temp_dir/BRNOUT\"> Click here to view or shift-click to download \
            the data file used to create this plot!</A>\n";
     print "<CENTER>";
     $num_branches = &GenerateBranches ();
@@ -89,7 +90,7 @@ sub PrintResults {
     }
     print "</CENTER>";
 
-    print "<A HREF=\"/$url_temp_dir/BRNOUT\"> Click here to view or shift-click to download \
+    print "<A HREF=\"$url_temp_dir/BRNOUT\"> Click here to view or shift-click to download \
            the data file used to create this plot!</A>\n";
     print "</BODY></HTML>";
 }
