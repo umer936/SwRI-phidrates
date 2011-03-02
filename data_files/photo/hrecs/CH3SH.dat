@@ -1,0 +1,17 @@
+         5      0.00   3095.   CH3SH    MS/H        26
+M stands for methyl radical (CH3)
+Branching ratio:
+Lambda = 1930. and 2220. A:
+   Vaghjiani, G., L. (1993)
+   J. Chem. Phys. 99, 5938.
+Lambda = 2540. A:
+   Steer, R. P., Knight, A. R. (1968)
+   J. Phys. Chem. 72, 2145.
+
+      0.60  1.00E-01
+   1930.00  4.90E-01
+   2220.00  9.50E-01
+   2540.00  1.00E 00
+   3095.00  1.00E 00
+         0      0.00   3095.   CH3SH    M/SH        26
+***
