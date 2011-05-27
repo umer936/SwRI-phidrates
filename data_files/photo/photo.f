@@ -678,7 +678,17 @@ C
       flx=radflx(2*i)
 *      if(i .lt. 163) flx=radflx(2*i) + sa*(flxrat(i) - 1.)*radflx(2*i)
       rate=xsect*flx
-      if (wave1.eq.0.) wave1=0.1
+      ! if (wave1.eq.0.) wave1=0.1
+      if(Wave1 < 1.0E-06) then     ! NEW 2/27/11 replaces: if(Wave1 == 0.) then
+        Wave1 = 0.1
+      else if(Wave1 > Thresh) then     ! NEW 2/27/11
+        Wave1 = Thresh                 ! NEW 2/27/11
+      else
+      end if
+      if(Wave2 > Thresh) then          ! NEW 2/27/11
+        Wave2 = Thresh                 ! NEW 2/27/11
+      else                             ! NEW 2/27/11
+      end if                           ! NEW 2/27/11
       wavel=2.*wave1*wave2/(wave1+wave2)
       enelec=angev/wavel-angev/thresh
       trate=trate+rate
