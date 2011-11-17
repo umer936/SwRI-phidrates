@@ -55,11 +55,24 @@ C     Initialize subroutine
 C     Read mother molecule information
       READ(1, 220, IOSTAT=IOS1) NS, ANGST1, ANGSTL, (MOTHER(I), I=1,2),
      1     NUM(1), KAT(1)
-      IF(IOS1) 30, 50, 40
-   30 IEND = 1
-      RETURN
-   40 STOP 'ERROR1'
-   50 IF(NUM(1) .NE. 0) NAM(1) = MOTHER(2)
+      if(IOS1 < 0) then
+        write (unit = *, fmt = *) "End of HRec file:", IOS1
+        IEND = 1
+        return
+      else if(IOS1 > 0) then
+        write (unit = *, fmt = *) "HRec input error:", IOS1
+        stop
+      else
+      end if
+c     IF(IOS1) 30, 50, 40
+c   30 IEND = 1
+c      RETURN
+c   40 STOP 'ERROR1'
+c   50 IF(NUM(1) .NE. 0) NAM(1) = MOTHER(2)
+      if (NUM(1) /= 0) then
+         NAM(1) = MOTHER(2)
+      else
+      end if
       THRSH(1) = ANGSTL
       WRITE(2, 180) (MOTHER(I),I=1,2)
 C     Read references for mother molecule
@@ -289,9 +302,18 @@ C     NEXT 3 lines for diagnostic print only.  Not set up for plotting
       ratepl(i)=0.
    80 continue
       read (4, 400, IOSTAT=IOS4) ns, angst1, angstl, (name(i),i=1,2)
-      if (IOS4) 300, 90, 85
-   85 STOP 'ERROR4'
-   90 continue
+      if (IOS4 > 0) then
+        write (unit = *, fmt = *) "Error unit 4"
+        stop
+      else
+        if (IOS4 < 0) then
+           go to 300
+        else
+        end if
+      end if
+c     if (IOS4) 300, 90, 85
+c  85 STOP 'ERROR4'
+c  90 continue
       iprnt=iprnt+1
       if (iprnt.eq.1) go to 100
       if (iprnt.gt.16) go to 300
@@ -300,8 +322,14 @@ C     NEXT 3 lines for diagnostic print only.  Not set up for plotting
       if (ns.lt.0) go to 380
       read (4, 410) (angsts(i),sigma(i),i=1,ns)
       do 110 i=1,ns
-      if (sigma(i) .LE. 1.E-50) sigpl(i)=-50.
-      if (sigma(i). GT. 1.E-50) sigpl(i)=alog10(sigma(i))
+      if (sigma(i) .LE. 1.E-30) then
+         sigpl(i)=-30.
+      end if
+c     if (sigma(i) .LE. 1.E-50) sigpl(i)=-50.
+      if (sigma(i). GT. 1.E-30) then
+        sigpl(i)=alog10(sigma(i))
+      end if
+c     if (sigma(i). GT. 1.E-50) sigpl(i)=alog10(sigma(i))
   110 continue
       if (angst1.ge.angstl) go to 370
       if (angst1.lt.angstf(1)) go to 370
@@ -330,7 +358,14 @@ c     if (xsct(1).le.0..or.angst1.eq.0.) xsct(1)=1.e-50
       do 170 i=i1,il
   130 continue
       j=j+1
-      if (angsts(i)-angstf(n)) 140,150,160
+      if (angsts(i) < 0.999*angstf(n)) then
+        go to 140
+      else if (angsts(i) > 1.001*angstf(n)) then
+        go to 160
+      else
+        go to 150
+      end if
+c      if (angsts(i)-angstf(n)) 140,150,160
   140 continue
       angx(j)=angsts(i)
       xsct(j)=sigma(i)
@@ -391,7 +426,11 @@ c.....MAXN is subscript of last non-zero cross section
       angpl(i)=angstf(n)
       angpl(i+1)=angstf(n+1)
 c     if (xsctn(n,iprnt).eq.0.) xsctn(n,iprnt)=1.e-50
-      if (xsctn(n,iprnt).le. 1.E-50) go to 260
+      if (xsctn(n,iprnt) < 1.E-30) then
+        go to 260
+      else
+      end if
+c     if (xsctn(n,iprnt).le. 1.E-50) go to 260
       xsctpl(i)=alog10(xsctn(n,iprnt))
       ratepl(i)=alog10(xsctn(n,iprnt)*flux(n)/(angpl(i+1)-angpl(i)))
       go to 270
@@ -414,7 +453,12 @@ c     if (xsctn(n,iprnt).eq.0.) xsctn(n,iprnt)=1.e-50
       ij=i+4
       WRITE(16, 430) ANGSTF(I), (XSECPU(J),J=I,IJ), (NAME(K),K=1,2)
   290 continue
-      if (nsets-iprnt) 300,300,50
+      if (nsets <= iprnt) then
+        go to 300
+      else
+        go to 50
+      end if
+c     if (nsets-iprnt) 300,300,50
   300 continue
       nampr=name(1)
       if (nsets.le.0) nsets=1
@@ -624,7 +668,14 @@ C     NAMCRS(16) and NAMPR are new
       iprnt = iprnt + 1
       k=k+1
       read (16, 150, IOSTAT=IOS16) MAXN
-      if (IOS16) 90, 20, 15
+      if (ios16 < 0) then
+        go to 90
+      else if (ios16 == 0) then
+        go to 20
+      else 
+        go to 15
+      end if
+c     if (IOS16) 90, 20, 15
    15 STOP 'ERROR16'
    20 continue
       if (MAXN.le.0) go to 90
