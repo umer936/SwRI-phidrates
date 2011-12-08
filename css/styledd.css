@@ -1,0 +1,139 @@
+ul2, li, nav2 {
+  margin:0;
+  padding:0;
+  border:0;
+  outline:0;
+  font-size:100%;
+  vertical-align:baseline;
+  background:transparent;
+}                  
+nav2 { 
+    display: block;
+	width: 900px; /*width of molecule navigation */
+}
+nav2 ul2 { list-style:none; }
+
+a:hover, a:active { outline: none; }
+a, a:active, a:visited { color: #607890; }
+a:hover { color: #036; }
+
+ul2 { margin-left: 1.8em; }
+
+
+nav2 ul2 {
+	width: 960px;
+	height: 35px;
+	overflow: hidden;
+	border: solid 1px #ccc;
+	margin: 0 auto;
+}
+
+	nav2 ul2 li {
+		float: left;
+	}
+
+		nav2 ul2 li a, nav2 ul2 li a:link, nav2 ul2 li a:visited {
+			display: block;
+			height: 35px;
+			padding: 0 20px;
+			float: left;
+			line-height: 30px;
+			text-decoration: none;
+			border-right: solid 1px #ccc;
+		}
+
+		nav2 ul2 li a:hover, nav2 ul2 li a:active {
+			color: black;	
+		}
+		
+		nav2 ul2 li a.active, nav2 ul2 li a.active:link, nav2 ul2 li a.active:visited {
+			background: #ccc;
+			color: #fff;
+		}
+	
+		nav2 ul2 li a span {
+			color: #ccc;
+			font-size: 11px;
+			_font-size: 9px; /* for IE6 */
+		}
+		
+		nav2 ul2 li a.active span {
+			color: #fff;
+			font-size: 11px;
+			_font-size: 9px; /* for IE6 */
+		}
+
+	#dropdown {
+		width: 900px; /* WIDTH OF MOLECULE DROPDOWN */
+		height: 210px; /* HEIGHT OF MOLECULE DROPDOWN */
+		margin: 0 auto;
+		border: solid 1px #000;
+		border-top: none;
+		display: none;
+		position: relative;
+		overflow: hidden;
+		
+	}
+	
+		#ajax {
+			padding: 10px;
+		}
+		
+			#ajax h2 {
+				text-align: center;
+				font-size: 16px;
+				color: #f00;
+			}
+	
+	.loading {
+		background: transparent url(../img/loading.gif) no-repeat center center;
+	}
+	
+
+
+	
+	.close {
+		position: absolute;
+		top: 10px;
+		right: 10px;
+	}
+	
+	.close a{
+		color: #F00;
+		font-weight:bold;
+	}	
+	
+	#ajax ul {
+		
+		width: 700px;
+		padding: 0 30px 0 0;
+	}
+	
+	
+	
+		#ajax ul li {
+			padding: 3px 0;
+		}
+
+
+
+ul3{
+    margin: 0 auto;
+    padding: 0;
+}
+
+/* The wider the #list_wrapper is, the more columns will fit in it */
+#list_wrapper{
+    width: 800px
+}
+
+/* The wider this li is, the fewer columns there will be */
+    ul3.multiple_columns li{
+        text-align: left;
+        float: left;
+        list-style: none;
+        height: 30px;
+        width: 100px;
+    }
+
+		
