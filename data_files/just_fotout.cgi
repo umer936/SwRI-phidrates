@@ -38,7 +38,8 @@ sub PrintResults {
     print "Content-type: text/html\n\n";
     print "<HTML><HEAD><TITLE>$molecule</TITLE></HEAD>\n";
 #    print "<BODY BGCOLOR=\"#000000\" TEXT=\"#00ff00\" LINK=\"#00ffff\" VLINK=\"#33ff00\">";
-    print "<BODY><CENTER>";
+    #print "<BODY><CENTER>";
+	print "<BODY>";
 #    print "Temp Dir = $temp_dir   Input = $input\n";
     $nice_name = &ConvertCanonicalInputName ($molecule);
     if (defined ($nice_name)) {
@@ -66,7 +67,7 @@ sub PrintResults {
     $line2 =~ s/ Av. Excess E = //g;
     $line2 =~ s/^\s+//g;
 #    print "<P>$line<P>\n";
-    print "<TABLE BORDER=2 CELLPADDING = 5><TR><TH>Branch</TH>";
+    print "<TABLE><TR><TH>Branch</TH>";
     print "<TH>Rate Coeffs.<BR>[s<sup>-1</sup>]</TH><TH>Excess Energies<BR>[eV]</TH></TR><TR>\n";
     @rates_val = split (/\s+/, $line);
     @energy_val = split (/\s+/, $line2);
@@ -84,7 +85,8 @@ sub PrintResults {
         $i++;
     }
     print "</TABLE>";
-    print "</CENTER>";
+    #print "</CENTER>";
+	print "<HR align=\"center\" width=\"50%\" size=\"1\"><br>";
     print "</BODY></HTML>";
 }
 

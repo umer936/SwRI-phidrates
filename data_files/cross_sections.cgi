@@ -48,10 +48,11 @@ sub PrintResults {
     local ($molecule, $temp_dir) = @_;
     local ($nice_name);
 
-    print "Content-type: text/html\n\n";
-    print "<HTML><HEAD><TITLE>Cross Sections of $molecule</TITLE></HEAD>\n";
-    print "<BODY BGCOLOR=\"#000000\" TEXT=\"#00ff00\" LINK=\"#00ffff\" VLINK=\"#33ff00\">";
-    print "<CENTER>";
+	print "Content-type: video/mpeg\n\n";
+
+    #print "<HTML><HEAD><TITLE>Cross Sections of $molecule</TITLE></HEAD>\n";
+    #print "<BODY BGCOLOR=\"#000000\" TEXT=\"#00ff00\" LINK=\"#00ffff\" VLINK=\"#33ff00\">";
+    #print "<CENTER>";
     $nice_name = &ConvertCanonicalInputName ($molecule);
     if (!defined ($nice_name)) {
         print "<H1>Cross Sections of $molecule\n</H1>";
@@ -66,10 +67,12 @@ sub PrintResults {
     $url_temp_dir =~ s/$reg_exp_prefix/\/amop_images/g;
     $url_temp_dir =~ s/tmp//;
 
-    print "</CENTER>";
-    print "<A HREF=\"$url_temp_dir/BRNOUT\"> Click here to view or shift-click to download \
-           the data file used to create this plot!</A>\n";
-    print "<CENTER>";
+    #print "</CENTER>";
+    print "<A class=\"btn\" HREF=\"$url_temp_dir/BRNOUT\"><span>Click here to view or shift-click to download \
+           the data file used to create this plot!</span></A>\n";   
+		   
+		   
+    #print "<CENTER>";
     $num_branches = &GenerateBranches ();
     $bnum = 0;
     while ($bnum <= $num_branches) {
@@ -88,11 +91,17 @@ sub PrintResults {
         unlink ("branch.$bnum");
         $bnum++;
     }
-    print "</CENTER>";
+    #print "</CENTER>";
 
-    print "<A HREF=\"$url_temp_dir/BRNOUT\"> Click here to view or shift-click to download \
-           the data file used to create this plot!</A>\n";
-    print "</BODY></HTML>";
+    print "<A class=\"btn\" HREF=\"$url_temp_dir/BRNOUT\"><span>Click here to view or shift-click to download \
+           the data file used to create this plot!</span></A>\n";
+    print "<HR align=\"center\" width=\"50%\" size=\"1\">";
+
+	
+
+	
+	
+	print "</BODY></HTML>";
 }
 
 sub RunPhotoRat {

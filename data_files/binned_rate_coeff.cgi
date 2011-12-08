@@ -39,17 +39,17 @@ sub PrintResults {
     print "Content-type: text/html\n\n";
     print "<HTML><HEAD><TITLE>Binned Rate Coefficients of $molecule</TITLE></HEAD>\n";
     print "<BODY BGCOLOR=\"#000000\" TEXT=\"#00ff00\" LINK=\"#00ffff\" VLINK=\"#33ff00\">";
-    print "<CENTER>";
+    #print "<CENTER>";
 #    print "Temp Dir = $temp_dir   Input = $input\n";
     $nice_name = &ConvertCanonicalInputName ($molecule);
     print "<H1>Binned Rate Coefficients of $nice_name</H1>\n";
     print "\n";
     print "<P>";
     chdir ($temp_dir);
-    print "</CENTER>";
-    print "<A HREF=\"$temp_dir/RATOUT\">Click here to view or shift-click to \
-           download the data wavelength-integrated over each bin!</A>\n";
-    print "<CENTER>";
+    #print "</CENTER>";
+    print "<A class=\"btn\" HREF=\"$temp_dir/RATOUT\"><span>Click here to view or shift-click to \ 
+           download the data wavelength-integrated over each bin!</span></A>\n";
+    #print "<CENTER>";
     $num_branches = &GenerateBranches ();
     $bnum = 1;
     while ($bnum <= $num_branches) {
@@ -64,10 +64,11 @@ sub PrintResults {
         unlink ("branch_r.$bnum");
         $bnum++;
     }
-    print "</CENTER>";
-    print "<A HREF=\"$temp_dir/RATOUT\">Click here to view or shift-click to \
-           download the data wavelength-integrated over each bin!</A>\n";
-    print "</BODY></HTML>";
+    #print "</CENTER>";
+    print "<A class=\"btn\" HREF=\"$temp_dir/RATOUT\"><span>Click here to view or shift-click to \
+           download the data wavelength-integrated over each bin!</span></A>\n";
+    print "<br><br><HR align=\"center\" width=\"50%\" size=\"1\"><br>";
+	print "</BODY></HTML>";
 }
 
 sub RunPhotoRat {

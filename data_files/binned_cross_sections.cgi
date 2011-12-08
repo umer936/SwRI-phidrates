@@ -39,17 +39,17 @@ sub PrintResults {
     print "Content-type: text/html\n\n";
     print "<HTML><HEAD><TITLE>Binned Cross Sections of $molecule</TITLE></HEAD>\n";
     print "<BODY BGCOLOR=\"#000000\" TEXT=\"#00ff00\" LINK=\"#00ffff\" VLINK=\"#33ff00\">";
-    print "<CENTER>";
+    #print "<CENTER>";
 #    print "Temp Dir = $temp_dir   Input = $input\n";
     $nice_name = &ConvertCanonicalInputName ($molecule);
     print "<H1>Binned Cross Sections of $nice_name</H1>\n";
     print "\n";
     print "<P>";
     chdir ($temp_dir);
-    print "</CENTER>";
-    print "<A HREF=\"$temp_dir/FOTOUT\">Click here to view or shift-click to \
-           download the data file used to create this plot!</A>\n";
-    print "<CENTER>";
+    #print "</CENTER>";
+    print "<A class=\"btn\" HREF=\"$temp_dir/FOTOUT\"><span>Click here to view or shift-click to \
+           download the data file used to create this plot!</span></A>\n";
+    #print "<CENTER>";
     $num_branches = &GenerateBranches ();
     $bnum = 1;
     while ($bnum <= $num_branches) {
@@ -67,10 +67,12 @@ sub PrintResults {
         unlink ("branch.$bnum");
         $bnum++;
     }
-    print "</CENTER>";
+    #print "</CENTER>";
 
-    print "<A HREF=\"$temp_dir/FOTOUT\">Click here to view or shift-click to \
-           download the data file used to create this plot!</A>\n";
+    print "<A class=\"btn\" HREF=\"$temp_dir/FOTOUT\"><span>Click here to view or shift-click to \
+           download the data file used to create this plot!</span></A>\n";
+		   
+	print "<br><br><HR align=\"center\" width=\"50%\" size=\"1\"><br>";	   
     print "</BODY></HTML>";
 }
 

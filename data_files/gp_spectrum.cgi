@@ -30,8 +30,12 @@ $temp_dir = &MakeTempDirectory ();
 $gifname = &CreateGIF ($temp_dir);
 
 print "<HTML><HEAD><TITLE>Solar Spectrum</TITLE></HEAD>\n";
-print "<BODY><P>Solar Spectrum<P></BODY>";
-print "<IMG SRC=\"$gifname\"><P></BODY></HTML>";
+print "<BODY><H1>Solar Spectrum</H1>";
+
+print "<IMG SRC=\"$gifname\">";
+print "<br><br><HR align=\"center\" width=\"50%\" size=\"1\"><br>";
+
+print "</BODY></HTML>";
 exit (0);
 
 sub MakeTempDirectory {
