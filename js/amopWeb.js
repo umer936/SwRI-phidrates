@@ -8,6 +8,39 @@ var useXAxisUnit = false;
 var molDivCounter = 0;
 
 function processLink (value) {
+
+
+$('window_area').update();
+// -> HTMLElement
+$('window_area').innerHTML;
+// -> '' (an empty string)
+
+$('tab1_area').update();
+// -> HTMLElement
+$('tab1_area').innerHTML;
+// -> '' (an empty string)
+
+
+$('tab2_area').update();
+// -> HTMLElement
+$('tab2_area').innerHTML;
+// -> '' (an empty string)
+
+
+$('tab3_area').update();
+// -> HTMLElement
+$('tab3_area').innerHTML;
+// -> '' (an empty string)
+
+
+$('tab4_area').update();
+// -> HTMLElement
+$('tab4_area').innerHTML;
+// -> '' (an empty string)
+
+
+
+
     justCrossSections = false;
 		if(value=="home") {
 				document.getElementById('home').className='main_tabs_link_div_sel';
@@ -15,34 +48,72 @@ function processLink (value) {
 				document.getElementById('blackbody').className='main_tabs_link_div';
 				document.getElementById('interstellar').className='main_tabs_link_div';
 				document.getElementById('solar').className='main_tabs_link_div';
-				//new Ajax.Updater('main_body', './home.html', {evalScripts:true});
+
+
+
+				
 				if(document.getElementById('side_menu_for_home_page').style.display=='none')
 				{
+
 					document.getElementById('molecule_side_menu').style.display='none';
 					document.getElementById('window_area').style.display='none';
 					document.getElementById('mol_text_area').style.display='none';
 					document.getElementById('side_menu_for_home_page').style.display='block';
 					document.getElementById('home_text_area').style.display='block';
+					
+					document.getElementById('tab1_area').style.display='none';
+					document.getElementById('tab2_area').style.display='none';
+					document.getElementById('tab3_area').style.display='none';
+					document.getElementById('tab4_area').style.display='none';
+					
 				}
 		}
-    else if (value == "photo") {
-        useXAxisUnit = true;
+
+
+
+
+
+		else if (value == "photo") {
+		useXAxisUnit = true;
         justCrossSections = true;
 				document.getElementById('photo').className='main_tabs_link_div_sel';
 				document.getElementById('home').className='main_tabs_link_div';
 				document.getElementById('blackbody').className='main_tabs_link_div';
 				document.getElementById('interstellar').className='main_tabs_link_div';
 				document.getElementById('solar').className='main_tabs_link_div';
-				new Ajax.Updater('mol_text_area', './photo_form.html', {evalScripts:true});
-				if(document.getElementById('molecule_side_menu').style.display=='none')
-				{
-					document.getElementById('side_menu_for_home_page').style.display='none';
-					document.getElementById('home_text_area').style.display='none';
-					document.getElementById('mol_text_area').style.display='block';
-					document.getElementById('molecule_side_menu').style.display='block';
-					document.getElementById('window_area').style.display='block';
-				}
-    } else if (value == "blackbody") {
+								new Ajax.Updater('mol_text_area', './photo_form.html', {evalScripts:true});
+								
+								
+/*** This ensures "Home" and "Info" content shows when the other side links are clicked before the top links. ****/
+document.getElementById('side_menu_info_div').className='home_side_menu_button';
+document.getElementById('side_menu_photonspectra_div').className='home_side_menu_button';
+document.getElementById('side_menu_usingwebsite_div').className='home_side_menu_button';
+document.getElementById('side_menu_references_div').className='home_side_menu_button';
+document.getElementById('side_menu_contact_div').className='home_side_menu_button';
+				
+/**************/
+								
+				
+
+								if(document.getElementById('molecule_side_menu').style.display=='none')
+								{
+									document.getElementById('side_menu_for_home_page').style.display='none';
+									document.getElementById('home_text_area').style.display='none';
+									document.getElementById('mol_text_area').style.display='block';
+									document.getElementById('molecule_side_menu').style.display='block';
+									document.getElementById('window_area').style.display='block';
+									
+									document.getElementById('tab1_area').style.display='block';
+									document.getElementById('tab2_area').style.display='block';
+									document.getElementById('tab3_area').style.display='block';
+									document.getElementById('tab4_area').style.display='block';
+									
+								}									
+								
+    } 
+	
+	
+	else if (value == "blackbody") {
                useTemp = true;
                useOpticalDepth = true;
                useSolarActivity = false;
@@ -53,6 +124,16 @@ function processLink (value) {
 								document.getElementById('interstellar').className='main_tabs_link_div';
 								document.getElementById('solar').className='main_tabs_link_div';
 								new Ajax.Updater('mol_text_area', './blackbody_form.html', {evalScripts:true});
+								
+/*** This ensures "Home" and "Info" content shows when the other side links are clicked before the top links. ****/
+document.getElementById('side_menu_info_div').className='home_side_menu_button';
+document.getElementById('side_menu_photonspectra_div').className='home_side_menu_button';
+document.getElementById('side_menu_usingwebsite_div').className='home_side_menu_button';
+document.getElementById('side_menu_references_div').className='home_side_menu_button';
+document.getElementById('side_menu_contact_div').className='home_side_menu_button';
+				
+/**************/								
+								
 								if(document.getElementById('molecule_side_menu').style.display=='none')
 								{
 									document.getElementById('side_menu_for_home_page').style.display='none';
@@ -60,8 +141,18 @@ function processLink (value) {
 									document.getElementById('mol_text_area').style.display='block';
 									document.getElementById('molecule_side_menu').style.display='block';
 									document.getElementById('window_area').style.display='block';
+									
+									document.getElementById('tab1_area').style.display='block';
+									document.getElementById('tab2_area').style.display='block';
+									document.getElementById('tab3_area').style.display='block';
+									document.getElementById('tab4_area').style.display='block';
 								}
-    } else if (value == "interstellar") {
+    } 
+	
+	
+	
+	
+	else if (value == "interstellar") {
                useTemp = false;
                useOpticalDepth = true;
                useSolarActivity = false;
@@ -72,6 +163,16 @@ function processLink (value) {
 								document.getElementById('blackbody').className='main_tabs_link_div';
 								document.getElementById('solar').className='main_tabs_link_div';
 								new Ajax.Updater('mol_text_area', './interstellar_form.html', {evalScripts:true});
+
+/*** This ensures "Home" and "Info" content shows when the other side links are clicked before the top links. ****/
+document.getElementById('side_menu_info_div').className='home_side_menu_button';
+document.getElementById('side_menu_photonspectra_div').className='home_side_menu_button';
+document.getElementById('side_menu_usingwebsite_div').className='home_side_menu_button';
+document.getElementById('side_menu_references_div').className='home_side_menu_button';
+document.getElementById('side_menu_contact_div').className='home_side_menu_button';
+				
+/**************/								
+								
 								if(document.getElementById('molecule_side_menu').style.display=='none')
 								{
 									document.getElementById('side_menu_for_home_page').style.display='none';
@@ -79,6 +180,11 @@ function processLink (value) {
 									document.getElementById('mol_text_area').style.display='block';
 									document.getElementById('molecule_side_menu').style.display='block';
 									document.getElementById('window_area').style.display='block';
+									
+									document.getElementById('tab1_area').style.display='block';
+									document.getElementById('tab2_area').style.display='block';
+									document.getElementById('tab3_area').style.display='block';
+									document.getElementById('tab4_area').style.display='block';
 								}
     } else if (value == "solar") {
                useTemp = false;
@@ -91,6 +197,16 @@ function processLink (value) {
 								document.getElementById('blackbody').className='main_tabs_link_div';
 								document.getElementById('interstellar').className='main_tabs_link_div';
 								new Ajax.Updater('mol_text_area', './solar_form.html', {evalScripts:true});
+
+/*** This ensures "Home" and "Info" content shows when the other side links are clicked before the top links. ****/
+document.getElementById('side_menu_info_div').className='home_side_menu_button';
+document.getElementById('side_menu_photonspectra_div').className='home_side_menu_button';
+document.getElementById('side_menu_usingwebsite_div').className='home_side_menu_button';
+document.getElementById('side_menu_references_div').className='home_side_menu_button';
+document.getElementById('side_menu_contact_div').className='home_side_menu_button';
+				
+/**************/
+								
 								if(document.getElementById('molecule_side_menu').style.display=='none')
 								{
 									document.getElementById('side_menu_for_home_page').style.display='none';
@@ -98,6 +214,11 @@ function processLink (value) {
 									document.getElementById('mol_text_area').style.display='block';
 									document.getElementById('molecule_side_menu').style.display='block';
 									document.getElementById('window_area').style.display='block';
+									
+									document.getElementById('tab1_area').style.display='block';
+									document.getElementById('tab2_area').style.display='block';
+									document.getElementById('tab3_area').style.display='block';
+									document.getElementById('tab4_area').style.display='block';
 								}
     }
     //parent.right_frame.location = "molecule.html";
@@ -105,31 +226,197 @@ function processLink (value) {
 
 function homeSideMenuSelected(divName)
 {
+
+$('window_area').update();
+// -> HTMLElement
+$('window_area').innerHTML;
+// -> '' (an empty string)
+
+$('tab1_area').update();
+// -> HTMLElement
+$('tab1_area').innerHTML;
+// -> '' (an empty string)
+
+
+$('tab2_area').update();
+// -> HTMLElement
+$('tab2_area').innerHTML;
+// -> '' (an empty string)
+
+
+$('tab3_area').update();
+// -> HTMLElement
+$('tab3_area').innerHTML;
+// -> '' (an empty string)
+
+
+$('tab4_area').update();
+// -> HTMLElement
+$('tab4_area').innerHTML;
+// -> '' (an empty string)
+
+
 	if(divName == 'side_menu_info_div')
 	{
 		document.getElementById('side_menu_info_div').className='home_side_menu_button_sel';
+		document.getElementById('side_menu_photonspectra_div').className='home_side_menu_button';
+		document.getElementById('side_menu_usingwebsite_div').className='home_side_menu_button';
+		document.getElementById('side_menu_references_div').className='home_side_menu_button';
 		document.getElementById('side_menu_contact_div').className='home_side_menu_button';
-//		document.getElementById('side_menu_questionnaire_div').className='home_side_menu_button';
 		new Ajax.Updater('home_text_area', './home_info.html', {evalScripts:true});
+/*** This ensures "Home" and "Info" content shows when the other side links are clicked before the top links. ****/	
+document.getElementById('solar').className='main_tabs_link_div';
+document.getElementById('home').className='main_tabs_link_div';
+document.getElementById('photo').className='main_tabs_link_div';
+document.getElementById('blackbody').className='main_tabs_link_div';
+document.getElementById('interstellar').className='main_tabs_link_div';
+		
+				if(document.getElementById('side_menu_for_home_page').style.display=='none')
+				{
+					document.getElementById('molecule_side_menu').style.display='none';
+					document.getElementById('window_area').style.display='none';
+					document.getElementById('mol_text_area').style.display='none';
+					document.getElementById('side_menu_for_home_page').style.display='block';
+					document.getElementById('home_text_area').style.display='block';
+				}
+
+		
+	}	
+
+
+	else if(divName == 'side_menu_photonspectra_div')
+	{
+		document.getElementById('side_menu_photonspectra_div').className='home_side_menu_button_sel';
+		document.getElementById('side_menu_info_div').className='home_side_menu_button';
+		document.getElementById('side_menu_usingwebsite_div').className='home_side_menu_button';
+		document.getElementById('side_menu_references_div').className='home_side_menu_button';
+		document.getElementById('side_menu_contact_div').className='home_side_menu_button';
+		new Ajax.Updater('home_text_area', './photon.html', {evalScripts:true});
+		
+/*** This ensures "Home" and "Info" content shows when the other side links are clicked before the top links. ****/	
+document.getElementById('solar').className='main_tabs_link_div';
+document.getElementById('home').className='main_tabs_link_div';
+document.getElementById('photo').className='main_tabs_link_div';
+document.getElementById('blackbody').className='main_tabs_link_div';
+document.getElementById('interstellar').className='main_tabs_link_div';
+	
+		
+		
+				if(document.getElementById('side_menu_for_home_page').style.display=='none')
+				{
+					document.getElementById('molecule_side_menu').style.display='none';
+					document.getElementById('window_area').style.display='none';
+					document.getElementById('mol_text_area').style.display='none';
+					document.getElementById('side_menu_for_home_page').style.display='block';
+					document.getElementById('home_text_area').style.display='block';
+				}
+
+		
+		
 	}
+
+
+	else if(divName == 'side_menu_usingwebsite_div')
+	{
+		document.getElementById('side_menu_usingwebsite_div').className='home_side_menu_button_sel';
+		document.getElementById('side_menu_info_div').className='home_side_menu_button';
+		document.getElementById('side_menu_photonspectra_div').className='home_side_menu_button';
+		document.getElementById('side_menu_references_div').className='home_side_menu_button';
+		document.getElementById('side_menu_contact_div').className='home_side_menu_button';
+		new Ajax.Updater('home_text_area', './usingwebsite.html', {evalScripts:true});
+/*** This ensures "Home" and "Info" content shows when the other side links are clicked before the top links. ****/	
+document.getElementById('solar').className='main_tabs_link_div';
+document.getElementById('home').className='main_tabs_link_div';
+document.getElementById('photo').className='main_tabs_link_div';
+document.getElementById('blackbody').className='main_tabs_link_div';
+document.getElementById('interstellar').className='main_tabs_link_div';
+
+		
+					if(document.getElementById('side_menu_for_home_page').style.display=='none')
+				{
+					document.getElementById('molecule_side_menu').style.display='none';
+					document.getElementById('window_area').style.display='none';
+					document.getElementById('mol_text_area').style.display='none';
+					document.getElementById('side_menu_for_home_page').style.display='block';
+					document.getElementById('home_text_area').style.display='block';
+				}	
+		
+		
+	}	
+
+
+	else if(divName == 'side_menu_references_div')
+	{
+		document.getElementById('side_menu_references_div').className='home_side_menu_button_sel';
+		document.getElementById('side_menu_info_div').className='home_side_menu_button';
+		document.getElementById('side_menu_photonspectra_div').className='home_side_menu_button';
+		document.getElementById('side_menu_usingwebsite_div').className='home_side_menu_button';
+		document.getElementById('side_menu_contact_div').className='home_side_menu_button';
+		new Ajax.Updater('home_text_area', './references.html', {evalScripts:true});
+/*** This ensures "Home" and "Info" content shows when the other side links are clicked before the top links. ****/	
+document.getElementById('solar').className='main_tabs_link_div';
+document.getElementById('home').className='main_tabs_link_div';
+document.getElementById('photo').className='main_tabs_link_div';
+document.getElementById('blackbody').className='main_tabs_link_div';
+document.getElementById('interstellar').className='main_tabs_link_div';		
+		
+					if(document.getElementById('side_menu_for_home_page').style.display=='none')
+				{
+					document.getElementById('molecule_side_menu').style.display='none';
+					document.getElementById('window_area').style.display='none';
+					document.getElementById('mol_text_area').style.display='none';
+					document.getElementById('side_menu_for_home_page').style.display='block';
+					document.getElementById('home_text_area').style.display='block';
+				}	
+		
+		
+	}	
+
 	else if(divName == 'side_menu_contact_div')
 	{
 		document.getElementById('side_menu_contact_div').className='home_side_menu_button_sel';
 		document.getElementById('side_menu_info_div').className='home_side_menu_button';
-//		document.getElementById('side_menu_questionnaire_div').className='home_side_menu_button';
+		document.getElementById('side_menu_photonspectra_div').className='home_side_menu_button';
+		document.getElementById('side_menu_usingwebsite_div').className='home_side_menu_button';
+		document.getElementById('side_menu_references_div').className='home_side_menu_button';
 		new Ajax.Updater('home_text_area', './contacts.html', {evalScripts:true});
+/*** This ensures "Home" and "Info" content shows when the other side links are clicked before the top links. ****/	
+document.getElementById('solar').className='main_tabs_link_div';
+document.getElementById('home').className='main_tabs_link_div';
+document.getElementById('photo').className='main_tabs_link_div';
+document.getElementById('blackbody').className='main_tabs_link_div';
+document.getElementById('interstellar').className='main_tabs_link_div';
+
+		
+					if(document.getElementById('side_menu_for_home_page').style.display=='none')
+				{
+					document.getElementById('molecule_side_menu').style.display='none';
+					document.getElementById('window_area').style.display='none';
+					document.getElementById('mol_text_area').style.display='none';
+					document.getElementById('side_menu_for_home_page').style.display='block';
+					document.getElementById('home_text_area').style.display='block';
+				}	
+		
+		
+		
 	}
-	else if(divName == 'side_menu_questionnaire_div')
-	{
-		document.getElementById('side_menu_questionnaire_div').className='home_side_menu_button_sel';
-		document.getElementById('side_menu_info_div').className='home_side_menu_button';
-		document.getElementById('side_menu_contact_div').className='home_side_menu_button';
-		new Ajax.Updater('home_text_area', './questionnaire.html', {evalScripts:true});
-	}
+
 }
+
+
+
+
+
 
 function moleculeMenuSelected(divName, listName, anchorName)
 {	
+
+
+
+
+
+
+
 	if(document.getElementById(listName).style.display == 'none')
 	{
 		document.getElementById(divName).className='home_side_menu_button_sel';
@@ -143,6 +430,7 @@ function moleculeMenuSelected(divName, listName, anchorName)
 			document.getElementById(listName).style.display = 'block';
 		}
 	}
+	
 	else
 	{
 		document.getElementById(divName).className='home_side_menu_button';
@@ -159,9 +447,45 @@ function moleculeMenuSelected(divName, listName, anchorName)
 }
 
 function runMolecule (value) {
+
+window.scroll(0,150); // horizontal and vertical scroll targets
+
+
+$('window_area').update();
+// -> HTMLElement
+$('window_area').innerHTML;
+// -> '' (an empty string)
+
+$('tab1_area').update();
+// -> HTMLElement
+$('tab1_area').innerHTML;
+// -> '' (an empty string)
+
+
+$('tab2_area').update();
+// -> HTMLElement
+$('tab2_area').innerHTML;
+// -> '' (an empty string)
+
+
+$('tab3_area').update();
+// -> HTMLElement
+$('tab3_area').innerHTML;
+// -> '' (an empty string)
+
+
+$('tab4_area').update();
+// -> HTMLElement
+$('tab4_area').innerHTML;
+// -> '' (an empty string)
+
+
+
     if (testNumbers () != 0) return;
 
-    var URL = 'http://phidrates.space.swri.edu/data_files/';
+    //var URL = 'http://phidrates.space.swri.edu/data_files/'; // real
+	var URL = 'http://porky/phidrates/data_files/'; // dev
+	
     var programToUse;
     //var useSolarActivity = parent.left_frame.useSolarActivity;
     //var justCrossSections = parent.left_frame.justCrossSections;
@@ -177,10 +501,16 @@ function runMolecule (value) {
             + '?use_electron_volts=' + use_electron_volts 
             + '?use_semi_log=false' 
             + '?solar_activity=0.0';
-				var win = new Window({className: "spread", title: "Cross Sections of "+value, 
-                      top:300+(10*molDivCounter), left:200+(12*molDivCounter), width:450, height:500, parent: document.getElementById('window_area'),
-                      url: cross_sections})
-				win.show();
+				//var win = new Window({className: "spread", title: "Cross Sections of "+value, 
+                  //    top:300+(10*molDivCounter), left:200+(12*molDivCounter), width:700, height:500, parent: document.getElementById('window_area'),
+					//  url: cross_sections})
+				//win.show();
+			new Ajax.Updater('window_area', cross_sections, {evalScripts:true});
+				
+
+			
+				
+				
         //cross_sections_window = window.open (cross_sections, "cross_sections",
           // "menubar=yes,resizable=yes,scrollbars=yes,width=600,height=500");
     } else {
@@ -196,10 +526,16 @@ function runMolecule (value) {
             + '?use_electron_volts=' + use_electron_volts 
             + '?use_semi_log=' + use_semi_log
             + '?solar_activity=' + solar_activity;
-				var win = new Window({className: "spread", title: "Rate Numbers of "+value, 
-							top:300+(10*molDivCounter), left:200+(12*molDivCounter), width:350, height:350, parent: document.getElementById('window_area'),
-							url: rate_numbers})
-				win.show();
+				//var win = new Window({className: "spread", title: "Rate Numbers of "+value, 
+					//		top:300+(10*molDivCounter), left:200+(12*molDivCounter), width:350, height:350, parent: document.getElementById('window_area'),
+						//	url: rate_numbers})
+				//win.show();
+				new Ajax.Updater('window_area', rate_numbers, {evalScripts:true});
+
+
+
+				
+				
        // rate_numbers_window = window.open (rate_numbers, "rate_numbers",
         //    "menubar=yes,resizable=yes,scrollbars=yes,width=600,height=500");
         if (document.options.plots_desired[0].checked == true) {
@@ -207,10 +543,12 @@ function runMolecule (value) {
                 + 'gp_spectrum.cgi'
                 + '?use_semi_log=' + use_semi_log
                 + '?solar_activity=' + solar_activity;
-				var win = new Window({className: "spread", title: "Solar Spectrum of "+value, 
-							top:300+(10*molDivCounter), left:200+(12*molDivCounter), width:450, height:500, parent: document.getElementById('window_area'),
-							url: solar_spectrum})
-				win.show();
+				//var win = new Window({className: "spread", title: "Solar Spectrum of "+value, 
+					//		top:300+(10*molDivCounter), left:200+(12*molDivCounter), width:700, height:500, parent: document.getElementById('window_area'),
+						//	url: solar_spectrum})
+				//win.show();
+				new Ajax.Updater('tab1_area', solar_spectrum, {evalScripts:true});
+				
            // solar_spectrum = window.open (solar_spectrum, "solar_spectrum",
            //     "menubar=yes,resizable=yes,scrollbars=yes,width=600,height=500");
         } 
@@ -221,10 +559,11 @@ function runMolecule (value) {
                 + '?use_electron_volts=' + use_electron_volts 
                 + '?use_semi_log=' + use_semi_log
                 + '?solar_activity=' + solar_activity;
-				var win = new Window({className: "spread", title: "Binned Cross Sections of "+value, 
-							top:300+(10*molDivCounter), left:200+(12*molDivCounter), width:450, height:500, parent: document.getElementById('window_area'),
-							url: cross_sections})
-				win.show();
+				//var win = new Window({className: "spread", title: "Binned Cross Sections of "+value, 
+						//	top:300+(10*molDivCounter), left:200+(12*molDivCounter), width:700, height:500, parent: document.getElementById('window_area'),
+					//		url: cross_sections})
+				//win.show();
+				new Ajax.Updater('tab2_area', cross_sections, {evalScripts:true});
 
             //cross_sections_window = window.open (cross_sections, "cross_sections",
             //    "menubar=yes,resizable=yes,scrollbars=yes,width=600,height=500");
@@ -236,10 +575,11 @@ function runMolecule (value) {
                 + '?use_electron_volts=' + use_electron_volts 
                 + '?use_semi_log=' + use_semi_log
                 + '?solar_activity=' + solar_activity;
-				var win = new Window({className: "spread", title: "Binned Rate Coefficients of "+value, 
-							top:300+(10*molDivCounter), left:200+(12*molDivCounter), width:450, height:500, parent: document.getElementById('window_area'),
-							url: rate_coeff})
-				win.show();
+				//var win = new Window({className: "spread", title: "Binned Rate Coefficients of "+value, 
+						//	top:300+(10*molDivCounter), left:200+(12*molDivCounter), width:700, height:500, parent: document.getElementById('window_area'),
+					//		url: rate_coeff})
+				//win.show();
+				new Ajax.Updater('tab3_area', rate_coeff, {evalScripts:true});
 
           //  rate_coeff_window = window.open (rate_coeff, "rate_coeff",
            //     "menubar=yes,resizable=yes,scrollbars=yes,width=600,height=500");
@@ -251,10 +591,11 @@ function runMolecule (value) {
                 + '?use_electron_volts=' + use_electron_volts 
                 + '?use_semi_log=' + use_semi_log
                 + '?solar_activity=' + solar_activity;
-				var win = new Window({className: "spread", title: "Excess Energies of "+value, 
-							top:300+(10*molDivCounter), left:200+(12*molDivCounter), width:450, height:500, parent: document.getElementById('window_area'),
-							url: excess_energies})
-				win.show();
+				//var win = new Window({className: "spread", title: "Excess Energies of "+value, 
+						//	top:300+(10*molDivCounter), left:200+(12*molDivCounter), width:700, height:500, parent: document.getElementById('window_area'),
+					//		url: excess_energies})
+				//win.show();
+				new Ajax.Updater('tab4_area', excess_energies, {evalScripts:true});
 
            // excess_energies_window = window.open (excess_energies, "excess_energies",
             //    "menubar=yes,resizable=yes,scrollbars=yes,width=600,height=500");
