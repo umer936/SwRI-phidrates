@@ -39,6 +39,10 @@ $('tab4_area').innerHTML;
 // -> '' (an empty string)
 
 
+$('backtotop').update();
+// -> HTMLElement
+$('backtotop').innerHTML;
+// -> '' (an empty string)
 
 
     justCrossSections = false;
@@ -55,7 +59,7 @@ $('tab4_area').innerHTML;
 				if(document.getElementById('side_menu_for_home_page').style.display=='none')
 				{
 
-					document.getElementById('molecule_side_menu').style.display='none';
+					document.getElementById('molecule_side_menu').style.visibility='hidden';
 					document.getElementById('window_area').style.display='none';
 					document.getElementById('mol_text_area').style.display='none';
 					document.getElementById('side_menu_for_home_page').style.display='block';
@@ -65,6 +69,7 @@ $('tab4_area').innerHTML;
 					document.getElementById('tab2_area').style.display='none';
 					document.getElementById('tab3_area').style.display='none';
 					document.getElementById('tab4_area').style.display='none';
+					document.getElementById('backtotop').style.display='none';
 					
 				}
 		}
@@ -95,18 +100,19 @@ document.getElementById('side_menu_contact_div').className='home_side_menu_butto
 								
 				
 
-								if(document.getElementById('molecule_side_menu').style.display=='none')
+								if(document.getElementById('molecule_side_menu').style.visibility=='hidden')
 								{
 									document.getElementById('side_menu_for_home_page').style.display='none';
 									document.getElementById('home_text_area').style.display='none';
 									document.getElementById('mol_text_area').style.display='block';
-									document.getElementById('molecule_side_menu').style.display='block';
+									document.getElementById('molecule_side_menu').style.visibility='visible';
 									document.getElementById('window_area').style.display='block';
 									
 									document.getElementById('tab1_area').style.display='block';
 									document.getElementById('tab2_area').style.display='block';
 									document.getElementById('tab3_area').style.display='block';
 									document.getElementById('tab4_area').style.display='block';
+									document.getElementById('backtotop').style.display='block';
 									
 								}									
 								
@@ -134,18 +140,19 @@ document.getElementById('side_menu_contact_div').className='home_side_menu_butto
 				
 /**************/								
 								
-								if(document.getElementById('molecule_side_menu').style.display=='none')
+								if(document.getElementById('molecule_side_menu').style.visibility=='hidden')
 								{
 									document.getElementById('side_menu_for_home_page').style.display='none';
 									document.getElementById('home_text_area').style.display='none';
 									document.getElementById('mol_text_area').style.display='block';
-									document.getElementById('molecule_side_menu').style.display='block';
+									document.getElementById('molecule_side_menu').style.visibility='visible';
 									document.getElementById('window_area').style.display='block';
 									
 									document.getElementById('tab1_area').style.display='block';
 									document.getElementById('tab2_area').style.display='block';
 									document.getElementById('tab3_area').style.display='block';
 									document.getElementById('tab4_area').style.display='block';
+									document.getElementById('backtotop').style.display='block';
 								}
     } 
 	
@@ -173,18 +180,19 @@ document.getElementById('side_menu_contact_div').className='home_side_menu_butto
 				
 /**************/								
 								
-								if(document.getElementById('molecule_side_menu').style.display=='none')
+								if(document.getElementById('molecule_side_menu').style.visibility=='hidden')
 								{
 									document.getElementById('side_menu_for_home_page').style.display='none';
 									document.getElementById('home_text_area').style.display='none';
 									document.getElementById('mol_text_area').style.display='block';
-									document.getElementById('molecule_side_menu').style.display='block';
+									document.getElementById('molecule_side_menu').style.visibility='visible';
 									document.getElementById('window_area').style.display='block';
 									
 									document.getElementById('tab1_area').style.display='block';
 									document.getElementById('tab2_area').style.display='block';
 									document.getElementById('tab3_area').style.display='block';
 									document.getElementById('tab4_area').style.display='block';
+									document.getElementById('backtotop').style.display='block';
 								}
     } else if (value == "solar") {
                useTemp = false;
@@ -207,18 +215,19 @@ document.getElementById('side_menu_contact_div').className='home_side_menu_butto
 				
 /**************/
 								
-								if(document.getElementById('molecule_side_menu').style.display=='none')
+								if(document.getElementById('molecule_side_menu').style.visibility=='hidden')
 								{
 									document.getElementById('side_menu_for_home_page').style.display='none';
 									document.getElementById('home_text_area').style.display='none';
 									document.getElementById('mol_text_area').style.display='block';
-									document.getElementById('molecule_side_menu').style.display='block';
+									document.getElementById('molecule_side_menu').style.visibility='visible';
 									document.getElementById('window_area').style.display='block';
 									
 									document.getElementById('tab1_area').style.display='block';
 									document.getElementById('tab2_area').style.display='block';
 									document.getElementById('tab3_area').style.display='block';
 									document.getElementById('tab4_area').style.display='block';
+									document.getElementById('backtotop').style.display='block';
 								}
     }
     //parent.right_frame.location = "molecule.html";
@@ -255,6 +264,11 @@ $('tab4_area').update();
 $('tab4_area').innerHTML;
 // -> '' (an empty string)
 
+$('backtotop').update();
+// -> HTMLElement
+$('backtotop').innerHTML;
+// -> '' (an empty string)
+
 
 	if(divName == 'side_menu_info_div')
 	{
@@ -273,7 +287,7 @@ document.getElementById('interstellar').className='main_tabs_link_div';
 		
 				if(document.getElementById('side_menu_for_home_page').style.display=='none')
 				{
-					document.getElementById('molecule_side_menu').style.display='none';
+					document.getElementById('molecule_side_menu').style.visibility='hidden';
 					document.getElementById('window_area').style.display='none';
 					document.getElementById('mol_text_area').style.display='none';
 					document.getElementById('side_menu_for_home_page').style.display='block';
@@ -304,7 +318,7 @@ document.getElementById('interstellar').className='main_tabs_link_div';
 		
 				if(document.getElementById('side_menu_for_home_page').style.display=='none')
 				{
-					document.getElementById('molecule_side_menu').style.display='none';
+					document.getElementById('molecule_side_menu').style.visibility='hidden';
 					document.getElementById('window_area').style.display='none';
 					document.getElementById('mol_text_area').style.display='none';
 					document.getElementById('side_menu_for_home_page').style.display='block';
@@ -334,7 +348,7 @@ document.getElementById('interstellar').className='main_tabs_link_div';
 		
 					if(document.getElementById('side_menu_for_home_page').style.display=='none')
 				{
-					document.getElementById('molecule_side_menu').style.display='none';
+					document.getElementById('molecule_side_menu').style.visibility='hidden';
 					document.getElementById('window_area').style.display='none';
 					document.getElementById('mol_text_area').style.display='none';
 					document.getElementById('side_menu_for_home_page').style.display='block';
@@ -362,7 +376,7 @@ document.getElementById('interstellar').className='main_tabs_link_div';
 		
 					if(document.getElementById('side_menu_for_home_page').style.display=='none')
 				{
-					document.getElementById('molecule_side_menu').style.display='none';
+					document.getElementById('molecule_side_menu').style.visibility='hidden';
 					document.getElementById('window_area').style.display='none';
 					document.getElementById('mol_text_area').style.display='none';
 					document.getElementById('side_menu_for_home_page').style.display='block';
@@ -390,7 +404,7 @@ document.getElementById('interstellar').className='main_tabs_link_div';
 		
 					if(document.getElementById('side_menu_for_home_page').style.display=='none')
 				{
-					document.getElementById('molecule_side_menu').style.display='none';
+					document.getElementById('molecule_side_menu').style.visibility='hidden';
 					document.getElementById('window_area').style.display='none';
 					document.getElementById('mol_text_area').style.display='none';
 					document.getElementById('side_menu_for_home_page').style.display='block';
@@ -408,43 +422,7 @@ document.getElementById('interstellar').className='main_tabs_link_div';
 
 
 
-function moleculeMenuSelected(divName, listName, anchorName)
-{	
 
-
-
-
-
-
-
-	if(document.getElementById(listName).style.display == 'none')
-	{
-		document.getElementById(divName).className='home_side_menu_button_sel';
-		document.getElementById(anchorName).title='Click to collapse.';
-		try
-		{
-			new Effect.SlideDown(listName,{ duration:0.7});
-		}
-		catch(err)
-		{
-			document.getElementById(listName).style.display = 'block';
-		}
-	}
-	
-	else
-	{
-		document.getElementById(divName).className='home_side_menu_button';
-		document.getElementById(anchorName).title='Click to expand.';
-		try
-		{
-			new Effect.SlideUp(listName,{ duration:0.7});
-		}
-		catch(err)
-		{
-			document.getElementById(listName).style.display = 'none';
-		}
-	}
-}
 
 function runMolecule (value) {
 
@@ -480,6 +458,12 @@ $('tab4_area').innerHTML;
 // -> '' (an empty string)
 
 
+$('backtotop').update();
+// -> HTMLElement
+$('backtotop').innerHTML;
+// -> '' (an empty string)
+
+
 
     if (testNumbers () != 0) return;
 
@@ -506,6 +490,7 @@ $('tab4_area').innerHTML;
 					//  url: cross_sections})
 				//win.show();
 			new Ajax.Updater('window_area', cross_sections, {evalScripts:true});
+			new Ajax.Updater('backtotop', 'backtotop.html', {evalScripts:true});
 				
 
 			
@@ -531,6 +516,7 @@ $('tab4_area').innerHTML;
 						//	url: rate_numbers})
 				//win.show();
 				new Ajax.Updater('window_area', rate_numbers, {evalScripts:true});
+				new Ajax.Updater('backtotop', 'backtotop.html', {evalScripts:true});
 
 
 
@@ -548,6 +534,7 @@ $('tab4_area').innerHTML;
 						//	url: solar_spectrum})
 				//win.show();
 				new Ajax.Updater('tab1_area', solar_spectrum, {evalScripts:true});
+				new Ajax.Updater('backtotop', 'backtotop.html', {evalScripts:true});
 				
            // solar_spectrum = window.open (solar_spectrum, "solar_spectrum",
            //     "menubar=yes,resizable=yes,scrollbars=yes,width=600,height=500");
@@ -564,6 +551,7 @@ $('tab4_area').innerHTML;
 					//		url: cross_sections})
 				//win.show();
 				new Ajax.Updater('tab2_area', cross_sections, {evalScripts:true});
+				new Ajax.Updater('backtotop', 'backtotop.html', {evalScripts:true});
 
             //cross_sections_window = window.open (cross_sections, "cross_sections",
             //    "menubar=yes,resizable=yes,scrollbars=yes,width=600,height=500");
@@ -580,6 +568,7 @@ $('tab4_area').innerHTML;
 					//		url: rate_coeff})
 				//win.show();
 				new Ajax.Updater('tab3_area', rate_coeff, {evalScripts:true});
+				new Ajax.Updater('backtotop', 'backtotop.html', {evalScripts:true});
 
           //  rate_coeff_window = window.open (rate_coeff, "rate_coeff",
            //     "menubar=yes,resizable=yes,scrollbars=yes,width=600,height=500");
@@ -596,6 +585,7 @@ $('tab4_area').innerHTML;
 					//		url: excess_energies})
 				//win.show();
 				new Ajax.Updater('tab4_area', excess_energies, {evalScripts:true});
+				new Ajax.Updater('backtotop', 'backtotop.html', {evalScripts:true});
 
            // excess_energies_window = window.open (excess_energies, "excess_energies",
             //    "menubar=yes,resizable=yes,scrollbars=yes,width=600,height=500");
