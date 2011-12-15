@@ -5,7 +5,12 @@ require "LUTIn.txt";
 require "LUTOut.txt";
 
 use IO::File;
-use POSIX qw(tmpnam);
+use File::Temp qw/ tempfile tempdir /;
+
+# this is where the aliases in httpd.conf is set and where the temp files will be written!
+
+$prefix = "/tmp/phidrates";
+$reg_exp_prefix = "\/tmp\/phidrates";
 
 ################################################################
 #  parse QUERY_STRING -> filename; display file
@@ -46,8 +51,13 @@ sub PrintResults {
     print "\n";
     print "<P>";
     chdir ($temp_dir);
+
+    my $url_temp_dir = $temp_dir;
+    $url_temp_dir =~ s/$reg_exp_prefix/\/amop_images/g;
+    $url_temp_dir =~ s/tmp//;
+
     #print "</CENTER>";
-    print "<A class=\"btn\" HREF=\"$temp_dir/RATOUT\"><span>Click here to view or shift-click to \ 
+    print "<A target=\"_blank\" class=\"btn\" HREF=\"$url_temp_dir/RATOUT\"><span>Click here to view or shift-click to \ 
            download the data wavelength-integrated over each bin!</span></A>\n";
     #print "<CENTER>";
     $num_branches = &GenerateBranches ();
@@ -56,7 +66,7 @@ sub PrintResults {
         if ($branches[$bnum] eq "Lambda") {
             $branches[$bnum] = "Total";
         }
-        $gifname = &GeneratePlot ("branch_r.$bnum", $branches[$bnum+1]);
+        $gifname = &GeneratePlot ($temp_dir, "branch_r.$bnum", $branches[$bnum+1]);
         $nice_name = &ConvertCanonicalOutputName ($branches[$bnum+1]);
         print "<H2>$nice_name</H2>";
         print "<IMG SRC = \"$gifname\" BORDER=4>\n";
@@ -65,7 +75,7 @@ sub PrintResults {
         $bnum++;
     }
     #print "</CENTER>";
-    print "<A class=\"btn\" HREF=\"$temp_dir/RATOUT\"><span>Click here to view or shift-click to \
+    print "<A target=\"_blank\" class=\"btn\" HREF=\"$url_temp_dir/RATOUT\"><span>Click here to view or shift-click to \
            download the data wavelength-integrated over each bin!</span></A>\n";
     print "<br><br><HR align=\"center\" width=\"50%\" size=\"1\"><br>";
 	print "</BODY></HTML>";
@@ -92,12 +102,14 @@ sub MakeTempDirectory {
 
 # make a temporary directory
 
-    $temp_dir = tmpnam ();
-    $temp_dir =~ s/var\/tmp/tmp\/joey/;
-    if (!(-e "/tmp/joey")) {
-        mkdir ("/tmp/joey", 0777);
+    if (!(-e $prefix)) {
+        mkdir ($prefix, 0777);
     }
-    mkdir ($temp_dir, 0777);
+
+    $temp_dir = tempdir (TEMPLATE => 'fileXXXXXX',
+                         DIR => $prefix,
+                         CLEANUP => 0);
+    chmod (0755, $temp_dir);
     return ($temp_dir);
 }
 
@@ -189,13 +201,15 @@ sub GenerateBranches {
 
 sub GeneratePlot {
 
-    local ($filename) = $_ [0];
-    local ($branch) = $_ [1];
-    local ($gifname, $rootname);
+    local ($tempdir) = $_ [0];
+    local ($filename) = $_ [1];
+    local ($branch) = $_ [2];
+    local ($gifname);
 
-    $rootname = tmpnam ();
-    $rootname =~ s/var/image2\/amop/;
-    open (TMP_FILE, "> $rootname.info");
+    my ($fh, $gnuinfo) = tempfile (TEMPLATE => 'gnu_XXXXXX',
+                                   DIR => $tempdir, CLEANUP => 1,
+                                   SUFFIX => '.info');
+    open (TMP_FILE, "> ".$gnuinfo) || die ("Can't open $gnuinfo\n");
     print TMP_FILE "set terminal png\n";
     print TMP_FILE "set size 0.7,0.7\n";
     print TMP_FILE "set title \"Southwest Research Institute\\nBranch: $branch\"\n";
@@ -209,11 +223,24 @@ sub GeneratePlot {
     print TMP_FILE "set mytics 5\n";
     print TMP_FILE "plot \"$filename\" title \"\" with steps\n";
     close (TMP_FILE);
-    $gifname = $rootname.".png";
-    `/usr/bin/gnuplot $rootname.info > $gifname`;
 
-    unlink ("$rootname.info");
-    $gifname =~ s/\/image2\/amop\//http:\/\/phidrates.space.swri.edu\//g;
-    return ($gifname);
+    my ($fh2, $gifname) = tempfile (TEMPLATE => 'XXXXXX',
+                                   DIR => $tempdir,
+                                   CLEANUP => 0,
+                                   SUFFIX => '.png');
+    system ("/usr/bin/gnuplot $gnuinfo > $gifname");
+    if ($? == -1) {
+        print "failed to execute: $!\n";
+    } elsif ($? & 127) { 
+        printf "child died with signal %d, %s coredump\n",
+        ($? & 127),  ($? & 128) ? 'with' : 'without';
+    } else {
+#        printf "child exited with value %d\n", $? >> 8;
+    }
+
+    chmod (0644, $gifname); 
+    $plotname = $gifname;
+    $plotname =~ s/$reg_exp_prefix/..\/amop_images/g;
+    return ($plotname);
 }
 
