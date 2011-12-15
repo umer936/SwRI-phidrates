@@ -1,310 +1,38 @@
-html { min-height: 100%; margin-bottom: 1px; }
+/*TOP MENU*/
 
-a{
-outline:none;
-cursor:pointer;
-}
-a:hover{
-color:#FF0000;
-text-decoration:none;
-}
-p{
-font-family:Georgia, "Times New Roman", Times, serif;
-font-size:16px;
-}
-h2{
-font-weight:bold;
-font-size:27px;
+.home_side_menu_button_sel a {
+	background-color: #fff;
+    margin:0;
+    padding:0;
+    text-decoration:none;
 }
 
-img {
-border: none;
-} 
+.home_side_menu_button_sel a span {
+    display:block;
+	margin:0;
+    padding:0;
+	background-color: #fff;
+    color:#000;
+	text-decoration:none;
+	/*border-bottom: 1px dashed #f00;*/
 
-#main_header{
+      }
 
-  clear:both;
-  top:0px;
-  left: 0px;
-  width:100%;
-  height: 103px;
-  font-weight: bold;
-  font-size: 18px;
-  text-align: right;
-  color: #222;
-  float:left;
-	background-image: url(../img/AMOP_Header.jpg);
-  background-repeat: no-repeat;
-  padding: 12px 0px 0px 0px;
-}
+/**********SUB MENU ********/
 
-#main_body{
-background-color:#181C25;/*24618E;*/
-padding:0px;
-padding-left:0px;
-padding-right:0px;
-border:5px solid #181C25;
-border-top:0px;
-border-bottom:0px;
-}
-#main_content{
-height:100%;
-background-color:#FFFFEA;
-}
-#home_text_area{
-padding:20px;
-}
-#mol_text_area{
-padding:20px;
-}
-#main_content_td{
-width:100%;
-height:100%;
-}
-#main_footer{
-border:5px solid #181C25;
-
-background-color:#FFFFEA;
-padding:10px;
-}
-
-.home_side_menu
-{
-	background-color: #181C25/*#24618E*/;
-	padding:7px;
-}
-
-#window_area{
-}
-.mol_menu_list
-{
-background-color: #FFFFEA/*#181C25;*/ ;
-width:85px; 
-text-align:center; 
-float:right;
-margin-top:0px;
-border-right:solid;
-border-right-width:7px;
-border-right-color:#181C25;
-border-bottom:solid;
-border-bottom-width:8px;
-border-bottom-color:#181C25;
-padding-top:5px;
-padding-bottom:5px;
-}
-#content_table
-{
-border:0;
-}
-
+.main_tabs_link_div_sel a {
+	background-color: #fff;
+    margin:0;
+    padding:0;
+    text-decoration:none;
 	
-/*- Menu Tabs E--------------------------- */
+}	  
+.main_tabs_link_div_sel a span {
+    display:block;
+	margin:0;
+    padding:0;
+	background-color: #fff;
+    color:#000;
+	text-decoration:none;
 
-    .main_tabs_div {
-      float:left;
-      width:100%;
-  		/*height: 115px;*/
-			/*background-image:url("../img/AMOP_Header.jpg");*/
-      /*background:#FEF810; /*#000*/
-      background:#181C25;
-			font-weight:bold;
-			font-family:Arial, Helvetica, sans-serif;
-      font-size:85%;
-      line-height:normal;
-
-      }
-		
-			
-    .main_tabs_div ul {
-	  margin:0;
-		margin-left:1px;
-		margin-right:1px;
-	  padding:0px 10px 0px 0px;
-	  list-style:none;
-      }
-    .main_tabs_div li {
-      display:inline;
-      margin:0;
-			margin-left:1px;
-			margin-right:1px;
-      padding:0;
-      }
-    .main_tabs_link_div a {
-      float:right;
-      background:url("../img/tableftH.gif") no-repeat left top;
-			background-position:0% -42px;
-      margin:0;
-			margin-left:1px;
-			margin-right:1px;
-      padding:0 0 0 4px;
-      text-decoration:none;
-      }
-    .main_tabs_link_div a span {
-      float:right;
-      display:block;
-      background:url("../img/tabrightH.gif") no-repeat right top;
-			background-position:100% -42px;
-      padding:5px 15px 4px 6px;
-      color:#FFF;
-      }
-    /* Commented Backslash Hack hides rule from IE5-Mac \*/
-    .main_tabs_link_div a span {float:none;}
-    /* End IE5-Mac hack */
-    main_tabs_link_div a:hover span {
-      color:#FFF;
-      }
-    .main_tabs_link_div a:hover {
-			background-position:0% 0px;
-      /* background-position:0% -42px; */
-      }
-    .main_tabs_link_div a:hover span {
-      background-position:100% 0px;
-			/* background-position:100% -42px; */
-      }  
-			
-		/*selected link*/
-    .main_tabs_link_div_sel a {
-      float:right;
-      background:url("../img/tableftH.gif") no-repeat left top;
-			background-position:0% -84px;
-      margin:0;
-			margin-left:1px;
-			margin-right:1px;
-      padding:0 0 0 4px;
-      text-decoration:none;
-      }
-    .main_tabs_link_div_sel a span {
-      float:left;
-      display:block;
-      background:url("../img/tabrightH.gif") no-repeat right top;
-			background-position:100% -84px;
-      padding:5px 15px 4px 6px;
-      color:#000;
-      }
-    /* Commented Backslash Hack hides rule from IE5-Mac \*/
-    .main_tabs_link_div_sel a span {float:none;}
-    /* End IE5-Mac hack */
-    .main_tabs_link_div a:hover span {
-      color:#FFF;
-      }
-    .main_tabs_link_div_sel a:hover {
-			background-position:0% -84px;
-      /* background-position:0% -42px; */
-      }
-    .main_tabs_link_div_sel a:hover span {
-      background-position:100% -84px;
-			/* background-position:100% -42px; */
-      }  
-			
-			/*SIDE MENU*/
-			
-    .home_side_menu ul {
-/*	  margin:0;
-		margin-left:1px;
-		margin-right:1px;
-	  padding:90px 10px 0 120px;*/
-	  list-style:none;
-      }
-    .home_side_menu li {
-    /*  display:inline;
-      margin:0;
-			margin-left:1px;
-			margin-right:1px;
-      padding:0;*/
-      }
-		.home_side_menu {
-			font-weight:bold;
-			font-family:Arial, Helvetica, sans-serif;
-      font-size:85%;
-      /*line-height:normal;
-			display:block;*/
-			left:0px;
-			/*border:10px;*/
-			background:#181C25;
-			padding:0px;
-			padding-right:0px;
-			padding-top:0px;
-			text-align:right;
-			/*overflow:visible;
-			float:left;*/
-      }
-					.home_side_menu_button {
-					padding:4px;
-					padding-bottom:25px;
-					padding-right:0px;
-		background:#181C25;
-
-      }
-    .home_side_menu_button a {
-      float:right;
-      background:url("/img/tableftI.gif") no-repeat left top;
-      background-position:0% -42px;
-     padding:0 0 0px 4px;
-      text-decoration:none;
-      }
-
-    .home_side_menu_button a span {
-      /*float:left;*/
-      display:block;
-      background:url("/img/tabrightI.gif") no-repeat right top;
-			background-position:100% -42px;
-      padding:3px 5px 2px 6px;
-      color:#FFF;
-      width:110px;
-      }
-    /* Commented Backslash Hack hides rule from IE5-Mac \*/
-    .home_side_menu_button a span {float:none;}
-    /* End IE5-Mac hack */
-    .home_side_menu_button a:hover span {
-      /* color:#000; */
-      }
-    .home_side_menu_button a:hover {
-			background-position:0% -21px;
-      /* background-position:0% -42px; */
-      }
-    .home_side_menu_button a:hover span {
-      background-position:100% -21px;
-			/* background-position:100% -42px; */
-      }  
-			
-		/*selected link*/
-							.home_side_menu_button_sel {
-					padding:4px;
-					padding-bottom:25px;
-					padding-right:0px;
-		background:#181C25;
-
-      }
-    .home_side_menu_button_sel a {
-      float:right;
-      background:url("../img/tableftI.gif") no-repeat left top;
-      background-position:0% 0px;
-     padding:0 0 0px 4px;
-      text-decoration:none;
-      }
-
-    .home_side_menu_button_sel a span {
-      float:left;
-      display:block;
-      background:url("../img/tabrightI.gif") no-repeat right top;
-			background-position:100% 0px;
-      padding:3px 5px 2px 6px;
-      color:#000;
-      width:110px;
-      }
-    /* Commented Backslash Hack hides rule from IE5-Mac \*/
-    .home_side_menu_button_sel a span {float:none;}
-    /* End IE5-Mac hack */
-    .home_side_menu_button_sel a:hover span {
-      color:#000;
-      }
-    .home_side_menu_button_sel a:hover {
-			color::#000;
-			background-position:0% 0px;
-      /* background-position:0% -42px; */
-      }
-    .home_side_menu_button_sel a:hover span {
-			color:#000;
-      background-position:100% 0px;
-			/* background-position:100% -42px; */
-      }  
+}
