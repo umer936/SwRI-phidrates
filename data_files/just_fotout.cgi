@@ -5,11 +5,18 @@ require "LUTIn.txt";
 require "LUTOut.txt";
 
 use IO::File;
-use POSIX qw(tmpnam);
+use File::Temp qw/ tempfile tempdir /;
 
 ################################################################
 #  parse QUERY_STRING -> filename; display file
 ################################################################
+
+$solar_activity = 0.0;
+
+# this is where the aliases in httpd.conf is set and where the temp files will be written!
+
+$prefix = "/tmp/phidrates";
+$reg_exp_prefix = "\/tmp\/phidrates";
 
 # convert variables to a value
 
@@ -111,12 +118,14 @@ sub MakeTempDirectory {
 
 # make a temporary directory
 
-    $temp_dir = tmpnam ();
-#    $temp_dir =~ s/var\/tmp/tmp\/joey/;
-    if (!(-e "/tmp/joey")) {
-        mkdir ("/tmp/joey", 0777);
+    if (!(-e $prefix)) {
+        mkdir ($prefix, 0777);
     }
-    mkdir ($temp_dir, 0777);
+
+    $temp_dir = tempdir (TEMPLATE => 'fileXXXXXX',
+                         DIR => $prefix,
+                         CLEANUP => 0);
+    chmod (0755, $temp_dir);
     return ($temp_dir);
 }
 

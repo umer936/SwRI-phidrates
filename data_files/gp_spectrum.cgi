@@ -1,13 +1,20 @@
 #!/usr/bin/perl
 
 use IO::File;
-use POSIX qw(tmpnam);
+use File::Temp qw/ tempfile tempdir /;
 
 require "vars.pl";
+
+$solar_activity = 0.0;
 
 ################################################################
 #  parse QUERY_STRING -> filename; display file
 ################################################################
+
+# this is where the aliases in httpd.conf is set and where the temp files will be written!
+
+$prefix = "/tmp/phidrates";
+$reg_exp_prefix = "\/tmp\/phidrates";
 
 print "Content-type: text/html\n\n";
 
@@ -44,12 +51,14 @@ sub MakeTempDirectory {
 
 # make a temporary directory
 
-    $temp_dir = tmpnam ();
-#    $temp_dir =~ s/var\/tmp/tmp\/joey/;
-    if (!(-e "/tmp/joey")) {
-        mkdir ("/tmp/joey", 0777);
+    if (!(-e $prefix)) {
+        mkdir ($prefix, 0777);
     }
-    mkdir ($temp_dir, 0777);
+
+    $temp_dir = tempdir (TEMPLATE => 'fileXXXXXX',
+                         DIR => $prefix,
+                         CLEANUP => 0);
+    chmod (0755, $temp_dir);
     return ($temp_dir);
 }
 
@@ -85,16 +94,15 @@ sub ComputeSpectrum {
 
 sub CreateGIF {
 
-    my ($temp_dir) = $_ [0];
-    my ($gnuplot_cmds, $gifname);
+    local ($tempdir) = $_ [0];
+    local ($gifname);
 
-    $gnuplot_cmds = "$temp_dir/spectrum.gp";
-    $gifname = tmpnam ();
-    $gifname .= ".png";
+    my ($fh, $gnuinfo) = tempfile (TEMPLATE => 'gnu_XXXXXX',
+                                   DIR => $tempdir, CLEANUP => 1,
+                                   SUFFIX => '.info');
+    open (DATAFILE, "> ".$gnuinfo) || die ("Can't open $gnuinfo\n");
 
-    open (DATAFILE, "> $gnuplot_cmds");
     print DATAFILE "set terminal png\n";
-    print DATAFILE "set output \"$gifname\"\n";
     if ($use_semi_log eq "false") {
         print DATAFILE "set logscale xy\n";
     } else {
@@ -109,9 +117,23 @@ sub CreateGIF {
     print DATAFILE "plot \"$temp_dir/PHFLUX.DAT\" with steps\n";
     close (DATAFILE);
 
-    `/usr/bin/gnuplot $gnuplot_cmds`;
+    my ($fh2, $gifname) = tempfile (TEMPLATE => 'XXXXXX',
+                                   DIR => $tempdir,
+                                   CLEANUP => 0,
+                                   SUFFIX => '.png');
+    system ("/usr/bin/gnuplot $gnuinfo > $gifname");
+    if ($? == -1) {
+        print "failed to execute: $!\n";
+    } elsif ($? & 127) {
+        printf "child died with signal %d, %s coredump\n",
+        ($? & 127),  ($? & 128) ? 'with' : 'without';
+    } else {
+#        printf "child exited with value %d\n", $? >> 8;
+    }
 
-    unlink ($gnuplot_cmds);
-    return ($gifname);
+    chmod (0644, $gifname);
+    $plotname = $gifname;
+    $plotname =~ s/$reg_exp_prefix/..\/amop_images/g;
+    return ($plotname);
 }
 
