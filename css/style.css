@@ -501,9 +501,11 @@ a:focus, a:hover, a:active {
 	}
 
 #subnav li a:hover, #subnav li a:active, #subnav .current_page_item a, #subnav .current-cat a {
-	background: url(images/subnavhov.png);
+	
 	color: #FFFFFF;
-	/*text-shadow: #055669 1px 1px;*/
+	/*
+	background: url(images/subnavhov.png);
+	text-shadow: #055669 1px 1px;*/
 	}
 	
 #subnav li a.sf-with-ul {
