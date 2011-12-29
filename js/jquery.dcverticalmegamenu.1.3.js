@@ -149,8 +149,8 @@
 				var height = $container.height();
 				var itemHeight = $(this).outerHeight(true);
 				var offset = $link.offset();
-				var scrollTop = $(window).scrollTop();
-				var offset = offset.top - scrollTop();
+				var scrollTop = 0; // $(window).scrollTop();
+				var offset = 0; // offset.top - 0; // scrollTop();
 				var bodyHeight = $(window).height();
 				var maxHeight = bodyHeight - offset;
 				var xsHeight = maxHeight - outerHeight;
