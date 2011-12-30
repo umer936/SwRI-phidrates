@@ -42,7 +42,7 @@ top: 18px;
 right: 15px; 
 width: 6px; 
 height: 8px; 
-background: url(images/arrow_right.png) no-repeat 0 0;
+/*background: url(images/arrow_right.png) no-repeat 0 0;*/
 }
 /* Mega menu container */
 .mega-menu li .sub-container {
@@ -96,12 +96,12 @@ text-shadow: none;
 }
 .mega-menu .sub li.mega-hdr li a {
 padding: 4px 5px 4px 20px; 
-/*background: url(images/arrow_white.png) no-repeat 5px 8px; */
+background: url(images/arrow_white.png) no-repeat 5px 8px; 
 font-weight: normal;
 }
 .mega-menu .sub li.mega-hdr li a:hover {
 color: #a32403; 
-/*background: #efefef url(images/arrow_on.png) no-repeat 5px 8px;*/
+background: #efefef url(images/arrow_on.png) no-repeat 5px 8px;
 }
 .mega-menu .sub ul li {
 padding-right: 0;
