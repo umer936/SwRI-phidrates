@@ -29,9 +29,9 @@
       common Name, idxaxs, idyaxs
       common /C/ AngstF, Flux, nF
       open(unit =  3, file = "RatOut")               ! Binned rate coefficient per Angstrom.
-      open(unit =  4, status = "replace")            ! Temporary file for wavelengths and cross sections.
+!      open(unit =  4, status = "replace")            ! Temporary file for wavelengths and cross sections.
       open(unit = 15, file = "FotOut")               ! Binned Cross Section.
-      open(unit = 16, status = "replace")            ! Temporary file.
+!      open(unit = 16, status = "replace")            ! Temporary file.
 !
       FMT1 = "((a14, 2x, 00 (1x, a8)))"
       FMT2 = "((0pf7.1, 1x,    8x , 00 (1x, 1pe8.2)))"

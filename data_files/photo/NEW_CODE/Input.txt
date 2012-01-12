@@ -1,0 +1,14 @@
+BB 
+    
+10000.  
+
+The above is a sample for the Input file for PHIDRATES.
+
+The first line starts at position 1 and has three characters:  Either "Sol" or "BB " or "IS ".  The first line is case sensitive!  Note the blank character after BB and IS!
+If the first line is "Sol", then the second line contains a value for the solar activity (SA) between 0.00 and 1.00; for example 0.66.  The third line is ignored.
+
+If the first line is "BB ", then the second line is read into a dummy location named DumSA; it can be left blank or can contain any four characters.  The third line should contain the blackbody temperature in Kelvin.  Any value between "1000.   " and "1000000."  The "period" is a decimal point.  In my compiler it can be ignored, but your compiler may demand it to get the correct value.  Note that the field on the third line is eight characters long (including the decimal point.  Any entry less than "1000.   "gives such small values that they are meaningless.  It would take more that the age of the universe to ionize or dissociate a molecule!
+
+If the first line is "IS ", then the second line will be ignored the same way as for the case "BB ".  The InterStellar (IS) radiation field has not been implemented as yet.
+
+Nothing after the third line in the input file will be read by the program at this point!

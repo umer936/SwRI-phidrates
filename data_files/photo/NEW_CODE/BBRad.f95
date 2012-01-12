@@ -30,9 +30,10 @@ real (kind = 8), dimension(LimA + 1) :: Angsts, AngPl, Sigpl
 real (kind = 8), dimension(LimF) :: Flux
 real (kind = 8), dimension(LimF + 1) :: AngstF
 real (kind = 8), dimension(GrPtLim) :: BBGrid
+character (len = 3) :: BB, IS, RadField, Sol
 character (len = 8), dimension(2) :: Name
-character (len = 8) :: NamPr, RadField
-common Name, RadField !, T
+character (len = 8) :: NamPr
+common Name, RadField
 common /C/ AngstF, Flux, nF
 
 open(unit = 3, file = "Output", status = "unknown")   ! RatOut = Binned rate coefficient per Angstrom.
@@ -74,6 +75,10 @@ do
     NBB1 = NBB2
   end if
 end do
+if(iFirst == 0) then
+  write(unit = 20, fmt = "(a43, f11.2, a3)") "The radiation field is from a blackbody at T =", T, "K."
+else
+end if
 close(unit = 12)
 return
 end Subroutine BBRad
