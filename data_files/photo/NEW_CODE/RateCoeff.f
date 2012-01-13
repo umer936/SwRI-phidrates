@@ -7,7 +7,8 @@
       integer :: i, ij, i1, iL, iFirst, IOS4, iPrnt, j, jL, jLm1, k, 
      1  Last, m2, m3, m4, maxN, maxPr, minPr, n, n1, nL, nPlot, nS, 
      2  nSets, nF
-      real (kind = 8) :: aLast, Angst1, AngstL, SA, x1, x2, T
+      real (kind = 4) :: SA
+      real (kind = 8) :: aLast, Angst1, AngstL, x1, x2, T
       real (kind = 8), dimension(16) :: Rate
       real (kind = 8), dimension(nSA) :: FlxRat         ! Flux ratio of 
 !                                                         active/quiet Sun
@@ -21,16 +22,17 @@
       real (kind = 8), dimension(LimB + 1) :: XSctPl, RatePl, AngPlt, 
      1  PhotFlx
       real (kind = 8), dimension(LimA, 16) :: XSctn, RateC
-      character (len = 8) :: NamPr, RadField
+      character (len = 3) :: BB, IS, RadField, Sol
+      character (len = 8) :: NamPr
       character (len = 8), dimension(2) :: Name
       character (len = 8), dimension(16)  :: NamCrs
       character (len = 24) :: FMT1, FMT3
       character (len = 39) :: FMT2
-      common Name, idxaxs, idyaxs
+      common Name, RadField, idxaxs, idyaxs
       common /C/ AngstF, Flux, nF
-      open(unit =  3, file = "RatOut")               ! Binned rate coefficient per Angstrom.
+      open(unit =  3, file = "RatOut")               ! Binned rate coefficients per Angstrom.
 !      open(unit =  4, status = "replace")            ! Temporary file for wavelengths and cross sections.
-      open(unit = 15, file = "FotOut")               ! Binned Cross Section.
+      open(unit = 15, file = "FotOut")               ! Binned Cross Sections.
 !      open(unit = 16, status = "replace")            ! Temporary file.
 !
       FMT1 = "((a14, 2x, 00 (1x, a8)))"
@@ -58,14 +60,14 @@
 ! Depending on the type of flux, read file with flux data.     
 !
 
-      idyaxs = 2
-      idxaxs = 1
-      if(iFirst .eq. 0) call pltxsct(j, angplt, flxplt)
-      idxaxs = 0
-
-      if(iFirst .eq. 0) call pltxsct(j, angplt, flxplt)
-      idyaxs=3
-      if(iFirst .eq. 0) call pltxsct(j, angplt, flxratpl)
+!      idyaxs = 2
+!      idxaxs = 1
+!      if(iFirst .eq. 0) call pltxsct(j, angplt, flxplt)
+!      idxaxs = 0
+!
+!      if(iFirst .eq. 0) call pltxsct(j, angplt, flxplt)
+!      idyaxs=3
+!      if(iFirst .eq. 0) call pltxsct(j, angplt, flxratpl)
       iFirst = 1
    50 nampr = name(1)
       Last = 1
@@ -199,6 +201,7 @@
       jLm1 = jL - 1
       n = n1
       maxN = n1 - 1
+!      write(unit = *, fmt = *) " maxN=", maxN
       x(n) = 0.0
       x1 = 0.5*XSct(1)
 !
@@ -286,8 +289,8 @@
       m2 = nSets
       m3 = 1
       m4 = nSets
-      write(unit = 15, fmt = "(i2, 49x, a8)") nSets, NamPr      ! unit 15 is FotOut
-      write(unit = 3, fmt = "(i2, 49x, a8)") nSets, NamPr       ! unit 3 is RatOut.
+      write(unit = 15, fmt = "(i2, 49x, a8)") nSets, NamPr ! unit 15 is FotOut
+      write(unit = 3, fmt = "(i2, 49x, a8)") nSets, NamPr  ! unit 3 is RatOut.
       if(m2 < 10) then
         FMT1(13:13) = CHAR(m2 + 48)
         FMT1(12:12) = CHAR(48)
@@ -331,10 +334,13 @@
         end if
       end do
       write(unit = 16, fmt = "(i6)") maxN
+!      write(unit = *, fmt = "(i6)") maxN
       do i = 1, maxN, 5
         ij = i + 4
         write(unit = 16, fmt = "(f7.0, 3x, 1p5e10.3, 10x, a8)") 
      1    AngstF(i), (XTotPu(j), j = i, ij), NamPr
+!        write(unit = *, fmt = "(f7.0, 3x, 1p5e10.3, a8, 2x, a8)") 
+!     1    AngstF(i), (XSecPu(j), j = i, ij), (Name(k), k = 1, 2)
       end do
       do i = 1, 16
         Rate(i) = 0.0
