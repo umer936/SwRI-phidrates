@@ -2,7 +2,8 @@ Subroutine SolRad(SA)
 !
 ! This subroutine calculates the solar photon flux for the activity level of the Sun.
 !
-integer, parameter :: iFirst = 0, LimB = 2000, LimF = 1000, nSA = 162
+integer, parameter :: LimB = 2000, LimF = 1000, nSA = 162
+integer :: iFirst
 real (kind = 4) :: SA
 real (kind = 8), dimension(LimB) :: FlxPlt
 real (kind = 8), dimension(LimB + 1) :: AngPlt, PhotFlx

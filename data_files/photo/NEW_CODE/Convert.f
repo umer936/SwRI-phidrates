@@ -18,9 +18,9 @@
       character (len = 38) :: FMT4
       COMMON /A/ Nam, Num, Kat, iFlg, Thrsh, nSets
       common /C/ AngstF, Flux, nF
-      open(unit =  4, status = "replace")        ! Temporary file for wavelengths and cross sections.
+!      open(unit =  4, status = "replace")        ! Temporary file for wavelengths and cross sections.
       open(unit =  9, file = "EIoniz")           ! Binned rates and excess energies.
-      open(unit = 16, status = "replace")        ! Temporary file.
+!      open(unit = 16, status = "replace")        ! Temporary file.
       open(unit = 19, file = "EEOut")            ! Binned excess energy per Angstrom.
       open(unit = 20, file = "Summary")          ! Summary of rate coefficients and excess energies.
 

@@ -8,7 +8,8 @@ Program InitializeF
 ! This code also calculates the excess energies of the photo products. 
 ! Subroutines called:  Branch, FotRat, Convert, (PltXsctn,?) and EIoniz (as part of Convert).
 !
-integer, parameter :: iFirst = 0, LimA = 50000, LimB = 2000, LimF = 1000, nSum = 0
+integer, parameter :: LimA = 50000, LimB = 2000, LimF = 1000, nSum = 0
+integer :: iFirst
 integer :: iEnd, IOS1, nB, nS
 real (kind = 4) :: SA, DumSA
 real (kind = 8), dimension(LimF) :: Flux
