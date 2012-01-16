@@ -187,10 +187,14 @@ if(nSets /= 0) then     ! This goes to end of "if"
 !
   do i = 1, ns
     ttemp = 1. - Tot(i)
-    if(ttemp < 0.) then
-      write(unit = *, fmt = *) Mother(1), ", ttemp < 0.: ", ttemp, " around wavelength: ", Angsts(i)
-      TabBrP(i, nSets) = 0.0
-      ttemp = 0.0
+    if(ttemp < 0.0) then
+      if(ttemp < -1.0e-6) then
+        write(unit = *, fmt = *) Mother(1), ", ttemp < -1.0e-6: ", ttemp, " around wavelength: ", Angsts(i)
+        stop
+      else
+        TabBrP(i, nSets) = 0.0
+        ttemp = 0.0
+      end if
     else
       TabBrP(i, nSets) = ttemp
     end if
