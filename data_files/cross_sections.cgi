@@ -68,7 +68,7 @@ sub PrintResults {
     $url_temp_dir =~ s/tmp//;
 
     #print "</CENTER>";
-    print "<A target=\"_blank\" class=\"btn\" HREF=\"$url_temp_dir/BRNOUT\"><span>Click here to view or shift-click to download \
+    print "<A target=\"_blank\" class=\"btn\" HREF=\"$url_temp_dir/BrnOut\"><span>Click here to view or shift-click to download \
            the data file used to create this plot!</span></A>\n";   
 		   
 		   
@@ -93,7 +93,7 @@ sub PrintResults {
     }
     #print "</CENTER>";
 
-    print "<A target=\"_blank\" class=\"btn\" HREF=\"$url_temp_dir/BRNOUT\"><span>Click here to view or shift-click to download \
+    print "<A target=\"_blank\" class=\"btn\" HREF=\"$url_temp_dir/BrnOut\"><span>Click here to view or shift-click to download \
            the data file used to create this plot!</span></A>\n";
     print "<HR align=\"center\" width=\"50%\" size=\"1\">";
 
@@ -177,7 +177,7 @@ sub ComputeSpectrum {
 sub GenerateBranches {
     local ($num_branches, $num_values, $line, $i, $bnum, $val);
 
-    open (INPUT_FILE, "< BRNOUT") || die ("Can't open BRNOUT\n");
+    open (INPUT_FILE, "< BrnOut") || die ("Can't open BrnOut\n");
 
     $ref_count = 0;
     $ref_count = 0;

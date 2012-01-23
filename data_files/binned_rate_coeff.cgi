@@ -57,7 +57,7 @@ sub PrintResults {
     $url_temp_dir =~ s/tmp//;
 
     #print "</CENTER>";
-    print "<A target=\"_blank\" class=\"btn\" HREF=\"$url_temp_dir/RATOUT\"><span>Click here to view or shift-click to \ 
+    print "<A target=\"_blank\" class=\"btn\" HREF=\"$url_temp_dir/RatOut\"><span>Click here to view or shift-click to \ 
            download the data wavelength-integrated over each bin!</span></A>\n";
     #print "<CENTER>";
     $num_branches = &GenerateBranches ();
@@ -75,7 +75,7 @@ sub PrintResults {
         $bnum++;
     }
     #print "</CENTER>";
-    print "<A target=\"_blank\" class=\"btn\" HREF=\"$url_temp_dir/RATOUT\"><span>Click here to view or shift-click to \
+    print "<A target=\"_blank\" class=\"btn\" HREF=\"$url_temp_dir/RatOut\"><span>Click here to view or shift-click to \
            download the data wavelength-integrated over each bin!</span></A>\n";
     print "<br><br><HR align=\"center\" width=\"50%\" size=\"1\"><br>";
 	print "</BODY></HTML>";
@@ -146,7 +146,7 @@ sub ComputeSpectrum {
 sub GenerateBranches {
     local ($num_branches, $num_values, $line, $i, $bnum, $val);
 
-    open (INPUT_FILE, "< RATOUT") || die ("Can't open RATOUT\n");
+    open (INPUT_FILE, "< RatOut") || die ("Can't open RatOut\n");
 
     $line = <INPUT_FILE>;
     $line =~ /^ (\d+)/;

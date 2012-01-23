@@ -56,7 +56,7 @@ sub PrintResults {
     $url_temp_dir =~ s/tmp//;
 
     #print "</CENTER>";
-    print "<A target=\"_blank\" class=\"btn\" HREF=\"$url_temp_dir/FOTOUT\"><span>Click here to view or shift-click to \
+    print "<A target=\"_blank\" class=\"btn\" HREF=\"$url_temp_dir/FotOut\"><span>Click here to view or shift-click to \
            download the data file used to create this plot!</span></A>\n";
     #print "<CENTER>";
     $num_branches = &GenerateBranches ();
@@ -78,7 +78,7 @@ sub PrintResults {
     }
     #print "</CENTER>";
 
-    print "<A target=\"_blank\" class=\"btn\" HREF=\"$url_temp_dir/FOTOUT\"><span>Click here to view or shift-click to \
+    print "<A target=\"_blank\" class=\"btn\" HREF=\"$url_temp_dir/FotOut\"><span>Click here to view or shift-click to \
            download the data file used to create this plot!</span></A>\n";
 		   
 	print "<br><br><HR align=\"center\" width=\"50%\" size=\"1\"><br>";	   
@@ -150,7 +150,7 @@ sub ComputeSpectrum {
 sub GenerateBranches {
     local ($num_branches, $num_values, $line, $i, $bnum, $val);
 
-    open (INPUT_FILE, "< FOTOUT") || die ("Can't open FOTOUT\n");
+    open (INPUT_FILE, "< FotOut") || die ("Can't open FotOut\n");
 
     $line = <INPUT_FILE>;
     $line =~ /^ (\d+)/;

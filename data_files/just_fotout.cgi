@@ -57,7 +57,7 @@ sub PrintResults {
     print "\n";
     print "<P>";
     chdir ($temp_dir);
-    open (EEOUT, "< $temp_dir/EEOUT") || die "Can't open EEOUT!\n";
+    open (EEOUT, "< $temp_dir/EEOut") || die "Can't open EEOut!\n";
     $line = <EEOUT>;
     $line = <EEOUT>;
     $line =~ s/Lambda//g;
