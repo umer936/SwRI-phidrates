@@ -1,6 +1,6 @@
         35      0.00   4940.   CH3SSCH3 total
 Cross section:
-Lambda = 0.61-600. A
+Lambda = 0.61-1100.00 A
    Synthesized from cross sections of atomic constituents 2*C + 6*H + 2*S
    Barfield, W. D., Koontz, G. D., Huebner W. F. (1972) 
    J. Quant. Spectr. Rad. Trans. 12, 1409 
@@ -23,11 +23,11 @@ Lambda = 2000.-3100. A
      70.50  7.00E-17
      73.50  1.00E-18
     122.00  2.00E-18
-    249.00  3.00E-18
-    363.00  2.00E-18
-    508.00  1.00E-17
-    553.00  1.00E-17
-   1100.00  1.00E-16
+    249.00  5.00E-18
+    363.00  2.40E-17
+    508.00  5.70E-17
+    553.00  6.40E-17
+   1100.00  4.80E-17
    2000.00  1.30E-17
    2100.00  5.30E-18
    2200.00  1.30E-18
