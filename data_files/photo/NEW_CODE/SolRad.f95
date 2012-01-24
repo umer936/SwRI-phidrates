@@ -3,7 +3,7 @@ Subroutine SolRad(SA)
 ! This subroutine calculates the solar photon flux for the activity level of the Sun.
 !
 integer, parameter :: LimB = 2000, LimF = 1000, nSA = 162
-integer :: iFirst
+integer :: iFirst = 0
 real (kind = 4) :: SA
 real (kind = 8), dimension(LimB) :: FlxPlt
 real (kind = 8), dimension(LimB + 1) :: AngPlt, PhotFlx
@@ -25,7 +25,6 @@ if(iFirst == 0) then
   read(unit = 10, fmt = "(f8.0, 2x, e8.2)") (PhotFlx(i), PhotFlx(i + 1), i = 1, 2*nF, 2)
   read(unit = 10, fmt = "(f8.0)") PhotFlx(2*nF + 1)
   write(unit = *, fmt = *) " nSA=", nSA
-  pause
   read(unit = 10, fmt = "(10f5.2)") (FlxRatio(i), i = 1, nSA - 2)
   read(unit = 10, fmt = "(2f5.2)") (FlxRatio(i), i = nSA - 1, nSA)
   close(unit = 10)
