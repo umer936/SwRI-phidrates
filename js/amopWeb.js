@@ -6,6 +6,7 @@ var useSolarActivity = true;
 var useAxesScaling = false;
 var useXAxisUnit = false;
 var molDivCounter = 0;
+var which_tab = "";
 
 function processLink (value) {
 
@@ -81,6 +82,7 @@ $('backtotop').innerHTML;
 		else if (value == "photo") {
 		useXAxisUnit = true;
         justCrossSections = true;
+
 				document.getElementById('photo').className='main_tabs_link_div_sel';
 				document.getElementById('home').className='main_tabs_link_div';
 				document.getElementById('blackbody').className='main_tabs_link_div';
@@ -124,6 +126,7 @@ document.getElementById('side_menu_contact_div').className='home_side_menu_butto
                useOpticalDepth = true;
                useSolarActivity = false;
                useAxesScaling = true;
+
 								document.getElementById('blackbody').className='main_tabs_link_div_sel';
 								document.getElementById('home').className='main_tabs_link_div';
 								document.getElementById('photo').className='main_tabs_link_div';
@@ -164,6 +167,7 @@ document.getElementById('side_menu_contact_div').className='home_side_menu_butto
                useOpticalDepth = true;
                useSolarActivity = false;
                useAxesScaling = true;
+
 								document.getElementById('interstellar').className='main_tabs_link_div_sel';
 								document.getElementById('home').className='main_tabs_link_div';
 								document.getElementById('photo').className='main_tabs_link_div';
@@ -199,6 +203,7 @@ document.getElementById('side_menu_contact_div').className='home_side_menu_butto
                useOpticalDepth = true;
                useSolarActivity = true;
                useAxesScaling = true;
+
 								document.getElementById('solar').className='main_tabs_link_div_sel';
 								document.getElementById('home').className='main_tabs_link_div';
 								document.getElementById('photo').className='main_tabs_link_div';
@@ -429,6 +434,27 @@ function runMolecule (value) {
 window.scroll(0,150); // horizontal and vertical scroll targets
 
 
+if (document.getElementById('photo').className=='main_tabs_link_div_sel')
+{
+	which_tab = "Sol";
+}
+
+else if(document.getElementById('blackbody').className=='main_tabs_link_div_sel')
+{
+	which_tab = "BB";
+}	
+
+else if (document.getElementById('interstellar').className=='main_tabs_link_div_sel')
+{
+	which_tab = "Sol";
+}
+
+else if (document.getElementById('solar').className=='main_tabs_link_div_sel')
+{
+	which_tab = "Sol";
+}
+
+
 $('window_area').update();
 // -> HTMLElement
 $('window_area').innerHTML;
@@ -477,10 +503,12 @@ $('backtotop').innerHTML;
     var solar_activity;
     var use_semi_log;
 
+
     if (justCrossSections == true) {
         use_electron_volts = document.options.x_axis_unit[1].checked;
         var cross_sections = URL
             + 'cross_sections.cgi'
+			+ '?which_tab=' + which_tab
             + '?molecule=' + value
             + '?use_electron_volts=' + use_electron_volts 
             + '?use_semi_log=false' 
@@ -491,6 +519,7 @@ $('backtotop').innerHTML;
 				//win.show();
 			new Ajax.Updater('window_area', cross_sections, {evalScripts:true});
 			new Ajax.Updater('backtotop', 'backtotop.html', {evalScripts:true});
+			//alert (cross_sections);
 				
 
 			
@@ -507,6 +536,7 @@ $('backtotop').innerHTML;
 
         var rate_numbers = URL
             + 'just_fotout.cgi'
+			+ '?which_tab=' + which_tab
             + '?molecule=' + value
             + '?use_electron_volts=' + use_electron_volts 
             + '?use_semi_log=' + use_semi_log
@@ -517,6 +547,7 @@ $('backtotop').innerHTML;
 				//win.show();
 				new Ajax.Updater('window_area', rate_numbers, {evalScripts:true});
 				new Ajax.Updater('backtotop', 'backtotop.html', {evalScripts:true});
+				//alert (rate_numbers);
 
 
 
@@ -527,6 +558,7 @@ $('backtotop').innerHTML;
         if (document.options.plots_desired[0].checked == true) {
             var solar_spectrum = URL
                 + 'gp_spectrum.cgi'
+				+ '?which_tab=' + which_tab
                 + '?use_semi_log=' + use_semi_log
                 + '?solar_activity=' + solar_activity;
 				//var win = new Window({className: "spread", title: "Solar Spectrum of "+value, 
@@ -535,6 +567,7 @@ $('backtotop').innerHTML;
 				//win.show();
 				new Ajax.Updater('tab1_area', solar_spectrum, {evalScripts:true});
 				new Ajax.Updater('backtotop', 'backtotop.html', {evalScripts:true});
+				//alert (solar_spectrum);
 				
            // solar_spectrum = window.open (solar_spectrum, "solar_spectrum",
            //     "menubar=yes,resizable=yes,scrollbars=yes,width=600,height=500");
@@ -542,6 +575,7 @@ $('backtotop').innerHTML;
         if (document.options.plots_desired[1].checked == true) {
             var cross_sections = URL
                 + 'binned_cross_sections.cgi'
+				+ '?which_tab=' + which_tab
                 + '?molecule=' + value
                 + '?use_electron_volts=' + use_electron_volts 
                 + '?use_semi_log=' + use_semi_log
@@ -552,6 +586,7 @@ $('backtotop').innerHTML;
 				//win.show();
 				new Ajax.Updater('tab2_area', cross_sections, {evalScripts:true});
 				new Ajax.Updater('backtotop', 'backtotop.html', {evalScripts:true});
+				//alert (cross_sections);
 
             //cross_sections_window = window.open (cross_sections, "cross_sections",
             //    "menubar=yes,resizable=yes,scrollbars=yes,width=600,height=500");
@@ -559,6 +594,7 @@ $('backtotop').innerHTML;
         if (document.options.plots_desired[2].checked == true) {
             var rate_coeff = URL
                 + 'binned_rate_coeff.cgi'
+				+ '?which_tab=' + which_tab
                 + '?molecule=' + value
                 + '?use_electron_volts=' + use_electron_volts 
                 + '?use_semi_log=' + use_semi_log
@@ -569,6 +605,7 @@ $('backtotop').innerHTML;
 				//win.show();
 				new Ajax.Updater('tab3_area', rate_coeff, {evalScripts:true});
 				new Ajax.Updater('backtotop', 'backtotop.html', {evalScripts:true});
+				//alert (rate_coeff);
 
           //  rate_coeff_window = window.open (rate_coeff, "rate_coeff",
            //     "menubar=yes,resizable=yes,scrollbars=yes,width=600,height=500");
@@ -576,6 +613,7 @@ $('backtotop').innerHTML;
         if (document.options.plots_desired[3].checked == true) {
             var excess_energies = URL
                 + 'excess_energies.cgi'
+				+ '?which_tab=' + which_tab
                 + '?molecule=' + value
                 + '?use_electron_volts=' + use_electron_volts 
                 + '?use_semi_log=' + use_semi_log
@@ -586,6 +624,7 @@ $('backtotop').innerHTML;
 				//win.show();
 				new Ajax.Updater('tab4_area', excess_energies, {evalScripts:true});
 				new Ajax.Updater('backtotop', 'backtotop.html', {evalScripts:true});
+				//alert (excess_energies);
 
            // excess_energies_window = window.open (excess_energies, "excess_energies",
             //    "menubar=yes,resizable=yes,scrollbars=yes,width=600,height=500");
