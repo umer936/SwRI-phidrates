@@ -15,7 +15,7 @@
       character*8 Name, Name1, Name2, Nam(16), NamCrs(16), NamPr
       character (len = 8) :: RadField
       character (len = 24) :: FMT3, FMT5 !, FMT6
-      character (len = 38) :: FMT4
+      character (len = 40) :: FMT4
       COMMON /A/ Nam, Num, Kat, iFlg, Thrsh, nSets
       common /C/ AngstF, Flux, nF
 !      open(unit =  4, status = "replace")        ! Temporary file for wavelengths and cross sections.
@@ -24,9 +24,9 @@
       open(unit = 19, file = "EEOut")            ! Binned excess energy per Angstrom.
       open(unit = 20, file = "Summary")          ! Summary of rate coefficients and excess energies.
 
-      FMT3 = "((a14, 2x, 00 (1x, a8)))"
-      FMT4 = "((0pf7.1, 1x,    8x, 00 (1x, 1pe8.2)))"
-      FMT5 = "((a16, 00 (1x, 1pe8.2)))"
+      FMT3 = "((a14, 2x, 00 (1x, a9)))"
+      FMT4 = "((0pf7.1, 1x,    8x, 00 (1x, 1pE9.2E3)))"
+      FMT5 = "((a16, 00 (1x, 1pe9.2)))"
 !
       rewind(unit = 4)
       read(unit = 4, fmt = "(i3)") nSets         ! Scratch file for wavelengths & cross sections.
