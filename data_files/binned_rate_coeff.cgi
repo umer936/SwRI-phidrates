@@ -1,5 +1,6 @@
 #!/usr/bin/perl -w
 
+require "common.pl";
 require "vars.pl";
 require "LUTIn.txt";
 require "LUTOut.txt";
@@ -7,14 +8,16 @@ require "LUTOut.txt";
 use IO::File;
 use File::Temp qw/ tempfile tempdir /;
 
-# this is where the aliases in httpd.conf is set and where the temp files will be written!
-
-$prefix = "/tmp/phidrates";
-$reg_exp_prefix = "\/tmp\/phidrates";
-
 ################################################################
 #  parse QUERY_STRING -> filename; display file
 ################################################################
+
+# Globals
+
+$solar_activity = 0.0;
+$temp = 1000.0;          #default for Blackbody temperature in Kelvin
+$which_tab = "";
+$use_semi_log = "false";
 
 # convert variables to a value
 
@@ -27,13 +30,22 @@ foreach $item (@items) {
     $$key = $val;
 }
 
+#  If option was not on the tab being processed, reset to default value
+#  since being overridden by previous parsing of QUERY_STRING.
+
+    if ($solar_activity eq "undefined") {
+      $solar_activity = 0.0
+    };
+
 # make a temporary directory
 # copy the "molecule".dat to our temporary directory
 # run photo on the temporary directory
 
 $temp_dir = &MakeTempDirectory ();
-&ComputeSpectrum ($solar_activity, $temp_dir);
+&ComputeSpectrum ($solar_activity, $which_tab, $temp_dir);
 &CopyMolecule ($molecule, $temp_dir);
+&CopyNecessaryFiles ($temp_dir);
+&WriteInputFile ($solar_activity, $temp, $which_tab, $temp_dir);
 &RunPhotoRat ($molecule, $temp_dir);
 &PrintResults ($molecule, $temp_dir);
 
@@ -47,7 +59,11 @@ sub PrintResults {
     #print "<CENTER>";
 #    print "Temp Dir = $temp_dir   Input = $input\n";
     $nice_name = &ConvertCanonicalInputName ($molecule);
-    print "<H1>Binned Rate Coefficients of $nice_name</H1>\n";
+    if (defined ($nice_name)) {
+        print "<H1>Binned Rate Coefficients of $nice_name</H1>\n";
+    } else {
+        print "<H1>Binned Rate Coefficients of $molecule</H1>\n";
+    }
     print "\n";
     print "<P>";
     chdir ($temp_dir);
@@ -68,7 +84,11 @@ sub PrintResults {
         }
         $gifname = &GeneratePlot ($temp_dir, "branch_r.$bnum", $branches[$bnum+1]);
         $nice_name = &ConvertCanonicalOutputName ($branches[$bnum+1]);
-        print "<H2>$nice_name</H2>";
+        if (defined ($nice_name)) {
+            print "<H2>$nice_name</H2>";
+        } else {
+            print "<H2>$branches[$bnum+1]</H2>";
+        }
         print "<IMG SRC = \"$gifname\" BORDER=4>\n";
         print "<P><P>";
         unlink ("branch_r.$bnum");
@@ -79,68 +99,6 @@ sub PrintResults {
            download the data wavelength-integrated over each bin!</span></A>\n";
     print "<br><br><HR align=\"center\" width=\"50%\" size=\"1\"><br>";
 	print "</BODY></HTML>";
-}
-
-sub RunPhotoRat {
-
-    local ($molecule, $temp_dir) = @_;
-
-    chdir ($temp_dir);
-    `$amop_cgi_bin_dir/photo/photo`;
-}
-
-sub CopyMolecule {
-
-    local ($molecule, $temp_dir) = @_;
-
-    `cp $amop_cgi_bin_dir/photo/hrecs/$molecule.dat $temp_dir/HREC`;
-}
-
-sub MakeTempDirectory {
-
-    local ($temp_dir);
-
-# make a temporary directory
-
-    if (!(-e $prefix)) {
-        mkdir ($prefix, 0777);
-    }
-
-    $temp_dir = tempdir (TEMPLATE => 'fileXXXXXX',
-                         DIR => $prefix,
-                         CLEANUP => 0);
-    chmod (0755, $temp_dir);
-    return ($temp_dir);
-}
-
-sub ComputeSpectrum {
-
-    my ($solar_activity, $temp_dir) = @_;
-    my ($i, $x, $y, $sunqflux_line, $sunqflux, $aqratio_line, $aqratio);
-
-# compute the new data
-
-    open (NEWDATAFILE, "> $temp_dir/PHFLUX.DAT") || die ("Location: error.gif\n\n");
-    open (AQRATIO, "< $amop_cgi_bin_dir/photo/aqratio.dat") || die ("Location: error.gif\n\n");
-    open (SUNQFLUX, "< $amop_cgi_bin_dir/photo/sunqflux.dat") || die ("Location: error.gif\n\n");
-
-    $i = 0;
-    while ($sunqflux_line = <SUNQFLUX>) {
-        ($x, $sunqflux) = split (/\s+/, $sunqflux_line);
-        if ($i < 162) {
-            $aqratio_line = <AQRATIO>;
-            ($x, $aqratio) = split (/\s+/, $aqratio_line);
-            $y = $sunqflux + $solar_activity * ($aqratio - 1.0) * $sunqflux;
-        } else {
-            $y = $sunqflux;
-        }
-        printf (NEWDATAFILE "%8.0f  %8.2e\n", $x, $y);
-        $i++;
-    }
-
-    close (NEWDATAFILE);
-    close (AQRATIO);
-    close (SUNQFLUX);
 }
 
 sub GenerateBranches {

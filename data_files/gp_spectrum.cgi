@@ -27,6 +27,13 @@ foreach $item (@items) {
     $$key = $val;
 }
 
+#  If option was not on the tab being processed, reset to default value
+#  since being overridden by previous parsing of QUERY_STRING.
+
+    if ($solar_activity eq "undefined") {
+      $solar_activity = 0.0
+    };
+
 # 1) open a temporary directory 
 # 2) compute the new data and write it to our temporary directory
 # 3) run gnuplot over the new data file
