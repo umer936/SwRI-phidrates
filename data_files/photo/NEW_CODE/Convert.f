@@ -84,9 +84,9 @@
         write(unit = 9, fmt = *) "Begin EIoniz"
         write(unit = 9, fmt = "(1x, 2i5, 11x, a8, 12x, a8)") Numb, iCat,
      1    Name1, Name2                           ! Unit 9 is EIoniz.
-        write(unit = 9, fmt = "(a49, a18)") 
-     1    "0   Wavelength Range X-Section    Flux      Rate ", 
-     2    "    E Excess   Sum"
+        write(unit = 9, fmt = "(a50, a19)") 
+     1    "0   Wavelength Range X-Section    Flux       Rate ", 
+     2    "     E Excess   Sum"
         NamPr = Name1
         NamCrs(iPrnt) = Name2
         if(nSets <= 0) then
@@ -140,7 +140,7 @@
           TRate = TRate + Rate
           ExEn(i, iPrnt) = EnElec*Rate
           ETot = ETot + EnElec*Rate
-          write(unit = 9, fmt = "(1x, 2f10.2, 1p3e10.3, 
+          write(unit = 9, fmt = "(1x, 2f10.2, 1pe10.3, 1p2E11.3E3,
      1    0pf10.2, 1pe10.3)") Wave1, Wave2, XSect, Flx, Rate, EnElec, 
      2    ETot
         end do
