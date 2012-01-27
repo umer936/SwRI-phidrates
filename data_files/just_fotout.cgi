@@ -39,7 +39,6 @@ foreach $item (@items) {
 # run photo on the temporary directory
 
 $temp_dir = &MakeTempDirectory ();
-&ComputeSpectrum ($solar_activity, $which_tab, $temp_dir);
 &CopyMolecule ($molecule, $temp_dir);
 &CopyNecessaryFiles ($temp_dir);
 &WriteInputFile ($solar_activity, $temp, $which_tab, $temp_dir);
