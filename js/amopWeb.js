@@ -8,6 +8,10 @@ var useXAxisUnit = false;
 var molDivCounter = 0;
 var which_tab = "";
 
+var temp = "1000.0";
+var optical_depth = "0";
+
+
 function processLink (value) {
 
 
@@ -80,8 +84,8 @@ $('backtotop').innerHTML;
 
 
 		else if (value == "photo") {
-		useXAxisUnit = true;
-        justCrossSections = true;
+                  useXAxisUnit = true;
+                  justCrossSections = true;
 
 				document.getElementById('photo').className='main_tabs_link_div_sel';
 				document.getElementById('home').className='main_tabs_link_div';
@@ -192,6 +196,7 @@ document.getElementById('side_menu_contact_div').className='home_side_menu_butto
 									document.getElementById('molecule_side_menu').style.visibility='visible';
 									document.getElementById('window_area').style.display='block';
 									
+
 									document.getElementById('tab1_area').style.display='block';
 									document.getElementById('tab2_area').style.display='block';
 									document.getElementById('tab3_area').style.display='block';
@@ -441,7 +446,7 @@ if (document.getElementById('photo').className=='main_tabs_link_div_sel')
 
 else if(document.getElementById('blackbody').className=='main_tabs_link_div_sel')
 {
-	which_tab = "BB";
+	which_tab = "BB ";
 }	
 
 else if (document.getElementById('interstellar').className=='main_tabs_link_div_sel')
@@ -504,11 +509,24 @@ $('backtotop').innerHTML;
     var use_semi_log;
 
 
+	
+
+	
+
+
+
     if (justCrossSections == true) {
         use_electron_volts = document.options.x_axis_unit[1].checked;
+		
+
+
+		
+		
         var cross_sections = URL
             + 'cross_sections.cgi'
 			+ '?which_tab=' + which_tab
+			+ '?temp=' + temp
+			+ '?optical_depth=' + optical_depth
             + '?molecule=' + value
             + '?use_electron_volts=' + use_electron_volts 
             + '?use_semi_log=false' 
@@ -519,10 +537,9 @@ $('backtotop').innerHTML;
 				//win.show();
 			new Ajax.Updater('window_area', cross_sections, {evalScripts:true});
 			new Ajax.Updater('backtotop', 'backtotop.html', {evalScripts:true});
-			//alert (cross_sections);
 				
 
-			
+
 				
 				
         //cross_sections_window = window.open (cross_sections, "cross_sections",
@@ -530,13 +547,23 @@ $('backtotop').innerHTML;
     } else {
         use_electron_volts = false;
         use_semi_log = document.options.axes_scaling[1].checked;
+		
+//	temp = document.options.temp.value;
+//	optical_depth = document.options.optical_depth.value;
+		
+		
+		
         if (useSolarActivity == true) {
             solar_activity = document.options.solar_activity.value;
+//			temp = document.options.temp.value;
+			optical_depth = document.options.optical_depth.value;
         }
 
         var rate_numbers = URL
             + 'just_fotout.cgi'
 			+ '?which_tab=' + which_tab
+			+ '?temp=' + temp
+			+ '?optical_depth=' + optical_depth
             + '?molecule=' + value
             + '?use_electron_volts=' + use_electron_volts 
             + '?use_semi_log=' + use_semi_log
@@ -547,18 +574,21 @@ $('backtotop').innerHTML;
 				//win.show();
 				new Ajax.Updater('window_area', rate_numbers, {evalScripts:true});
 				new Ajax.Updater('backtotop', 'backtotop.html', {evalScripts:true});
-				//alert (rate_numbers);
 
-
-
+//alert(rate_numbers);
 				
 				
        // rate_numbers_window = window.open (rate_numbers, "rate_numbers",
         //    "menubar=yes,resizable=yes,scrollbars=yes,width=600,height=500");
         if (document.options.plots_desired[0].checked == true) {
-            var solar_spectrum = URL
+
+			var solar_spectrum = URL
                 + 'gp_spectrum.cgi'
 				+ '?which_tab=' + which_tab
+				+ '?temp=' + temp
+				+ '?optical_depth=' + optical_depth
+                + '?molecule=' + value
+                + '?use_electron_volts=' + use_electron_volts 
                 + '?use_semi_log=' + use_semi_log
                 + '?solar_activity=' + solar_activity;
 				//var win = new Window({className: "spread", title: "Solar Spectrum of "+value, 
@@ -567,15 +597,18 @@ $('backtotop').innerHTML;
 				//win.show();
 				new Ajax.Updater('tab1_area', solar_spectrum, {evalScripts:true});
 				new Ajax.Updater('backtotop', 'backtotop.html', {evalScripts:true});
-				//alert (solar_spectrum);
+				//alert(solar_spectrum);
 				
            // solar_spectrum = window.open (solar_spectrum, "solar_spectrum",
            //     "menubar=yes,resizable=yes,scrollbars=yes,width=600,height=500");
         } 
         if (document.options.plots_desired[1].checked == true) {
-            var cross_sections = URL
+
+			var cross_sections = URL
                 + 'binned_cross_sections.cgi'
 				+ '?which_tab=' + which_tab
+				+ '?temp=' + temp
+				+ '?optical_depth=' + optical_depth
                 + '?molecule=' + value
                 + '?use_electron_volts=' + use_electron_volts 
                 + '?use_semi_log=' + use_semi_log
@@ -586,15 +619,18 @@ $('backtotop').innerHTML;
 				//win.show();
 				new Ajax.Updater('tab2_area', cross_sections, {evalScripts:true});
 				new Ajax.Updater('backtotop', 'backtotop.html', {evalScripts:true});
-				//alert (cross_sections);
+				//alert(cross_sections);
 
             //cross_sections_window = window.open (cross_sections, "cross_sections",
             //    "menubar=yes,resizable=yes,scrollbars=yes,width=600,height=500");
         } 
         if (document.options.plots_desired[2].checked == true) {
-            var rate_coeff = URL
+
+			var rate_coeff = URL
                 + 'binned_rate_coeff.cgi'
 				+ '?which_tab=' + which_tab
+				+ '?temp=' + temp
+				+ '?optical_depth=' + optical_depth
                 + '?molecule=' + value
                 + '?use_electron_volts=' + use_electron_volts 
                 + '?use_semi_log=' + use_semi_log
@@ -605,15 +641,17 @@ $('backtotop').innerHTML;
 				//win.show();
 				new Ajax.Updater('tab3_area', rate_coeff, {evalScripts:true});
 				new Ajax.Updater('backtotop', 'backtotop.html', {evalScripts:true});
-				//alert (rate_coeff);
 
           //  rate_coeff_window = window.open (rate_coeff, "rate_coeff",
            //     "menubar=yes,resizable=yes,scrollbars=yes,width=600,height=500");
         } 
         if (document.options.plots_desired[3].checked == true) {
-            var excess_energies = URL
+
+			var excess_energies = URL
                 + 'excess_energies.cgi'
 				+ '?which_tab=' + which_tab
+				+ '?temp=' + temp
+				+ '?optical_depth=' + optical_depth
                 + '?molecule=' + value
                 + '?use_electron_volts=' + use_electron_volts 
                 + '?use_semi_log=' + use_semi_log
@@ -624,7 +662,6 @@ $('backtotop').innerHTML;
 				//win.show();
 				new Ajax.Updater('tab4_area', excess_energies, {evalScripts:true});
 				new Ajax.Updater('backtotop', 'backtotop.html', {evalScripts:true});
-				//alert (excess_energies);
 
            // excess_energies_window = window.open (excess_energies, "excess_energies",
             //    "menubar=yes,resizable=yes,scrollbars=yes,width=600,height=500");
@@ -642,7 +679,23 @@ function testNumbers () {
 
     if (justCrossSections == false) {
         if (useTemp == true) {
-            var temp = document.options.temp;
+            var temp = document.options.temp.value;
+			if ((isNumberString (temp) == false) || 
+                (isBetweenXY (temp, 1000, 1000000.) == false)) {
+                alert ("Temperature between 1000 and 1000000 is required for temperature in k!")
+                Ctrl.focus ();
+                return (-1);
+            }
+            if (isBetweenXY (temp, 1000, 1000000.) == false) {
+                alert ("Number between 1000 and 1000000 is required for temperature in k!")
+                Ctrl.focus ();
+                return (-1);
+            }
+			
+			
+			
+        } else {
+            var temp = "1000.0";
         }
         if (useSolarActivity == true) {
             var solar_activity = document.options.solar_activity.value;
@@ -657,14 +710,33 @@ function testNumbers () {
                 Ctrl.focus ();
                 return (-1);
             }
+        } else {
+            var solar_activity = "0.0";
         }
         if (useOpticalDepth == true) {
             var optical_depth = document.options.optical_depth.value;
+  
+			
+			
+	          if ((isNumberString (optical_depth) == false) || 
+                (isBetweenXY (optical_depth, 0, 1) == false)) {
+                alert ("Number between 0 and 1 is required for optical depth!")
+                Ctrl.focus ();
+                return (-1);
+            }		
+			
+			
+			
+			
+			
+			
             if (isBetweenXY (optical_depth, 0, 1) == false) {
                 alert ("Number between 0 and 1 is required for optical depth!")
                 Ctrl.focus ();
                 return (-1);
             }
+        } else {
+            var optical_depth = "0.0";
         }
     }
     return (0);
