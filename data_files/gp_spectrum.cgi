@@ -1,22 +1,23 @@
-#!/usr/bin/perl
+#!/usr/bin/perl -w
+
+require "common.pl";
+require "vars.pl";
 
 use IO::File;
 use File::Temp qw/ tempfile tempdir /;
-
-require "vars.pl";
-
-$solar_activity = 0.0;
 
 ################################################################
 #  parse QUERY_STRING -> filename; display file
 ################################################################
 
-# this is where the aliases in httpd.conf is set and where the temp files will be written!
+# Globals
 
-$prefix = "/tmp/phidrates";
-$reg_exp_prefix = "\/tmp\/phidrates";
+$solar_activity = 0.0;
+$which_tab = "";
+$temp = 1000.0;          #default for Blackbody temperature in Kelvin
+$use_semi_log = "false";
 
-print "Content-type: text/html\n\n";
+# convert variables to a value
 
 $input = $ENV{'QUERY_STRING'};
 @items = split (/\?/, $input);
@@ -34,14 +35,23 @@ foreach $item (@items) {
       $solar_activity = 0.0
     };
 
-# 1) open a temporary directory 
-# 2) compute the new data and write it to our temporary directory
-# 3) run gnuplot over the new data file
-# 4) return the name of the picture
+# 1) make a temporary directory
+# 2) copy the "molecule".dat to our temporary directory
+# 3) Create the "Input" file to the "photo" program in our temporary directory
+# 4) run photo on the temporary directory
+# 5) Extract the values needed for the plot and place in new data file
+# 6) run gnuplot over the new data file
+# 7) return the name of the picture
 
 $temp_dir = &MakeTempDirectory ();
-&ComputeSpectrum ($solar_activity, $temp_dir);
-$gifname = &CreateGIF ($temp_dir);
+&CopyNecessaryFiles ($temp_dir);
+&CopyMolecule ($molecule, $temp_dir);
+&WriteInputFile ($solar_activity, $temp, $which_tab, $temp_dir);
+&RunPhotoRat ($molecule, $temp_dir);
+&GenerateSpectrum ($temp_dir);
+$gifname = &CreateGIF ($temp_dir, $use_semi_log);
+
+print "Content-type: text/html\n\n";
 
 print "<HTML><HEAD><TITLE>Solar Spectrum</TITLE></HEAD>\n";
 print "<BODY><H1>Solar Spectrum</H1>";
@@ -52,109 +62,101 @@ print "<br><br><HR align=\"center\" width=\"50%\" size=\"1\"><br>";
 print "</BODY></HTML>";
 exit (0);
 
-sub MakeTempDirectory {
+sub GenerateSpectrum {
+  my ($temp_dir) = @_;
+  local ($i, $val, $line, $header, $Wavelength, $Range, $XSection, $Flux, $Rate, $EExcess, $Sum, $lastline);
 
-    local ($temp_dir);
+  open (INPUT_FILE, "< EIoniz") || die ("Can't open EIoniz\n");
+  open (OUTPUT_FILE, "> $temp_dir/GP_SPECTRUM.DAT") || die ("$temp_dir/GP_SPECTRUM.DAT - Location: error.gif\n\n");
 
-# make a temporary directory
+# Begin line indicator
 
-    if (!(-e $prefix)) {
-        mkdir ($prefix, 0777);
-    }
+  $line = <INPUT_FILE>;
+  if ($line =~ /Begin/) {
 
-    $temp_dir = tempdir (TEMPLATE => 'fileXXXXXX',
-                         DIR => $prefix,
-                         CLEANUP => 0);
-    chmod (0755, $temp_dir);
-    return ($temp_dir);
-}
+# read and ignore the 2nd line
 
-sub ComputeSpectrum {
+    $line = <INPUT_FILE>;
+      
+# read the 3rd line, which contains column header labels.
+   
+    $header = <INPUT_FILE>;
 
-    my ($solar_activity, $temp_dir) = @_;
-    my ($i, $x, $y, $sunqflux_line, $sunqflux, $aqratio_line, $aqratio);
+    $i = 1;
+    $lastline = "false";
+    do {
+        $line = <INPUT_FILE>;
 
-# compute the new data
+# When we reach the "Average Energy" line, we are done.
+# This works even if there is more than one Begin EIoniz block.
 
-    open (NEWDATAFILE, "> $temp_dir/PHFLUX.DAT") || die ("Location: error.gif\n\n");
-    open (AQRATIO, "< $amop_cgi_bin_dir/photo/aqratio.dat") || die ("Location: error.gif\n\n");
-    open (SUNQFLUX, "< $amop_cgi_bin_dir/photo/sunqflux_plot.dat") || die ("Location: error.gif\n\n");
-
-    $i = 0;
-    while ($sunqflux_line = <SUNQFLUX>) {
-        ($x, $sunqflux) = split (/\s+/, $sunqflux_line);
-        if ($i < 162) {
-            $aqratio_line = <AQRATIO>;
-            ($x, $aqratio) = split (/\s+/, $aqratio_line);
-            $y = $sunqflux + $solar_activity * ($aqratio - 1.0) * $sunqflux;
-        } else {
-            $y = $sunqflux;
+        if ($line =~ /Average/) {
+          # ignore this line but flag end of processing
+          $lastline = "true";
         }
-        printf (NEWDATAFILE "%8.0f  %8.2e\n", $x, $y);
-        $i++;
-    }
+        elsif ($line =~ /Total/) {
+          # ignore this line for now
+        }
+         else {
+           $line =~ s/^\s+//g;
+           $line =~ s/\s+$//g;
+           $line =~ s/\s+/ /g;
 
-    close (NEWDATAFILE);
-    close (AQRATIO);
-    close (SUNQFLUX);
+           @values = split (/ /, $line);
+           $Wavelength = $values[0];
+           $Range = $values[1];
+           $XSection = $values[2];
+           $Flux = $values[3];
+           $Rate = $values[4];
+           $EExcess = $values[5];
+           $Sum = $values[6];
+
+           if ($Wavelength eq "undefined") {
+                print "Content-type: text/html\n\n";
+                printf ("Wavelength value is undefined at line number %d\n", $i);
+           }
+           if ($Flux eq "undefined") {
+                print "Content-type: text/html\n\n";
+                printf ("Flux value is undefined at line number %d\n", $i);
+           }
+        printf (OUTPUT_FILE "%10.2f %e\n", $Wavelength, $Flux);
+      }
+      $i++;
+    } while ($lastline eq "false");
+    close (INPUT_FILE);
+    close (OUTPUT_FILE);
+  }
+
+# Invalid 1st line read from file.  This should trap the case where 0-length files are generated
+# when photo.exe does not execute properly.
+
+  else {
+       print "Content-type: text/html\n\n";
+       print "Invalid 1st line in file EIoniz, command = photo;\n";
+  }
 }
 
 sub CreateGIF {
 
-    local ($tempdir) = $_ [0];
-    local ($gifname);
+    local ($tempdir, $use_semi_log) = @_;
+    local ($gifname, $xlabel, $ylabel, $plotTitle, $set_mytics);
 
     my ($fh, $gnuinfo) = tempfile (TEMPLATE => 'gnu_XXXXXX',
                                    DIR => $tempdir, CLEANUP => 1,
                                    SUFFIX => '.info');
-    open (DATAFILE, "> ".$gnuinfo) || die ("Can't open $gnuinfo\n");
+    open (TMP_FILE, "> ".$gnuinfo) || die ("Can't open $gnuinfo\n");
 
-    print DATAFILE "set terminal png size 800,600 font \"/usr/share/fonts/dejavu-lgc/DejaVuLGCSans.ttf\" 12\n";
-    if ($use_semi_log eq "false") {
-        print DATAFILE "set logscale xy\n";
-    } else {
-        print DATAFILE "set logscale y\n";
-    }
+    $xlabel = "Wavelength  (A)";
+    $ylabel = "Solar Flux  (Photons cm**-2 s**-1 A**-1)";
+    $plotTitle = "Southwest Research Institute\\nSolar Activity: $solar_activity";
+    $set_mytics = "false";
+    &SetCommonOutput ($use_semi_log, $xlabel, $ylabel, $plotTitle, $set_mytics);
 
-print DATAFILE << "EOF";
-
-# Line style for axes
-set style line 80 lt 0
-
-# Line style for grid
-set style line 81 lt 3  # dashed
-set style line 81 lw 0.5  # grey
-
-# set grid back linestyle 81
-set xtics nomirror
-set ytics nomirror
-
-#set log x
-set mxtics 10    # Makes logscale look good.
-
-# Line styles: try to pick pleasing colors, rather
-# than strictly primary colors or hard-to-see colors
-# like gnuplot's default yellow.  Make the lines thick
-# so they're easy to see in small plots in papers.
-set style line 1 lt 1
-set style line 2 lt 1
-set style line 3 lt 1
-set style line 4 lt 1
-set style line 1 lt 1 lw 6 pt 7
-set style line 2 lt 2 lw 6 pt 9
-set style line 3 lt 3 lw 6 pt 5
-set style line 4 lt 4 lw 6 pt 13
-set origin 0, 0.01
-EOF
-
-    print DATAFILE "set title \"Southwest Research Institute\\nSolar Activity: $solar_activity\"\n";
-    print DATAFILE "set xrange [1:100000]\n";
-    print DATAFILE "set xlabel \"Wavelength  (A)\"\n";
-    print DATAFILE "set ylabel \"Solar Flux  (Photons cm**-2 s**-1 A**-1)\"\n";
-    print DATAFILE "set nokey\n";
-    print DATAFILE "set mxtics 5\n";
-    print DATAFILE "plot \"$temp_dir/PHFLUX.DAT\" with steps\n";
-    close (DATAFILE);
+    print TMP_FILE "set xrange [1:100000]\n";
+    print TMP_FILE "set nokey\n";
+    print TMP_FILE "set mxtics 5\n";
+    print TMP_FILE "plot \"$temp_dir/GP_SPECTRUM.DAT\" with steps\n";
+    close (TMP_FILE);
 
     my ($fh2, $gifname) = tempfile (TEMPLATE => 'XXXXXX',
                                    DIR => $tempdir,

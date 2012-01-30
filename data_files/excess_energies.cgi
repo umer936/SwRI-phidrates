@@ -46,10 +46,10 @@ $temp_dir = &MakeTempDirectory ();
 &CopyNecessaryFiles ($temp_dir);
 &WriteInputFile ($solar_activity, $temp, $which_tab, $temp_dir);
 &RunPhotoRat ($molecule, $temp_dir);
-&PrintResults ($molecule, $temp_dir);
+&PrintResults ($molecule, $temp_dir, $use_semi_log);
 
 sub PrintResults {
-    local ($molecule, $temp_dir) = @_;
+    local ($molecule, $temp_dir, $use_semi_log) = @_;
     local ($nice_name);
 
     print "Content-type: text/html\n\n";
@@ -81,7 +81,7 @@ sub PrintResults {
         if ($branches[$bnum] eq "Lambda") {
             $branches[$bnum] = "Total";
         }
-        $gifname = &GeneratePlot ($temp_dir, "branch_r.$bnum", $branches[$bnum+1]);
+        $gifname = &GeneratePlot ($temp_dir, "branch_r.$bnum", $branches[$bnum+1], $use_semi_log);
         $nice_name = &ConvertCanonicalOutputName ($branches[$bnum+1]);
         if (defined ($nice_name)) {
             print "<H2>$nice_name</H2>";
@@ -165,23 +165,20 @@ sub GeneratePlot {
     local ($tempdir) = $_ [0];
     local ($filename) = $_ [1];
     local ($branch) = $_ [2];
-    local ($gifname);
+    local ($use_semi_log) = $_ [3];
+    local ($gifname, $xlabel, $ylabel, $plotTitle, $set_mytics);
 
     my ($fh, $gnuinfo) = tempfile (TEMPLATE => 'gnu_XXXXXX',
                                    DIR => $tempdir, CLEANUP => 1,
                                    SUFFIX => '.info');
     open (TMP_FILE, "> ".$gnuinfo) || die ("Can't open $gnuinfo\n");
-    print TMP_FILE "set terminal png\n";
-    print TMP_FILE "set size 0.7,0.7\n";
-    print TMP_FILE "set title \"Southwest Research Institute\\nBranch: $branch\"\n";
-    print TMP_FILE "set xlabel \"Wavelength [A]\"\n";
-    print TMP_FILE "set ylabel \"Excess Energies [eV A**-1 s**-1]\"\n";
-    if ($use_semi_log eq "false") {
-        print TMP_FILE "set logscale xy\n";
-    } else {
-        print TMP_FILE "set logscale y\n";
-    }
-    print TMP_FILE "set mytics 5\n";
+
+    $xlabel = "Wavelength [A]";
+    $ylabel = "Excess Energies [eV A**-1 s**-1]";
+    $plotTitle = "Southwest Research Institute\\nBranch: $branch";
+    $set_mytics = "true";
+    &SetCommonOutput ($use_semi_log, $xlabel, $ylabel, $plotTitle, $set_mytics);
+
     print TMP_FILE "plot \"$filename\" title \"\" with steps\n";
     close (TMP_FILE);
 

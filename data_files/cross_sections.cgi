@@ -47,10 +47,10 @@ $temp_dir = &MakeTempDirectory ();
 &CopyNecessaryFiles ($temp_dir);
 &WriteInputFile ($solar_activity, $temp, $which_tab, $temp_dir);
 &RunPhotoRat ($molecule, $temp_dir);
-&PrintResults ($molecule, $temp_dir);
+&PrintResults ($molecule, $temp_dir, $use_semi_log);
 
 sub PrintResults {
-    local ($molecule, $temp_dir) = @_;
+    local ($molecule, $temp_dir, $use_semi_log) = @_;
     local ($nice_name);
 
     print "Content-type: text/html\n\n";
@@ -85,7 +85,7 @@ sub PrintResults {
         if ($branches[$bnum+2] eq "Sigma") {
             $branches[$bnum+2] = "Total";
         }
-        $gifname = &GeneratePlot ($temp_dir, "branch.$bnum", $branches[$bnum+2]);
+        $gifname = &GeneratePlot ($temp_dir, "branch.$bnum", $branches[$bnum+2], $use_semi_log);
         $nice_name = &ConvertCanonicalOutputName ($branches[$bnum+2]);
         if (!defined ($nice_name)) {
             print "<H2>$branches[$bnum + 2]</H2>";
@@ -173,28 +173,24 @@ sub GeneratePlot {
     local ($tempdir) = $_ [0];
     local ($filename) = $_ [1];
     local ($branch) = $_ [2];
-    local ($gifname);
+    local ($use_semi_log) = $_ [3];
+    local ($gifname, $xlabel, $ylabel, $plotTitle, $set_mytics);
 
     my ($fh, $gnuinfo) = tempfile (TEMPLATE => 'gnu_XXXXXX',
                                    DIR => $tempdir, CLEANUP => 1,
                                    SUFFIX => '.info');
     open (TMP_FILE, "> ".$gnuinfo) || die ("Can't open $gnuinfo\n");
-    print TMP_FILE "set terminal png\n";
-    print TMP_FILE "set size 0.7,0.7\n";
-    print TMP_FILE "set title \"Southwest Research Institute\\nBranch: $branch\"\n";
+
     if ($use_electron_volts eq "true") {
-        print TMP_FILE "set xlabel \"Energy [eV]\"\n";
+        $xlabel = "Energy [eV]";
     } else {
-        print TMP_FILE "set xlabel \"Wavelength\"\n";
+        $xlabel = "Wavelength";
     }
-    print TMP_FILE "set ylabel \"Cross Section [cm**2]\"\n";
-    if ($use_semi_log eq "false") {
-        print TMP_FILE "set logscale xy\n";
-    } else {
-        print TMP_FILE "set logscale y\n";
-    }
-    print TMP_FILE "set mytics 5\n";
-    print TMP_FILE "set mxtics 10\n";
+    $ylabel = "Cross Section [cm**2]";
+    $plotTitle = "Southwest Research Institute\\nBranch: $branch";
+    $set_mytics = "true";
+    &SetCommonOutput ($use_semi_log, $xlabel, $ylabel, $plotTitle, $set_mytics);
+
     print TMP_FILE "plot \"$filename\" title \"\" with lines\n";
     close (TMP_FILE);
     my ($fh2, $gifname) = tempfile (TEMPLATE => 'XXXXXX',

@@ -96,3 +96,58 @@ sub CopyNecessaryFiles {
     `cp $amop_cgi_bin_dir/photo/NEW_CODE/BBFlux.dat $temp_dir/BBFlux.dat`;
     `cp $amop_cgi_bin_dir/photo/NEW_CODE/PhFlux.dat $temp_dir/PhFlux.dat`;
 }
+
+sub SetCommonOutput {
+
+    local ($use_semi_log, $xlabel, $ylabel, $title, $set_ytics) = @_;
+
+# do not use local or my for file handler.
+
+    print TMP_FILE "set terminal png size 800,600 font \"/usr/share/fonts/dejavu-lgc/DejaVuLGCSans.ttf\" 12\n";
+    if ($use_semi_log eq "false") {
+        print TMP_FILE "set logscale xy\n";
+    } else {
+        print TMP_FILE "set logscale y\n";
+    }
+
+   print TMP_FILE << "EOF";
+
+# Line style for axes
+set style line 80 lt 0
+
+# Line style for grid
+set style line 81 lt 3  # dashed
+set style line 81 lw 0.5  # grey
+
+# set grid back linestyle 81
+set xtics nomirror
+set ytics nomirror
+
+#set log x
+set mxtics 10    # Makes logscale look good.
+
+# Line styles: try to pick pleasing colors, rather
+# than strictly primary colors or hard-to-see colors
+# like gnuplot's default yellow.  Make the lines thick
+# so they're easy to see in small plots in papers.
+set style line 1 lt 1
+set style line 2 lt 1
+set style line 3 lt 1
+set style line 4 lt 1
+set style line 1 lt 1 lw 6 pt 7
+set style line 2 lt 2 lw 6 pt 9
+set style line 3 lt 3 lw 6 pt 5
+set style line 4 lt 4 lw 6 pt 13
+set origin 0, 0.01
+EOF
+
+    print TMP_FILE "set xlabel \"$xlabel\"\n";
+    print TMP_FILE "set ylabel \"$ylabel\"\n";
+    print TMP_FILE "set title \"$title\"\n";
+
+# Currently, all but gp_spectrum set this value.
+
+    if ($set_ytics eq "true") {
+      print TMP_FILE "set mytics 5\n";
+   }
+}
