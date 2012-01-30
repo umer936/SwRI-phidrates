@@ -109,12 +109,44 @@ sub CreateGIF {
                                    SUFFIX => '.info');
     open (DATAFILE, "> ".$gnuinfo) || die ("Can't open $gnuinfo\n");
 
-    print DATAFILE "set terminal png\n";
+    print DATAFILE "set terminal png size 800,600 font \"/usr/share/fonts/dejavu-lgc/DejaVuLGCSans.ttf\" 12\n";
     if ($use_semi_log eq "false") {
         print DATAFILE "set logscale xy\n";
     } else {
         print DATAFILE "set logscale y\n";
     }
+
+print DATAFILE << "EOF";
+
+# Line style for axes
+set style line 80 lt 0
+
+# Line style for grid
+set style line 81 lt 3  # dashed
+set style line 81 lw 0.5  # grey
+
+# set grid back linestyle 81
+set xtics nomirror
+set ytics nomirror
+
+#set log x
+set mxtics 10    # Makes logscale look good.
+
+# Line styles: try to pick pleasing colors, rather
+# than strictly primary colors or hard-to-see colors
+# like gnuplot's default yellow.  Make the lines thick
+# so they're easy to see in small plots in papers.
+set style line 1 lt 1
+set style line 2 lt 1
+set style line 3 lt 1
+set style line 4 lt 1
+set style line 1 lt 1 lw 6 pt 7
+set style line 2 lt 2 lw 6 pt 9
+set style line 3 lt 3 lw 6 pt 5
+set style line 4 lt 4 lw 6 pt 13
+
+EOF
+
     print DATAFILE "set title \"Southwest Research Institute\\nSolar Activity: $solar_activity\"\n";
     print DATAFILE "set xrange [1:100000]\n";
     print DATAFILE "set xlabel \"Wavelength  (A)\"\n";
