@@ -144,7 +144,7 @@ set style line 1 lt 1 lw 6 pt 7
 set style line 2 lt 2 lw 6 pt 9
 set style line 3 lt 3 lw 6 pt 5
 set style line 4 lt 4 lw 6 pt 13
-
+set origin 0, 0.01
 EOF
 
     print DATAFILE "set title \"Southwest Research Institute\\nSolar Activity: $solar_activity\"\n";
