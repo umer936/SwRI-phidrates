@@ -74,8 +74,8 @@ sub PrintResults {
     $url_temp_dir =~ s/tmp//;
 
     #print "</CENTER>";
-    print "<A target=\"_blank\" class=\"btn\" HREF=\"$url_temp_dir/BrnOut\"><span>Click here to view or shift-click to download \
-           the data file used to create this plot!</span></A>\n";   
+#    print "<A target=\"_blank\" class=\"btn\" HREF=\"$url_temp_dir/BrnOut\"><span>Click here to view or shift-click to download \
+#           the data file used to create this plot!</span></A>\n";   
 		   
 		   
     #print "<CENTER>";
