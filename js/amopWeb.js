@@ -498,8 +498,8 @@ $('backtotop').innerHTML;
 
     if (testNumbers () != 0) return;
 
-    //var URL = 'http://phidrates.space.swri.edu/data_files/'; // real
-	var URL = 'http://porky/phidrates/data_files/'; // dev
+    var URL = 'http://phidrates.space.swri.edu/data_files/'; // real
+//	var URL = 'http://porky/phidrates/data_files/'; // dev
 	
     var programToUse;
     //var useSolarActivity = parent.left_frame.useSolarActivity;
@@ -548,15 +548,13 @@ $('backtotop').innerHTML;
         use_electron_volts = false;
         use_semi_log = document.options.axes_scaling[1].checked;
 		
-//	temp = document.options.temp.value;
 //	optical_depth = document.options.optical_depth.value;
-		
-		
-		
+	if (useTemp == true) {
+	    temp = document.options.temp.value;
+        }
         if (useSolarActivity == true) {
             solar_activity = document.options.solar_activity.value;
-//			temp = document.options.temp.value;
-			optical_depth = document.options.optical_depth.value;
+   	    optical_depth = document.options.optical_depth.value;
         }
 
         var rate_numbers = URL

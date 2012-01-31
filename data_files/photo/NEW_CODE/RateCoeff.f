@@ -313,7 +313,7 @@
       write(unit = 15, fmt = FMT2) (AngstF(i), 
      1  (XSctn(i, j), j = m3, m4), i = minPr, maxPr)
       write(unit = 3, fmt = FMT2) (AngstF(i), 
-     1  (XSctn(i, j), j = m3, m4), i = minPr, maxPr)
+     1  (RateC(i, j), j = m3, m4), i = minPr, maxPr)
       write(unit = 15, fmt = "(0pf7.1)") AngstF(maxPr + 1)
       write(unit = 3, fmt = "(0pf7.1)") AngstF(maxPr + 1)
       write(unit = 3, fmt = FMT3) " Rate Coeffs. = ", (Rate(j), 
