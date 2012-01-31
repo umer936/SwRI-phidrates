@@ -126,7 +126,7 @@ sub GenerateBranches {
     do {
         $line = <INPUT_FILE>;
         if ($line =~ /Rate/) {
-            # ignore this line
+            # ignore this line - Although does not appear to be written by NEW_CODE
         } else {
             $line =~ s/^\s+//g;
             $line =~ s/\s+$//g;
