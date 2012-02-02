@@ -213,21 +213,20 @@
         x1 = x2
         if(j == jLm1) then
           XSctn(n, iPrnt) = x(n)/(AngstF(n + 1) - AngstF(n))
-          RateC(n, iPrnt) = XSctn(n, iPrnt)*Flux(n)
           XSecPu(n) = XSctn(n, iPrnt)
-          if(XSecPu(n) <= 1.e-30) then
+          if(XSecPu(n) <= 1.d-30) then
             Last = Last + 1
             if(XSctn(n, iPrnt) < 0.0) then
               XSctn(n, iPrnt) = 0.0
             else
-              if(XSctn(n, iPrnt) < 1.e-30) then
-                XSctn(n, iPrnt) = 1.e-30
+              if(XSctn(n, iPrnt) < 1.d-30) then
+                XSctn(n, iPrnt) = 1.d-35
               else
               end if
             end if
           else
           end if
-          Rate(iPrnt) = Rate(iPrnt) + XSctn(n, iPrnt)*Flux(n)
+          RateC(n, iPrnt) = XSctn(n, iPrnt)*Flux(n)
         else
           if(Angx(j + 1) >= AngstF(n + 1)) then             ! This and the following 9 lines were not in Phidrats
             XSctn(n, iPrnt) = x(n)/(AngstF(n + 1) - AngstF(n))

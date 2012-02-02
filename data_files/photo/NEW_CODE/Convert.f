@@ -145,9 +145,9 @@
      2    ETot
         end do
           AvgEn = ETot/TRate
-        write(unit = 9, fmt = "(a1, 48X, a13, 1pe10.3)") "0", 
+        write(unit = 9, fmt = "(a1, 46x, a14, 1pe10.3)") "0",
      1    "Total Rate = ", TRate
-        write(unit = 9, fmt = "(45X, a17, f6.3)") "Average Energy = ", 
+        write(unit = 9, fmt = "(43x, a17, f7.3)") "Average Energy = ",
      1    AvgEn
           TotRat(iPrnt) = TRate
           TotEEn(iPrnt) = AvgEn
