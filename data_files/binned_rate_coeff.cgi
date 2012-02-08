@@ -106,7 +106,7 @@ sub GenerateBranches {
     open (INPUT_FILE, "< RatOut") || die ("Can't open RatOut\n");
 
     $line = <INPUT_FILE>;
-    $line =~ /^ (\d+)/;
+    $line =~ /^\s*(\d+)/;
     $num_branches = $1;
     $header = <INPUT_FILE>;
     @branches = split (/\s+/, $header);
@@ -192,9 +192,13 @@ sub GeneratePlot {
 #        printf "child exited with value %d\n", $? >> 8;
     }
 
-    chmod (0644, $gifname); 
-    $plotname = $gifname;
-    $plotname =~ s/$reg_exp_prefix/..\/amop_images/g;
+    if (-s $gifname) {
+        chmod (0644, $gifname);
+        $plotname = $gifname;
+        $plotname =~ s/$reg_exp_prefix/..\/amop_images/g;
+    } else {
+        $plotname = "img/baddata.gif";
+    }
     return ($plotname);
 }
 

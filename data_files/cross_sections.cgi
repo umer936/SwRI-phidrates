@@ -207,8 +207,12 @@ sub GeneratePlot {
 #        printf "child exited with value %d\n", $? >> 8;
     }
 
-    chmod (0644, $gifname);
-    $plotname = $gifname;
-    $plotname =~ s/$reg_exp_prefix/..\/amop_images/g;
+    if (-s $gifname) {
+        chmod (0644, $gifname);
+        $plotname = $gifname;
+        $plotname =~ s/$reg_exp_prefix/..\/amop_images/g;
+    } else {
+        $plotname = "img/baddata.gif";
+    }
     return ($plotname);
 }
