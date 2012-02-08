@@ -62,9 +62,10 @@ do
   if(c2/(AngstF(nF + 1)*1.d-10*T) < 700.) then  ! Avoid overflow of the exponent.
     NBB2 = c1*1.d-04/((AngstF(nF + 1)*1.d-10)**(4.d+00)*(dexp(c2/(AngstF(nF + 1)*1.d-10*T)) - 1.d+00))
     Flux(nF) = (NBB1 + NBB2)*(AngstF(nF + 1) - AngstF(nF))*1.d-10/2.
-    write(unit = 12, fmt = "(f10.2, 1pe10.2)") AngstF(nF), Flux(nF)  ! Blackbody photon flux
   else
+    Flux(nF) = 0.0
   end if
+  write(unit = 12, fmt = "(f10.2, 1pe10.2)") AngstF(nF), Flux(nF)  ! Blackbody photon flux
   iGrpt = iGrPt + 1
   nF = nF + 1
   AngstF(nF + 1) = BBGrid(iGrPt + 1)

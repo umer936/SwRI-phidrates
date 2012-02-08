@@ -141,10 +141,14 @@
           ExEn(i, iPrnt) = EnElec*Rate
           ETot = ETot + EnElec*Rate
           write(unit = 9, fmt = "(1x, 2f10.2, 1pe10.3, 1p2E11.3E3,
-     1    0pf10.2, 1pe10.3)") Wave1, Wave2, XSect, Flx, Rate, EnElec, 
+     1    0pf10.2, 1pe12.3e3)") Wave1, Wave2, XSect, Flx, Rate, EnElec, 
      2    ETot
         end do
-          AvgEn = ETot/TRate
+          if(TRate < 1.0d-99) then
+            TRate = 0.0
+          else
+            AvgEn = ETot/TRate
+          end if
         write(unit = 9, fmt = "(a1, 46x, a14, 1pe10.3)") "0",
      1    "Total Rate = ", TRate
         write(unit = 9, fmt = "(43x, a17, f7.3)") "Average Energy = ",
@@ -152,7 +156,11 @@
           TotRat(iPrnt) = TRate
           TotEEn(iPrnt) = AvgEn
         do i = 1, maxN
-          ExEn(i, iPrnt) = ExEn(i, iPrnt)/TRate
+          if(TotRat(iPrnt) < 1.0d-99) then
+            ExEn(i, iPrnt) = 0.0
+          else
+            ExEn(i, iPrnt) = ExEn(i, iPrnt)/TRate
+          end if
           if(ExEn(i, iPrnt) < 0.0) then
             ExEn(i, iPrnt) = 0.0
           end if

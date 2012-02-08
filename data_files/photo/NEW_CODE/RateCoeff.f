@@ -27,7 +27,7 @@
       character (len = 8), dimension(2) :: Name
       character (len = 8), dimension(16)  :: NamCrs
       character (len = 24) :: FMT1, FMT3
-      character (len = 39) :: FMT2
+      character (len = 45) :: FMT2
       common Name, RadField, idxaxs, idyaxs
       common /C/ AngstF, Flux, nF
       open(unit =  3, file = "RatOut")               ! Binned rate coefficients per Angstrom.
@@ -36,7 +36,7 @@
 !      open(unit = 16, status = "replace")            ! Temporary file.
 !
       FMT1 = "((a14, 2x, 00 (1x, a8)))"
-      FMT2 = "((0pf7.1, 1x,    8x , 00 (1x, 1pe8.2)))"
+      FMT2 = "((0pf7.1, 1x,    8x , 00 (1x, 1pe9.2e3)))"
       FMT3 = "((a16, 00 (1x, 1pe8.2)))"
       do i = 1, LimB
         xTotPu(i) = 0.0
@@ -315,6 +315,12 @@
      1  (RateC(i, j), j = m3, m4), i = minPr, maxPr)
       write(unit = 15, fmt = "(0pf7.1)") AngstF(maxPr + 1)
       write(unit = 3, fmt = "(0pf7.1)") AngstF(maxPr + 1)
+      do j = m3, m4
+        if(Rate(j) < 1.0d-99) then
+          Rate(j) = 0.0
+        else
+        end if
+      end do
       write(unit = 3, fmt = FMT3) " Rate Coeffs. = ", (Rate(j), 
      1  j = m3, m4)
       aLast = 0.0
