@@ -53,8 +53,13 @@ $gifname = &CreateGIF ($temp_dir, $use_semi_log);
 
 print "Content-type: text/html\n\n";
 
-print "<HTML><HEAD><TITLE>Solar Spectrum</TITLE></HEAD>\n";
-print "<BODY><H1>Solar Spectrum</H1>";
+if ($which_tab eq "BB ") {
+    print "<HTML><HEAD><TITLE>Blackbody Spectrum</TITLE></HEAD>\n";
+    print "<BODY><H1>Blackbody Spectrum</H1>";
+} else {
+    print "<HTML><HEAD><TITLE>Solar Spectrum</TITLE></HEAD>\n";
+    print "<BODY><H1>Solar Spectrum</H1>";
+}
 
 print "<IMG SRC=\"$gifname\">";
 print "<br><br><HR align=\"center\" width=\"50%\" size=\"1\"><br>";
@@ -146,9 +151,14 @@ sub CreateGIF {
                                    SUFFIX => '.info');
     open (TMP_FILE, "> ".$gnuinfo) || die ("Can't open $gnuinfo\n");
 
-    $xlabel = "Wavelength  (A)";
-    $ylabel = "Solar Flux  (Photons cm**-2 s**-1 A**-1)";
-    $plotTitle = "Southwest Research Institute\\nSolar Activity: $solar_activity";
+    $xlabel = "Wavelength [A]";
+    if ($which_tab eq "BB ") {
+        $ylabel = "Blackbody Photon Spectrum (cm**-2 s**-1 A**-1)";
+        $plotTitle = "Southwest Research Institute\\nBlackbody Rate coefficient at T = ${temp}K";
+    } else {
+        $ylabel = "Solar Flux (Photons cm**-2 s**-1 A**-1)";
+        $plotTitle = "Southwest Research Institute\\nSolar Activity: $solar_activity";
+    }
     $set_mytics = "false";
     &SetCommonOutput ($use_semi_log, $xlabel, $ylabel, $plotTitle, $set_mytics);
 

@@ -175,7 +175,11 @@ sub GeneratePlot {
 
     $xlabel = "Wavelength [A]";
     $ylabel = "Excess Energies [eV A**-1 s**-1]";
-    $plotTitle = "Southwest Research Institute\\nBranch: $branch";
+    if ($which_tab eq "Sol") {
+        $plotTitle = "Southwest Research Institute\\nBranch: $branch at SA = ${solar_activity}";
+    } else {
+        $plotTitle = "Southwest Research Institute\\nBranch: $branch at T = ${temp}K";
+    }
     $set_mytics = "true";
     &SetCommonOutput ($use_semi_log, $xlabel, $ylabel, $plotTitle, $set_mytics);
 

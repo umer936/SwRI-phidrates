@@ -184,7 +184,7 @@ sub GeneratePlot {
     if ($use_electron_volts eq "true") {
         $xlabel = "Energy [eV]";
     } else {
-        $xlabel = "Wavelength";
+        $xlabel = "Wavelength [A]";
     }
     $ylabel = "Cross Section [cm**2]";
     $plotTitle = "Southwest Research Institute\\nBranch: $branch";
