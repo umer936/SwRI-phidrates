@@ -451,7 +451,7 @@ else if(document.getElementById('blackbody').className=='main_tabs_link_div_sel'
 
 else if (document.getElementById('interstellar').className=='main_tabs_link_div_sel')
 {
-	which_tab = "Sol";
+	which_tab = "Int";
 }
 
 else if (document.getElementById('solar').className=='main_tabs_link_div_sel')
