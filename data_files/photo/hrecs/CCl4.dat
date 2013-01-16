@@ -1,4 +1,4 @@
-        59      0.00   4070.   CCl4     total
+        59      0.00   4070.   CCl4     Total
 Cross section:
 Lambda = 0.61-625.80 A
    Synthesized from cross sections of constituent atoms C + 4* Cl
@@ -81,3 +81,4 @@ Lambda = 1700.-2400. A
    4070.00  1.00E 00
          0      0.00   2090.   CCl4     CCl2/2Cl    26
 ***
+
