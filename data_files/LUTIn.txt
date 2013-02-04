@@ -1,6 +1,8 @@
 #!/bin/perl -w
 $inputLUT {'H'} = "H";
 $inputLUT {'H-'} = "H<sup>-</sup>";
+$inputLUT {'H+/2e'} = "H<sup>+</sup> + 2e";
+$inputLUT {'H/e'} = "H + e";
 $inputLUT {'He'} = "He";
 $inputLUT {'He+'} = "He<sup>+</sup>";
 $inputLUT {'Li'} = "Li";

@@ -34,6 +34,7 @@ if ($which_tab eq "Int") {  # we need to block out interstellar for the moment!
     print "<BODY><H1>$nice_name</H1>";
     print "<TABLE><TR><TH>Branch</TH>";
     print "<TH>Rate Coeffs.<BR>[s<sup>-1</sup>]</TH><TH>Excess Energies<BR>[eV]</TH></TR><TR>\n";
+    print "<TD colspan=\"3\"><CENTER>Data for the Interstellar Radiation Field is not yet available.</CENTER></TD>";
     print "</TABLE>";
 #    print "<IMG SRC=\"img/under_construction.png\">";
     print "<br><br><HR align=\"center\" width=\"50%\" size=\"1\"><br>";

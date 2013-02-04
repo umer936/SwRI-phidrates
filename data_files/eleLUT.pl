@@ -2,6 +2,8 @@
 
 $eleLUT {'H'} = "H";
 $eleLUT {'H-'} = "H<sup>-</sup>";
+$eleLUT {'H+/2e'} = "H<sup>+</sup> + 2e";
+$eleLUT {'H/e'} = "H + e";
 $eleLUT {'He'} = "He";
 $eleLUT {'He+'} = "He<sup>+</sup>";
 $eleLUT {'Li'} = "Li";
