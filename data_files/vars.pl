@@ -5,8 +5,8 @@ $amop_site = "http:\/\/phidrates.space.swri.edu\/";
 
 $amop_cgi_bin_dir = "/web/phidrates/data_files";
 
-# Alias /amop_images /var/tmp
-$amop_gif_alias = "amop_images";
+# Alias /phidrates_images /var/tmp
+$amop_gif_alias = "phidrates_images";
 
 # this is where the aliases in httpd.conf is set and where the temp files will be written!
 

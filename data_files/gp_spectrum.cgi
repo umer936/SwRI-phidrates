@@ -199,7 +199,7 @@ sub CreateGIF {
     if (-s $gifname) {
         chmod (0644, $gifname);
         $plotname = $gifname;
-        $plotname =~ s/$reg_exp_prefix/..\/amop_images/g;
+        $plotname =~ s/$reg_exp_prefix/..\/phidrates_images/g;
     } else {
         $plotname = "img/baddata.gif";
     }

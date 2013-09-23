@@ -79,7 +79,7 @@ sub PrintResults {
     chdir ($temp_dir);
 
     my $url_temp_dir = $temp_dir;
-    $url_temp_dir =~ s/$reg_exp_prefix/\/amop_images/g;
+    $url_temp_dir =~ s/$reg_exp_prefix/\/phidrates_images/g;
     $url_temp_dir =~ s/tmp//;
 
     #print "</CENTER>";
@@ -214,7 +214,7 @@ sub GeneratePlot {
     if (-s $gifname) {
         chmod (0644, $gifname);
         $plotname = $gifname;
-        $plotname =~ s/$reg_exp_prefix/..\/amop_images/g;
+        $plotname =~ s/$reg_exp_prefix/..\/phidrates_images/g;
     } else {
         $plotname = "img/baddata.gif";
     }
