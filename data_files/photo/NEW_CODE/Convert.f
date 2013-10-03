@@ -146,6 +146,7 @@
         end do
           if(TRate < 1.0d-99) then
             TRate = 0.0
+            AvgEn = 0.0
           else
             AvgEn = ETot/TRate
           end if

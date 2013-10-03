@@ -52,7 +52,7 @@ else
     read(unit = 7, fmt = "(f8.0)") T
     call BBRad(T)
   else
-    if(RadField == "IS") then  ! Calculate interstellar spectral photon flux. 
+    if(RadField == "IS ") then  ! Calculate interstellar spectral photon flux. 
       call ISRad
     else
     end if
