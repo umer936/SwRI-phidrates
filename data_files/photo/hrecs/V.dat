@@ -1,12 +1,17 @@
-       197      0.00   1839.54 V        V+           2
+       197      0.00   1837.84 V        V+           2
 Cross section:
-Lambda = 0.1-1839.54 A
+Lambda = 0.1 - 1837.8 A
    Verner, D. A., Yakovlev, D. G., Band, I. M., Trzhaskovskaya, M. B. (1993)
    Atomic Data Nuclear Data Tables 55, 233
    Verner, D. A., Yakovlev, D. G. (1995)
    Astron. Astrophys. Suppl. 109, 125
    Verner, D. A., Ferland, G. J., Korista, K. T., Yakovlev, D. G. (1996)
    Astrophys. J. 465, 487
+Threshold:
+Lambda = 1837.84 A
+   James, A. M., Kowalczyk, P., Langlois, E., Campell, M. D., Ogawa, A., 
+   Simard, B. (1994)
+   J. Chem. Phys. 101, 4485-4495.
 
       0.10  5.47E-24
       2.26  5.00E-20
@@ -204,6 +209,6 @@ Lambda = 0.1-1839.54 A
    1810.00  5.81E-19
    1820.00  6.06E-19
    1830.00  6.32E-19
-   1839.54  6.56E-19
+   1837.84  6.50E-19
   0
 ***

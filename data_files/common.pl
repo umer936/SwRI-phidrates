@@ -66,8 +66,8 @@ sub WriteInputFile {
 # InterStellar Radiation Field - has not been completely implemented using Input file.
 # For now, just put a placeholder for 3rd line.
 
-   elsif ($which_tab eq "IS ") {
-     print NEWFILE "$which_tab\n";
+   elsif (($which_tab eq "Int") || ($which_tab eq "IS ")) {
+     print NEWFILE "IS \n";
      printf (NEWFILE "%4.2f\n", $DummySA);
      print NEWFILE "\n";
    }
@@ -123,8 +123,8 @@ set style line 81 lt 3  # dashed
 set style line 81 lw 0.5  # grey
 
 # set grid back linestyle 81
-set xtics nomirror
-set ytics nomirror
+# set xtics nomirror
+# set ytics nomirror
 
 #set log x
 set mxtics 10    # Makes logscale look good.

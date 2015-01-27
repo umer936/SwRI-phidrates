@@ -1,12 +1,16 @@
-       145      0.00   1319.83 Zn       Zn+          2
+       145      0.00   1319.80 Zn       Zn+          2
 Cross section:
-Lambda = 0.1-1319.83 A
+Lambda = 0.1 - 1319.8 A
    Verner, D. A., Yakovlev, D. G., Band, I. M., Trzhaskovskaya, M. B. (1993)
-   Atomic Data Nuclear Data Tables 55, 233
+   Atomic Data Nuclear Data Tables 55, 233.
    Verner, D. A., Yakovlev, D. G. (1995)
-   Astron. Astrophys. Suppl. 109, 125
+   Astron. Astrophys. Suppl. 109, 125.
    Verner, D. A., Ferland, G. J., Korista, K. T., Yakovlev, D. G. (1996)
-   Astrophys. J. 465, 487
+   Astrophys. J. 465, 487.
+Threshold:
+Lambda = 1319.80 A
+   Sugar, J., Musgrove, A. (1995)
+   J. Phys. Chem. Ref. Data 24, 1803.
 
       0.10  1.80E-23
       1.28  2.82E-20
@@ -152,6 +156,6 @@ Lambda = 0.1-1319.83 A
    1290.00  1.32E-18
    1300.00  1.39E-18
    1310.00  1.45E-18
-   1319.83  1.52E-18
+   1319.80  1.50E-18
   0
 ***

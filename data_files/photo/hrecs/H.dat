@@ -2,19 +2,21 @@
 Cross section:
 Lambda = large
    Stobbe, M. (1930)
-   Ann. Physik 7, 661
+   Ann. Physik 7, 661.
 Lambda = short
    Sauter, F. (1931)
-   Ann. Physik 9, 217 and Ann. Physik 11, 454
+   Ann. Physik 9, 217 and Ann. Physik 11, 454.
 Lambda = medium
    Bethe, H. A. and Salpeter, E. E. (1957)
-   Quantum Mechanics of One- and Two-Electron Atoms (Springer Verlag, Berlin, Goettingen, Heidelberg)
-   (Interpolation method between short and long wavelength limits)
+   Quantum Mechanics of One- and Two-Electron Atoms (Springer Verlag, Berlin, 
+   Goettingen, Heidelberg).
+   (Interpolation method between short and long wavelength limits).
 Threshold:
-Lambda = 911.75 A  
-   Moore, C. E. (1970)
-   Ionization Potentials and Ionization Limits Derived from the the Analyses of Optical Spectra, NSRDS-NBS 34
-  
+Lambda = 911.75 A
+   Moore, P, Kotochigova (2000), 
+   unpublished.
+   See:  http://physics.nist.gov/PhysRefData/Handbook/atomic_number.htm.
+
       1.00  2.00e-27
       5.20  6.11e-25
      10.00  5.60e-24

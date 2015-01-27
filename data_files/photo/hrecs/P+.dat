@@ -1,12 +1,16 @@
-        72      0.00    628.41 P+       P^2+         2
+        72      0.00    627.15 P+       P^2+         2
 Cross section:
-Lambda = 0.1-628.41 A
+Lambda = 0.1 - 627.15 A
    Verner, D. A., Yakovlev, D. G., Band, I. M., Trzhaskovskaya, M. B. (1993)
-   Atomic Data Nuclear Data Tables 55, 233
+   Atomic Data Nuclear Data Tables 55, 233.
    Verner, D. A., Yakovlev, D. G. (1995)
-   Astron. Astrophys. Suppl. 109, 125
+   Astron. Astrophys. Suppl. 109, 125.
    Verner, D. A., Ferland, G. J., Korista, K. T., Yakovlev, D. G. (1996)
-   Astrophys. J. 465, 487
+   Astrophys. J. 465, 487.
+Threshold:
+Lambda = 627.15 A
+   Martin, W. C., Zalubas, R., Musgrove, A. (1985)
+   J. Phys. Chem. Ref. Data 14, 751 (1985).
 
       0.10  8.35E-25
       5.75  1.30E-19
@@ -79,6 +83,6 @@ Lambda = 0.1-628.41 A
     600.00  1.11E-18
     610.00  1.23E-18
     620.00  1.37E-18
-    628.41  1.49E-18
+    627.15  1.48E-18
   0
 ***

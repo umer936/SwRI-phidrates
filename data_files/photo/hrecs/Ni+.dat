@@ -1,12 +1,16 @@
-        80      0.00    682.36 Ni+      Ni^2+        2
+        80      0.00    682.40 Ni+      Ni^2+        2
 Cross section:
-Lambda = 0.1-682.36 A
+Lambda = 0.1 - 682.40 A
    Verner, D. A., Yakovlev, D. G., Band, I. M., Trzhaskovskaya, M. B. (1993)
-   Atomic Data Nuclear Data Tables 55, 233
+   Atomic Data Nuclear Data Tables 55, 233.
    Verner, D. A., Yakovlev, D. G. (1995)
-   Astron. Astrophys. Suppl. 109, 125
+   Astron. Astrophys. Suppl. 109, 125.
    Verner, D. A., Ferland, G. J., Korista, K. T., Yakovlev, D. G. (1996)
-   Astrophys. J. 465, 487
+   Astrophys. J. 465, 487.
+Threshold:
+Lambda = 682.40 A
+   Shenstone, A. G. (1970)
+   J. Res. Natl. Bur. Stand. (U.S.) 74A, 801.
 
       0.10  1.35E-23
       1.48  3.07E-20
@@ -87,6 +91,6 @@ Lambda = 0.1-682.36 A
     660.00  7.45E-18
     670.00  7.34E-18
     680.00  7.24E-18
-    682.36  7.21E-18
+    682.40  7.21E-18
   0
 ***

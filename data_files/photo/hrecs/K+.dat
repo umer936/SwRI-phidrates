@@ -1,12 +1,16 @@
-        49      0.00    391.98 K+       K^2+         2
+        49      0.00    392.00 K+       K^2+         2
 Cross section:
-Lambda = 0.1-391.98 A
+Lambda = 0.1 - 392.00 A
    Verner, D. A., Yakovlev, D. G., Band, I. M., Trzhaskovskaya, M. B. (1993)
-   Atomic Data Nuclear Data Tables 55, 233
+   Atomic Data Nuclear Data Tables 55, 233.
    Verner, D. A., Yakovlev, D. G. (1995)
-   Astron. Astrophys. Suppl. 109, 125
+   Astron. Astrophys. Suppl. 109, 125.
    Verner, D. A., Ferland, G. J., Korista, K. T., Yakovlev, D. G. (1996)
-   Astrophys. J. 465, 487
+   Astrophys. J. 465, 487.
+Threshold:
+Lambda = 392.00 A
+   Kelly, R. L. (1987)
+   J. Phys. Chem. Ref. Data 16, Suppl. 1.
 
       0.10  2.64E-24
       3.43  7.29E-20

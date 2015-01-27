@@ -1,12 +1,16 @@
-       116      0.00   1044.52 Ca+      Ca^2+        2
+       116      0.00   1044.37 Ca+      Ca^2+        2
 Cross section:
-Lambda = 0.1-1044.52 A
+Lambda = 0.1 - 1044.37 A
    Verner, D. A., Yakovlev, D. G., Band, I. M., Trzhaskovskaya, M. B. (1993)
-   Atomic Data Nuclear Data Tables 55, 233
+   Atomic Data Nuclear Data Tables 55, 233.
    Verner, D. A., Yakovlev, D. G. (1995)
-   Astron. Astrophys. Suppl. 109, 125
+   Astron. Astrophys. Suppl. 109, 125.
    Verner, D. A., Ferland, G. J., Korista, K. T., Yakovlev, D. G. (1996)
-   Astrophys. J. 465, 487
+   Astrophys. J. 465, 487.
+Threshold:
+Lambda = 1044.37 A
+   Sugar, J., Corliss, C. (1985)
+   J. Phys. Chem. Ref. Data 14, Suppl. 2.
 
       0.10  3.06E-24
       3.06  6.72E-20
@@ -123,6 +127,6 @@ Lambda = 0.1-1044.52 A
    1020.00  5.28E-19
    1030.00  5.33E-19
    1040.00  5.38E-19
-   1044.52  5.40E-19
+   1044.37  5.40E-19
   0
 ***

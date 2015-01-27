@@ -1,12 +1,16 @@
-       105      0.00    913.00 Ti+      Ti^2+        2
+       105      0.00    913.29 Ti+      Ti^2+        2
 Cross section:
-Lambda = 0.1-913.00 A
+Lambda = 0.1 - 913.29 A
    Verner, D. A., Yakovlev, D. G., Band, I. M., Trzhaskovskaya, M. B. (1993)
-   Atomic Data Nuclear Data Tables 55, 233
+   Atomic Data Nuclear Data Tables 55, 233.
    Verner, D. A., Yakovlev, D. G. (1995)
-   Astron. Astrophys. Suppl. 109, 125
+   Astron. Astrophys. Suppl. 109, 125.
    Verner, D. A., Ferland, G. J., Korista, K. T., Yakovlev, D. G. (1996)
-   Astrophys. J. 465, 487
+   Astrophys. J. 465, 487.
+Threshold:
+Lambda = 913.29 A
+   Sugar, J., Corliss, C. (1985)
+   J. Phys. Chem. Ref. Data 14, Suppl. 2.
 
       0.10  4.48E-24
       2.49  5.46E-20
@@ -112,6 +116,6 @@ Lambda = 0.1-913.00 A
     890.00  1.66E-19
     900.00  1.66E-19
     910.00  1.66E-19
-    913.00  1.66E-19
+    913.29  1.66E-19
   0
 ***

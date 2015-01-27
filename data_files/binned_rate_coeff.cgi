@@ -30,15 +30,8 @@ foreach $item (@items) {
     $$key = $val;
 }
 
-if ($which_tab eq "Int") {  # we need to block out interstellar for the moment!
-    print "Content-type: text/html\n\n";
-    print "<HTML><HEAD><TITLE>Binned Rate Coefficients of $molecule</TITLE></HEAD>\n";
-    $nice_name = &ConvertCanonicalInputName ($molecule);
-    print "<BODY><H1>Binned Rate Coefficients of $nice_name</H1>";
-    print "<IMG SRC=\"img/under_construction.png\">";
-    print "<br><br><HR align=\"center\" width=\"50%\" size=\"1\"><br>";
-    print "</BODY></HTML>";
-    exit (0);
+if ($which_tab eq "Int") {  # Change the name of interstellar!
+   $which_tab = "IS ";
 }
 
 #  If option was not on the tab being processed, reset to default value

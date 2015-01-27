@@ -26,6 +26,7 @@ $eleLUT {'F'} = "F";
 $eleLUT {'F+'} = "F<sup>+</sup>";
 $eleLUT {'Ne'} = "Ne";
 $eleLUT {'Ne+'} = "Ne<sup>+</sup>";
+$eleLUT {'Na'} = "Na";
 $eleLUT {'Nae'} = "Na (exp.)";
 $eleLUT {'Nat'} = "Na (theor.)";
 $eleLUT {'Na+'} = "Na<sup>+</sup>";

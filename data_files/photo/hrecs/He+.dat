@@ -1,11 +1,16 @@
-        24      0.00    227.83 He+      He^2+        2
-Cross section:799.83 A
+        24      0.00    227.84 He+      He^2+        2
+Cross section:
+Lambda = 0.1 ? 227.83 A
    Verner, D. A., Yakovlev, D. G., Band, I. M., Trzhaskovskaya, M. B. (1993)
-   Atomic Data Nuclear Data Tables 55, 233
+   Atomic Data Nuclear Data Tables 55, 233.
    Verner, D. A., Yakovlev, D. G. (1995)
-   Astron. Astrophys. Suppl. 109, 125
+   Astron. Astrophys. Suppl. 109, 125.
    Verner, D. A., Ferland, G. J., Korista, K. T., Yakovlev, D. G. (1996)
-   Astrophys. J. 465, 487
+   Astrophys. J. 465, 487.
+Threshold:
+Lambda = 227.84 A
+   Mohr, P., Kotochigova, S., (2000)
+   unpublished calculations.
 
       0.10  2.26E-29
      10.00  1.35E-22

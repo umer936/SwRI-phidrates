@@ -1,15 +1,16 @@
-       203      0.00   1895.79 Sc       Sc+          2
+       202      0.00   1889.57 Sc       Sc+          2
 Cross section:
-Lambda = 0.1-1895.79 A
+Lambda = 0.1 - 1895.79 A
    Verner, D. A., Yakovlev, D. G., Band, I. M., Trzhaskovskaya, M. B. (1993)
    Atomic Data Nuclear Data Tables 55, 233
    Verner, D. A., Yakovlev, D. G. (1995)
    Astron. Astrophys. Suppl. 109, 125
    Verner, D. A., Ferland, G. J., Korista, K. T., Yakovlev, D. G. (1996)
    Astrophys. J. 465, 487
-Threshold:  7.342 eV
-   Cowan, R. D. (1981)
-   The Theory of Atomic Structure and Spectra (University of California Press, Berkeley, Los Angeles, London), p. 12-15.
+Threshold:
+Lambda = 1889.57 A
+   Sugar, J, Corliss, C. (1985)
+   J. Phys. Chem. Ref. Data 14, Suppl. 2.
 
       0.10  3.68E-24
       2.76  6.10E-20
@@ -212,7 +213,6 @@ Threshold:  7.342 eV
    1860.00  1.49E-19
    1870.00  1.59E-19
    1880.00  1.68E-19
-   1890.00  1.78E-19
-   1895.79  1.84E-19
+   1889.57  1.78E-19
   0
 ***

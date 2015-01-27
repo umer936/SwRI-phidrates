@@ -1,12 +1,16 @@
-        83      0.00    690.34 Zn+      Zn^2+        2
+        83      0.00    690.17 Zn+      Zn^2+        2
 Cross section:
-Lambda = 0.1-690.34 A
+Lambda = 0.1 - 690.17 A
    Verner, D. A., Yakovlev, D. G., Band, I. M., Trzhaskovskaya, M. B. (1993)
-   Atomic Data Nuclear Data Tables 55, 233
+   Atomic Data Nuclear Data Tables 55, 233.
    Verner, D. A., Yakovlev, D. G. (1995)
-   Astron. Astrophys. Suppl. 109, 125
+   Astron. Astrophys. Suppl. 109, 125.
    Verner, D. A., Ferland, G. J., Korista, K. T., Yakovlev, D. G. (1996)
-   Astrophys. J. 465, 487
+   Astrophys. J. 465, 487.
+Threshold:
+Lambda = 690.17 A
+   Sugar, J., Musgrove, A. (1995)
+   J. Phys. Chem. Ref. Data 24, 1803.
 
       0.10  1.79E-23
       1.28  2.74E-20
@@ -90,6 +94,6 @@ Lambda = 0.1-690.34 A
     670.00  2.74E-20
     680.00  2.53E-20
     690.00  2.33E-20
-    690.34  2.33E-20
+    690.17  2.33E-20
   0
 ***

@@ -1,12 +1,16 @@
-       233      0.00   2299.42 Li       Li+          2
+       233      0.00   2299.53 Li       Li+          2
 Cross section:
-Lambda = 0.1-2299.42 A
+Lambda = 0.1-2299.5 A
    Verner, D. A., Yakovlev, D. G., Band, I. M., Trzhaskovskaya, M. B. (1993)
-   Atomic Data Nuclear Data Tables 55, 233
+   Atomic Data Nuclear Data Tables 55, 233.
    Verner, D. A., Yakovlev, D. G. (1995)
-   Astron. Astrophys. Suppl. 109, 125
+   Astron. Astrophys. Suppl. 109, 125.
    Verner, D. A., Ferland, G. J., Korista, K. T., Yakovlev, D. G. (1996)
-   Astrophys. J. 465, 487
+   Astrophys. J. 465, 487.
+Threshold:
+Lambda = 2299.53 A
+   Kelly, R. L., (1987)
+   J. Phys. Chem. Ref. Data 16, Suppl. 1.
 
       0.10  3.09E-28
      10.00  1.32E-21
@@ -240,6 +244,6 @@ Lambda = 0.1-2299.42 A
    2270.00  1.52E-18
    2280.00  1.51E-18
    2290.00  1.50E-18
-   2299.42  1.50E-18
+   2299.50  1.50E-18
   0
 ***

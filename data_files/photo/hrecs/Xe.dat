@@ -1,16 +1,17 @@
-       252      0.00   1023.00 Xe       Xe+          2
+       250      0.00   1022.14 Xe       Xe+          2
 Cross section:
-Lambda = 0.085-920.00 A
+Lambda = 0.085 - 922.00 A
    West, J. B., Morton, J. (1978)
-   Atom. Dat. Nucl. Dat. Tab. 22, 103
+   Atom. Dat. Nucl. Dat. Tab. 22, 103.
 Cross section including autoionization:
-Lambda = 926.30-1023.00 A
-   Huffman, R. E., Tanaka, Y., Larrabee, J. C. (1963)
-   J. Chem. Phys. 39, 902
+Lambda = 926.30 - 1023. A
+   Huffman, R. E., Tanaka, Y., Larrabee, J. C., (1963)
+   J. Chem. Phys. 39, 902.
 Threshold:
-Lambda = 1023 A
-   Huffman, R. E., Tanaka, Y., Larrabee, J. C. (1963)
-   J. Chem. Phys. 39, 902
+Lambda = 1022.14 A
+   Brandi, F., Velchev, I., Horgervorst, W., Ubachs, W. (2001)
+   Phys. Rev. A 64, 032505.  See also: / 
+   http://physics.nist.gov/PhysRefData/Handbook/atomic_number.htm.
 
       0.09  1.60E-22
       0.10  2.41E-22
@@ -192,7 +193,6 @@ Lambda = 1023 A
     890.00  6.47E-17
     900.00  6.52E-17
     910.00  6.57E-17
-    915.00  7.73E-17
     920.00  6.62E-17
     922.00  6.50E-17
     924.00  6.00E-17
@@ -263,6 +263,5 @@ Lambda = 1023 A
    1020.00  5.50E-17
    1021.00  5.61E-17
    1022.00  5.46E-17
-   1023.00  0.00E+00
    0
 ***

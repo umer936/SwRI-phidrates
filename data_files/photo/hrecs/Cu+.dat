@@ -1,12 +1,16 @@
-        73      0.00    611.06 Cu+      Cu^2+        2
+        73      0.00    610.99 Cu+      Cu^2+        2
 Cross section:
-Lambda = 0.1-611.06 A
+Lambda = 0.1 - 610.99 A
    Verner, D. A., Yakovlev, D. G., Band, I. M., Trzhaskovskaya, M. B. (1993)
-   Atomic Data Nuclear Data Tables 55, 233
+   Atomic Data Nuclear Data Tables 55, 233.
    Verner, D. A., Yakovlev, D. G. (1995)
-   Astron. Astrophys. Suppl. 109, 125
+   Astron. Astrophys. Suppl. 109, 125.
    Verner, D. A., Ferland, G. J., Korista, K. T., Yakovlev, D. G. (1996)
-   Astrophys. J. 465, 487
+   Astrophys. J. 465, 487.
+Threshold:
+Lambda = 610.99 A
+   Sugar, J., Musgrove, A. (1990)
+   J. Phys. Chem. Ref. Data 19, 527.
 
       0.10  1.57E-23
       1.38  2.84E-20
@@ -80,6 +84,6 @@ Lambda = 0.1-611.06 A
     590.00  9.36E-18
     600.00  9.45E-18
     610.00  9.56E-18
-    611.06  9.57E-18
+    610.99  9.57E-18
   0
 ***

@@ -1,12 +1,16 @@
-        96      0.00    845.74 V+       V^2+         2
+        96      0.00    848.18 V+       V^2+         2
 Cross section:
-Lambda = 0.1-845.74 A
+Lambda = 0.1 - 848.18 A
    Verner, D. A., Yakovlev, D. G., Band, I. M., Trzhaskovskaya, M. B. (1993)
-   Atomic Data Nuclear Data Tables 55, 233
+   Atomic Data Nuclear Data Tables 55, 233.
    Verner, D. A., Yakovlev, D. G. (1995)
-   Astron. Astrophys. Suppl. 109, 125
+   Astron. Astrophys. Suppl. 109, 125.
    Verner, D. A., Ferland, G. J., Korista, K. T., Yakovlev, D. G. (1996)
-   Astrophys. J. 465, 487
+   Astrophys. J. 465, 487.
+Threshold:
+Lambda = 848.18 A
+   Iglesias, L., Cabeza, M. I., de Luis, B. (1988)
+   Pub. Inst. Opt. Madrid, No. 47.
 
       0.10  5.72E-24
       2.26  4.77E-20
@@ -103,6 +107,6 @@ Lambda = 0.1-845.74 A
     820.00  1.48E-17
     830.00  1.53E-17
     840.00  1.59E-17
-    845.74  1.63E-17
+    848.18  1.64E-17
   0
 ***
