@@ -1,0 +1,176 @@
+Index: Convert.f
+===================================================================
+--- Convert.f	(revision 142)
++++ Convert.f	(working copy)
+@@ -1,4 +1,4 @@
+-      Subroutine Convert(BSUM)
++      Subroutine Convert(BSUM)     ! From Keyboard Input Version
+       integer, parameter :: LimA = 50000, LimB = 2000, LimF = 1000
+       integer :: BSum, i, iCat, idiff, iFlag, inc, ind2, ind3, IOS16, 
+      1  iPrnt, j, k, m2, m3, m4, maxBin, maxN, maxp3, n1, n2, nSets, 
+@@ -13,21 +13,21 @@
+       real (kind = 8), dimension(LimF) :: Flux
+       real (kind = 8), dimension(LimF + 1) :: AngstF
+       character*8 Name, Name1, Name2, Nam(16), NamCrs(16), NamPr
+-      character (len = 8) :: RadField
+-      character (len = 24) :: FMT3, FMT5 !, FMT6
+-      character (len = 40) :: FMT4
+-      COMMON /A/ Nam, Num, Kat, iFlg, Thrsh, nSets
++      character (len = 24) :: FMT3, FMT5, FMT6
++      character (len = 38) :: FMT4
++      common /A/ Nam, Num, Kat, iFlg, Thrsh, nSets
+       common /C/ AngstF, Flux, nF
+ !      open(unit =  4, status = "replace")        ! Temporary file for wavelengths and cross sections.
+       open(unit =  9, file = "EIoniz")           ! Binned rates and excess energies.
+ !      open(unit = 16, status = "replace")        ! Temporary file.
+       open(unit = 19, file = "EEOut")            ! Binned excess energy per Angstrom.
+       open(unit = 20, file = "Summary")          ! Summary of rate coefficients and excess energies.
+-
+-      FMT3 = "((a14, 2x, 00 (1x, a9)))"
+-      FMT4 = "((0pf7.1, 1x,    8x, 00 (1x, 1pE9.2E3)))"
+-      FMT5 = "((a16, 00 (1x, 1pe9.2)))"
+ !
++      FMT3 = "((a14, 2x, 00 (1x, a8)))"
++      FMT4 = "((0pf7.1, 1x,    8x, 00 (1x, 1pe8.2)))"
++      FMT5 = "((a16, 00 (1x, 1pe8.2)))"
++      FMT6 = "((a13, a3, 00 (1x, a8)))"
++!
+       rewind(unit = 4)
+       read(unit = 4, fmt = "(i3)") nSets         ! Scratch file for wavelengths & cross sections.
+       ind3 = 0
+@@ -47,7 +47,7 @@
+       k = k + 1
+       read(unit = 16, fmt = "(i6)", iostat = IOS16) maxN
+       if(IOS16 > 0) then
+-        write(unit = *, fmt = *) "Error unit = 16"
++!        write(unit = *, fmt = *) "Error unit = 16"
+         stop
+       else
+         if(IOS16 < 0) then
+@@ -59,7 +59,7 @@
+       else
+       end if
+       if(maxN > 9999) then
+-        write(unit = *, fmt = *) "Stop (maxN > 9999)"
++!        write(unit = *, fmt = *) "Stop (maxN > 9999)"
+         stop
+       else
+       end if  
+@@ -81,12 +81,12 @@
+ !
+ !.....Begin EIONIZ.....
+ !
+-        write(unit = 9, fmt = *) "Begin EIoniz"
++        write(unit = 9, fmt = "(a12)") "Begin EIoniz"
+         write(unit = 9, fmt = "(1x, 2i5, 11x, a8, 12x, a8)") Numb, iCat,
+      1    Name1, Name2                           ! Unit 9 is EIoniz.
+-        write(unit = 9, fmt = "(a50, a19)") 
+-     1    "0   Wavelength Range X-Section    Flux       Rate ", 
+-     2    "     E Excess   Sum"
++        write(unit = 9, fmt = "(a49, a18)") 
++     1    "0   Wavelength Range X-Section    Flux      Rate ", 
++     2    "    E Excess   Sum"
+         NamPr = Name1
+         NamCrs(iPrnt) = Name2
+         if(nSets <= 0) then
+@@ -96,11 +96,6 @@
+         m2 = nSets
+         m3 = 1
+         m4 = nSets
+-        if(iPrnt == 1) then
+-          write(unit = 19, fmt = "(i2, 49x, a8)") nSets, NamPr! Unit 19 is EEOut.
+-          write(unit = 20, fmt = "(a8)") NamPr                ! Unit 20 is Summary.
+-        else
+-        end if
+         if(m2 < 10) then
+           FMT3(13:13) = CHAR(m2 + 48)
+           FMT3(12:12) = CHAR(48)
+@@ -108,6 +103,8 @@
+           FMT4(22:22) = CHAR(48)
+           FMT5(9:9) = CHAR(M2 + 48)
+           FMT5(8:8) = CHAR(48)
++          FMT6(13:13) = char(m2 + 48)
++          FMT6(12:12) = char(48)
+         else
+           FMT3(13:13) = CHAR(M2 + 38)
+           FMT3(12:12) = CHAR(M2/10 + 48)
+@@ -115,7 +112,13 @@
+           FMT4(22:22) = CHAR(M2/10 + 48)
+           FMT5(9:9) = CHAR(M2 + 38)
+           FMT5(8:8) = CHAR(M2/10 + 48)
++          FMT6(13:13) = char(m2 + 38)
++          FMT6(12:12) = char(m2/10 + 48)
+         end if
++        if(iPrnt == 1) then             ! Unit 19 is EEOut, unit 20 is Summary.
++          write(unit = 19, fmt = "(i2, 49x, a8)") nSets, NamPr
++        else
++        end if
+         TRate = 0.0
+         ETot = 0.0
+         do i = 1, maxN
+@@ -123,8 +126,7 @@
+           Wave2 = AngstF(i + 1)
+           XSect = Data(i)
+           Flx = Flux(i)
+-          Rate = XSect*Flx
+-      ! if (wave1.eq.0.) wave1=0.1
++          Rate = Flx
+           if(Wave1 < 1.0E-06) then
+             Wave1 = 0.1
+           else if(Wave1 > Thresh) then
+@@ -140,24 +142,26 @@
+           TRate = TRate + Rate
+           ExEn(i, iPrnt) = EnElec*Rate
+           ETot = ETot + EnElec*Rate
+-          write(unit = 9, fmt = "(1x, 2f10.2, 1pe10.3, 1p2E11.3E3,
+-     1    0pf10.2, 1pe12.3e3)") Wave1, Wave2, XSect, Flx, Rate, EnElec, 
++          write(unit = 9, fmt = "(1x, 2f10.2, 1p3e10.3, 
++     1    0pf10.2, 1pe10.3)") Wave1, Wave2, XSect, Flx, Rate, EnElec, 
+      2    ETot
+         end do
+-          if(TRate < 1.0d-99) then
+-            TRate = 0.0
+-            AvgEn = 0.0
+-          else
+-            AvgEn = ETot/TRate
+-          end if
+-        write(unit = 9, fmt = "(a1, 46x, a14, 1pe10.3)") "0",
+-     1    "Total Rate = ", TRate
+-        write(unit = 9, fmt = "(43x, a17, f7.3)") "Average Energy = ",
++!        if(TRate < 1.0d-99) then
++        if(TRate < 1.0d-265) then
++          TRate = 0.0
++          AvgEn = 0.0
++        else
++          AvgEn = ETot/TRate
++        end if
++        write(unit = 9, fmt = "(a1, 46x, a14, 1pe10.3)") "0", 
++     1    "Total Rate =  ", TRate
++        write(unit = 9, fmt = "(43x, a17, f7.3)") "Average Energy = ", 
+      1    AvgEn
+           TotRat(iPrnt) = TRate
+           TotEEn(iPrnt) = AvgEn
+         do i = 1, maxN
+-          if(TotRat(iPrnt) < 1.0d-99) then
++!          if(TotRat(iPrnt) < 1.0d-99) then
++          if(TotRat(iPrnt) < 1.0d-265) then
+             ExEn(i, iPrnt) = 0.0
+           else
+             ExEn(i, iPrnt) = ExEn(i, iPrnt)/TRate
+@@ -180,12 +184,14 @@
+           write(unit = 19, fmt = "(0PF7.1)") AngstF(maxBin + 1)
+           write(unit = 19, fmt = FMT5) " Rate Coeffs. = ", (TotRat(j), 
+      1      j = 1, nSets)
++          write(unit = 20, fmt = FMT6) NamPr, "-->", 
++     1      (NamCrs(j), j = m3, m4)                        ! Summary file.
+           write(unit = 20, fmt = FMT5) " Rate Coeffs. = ", (TotRat(j), 
+-     1      j = 1, nSets)                        ! Summary file.
++     1      j = 1, nSets)
+           write(unit = 19, fmt = FMT5) " Av. Excess E = ", (TotEEn(j), 
+      1      j = 1, nSets)
+           write(unit = 20, fmt = FMT5) " Av. Excess E = ", (TotEEn(j), 
+-     1      j = 1, nSets)                        ! Summary file.
++     1      j = 1, nSets)
+         else
+         end if
+ !
