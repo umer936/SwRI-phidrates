@@ -1,3 +1,4 @@
 <FilesMatch "\.(?i:doc|odf|pdf|rtf|txt)$">
   Header set Content-Disposition attachment
 </FilesMatch>
+FileEtag None
