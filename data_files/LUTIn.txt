@@ -146,6 +146,7 @@ $inputLUT {'CH3Cl3'} = "CH<sub>3</sub>Cl<sub>3</sub>";
 $inputLUT {'CH3O2NO2'} = "CH<sub>3</sub>O<sub>2</sub>NO<sub>2</sub>";
 $inputLUT {'CH3SSCH3'} = "CH<sub>3</sub>SSCH<sub>3</sub>";
 $inputLUT {'CH3CNO5'} = "CH<sub>3</sub>CO<sub>3</sub>NO<sub>2</sub>";
+$inputLUT {'CH3CN'} = "CH<sub>3</sub>CN";
 
 sub ConvertCanonicalInputName {
     local ($branch) = $_ [0];

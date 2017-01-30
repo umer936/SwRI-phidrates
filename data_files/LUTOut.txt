@@ -258,6 +258,7 @@ $outputLUT {'MSS/M'} = "CH<sub>3</sub>SS + CH<sub>3</sub>";
 $outputLUT {'2(CH3S)'} = "CH<sub>3</sub>S + CH<sub>3</sub>S";
 $outputLUT {'MCO3/NO2'} = "CH<sub>3</sub>CO<sub>3</sub> + NO<sub>2</sub>";
 $outputLUT {'MCO2/NO3'} = "CH<sub>3</sub>CO<sub>2</sub> + NO<sub>3</sub>";
+$outputLUT {'CH3CN'} = "CH<sub>3</sub>CN";
 
 sub ConvertCanonicalOutputName {
     local ($branch) = $_ [0];
