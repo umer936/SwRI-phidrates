@@ -1,4 +1,4 @@
-       960      0.00   2000.00 CH3CN    Total
+       959      0.00   2000.00 CH3CN    Total
 Cross Section:
 Lambda = 0.00-600.00 A
    Barfield, W. D., Koontz, G. D., Huebner, W. F. (1972)
@@ -985,7 +985,6 @@ Lambda = 1017. A
    Dibeler, V. H., and S. K. Liston (1968), J. Chem. Phys. 48, 4765, 
    doi:http://dx.doi.org/10.1063/1.1668059. 
    
-      1.00  5.00E-01
      10.00  5.00E-01
      20.00  5.00E-01
      30.00  5.00E-01
@@ -1449,7 +1448,6 @@ Lambda = 1450. A
    Okabe, H., Dibeler, V. H. (1973), J. Chem. Phys. 59, 2430, 
    doi:http://dx.doi.org/10.1063/1.1680354.
 
-      1.00  1.00E-03
     940.29  9.09E-03
     943.06  9.40E-03
     951.47  1.01E-02
