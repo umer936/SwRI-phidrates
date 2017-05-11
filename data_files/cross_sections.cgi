@@ -81,21 +81,25 @@ sub PrintResults {
     #print "<CENTER>";
     $num_branches = &GenerateBranches ();
     $bnum = 0;
-    while ($bnum <= $num_branches) {
-        if ($branches[$bnum+2] eq "Sigma") {
-            $branches[$bnum+2] = "Total";
+    if (scalar (@branches) > 0) {
+        while ($bnum <= $num_branches) {
+            if ($branches[$bnum+2] eq "Sigma") {
+                $branches[$bnum+2] = "Total";
+            }
+            $gifname = &GeneratePlot ($temp_dir, "branch.$bnum", $branches[$bnum+2], $use_semi_log);
+            $nice_name = &ConvertCanonicalOutputName ($branches[$bnum+2]);
+            if (!defined ($nice_name)) {
+                print "<H2>$branches[$bnum + 2]</H2>";
+            } else {
+                print "<H2>$nice_name</H2>";
+            }
+            print "<IMG SRC = \"$gifname\" BORDER=4>\n";
+            print "<P><P>";
+            unlink ("branch.$bnum");
+            $bnum++;
         }
-        $gifname = &GeneratePlot ($temp_dir, "branch.$bnum", $branches[$bnum+2], $use_semi_log);
-        $nice_name = &ConvertCanonicalOutputName ($branches[$bnum+2]);
-        if (!defined ($nice_name)) {
-            print "<H2>$branches[$bnum + 2]</H2>";
-        } else {
-            print "<H2>$nice_name</H2>";
-        }
-        print "<IMG SRC = \"$gifname\" BORDER=4>\n";
-        print "<P><P>";
-        unlink ("branch.$bnum");
-        $bnum++;
+    } else {
+        print "<IMG SRC = \"img/baddata.gif\" BORDER=4>\n";
     }
     #print "</CENTER>";
 
@@ -210,7 +214,7 @@ sub GeneratePlot {
     if (-s $gifname) {
         chmod (0644, $gifname);
         $plotname = $gifname;
-        $plotname =~ s/$reg_exp_prefix/..\/phidrates_images/g;
+        $plotname =~ s/$reg_exp_prefix/\/phidrates_images/g;
     } else {
         $plotname = "img/baddata.gif";
     }
