@@ -10,7 +10,8 @@ implicit none
 ! Since Delta E = 12398.5*(Delta lambda)/lamda^2, 
 ! Flux [photons/(cm^2 s A)] = [3.203 - 5154*lambda^{-1} + 2055000*lambda^{-2}]*10^15/lambda^3,  (lambda < 2000 A). 
 ! The van Dishoeck and Black (1982) extension of the flux: 
-! Flux [photons/(cm^2 s A)] = 732*lambda^{0.7),  (lambda > 2000 A). 
+! Flux [photons/(cm^2 s A)] = 732.26*lambda^{0.7),  (lambda > 2000 A),
+!   since 3670.*(0.1)**(0.7) = 732.26.
 ! The ISGrid (wavelength) is based on the solar flux grid, except a few additional grid points have been added at long wavelengths.
 ! 
 ! lambda is the photon wavelength in Angstrom (1 A = 1.E-10 m). 
@@ -53,13 +54,13 @@ do
     NIS2 = 0.0
   else
     if(AngstF(nF + 1) < 2000.) then
-      NIS2 = (3.203 - 5154./AngstF(nF + 1) + 2055000./(AngstF(nF + 1))**2)*1.d15/(AngstF(nF + 1))**3 
+      NIS2 = (3.2028 - 5154.2/AngstF(nF + 1) + 2054600./(AngstF(nF + 1))**2)*1.d15/(AngstF(nF + 1))**3 
     else
       if(AngstF(nF + 1) == 2000.) then
-        NIS2 = ((3.203 - 5154./AngstF(nF + 1) + 2055000./(AngstF(nF + 1))**2)*1.d15/(AngstF(nF + 1))**3 & 
-          + 732.*(AngstF(nF + 1))**(0.7))/2.
+        NIS2 = ((3.2028 - 5154.2/AngstF(nF + 1) + 2054600./(AngstF(nF + 1))**2)*1.d15/(AngstF(nF + 1))**3 & 
+          + 732.26*(AngstF(nF + 1))**(0.7))/2.
       else
-        NIS2 = 732.*(AngstF(nF + 1))**(0.7)
+        NIS2 = 732.26*(AngstF(nF + 1))**(0.7)  ! AngstF(nF + 1) > 2000 A.
       end if
     end if
   end if
