@@ -60,6 +60,9 @@ print "Content-type: text/html\n\n";
 if ($which_tab eq "BB ") {
     print "<HTML><HEAD><TITLE>Blackbody Spectrum</TITLE></HEAD>\n";
     print "<BODY><H1>Blackbody Spectrum</H1>";
+} elsif ($which_tab eq "IS ") {
+    print "<HTML><HEAD><TITLE>Interstellar Spectrum</TITLE></HEAD>\n";
+    print "<BODY><H1>Interstellar Spectrum</H1>";
 } else {
     print "<HTML><HEAD><TITLE>Solar Spectrum</TITLE></HEAD>\n";
     print "<BODY><H1>Solar Spectrum</H1>";
