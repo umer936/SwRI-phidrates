@@ -57,15 +57,15 @@ sub PrintResults {
     local ($nice_name);
 
     print "Content-type: text/html\n\n";
-    print "<HTML><HEAD><TITLE>Excess Energies of $molecule</TITLE></HEAD>\n";
+    print "<HTML><HEAD><TITLE>Binned Excess Energies of $molecule</TITLE></HEAD>\n";
     print "<BODY BGCOLOR=\"#000000\" TEXT=\"#00ff00\" LINK=\"#00ffff\" VLINK=\"#33ff00\">";
     #print "<CENTER>";
 #    print "Temp Dir = $temp_dir   Input = $input\n";
     $nice_name = &ConvertCanonicalInputName ($molecule);
     if (defined ($nice_name)) {
-        print "<H1>Excess Energies of $nice_name</H1>\n";
+        print "<H1>Binned Excess Energies of $nice_name</H1>\n";
     } else {
-        print "<H1>Excess Energies of $molecule</H1>\n";
+        print "<H1>Binned Excess Energies of $molecule</H1>\n";
     }
     print "\n";
     print "<P>";
@@ -178,14 +178,20 @@ sub GeneratePlot {
     open (TMP_FILE, "> ".$gnuinfo) || die ("Can't open $gnuinfo\n");
 
     $xlabel = "Wavelength [A]";
-    $ylabel = "Excess Energies [eV A**-1 s**-1]";
+    $ylabel = "Binned Excess Energies [eV A**-1 s**-1]";
     if ($which_tab eq "Sol") {
         $plotTitle = "Southwest Research Institute\\nBranch: $branch at SA = ${solar_activity}";
+    } elsif ($which_tab eq "IS ") {
+        $plotTitle = "Southwest Research Institute\\nBranch: $branch";
     } else {
         $plotTitle = "Southwest Research Institute\\nBranch: $branch at T = ${temp}K";
     }
     $set_mytics = "true";
     &SetCommonOutput ($use_semi_log, $xlabel, $ylabel, $plotTitle, $set_mytics);
+
+    if ($which_tab eq "IS ") {
+        print TMP_FILE "set xrange [100:100000]\n";
+    }
 
     print TMP_FILE "plot \"$filename\" title \"\" with steps\n";
     close (TMP_FILE);

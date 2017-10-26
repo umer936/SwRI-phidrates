@@ -177,11 +177,17 @@ sub GeneratePlot {
     $ylabel = "Rate Coefficient [A**-1 s**-1]";
     if ($which_tab eq "Sol") {
         $plotTitle = "Southwest Research Institute\\nBranch: $branch at SA = ${solar_activity}";
+    } elsif ($which_tab eq "IS ") {
+        $plotTitle = "Southwest Research Institute\\nBranch: $branch";
     } else {
         $plotTitle = "Southwest Research Institute\\nBranch: $branch at T = ${temp}K";
     }
     $set_mytics = "true";
     &SetCommonOutput ($use_semi_log, $xlabel, $ylabel, $plotTitle, $set_mytics);
+
+    if ($which_tab eq "IS ") {
+        print TMP_FILE "set xrange [100:100000]\n";
+    }
 
     print TMP_FILE "plot \"$filename\" title \"\" with steps\n";
     close (TMP_FILE);

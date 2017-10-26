@@ -61,8 +61,8 @@ if ($which_tab eq "BB ") {
     print "<HTML><HEAD><TITLE>Blackbody Spectrum</TITLE></HEAD>\n";
     print "<BODY><H1>Blackbody Spectrum</H1>";
 } elsif ($which_tab eq "IS ") {
-    print "<HTML><HEAD><TITLE>Interstellar Spectrum</TITLE></HEAD>\n";
-    print "<BODY><H1>Interstellar Spectrum</H1>";
+    print "<HTML><HEAD><TITLE>Interstellar Radiation Field</TITLE></HEAD>\n";
+    print "<BODY><H1>Interstellar Radiation Field</H1>";
 } else {
     print "<HTML><HEAD><TITLE>Solar Spectrum</TITLE></HEAD>\n";
     print "<BODY><H1>Solar Spectrum</H1>";
@@ -162,6 +162,9 @@ sub CreateGIF {
     if ($which_tab eq "BB ") {
         $ylabel = "Blackbody Photon Spectrum (cm**-2 s**-1 A**-1)";
         $plotTitle = "Southwest Research Institute\\nBlackbody Rate coefficient at T = ${temp}K";
+    } elsif ($which_tab eq "IS ") {
+        $ylabel = "Interstellar Radioation Field (cm**-2 s**-1 A**-1)";
+        $plotTitle = "Southwest Research Institute";
     } else {
         $ylabel = "Solar Flux (Photons cm**-2 s**-1 A**-1)";
         $plotTitle = "Southwest Research Institute\\nSolar Activity: $solar_activity";
@@ -169,7 +172,11 @@ sub CreateGIF {
     $set_mytics = "false";
     &SetCommonOutput ($use_semi_log, $xlabel, $ylabel, $plotTitle, $set_mytics);
 
-    print TMP_FILE "set xrange [1:100000]\n";
+    if ($which_tab eq "IS ") {
+        print TMP_FILE "set xrange [100:100000]\n";
+    } else {
+        print TMP_FILE "set xrange [1:100000]\n";
+    }
     print TMP_FILE "set nokey\n";
     print TMP_FILE "set mxtics 5\n";
     print TMP_FILE "plot \"$temp_dir/GP_SPECTRUM.DAT\" with steps\n";
