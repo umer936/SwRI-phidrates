@@ -34,7 +34,7 @@ character (len = 3) :: BB, IS, RadField, Sol
 character (len = 8), dimension(2) :: Name
 character (len = 8) :: NamPr
 common Name, RadField
-common /C/ AngstF, Flux, nF
+common /d/ AngstF, Flux, nF
 
 open(unit = 3, file = "Output", status = "unknown")   ! RatOut = Binned rate coefficient per Angstrom.
 open(unit = 7, file = "BBGrid.dat", status = "old")   ! Solar grid plus a few additional wavelength points.
