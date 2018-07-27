@@ -22,12 +22,12 @@ open(unit =  1, file = "Hrec", status = "old")   ! Input data (HRec):  Species n
 !                                                  cross sections, branching ratios, etc.
 open(unit =  2, file = "BrnOut")                 ! Wavelengths and cross sections for branches.
 open(unit =  3, file = "RatOut")                 ! Binned rate coefficients per Angstrom.
-open(unit =  4, status = "replace")              ! Temporary file for wavelengths and cross sections.
+open(unit =  4, file = "fort.4", status = "replace")              ! Temporary file for wavelengths and cross sections.
 Open(unit =  7, file = "Input")                  ! Input parameters:  Sol, BB, IS, AS, T, etc.
 open(unit =  9, file = "EIoniz")                 ! Binned rates and excess energies.
 ! open(unit = 10, file = "PhFlux.dat", status = "old") ! Solar flux for quiet Sun.
 open(unit = 15, file = "FotOut")                 ! Binned Cross Sections.
-open(unit = 16, status = "replace")              ! Temporary file.
+open(unit = 16, file = "fort.16", status = "replace")              ! Temporary file.
 open(unit = 19, file = "EEOut")                  ! Binned excess energies per Angstrom.
 open(unit = 20, file = "Summary")                ! Summary of rate coefficients and average excess energies.
 !
