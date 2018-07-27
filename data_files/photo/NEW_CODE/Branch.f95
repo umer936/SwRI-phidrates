@@ -96,6 +96,10 @@ if(nSets /= 0) then     ! This goes to end of "if"
 ! Read information for a branching set.
 !
   do
+!    if(m == 7) then
+!      read(unit = 1, fmt = "(10 a8)") (Text(i), i = 1, 10)
+!      exit
+!    end if
     read(unit = 1, fmt = "(i10, 2 f10.2, 2 (1x, a8), 2 i3)") nB, AngstB1, &
          AngstBL, (iProd(i), i = 1, 2), Num(m + 1), Kat(m + 1)
     Thrsh(m + 1) = AngstBL
@@ -179,6 +183,7 @@ if(nSets /= 0) then     ! This goes to end of "if"
     end if
   end do
   nSets = nSets + 1
+!  read(unit = 1, fmt = "(10 a8)") (Text(i), i = 1, 10)
   read(unit = 1, fmt = "(i10, 2 f10.2, 2 (1x, a8), 2 i3)") nDum, Dum, &
     Thrsh(nSets), iProd(1), LastN, Num(nSets), Kat(nSets)
   Nam(nSets) = LastN
@@ -190,7 +195,7 @@ if(nSets /= 0) then     ! This goes to end of "if"
     if(ttemp < 0.0) then
       if(ttemp < -1.0e-6) then
         write(unit = *, fmt = *) Mother(1), ", ttemp < -1.0e-6: ", ttemp, " around wavelength: ", Angsts(i)
-        stop
+!        stop
       else
         TabBrP(i, nSets) = 0.0
         ttemp = 0.0

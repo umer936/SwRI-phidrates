@@ -1,4 +1,4 @@
-       186      0.00   2000.00 CH3CN    Total
+       202      0.00   3080.00 CH3CN    Total
 Cross Section:
 Lambda = 0.00-600.00 A
    Barfield, W. D., Koontz, G. D., Huebner, W. F. (1972)
@@ -7,17 +7,20 @@ Lambda = 600.0-876.0 A
    Nuth, J. A., Glicker, S. (1982)
    J. Quant. Spectr. Rad. Trans. 28, 223-231. 
    doi:10.1016/0022-4073(82) 90025-5.
-Lambda = 876.0-1130.0 A
+Lambda = 876.0-1060.0 A
    Leach, S. et al. (2008)
    A Revisionist Study Chemical Physics, 344, 147-163.
    doi:10.1016/j.chemphys.2007.12.012.
-Lambda = 1060.0-1345.0 A
+Lambda = 1060.0-1360.0 A
    Kono, M., Private communication (2018) based on Ph. D. Thesis:  
-   The Graduate University for Advanced Studies, Okazaki (1995).  
-Lambda = 1130.1-1600.0 A
-   Schwell, M., H.-W. Jochims, H. Baumgärtel, and S. Leach (2008), 
-   Chem. Phys., 344(1), 164-175, doi:10.1016/j.chemphys.2007.12.011.
-Lambda = 1601.0-2000.0 A
+   The Graduate University for Advanced Stu40es, Okazaki (1995).  
+Lambda = 1360.1-1750.0 A
+   Eden S., Limao-Vieira, P., Kendall, P., Mason, N. J., Hoffman, S. V., 
+   Spyrou, S. M.,  High Resolution Photo-Absorption Studies of 
+   Acrylonitrile, C2H3CN and Acetonitrile, CH3CN Electronic State 
+   Spectroscopy of Acetaldehyde, CH3CHO by High Resolution VUV Photo-
+   Absorption (2003).  doi: 10.1140/epjd/e2003-00223-5.  
+Lambda = 1750.0-3080.0 A
    "The MPI-Mainz UV/VIS Spectral Atlas of Gaseous Molecules of 
    Atmospheric Interest.”  N.p., n.d. Web. 22 Aug. 2016.
    http://satellite.mpic.de/spectral_atlas/cross_sections/Organics 
@@ -160,7 +163,7 @@ Lambda = 1601.0-2000.0 A
    1083.00  8.50E-17
    1090.00  5.90E-17
    1098.00  6.30E-17
-   1108.00  1.10E-16  
+   1108.00  1.10E-16
    1118.00  5.00E-17
    1120.00  3.00E-17
    1125.00  3.00E-17
@@ -202,19 +205,35 @@ Lambda = 1601.0-2000.0 A
    1287.00  3.00E-17
    1291.00  1.01E-16
    1298.00  2.70E-17
-   1300.00  1.60E-17
-   1310.00  1.00E-17
-   1320.00  8.00E-18
-   1330.00  6.00E-18
-   1380.00  1.00E-18
-   1381.00  0.00E+00
-   2000.00  0.00E+00
+   1300.00  1.90E-17
+   1310.00  1.12E-17
+   1320.00  9.10E-18
+   1330.00  8.87E-18
+   1340.00  8.96E-18
+   1350.00  8.63E-18
+   1360.00  8.67E-18
+   1370.00  8.15E-18
+   1380.00  8.17E-18
+   1390.00  7.36E-18
+   1400.00  6.07E-18
+   1410.00  5.12E-18
+   1420.00  4.26E-18
+   1430.00  3.27E-18
+   1500.00  1.05E-18
+   1550.00  8.00E-19
+   1600.00  6.00E-19
+   1650.00  1.15E-19
+   1700.00  8.00E-20
+   1750.00  1.30E-20
+   1800.00  1.05E-20
+   1850.00  1.05E-21
+   3080.00  1.00E-23
   6
         66      0.00   1028.95 CH3CN    CH3CN+       2
 Branching ratio:
-Lambda = 0.0-1017.8 A
+Lambda = 0.0-1017.1 A
 Threshold:
-Lambda = 1017.8 A
+Lambda = 1017.1 A
    Dibeler, V. H., and S. K. Liston (1968), J. Chem. Phys. 48, 4765, 
    doi:http://dx.doi.org/10.1063/1.1668059. 
               
@@ -281,10 +300,10 @@ Lambda = 1017.8 A
    1007.89  6.42E-02
    1011.20  3.75E-02
    1016.18  1.99E-02
-   1017.84  9.66E-03
-   1018.00  0.00E+00
-   2000.00  0.00E+00
-        41      0.00    886.60 CH3CN    CH2CN+H     40
+   1017.10  9.66E-03
+   1017.20  0.00E+00
+   3080.00  0.00E+00
+        40      0.00    886.60 CH3CN    CH2CN+H     40
 Branching ratios:
 Lambda = 0.0-885.6 A
 Threshold:
@@ -330,14 +349,13 @@ Lambda = 885.6 A
     873.05  2.33E-01
     879.71  2.25E-01
     885.60  2.29E-01
-    886.10  1.15E-01
-    886.60  0.00E+00
-   2000.00  0.00E+00
-        28      0.00    822.70 CH3CN    CHCN+H/H    40
+    886.00  0.00E+00
+   3080.00  0.00E+00
+        27      0.00    822.70 CH3CN    CHCN+H2     40
 Branching ratios:
-Lambda = 0.0-821.7
+Lambda = 0.0-821.0
 Threshold:
-Lambda = 821.7 A
+Lambda = 821.0 A
    Dibeler, V. H., Liston, S. K. (1968), J. Chem. Phys. 48, 4765,
    doi:http://dx.doi.org/10.1063/1.1668059.
 
@@ -365,11 +383,10 @@ Lambda = 821.7 A
     801.33  3.57E-02
     806.33  3.56E-02
     813.00  3.55E-02
-    821.70  3.55E-02
-    822.20  1.76E-02
-    822.70  0.00E+00
-   2000.00  0.00E+00
-        33      0.00    831.50 CH3CN    CH2+HCN     40
+    821.00  3.55E-02
+    821.10  0.00E+00
+   3080.00  0.00E+00
+        32      0.00    831.50 CH3CN    CH2+HCN     40
 Branching ratios:
 Lambda = 0.0-830.5 A
 Threshold:
@@ -407,14 +424,13 @@ Lambda = 830.5 A
     824.69  1.56E-02
     828.01  1.50E-02
     830.50  1.40E-02
-    831.00  7.00E-03
-    831.50  0.00E+00
-   2000.00  0.00E+00
-       134    600.00   2000.00 CH3CN    CH2CN/H     26
+    830.60  0.00E+00
+   3080.00  0.00E+00
+       134    600.00   3080.00 CH3CN    CH2CN/H     26
 Branching ratios:
-Lambda = 600.0-2000.0 A
+Lambda = 600.0-3080.0 A
 Threshold:
-Lambda = 770. A
+Lambda = 3080. A
    Schwell, M., H.-W. Jochims, H. Baumgärtel, and S. Leach (2008), 
    Chem. Phys., 344(1), 164-175, doi:10.1016/j.chemphys.2007.12.011.
    
@@ -551,10 +567,10 @@ Lambda = 770. A
    1312.11  9.87E-01
    1322.11  9.87E-01
    1357.20  1.00E+00 
-   2000.00  1.00E+00
-        92      0.00   2000.00 CH3CN    CH3/CNB2    26
+   3080.00  1.00E+00
+        93      0.00   3080.00 CH3CN    CH3/CNB2    26
 Branching ratios:
-Lambda = 934.7-2000.0 A
+Lambda = 934.7-3080.0 A
 Threshold:
 Lambda = 1450. A
    Kanda, K., T. Nagata, and T. Ibuki (1999), Chem. Phys. 
@@ -650,8 +666,9 @@ Lambda = 1450. A
    1302.14  9.92E-03
    1312.11  9.93E-03
    1322.11  9.99E-03
-   1357.20  0.00E+00
-   2000.00  0.00E+00
-         0    600.00   2000.00 CH3CN    CH3/CNA2    26
+   1450.00  9.99E-03
+   1450.10  0.00E+00
+   3080.00  0.00E+00
+         0    600.00   3080.00 CH3CN    CH3/CNA2    26
 ***
 
