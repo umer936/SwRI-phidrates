@@ -498,7 +498,7 @@ $('backtotop').innerHTML;
 
     if (testNumbers () != 0) return;
 
-    var URL = 'http://phidrates.space.swri.edu/data_files/'; // real
+    var URL = 'https://phidrates.space.swri.edu/data_files/'; // real
 //	var URL = 'http://porky/phidrates/data_files/'; // dev
 	
     var programToUse;

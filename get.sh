@@ -1,2 +1,2 @@
 #!/bin/sh
-rsync -vaz --exclude '.svn' joey@guinan.space.swri.edu:/web/phidrates/ /web/RELEASE/phidrates
+rsync -vaz --exclude 'tmp' --exclude '.svn' jmukherjee@guinan-new.space.swri.edu:/web/phidrates/ /web/RELEASE/phidrates
