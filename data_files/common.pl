@@ -108,7 +108,9 @@ sub SetCommonOutput {
 
     print TMP_FILE "set terminal png size 800,600 font \"/usr/share/fonts/dejavu-lgc/DejaVuLGCSans.ttf\" 12\n";
     if ($use_semi_log eq "false") {
-        print TMP_FILE "set logscale xy\n";
+        print TMP_FILE "set logscale x\n";
+        print TMP_FILE "set logscale y 10\n";
+        print TMP_FILE "set format y '%g'\n";
     } else {
         print TMP_FILE "set logscale y\n";
     }
