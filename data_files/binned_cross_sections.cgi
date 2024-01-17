@@ -32,7 +32,7 @@ foreach $item (@items) {
 }
 
 if ($which_tab eq "Int") {  # Change the name of interstellar!
-   $which_tab = "IS ";
+    $which_tab = "IS ";
 }
 
 #  If option was not on the tab being processed, reset to default value
