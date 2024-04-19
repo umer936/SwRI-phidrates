@@ -4,10 +4,10 @@ Calculates solar photon fluxes for the activity level of the sun
 
     0.00 = quiet sun, 1.00 = active sun
 """
-function solrad!(angst_flux, fluxes, SA::AbstractFloat)
+function solrad(SA::AbstractFloat)
     nSA = 162
     nF = 324
-    
+
     photoflux = Vector{Float64}(undef, 2nF+1)
     fluxratio = Vector{Float64}(undef, nSA)
     
@@ -24,8 +24,6 @@ function solrad!(angst_flux, fluxes, SA::AbstractFloat)
         end
         photoflux[2nF+1] = data[ln, 1]
         ln += 1
-
-        # println(stderr, nSA)
 
         # Populate fluxratio
         j = 1 # index of fluxratio in row
@@ -45,16 +43,10 @@ function solrad!(angst_flux, fluxes, SA::AbstractFloat)
         j = 2i
 
         angst_flux[i] = photoflux[j-1]
-
-        #=
-        angplot[j-1] = ifelse(j != 2, log10(photoflux[j-1]), 0)
-        angplot[j]   = log10(photoflux[j+1])
-        fluxplot[j] = fluxplot[j-1] = log10(photoflux[j] / (photoflux[j+1] - photoflux[j-1]))
-        =#
-
-        fluxes[i] = photoflux[j]
         if i <= nSA
-            fluxes[i] += SA * (fluxratio[i] - 1) * fluxes[i]
+            fluxes[i] = photoflux[j] + SA * (fluxratio[i] - 1) * photoflux[j]
+        else
+            fluxes[i] = photoflux[j]
         end
     end
     
@@ -66,7 +58,7 @@ function solrad!(angst_flux, fluxes, SA::AbstractFloat)
         println(summary, "(The quiet Sun has solar activity 0.00, the active Sun has solar activity 1.00)")
     end
 
-    return nF
+    return (angst_flux, fluxes)
 end
 
 

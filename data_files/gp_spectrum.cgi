@@ -1,7 +1,7 @@
 #!/usr/bin/perl -w
 
-require "common.pl";
-require "vars.pl";
+require "/usr/local/var/www/SwRI-phidrates/data_files/common.pl";
+require "/usr/local/var/www/SwRI-phidrates/data_files/vars.pl";
 
 use IO::File;
 use File::Temp qw/ tempfile tempdir /;
@@ -19,7 +19,8 @@ $use_semi_log = "false";
 
 # convert variables to a value
 
-$input = $ENV{'QUERY_STRING'};
+# $input = $ENV{'QUERY_STRING'};
+$input = "which_tab=Sol?temp=1000.0?optical_depth=0?molecule=K?use_electron_volts=false?use_semi_log=false?solar_activity=0.1";
 @items = split (/\?/, $input);
 foreach $item (@items) {
     ($key, $val) = split(/=/, $item, 2);

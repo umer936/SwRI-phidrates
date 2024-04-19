@@ -388,7 +388,7 @@ function runMolecule(value) {
         use_electron_volts = document.options.x_axis_unit[1].checked;
 
         var cross_sections = URL
-            + 'cross_sections.cgi'
+            + 'bash_cross_sections_jl.cgi'
 			+ '?which_tab=' + which_tab
 			+ '?temp=' + temp
 			+ '?optical_depth=' + optical_depth

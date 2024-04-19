@@ -1,0 +1,1 @@
+fmtfloat(num, width, precision) = lpad(round(num; digits=precision), width)

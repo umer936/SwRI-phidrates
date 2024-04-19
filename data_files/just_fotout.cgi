@@ -1,9 +1,8 @@
 #!/usr/bin/perl -w
-
-require "common.pl";
-require "vars.pl";
-require "LUTIn.txt";
-require "LUTOut.txt";
+require "/usr/local/var/www/SwRI-phidrates/data_files/common.pl";
+require "/usr/local/var/www/SwRI-phidrates/data_files/vars.pl";
+require "/usr/local/var/www/SwRI-phidrates/data_files/LUTIn.txt";
+require "/usr/local/var/www/SwRI-phidrates/data_files/LUTOut.txt";
 
 use IO::File;
 use File::Temp qw/ tempfile tempdir /;
@@ -18,7 +17,8 @@ $which_tab = "";
 
 # convert variables to a value
 
-$input = $ENV{'QUERY_STRING'};
+$input = "which_tab=BB?temp=1000.0?optical_depth=0?molecule=K?use_electron_volts=false?use_semi_log=false?solar_activity=0.1";
+# $ENV{'QUERY_STRING'};
 @items = split (/\?/, $input);
 foreach $item (@items) {
     ($key, $val) = split(/=/, $item, 2);

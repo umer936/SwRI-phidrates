@@ -4,8 +4,8 @@ amop_site="https:\/\/phidrates.space.swri.edu\/";
 amop_cgi_bin_dir="/usr/local/var/www/SwRI-phidrates/data_files"; 
 
 # Alias /phidrates_images /var/tmp
-amop_gif_alias="/usr/local/var/tmp" #"\/usr\/local\/var\/www\/SwRI-phidrates\/tmp\/";
+amop_gif_alias="\/usr\/local\/var\/www\/SwRI-phidrates\/tmp\/";
 
 # this is where the aliases in httpd.conf is set and where the temp files will be written!
-prefix="/usr/local/var/tmp" #"/usr/local/var/www/SwRI-phidrates/tmp";
-reg_exp_prefix="/usr/local/var/tmp" #"/usr/local/var/www/SwRI-phidrates/tmp";
+prefix="/usr/local/var/www/SwRI-phidrates/tmp";
+reg_exp_prefix="\/usr\/local\/var\/www\/SwRI-phidrates\/tmp";

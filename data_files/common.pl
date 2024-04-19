@@ -1,6 +1,6 @@
 #!/usr/bin/perl -w
 
-require "vars.pl";
+require "/usr/local/var/www/SwRI-phidrates/data_files/vars.pl";
 
 sub CopyMolecule {
 
@@ -32,7 +32,7 @@ sub RunPhotoRat {
 
     chdir ($temp_dir);
     `$amop_cgi_bin_dir/photo/NEW_CODE/photo.exe`;
-
+    
     if ($?)
     {
           my $code = $? >> 8;

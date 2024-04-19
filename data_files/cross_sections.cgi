@@ -1,12 +1,14 @@
 #!/usr/bin/perl -w
 
-require "common.pl";
-require "vars.pl";
-require "LUTIn.txt";
-require "LUTOut.txt";
+require "/usr/local/var/www/SwRI-phidrates/data_files/common.pl";
+require "/usr/local/var/www/SwRI-phidrates/data_files/vars.pl";
+require "/usr/local/var/www/SwRI-phidrates/data_files/LUTIn.txt";
+require "/usr/local/var/www/SwRI-phidrates/data_files/LUTOut.txt";
 
 use IO::File;
 use File::Temp qw/ tempfile tempdir /;
+use Cwd qw(); # troubleshooting
+
 
 ################################################################
 #  parse QUERY_STRING -> filename; display file
@@ -21,8 +23,7 @@ $which_tab = "";
 @ref_list = ();
 
 # convert variables to a value
-
-$input = $ENV{'QUERY_STRING'};
+$input = "whichtab=Sol?temp=1000.0?optical_depth=0?molecule=H2O?use_electron_volts=false?use_semi_log=false?solar_activity=0.1"; # $ENV{'QUERY_STRING'}; # # 
 @items = split (/\?/, $input);
 foreach $item (@items) {
     ($key, $val) = split(/=/, $item, 2);
@@ -68,10 +69,15 @@ sub PrintResults {
 #    print "Temp Dir = $temp_dir\n Input = $input\n";
     print "\n";
     print "<P>";
+
     chdir ($temp_dir);
+    
     my $url_temp_dir = $temp_dir;
+    print $url_temp_dir; print "\n";
     $url_temp_dir =~ s/$reg_exp_prefix/\/phidrates_images/g;
+    print $url_temp_dir; print "\n";
     $url_temp_dir =~ s/tmp//;
+    print $url_temp_dir; print "\n";
 
     #print "</CENTER>";
 #    print "<A target=\"_blank\" class=\"btn\" HREF=\"$url_temp_dir/BrnOut\"><span>Click here to view or shift-click to download \
@@ -93,6 +99,7 @@ sub PrintResults {
             } else {
                 print "<H2>$nice_name</H2>";
             }
+            
             print "<IMG SRC = \"$gifname\" BORDER=4>\n";
             print "<P><P>";
             unlink ("branch.$bnum");
@@ -201,7 +208,8 @@ sub GeneratePlot {
                                    DIR => $tempdir,
                                    CLEANUP => 0,
                                    SUFFIX => '.png');
-    system ("/usr/bin/gnuplot $gnuinfo > $gifname");
+    # REMOVE LOCAL IF NEEDED
+    system ("/usr/local/bin/gnuplot $gnuinfo > $gifname");
     if ($? == -1) {
         print "failed to execute: $!\n";
     } elsif ($? & 127) {

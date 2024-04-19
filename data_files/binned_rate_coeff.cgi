@@ -1,9 +1,9 @@
 #!/usr/bin/perl -w
 
-require "common.pl";
-require "vars.pl";
-require "LUTIn.txt";
-require "LUTOut.txt";
+require "/usr/local/var/www/SwRI-phidrates/data_files/common.pl";
+require "/usr/local/var/www/SwRI-phidrates/data_files/vars.pl";
+require "/usr/local/var/www/SwRI-phidrates/data_files/LUTIn.txt";
+require "/usr/local/var/www/SwRI-phidrates/data_files/LUTOut.txt";
 
 use IO::File;
 use File::Temp qw/ tempfile tempdir /;
