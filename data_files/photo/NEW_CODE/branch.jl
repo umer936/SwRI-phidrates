@@ -1,5 +1,13 @@
 using DelimitedFiles, Printf
 
+struct Branch
+    name::AbstractString
+    num::Integer
+    cat::Integer
+    flag::Integer
+    thresh::AbstractFloat
+end
+
 function branch()
     fort4 = open("fort.4", "w+") # Temporary file for wavelengths and cross sections.
     brnout = open("BrnOut", "w+")
@@ -58,9 +66,9 @@ function branch()
         ln += 1
 
         for s in 1:num_sets
-            angstBN = data[ln, 1]
-            angstB1 = data[ln, 2]
-            angstBL = data[ln, 3]
+            bangstN = data[ln, 1]
+            bangst1 = data[ln, 2]
+            bangstL = data[ln, 3]
             
             prod1 = data[ln, 4]
             prod2 = data[ln, 5]
@@ -70,7 +78,7 @@ function branch()
             ln += 1
 
             branch_names[s] = prod2
-            thresholds[s] = angstBL
+            thresholds[s] = bangstL
 
             # Write references for branching set to file
             println(brnout, "0          References for Cross Section of ", lpad(prod1, 8), lpad(prod2, 8))
@@ -79,10 +87,10 @@ function branch()
                 ln += 1
             end
 
-            angst1 = max(angst1, angstB1)
-            angstL = min(angstL, angstBL)
+            angst1 = max(angst1, bangst1)
+            angstL = min(angstL, bangstL)
             
-            for i in 1:angstBN
+            for i in 1:bangstN
                 angstsB[i] = data[ln, 1]
                 xsctnsB[i] = data[ln, 2]
                 
@@ -90,7 +98,7 @@ function branch()
             end
 
             for i in 1:angstN # iterate thru wavelengths
-                for j in 1:angstBN # iterate thru branch data
+                for j in 1:bangstN # iterate thru branch data
                     branch_prob = 0
                     if angsts[i] > angstsB[j + 1] && !limit
                     else
@@ -109,7 +117,7 @@ function branch()
                         break
                     end
 
-                    limit = j + 1 >= angstBN && angsts[i] > angstsB[angstBN] #! chopping block
+                    limit = j + 1 >= bangstN && angsts[i] > angstsB[bangstN]
                 end
             end
 

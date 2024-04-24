@@ -151,7 +151,6 @@ function branch()
             end
             bprofs[s] = branch
         end
-        # branchL =  BranchProfile(parent.angstN, parent.angst1, data[ln, 3:7]..., true)
 
         for i in 1:parent.angstN # iterate through parent wavelengths
             temp = 1.0 - tot_rates[i]
@@ -166,7 +165,6 @@ function branch()
         bprofs[num_sets+1] = BranchProfile(parent.angstN, parent.angst1, parent.angstL, parent.name1, data[ln, 5:7]..., true)
     end
 
-    # bprofs[1] = parent
     close(Hrec)
 
     write_brnout(brnout, bprofs, angsts, xsctn_tbl)

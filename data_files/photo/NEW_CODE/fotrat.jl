@@ -215,7 +215,6 @@ function fotrat()
         idyaxs = 0
         plotxsect(num_plots, angst_plot, rate_plot)
         =#
-
         #? use LinearIndexing
         println(fort16, lpad(maxN, 6))
         for i in 1:5:maxN

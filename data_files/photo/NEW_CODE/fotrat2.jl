@@ -10,7 +10,7 @@ function fotrat!(branches, angsts, xsctn_data, angst_flux)
     fix_angsts = Vector{Float64}(undef, MAX_ANGSTS) # + 2
 
     xsctn_tbl = Matrix{Float64}(undef, MAX_ANGSTS, num_sets)
-    rate_tbl = Matrix{Float64}(undef, MAX_ANGSTS, num_sets)
+    # rate_tbl = Matrix{Float64}(undef, MAX_ANGSTS, num_sets)
     
     tot_rates = zeros(Float64, num_sets)
 
@@ -23,14 +23,9 @@ function fotrat!(branches, angsts, xsctn_data, angst_flux)
         angst1 = branches[s].angst1
         angstL = branches[s].angstL
 
-        name2 = branches[s].name2
-        print(name2, ", ")
-
         xsctns = xsctn_data[:, s]
 
-        if angst1 - angstL >= -1.0e-6 || angst1 < angst_flux[1] || angstL > angst_flux[nF]
-            break
-        end
+        angst1 - angstL >= -1.0e-6 || angst1 < angst_flux[1] || angstL > angst_flux[nF] && break
 
         tot_rates[s] = 0
 
@@ -95,6 +90,7 @@ function fotrat!(branches, angsts, xsctn_data, angst_flux)
         xt = 0.0
 
         # Compute cross section per wavelength per bin
+
         for k in 1:j
             xt += 0.5(fix_xsctns[k+1] + fix_xsctns[k]) * (fix_angsts[k+1] - fix_angsts[k])
             
@@ -107,16 +103,15 @@ function fotrat!(branches, angsts, xsctn_data, angst_flux)
                         tmp_xsctn = 1.0e-35
                     end
                 end
-
                 xsctn_tbl[n, s] = tmp_xsctn
-                rate_tbl[n, s] = tmp_xsctn * fluxes[n]
+                # rate_tbl[n, s] = tmp_xsctn * fluxes[n]
             else
                 if fix_angsts[k+1] >= angst_flux[n+1]
                     tmp_xsctn = xt / (angst_flux[n+1] - angst_flux[n])
                     xsctn_tbl[n, s] = tmp_xsctn
-                    rate_tbl[n, s] = tmp_xsctn * fluxes[n]
+                    # rate_tbl[n, s] = tmp_xsctn * fluxes[n] # can be moved to the output section as xsctn_tbl[n, s] * fluxes[n]
 
-                    tot_rates[s] += tmp_xsctn * fluxes[n]
+                    tot_rates[s] += tmp_xsctn * fluxes[n] # can be moved to the output section val += xsctn_tbl[n, s] * fluxes[n]; print(val)
 
                     n += 1
                     xt = 0
@@ -124,6 +119,30 @@ function fotrat!(branches, angsts, xsctn_data, angst_flux)
             end
         end
     end
+
+    #=
+    fmtd_num_sets = lpad(num_sets, 2) * " "^49 * lpad(branches[1].name1, 8)
+    println(fotout, fmtd_num_sets)
+    println(ratout, fmtd_num_sets)
+
+    fmtd_names = join(rpad.(map(br -> br.name2, branches[2:end]), 8),' ')
+    println(fotout, " Lambda         ", fmtd_names)
+    println(ratout, " Lambda         ", fmtd_names)
+
+    for i in min_pr:max_pr 
+        print(fotout, fmtfloat(angst_flux[i], 7, 1), "        ")
+        print(ratout, fmtfloat(angst_flux[i], 7, 1), "        ")
+        for j in 1:num_sets
+            @printf(fotout, "%9.2e", xsctn_tbl[i, j])
+            @printf(ratout, "%9.2e", rate_tbl[i, j])
+        end
+        println(fotout)
+        println(ratout)
+    end
+
+    print(fotout, fmtfloat(angst_flux[max_pr + 1], 7, 1))
+    print(ratout, fmtfloat(angst_flux[max_pr + 1], 7, 1))
+    =#
 
     fmtd_num_sets = lpad(num_sets, 2) * " "^49 * lpad(branches[1].name1, 8)
     println(fotout, fmtd_num_sets)
@@ -136,39 +155,48 @@ function fotrat!(branches, angsts, xsctn_data, angst_flux)
     for i in min_pr:max_pr 
         print(fotout, fmtfloat(angst_flux[i], 7, 1), "        ")
         print(ratout, fmtfloat(angst_flux[i], 7, 1), "        ")
-        # @printf(fotout, "%7.1f        ", angst_flux[i])
-        # @printf(ratout, "%7.1f        ", angst_flux[i])
         for j in 1:num_sets
             @printf(fotout, "%9.2e", xsctn_tbl[i, j])
-            # @printf("   %9.2e", xsctn_tbl[i, j])
-            @printf(ratout, "%9.2e", rate_tbl[i, j])
+            @printf(ratout, "%9.2e", xsctn_tbl[i, j] * fluxes[i])
         end
         println(fotout)
         println(ratout)
-        # println()
     end
 
     print(fotout, fmtfloat(angst_flux[max_pr + 1], 7, 1))
     print(ratout, fmtfloat(angst_flux[max_pr + 1], 7, 1))
-    # @printf(fotout, "%7.1f", angst_flux[max_pr+1])
-    # @printf(ratout, "%7.1f", angst_flux[max_pr+1])
-    for i in 1:num_sets
-        r = tot_rates[i]
-        tot_rates[i] = r < 1.0e-99 ? 0 : r
-    end
 
+    # write_output(fotout, branches, angst_flux, xsctn_tbl, min_pr:max_pr)
+    # write_output(ratout, branches, angst_flux, rate_tbl, min_pr:max_pr)
+    
     print(ratout, "\n Rate Coeffs. = ")
-    for j in 1:num_sets
-        @printf(ratout, " %8.2e", tot_rates[j])
-    end
-
-    #=
-    total_xsctns = Vector{Float64}(undef, nF)
-    for i in 1:nF
-        total_xsctns[i] += sum(xsctn_tbl[i, :])
-    end
-    =#
+    foreach(r -> @printf(ratout, " %8.2f", r < 1.0e-99 ? 0 : r), tot_rates)
 
     close(ratout)
     close(fotout)
+
+    # total_xsctns
+    return reduce(+, xsctn_tbl, dims=1)
+end
+
+function write_output(io::IO, 
+        branches::AbstractVector{BranchProfile}, 
+        x::AbstractVector{T}, 
+        y::AbstractMatrix{T}, 
+        r::AbstractRange) where {T<:AbstractFloat}
+    
+    num_sets = length(branches)
+
+    println(io, lpad(num_sets, 2) * " "^49 * lpad(branches[1].name1, 8))
+    println(io, " Lambda         ", join(rpad.(map(br -> br.name2, branches[2:end]), 8),' '))
+
+    for i in r
+        print(io, fmtfloat(x[i], 7, 1), "        ")
+        for j in 1:num_sets
+            @printf(io, "%9.2e", y[i, j])
+        end
+        println(io)
+    end
+
+    print(io, fmtfloat(x[r.stop + 1], 7, 1))
 end

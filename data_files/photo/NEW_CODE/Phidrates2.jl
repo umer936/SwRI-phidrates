@@ -3,6 +3,7 @@ module Phidrates2
 using DelimitedFiles, Printf, Profile, PProf
 
 set_zero_subnormals(true)
+
 #===========#
 # CONSTANTS #
 #===========#
@@ -20,6 +21,7 @@ run(`/bin/bash /usr/local/var/www/SwRI-phidrates/data_files/bash_cross_sections_
 cd(readchomp("/usr/local/var/www/SwRI-phidrates/data_files/photo/NEW_CODE/store.txt"))
 println(pwd())
 input = open("Input", "r") # Input parameters:  Sol, BB, IS, AS, T, etc.
+
 #============#
 # INITIALIZE #
 #============#
@@ -42,7 +44,6 @@ include("convert2.jl")
 #========#
 # BRANCH #
 #========#
-
 @time angsts::Vector{Float64}, xsctn_tbl::Matrix{Float64}, bprofs::Vector{BranchProfile} = branch()
 
 #==============#
@@ -53,7 +54,6 @@ nF = 324
 # nSA = 162
 angst_flux = Vector{Float64}(undef, nF+1)
 fluxes = Vector{Float64}(undef, nF+1)
-
 if mode === "Sol"
     SA = parse(Float64, readline(input))
 
