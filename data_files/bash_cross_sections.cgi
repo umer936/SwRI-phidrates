@@ -10,7 +10,7 @@ which_tab=""
 ref_list=()
 
 # input="${QUERY_STRING}"
-input="which_tab=Sol?temp=1000.0?optical_depth=0?molecule=H2O?use_electron_volts=false?use_semi_log=false?solar_activity=0.1"
+input="which_tab=Sol?temp=1000.0?optical_depth=0?molecule=SO2?use_electron_volts=false?use_semi_log=false?solar_activity=0.1"
 IFS='?' read -ra items <<< "$input"
 for item in "${items[@]}"; do
     IFS='=' read -r key val <<< "$item"
@@ -195,11 +195,13 @@ echo -e "Content-type: text/html\n"
 
 cd "/usr/local/var/www/SwRI-phidrates"
 temp_dir="$(make_temp_directory)"
+echo "$temp_dir"
 
 copy_molecule "$molecule" "$temp_dir"
 copy_necessary_files "$temp_dir"
 write_input_file "$solar_activity" "$temp" "$which_tab" "$temp_dir"
 run_photo_rat "$molecule" "$temp_dir"
 print_results "$molecule" "$temp_dir" "$use_semi_log"
+echo "$temp_dir"
 
 exit 0

@@ -16,9 +16,9 @@ const GR_PT_LIM = 400
 #=======#
 # FILES #
 #=======#
-# run(`/bin/bash /usr/local/var/www/SwRI-phidrates/data_files/bash_cross_sections_jl.cgi`)
-# cd(readchomp("/usr/local/var/www/SwRI-phidrates/data_files/photo/NEW_CODE/store.txt"))
-# println(pwd())
+run(`/bin/bash /usr/local/var/www/SwRI-phidrates/data_files/bash_cross_sections_jl.cgi`)
+cd(readchomp("/usr/local/var/www/SwRI-phidrates/data_files/photo/NEW_CODE/store.txt"))
+println(pwd())
 input = open("Input", "r") # Input parameters:  Sol, BB, IS, AS, T, etc.
 
 #============#

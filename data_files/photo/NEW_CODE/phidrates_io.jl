@@ -41,7 +41,7 @@ function print_names(io::IO, branches; right=false)
 end
 
 
-function write_brnout(brnout::IO, bprofs::AbstractVector{BranchProfile}, λ::AbstractVector{T}, xsctn_tbl::AbstractMatrix{T}) where {T<:Real}
+function write_brnout(brnout::IO, bprofs::AbstractVector{BranchProfile}, angsts::AbstractVector{T}, xsctn_tbl::AbstractMatrix{T}) where {T<:Real}
 
     parent = bprofs[1]
     num_sets = length(bprofs)
@@ -53,7 +53,7 @@ function write_brnout(brnout::IO, bprofs::AbstractVector{BranchProfile}, λ::Abs
     println(brnout)
 
     for i in 1:parent.angstN
-        @printf(brnout, "%7.1f", λ[i])
+        @printf(brnout, "%7.1f", angsts[i])
         for s in 1:num_sets @printf(brnout, " %8.2e", xsctn_tbl[i, s]) end
         println(brnout)
     end

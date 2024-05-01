@@ -9,7 +9,7 @@ which_tab=""
 ref_list=()
 
 # input="${QUERY_STRING}"
-input="which_tab=Sol?temp=1000.0?optical_depth=0?molecule=H2O?use_electron_volts=false?use_semi_log=false?solar_activity=0.1"
+input="which_tab=Sol?temp=1000.0?optical_depth=0?molecule=SO2?use_electron_volts=false?use_semi_log=false?solar_activity=0.1"
 IFS='?' read -ra items <<< "$input"
 for item in "${items[@]}"; do
     IFS='=' read -r key val <<< "$item"

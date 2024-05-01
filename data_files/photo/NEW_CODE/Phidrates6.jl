@@ -69,7 +69,6 @@ function main()
     eioniz::IO = open("EIoniz", "w+") # Binned rates and excess energies. 9
      eeout::IO = open("EEOut", "w+")  # Binned excess energies per Angstrom. 19
 
-
     # Read Parent Molecule Information:
     # Input data (HRec):  Species name, wavelengths, cross sections, branching ratios, etc. 1
     _Hrec::IO = open("Hrec", "r") |> seekstart
@@ -111,12 +110,12 @@ function main()
     branches::Vector{Branch} = Vector{Branch}(undef, num_sets) # Branch
     
     # Initialize branch data
-    bangsts = zeros(nF)
-    bxsctns = zeros(nF)
+    bangsts = zeros(MAX_ANGSTS)
+    bxsctns = zeros(MAX_ANGSTS)
 
     # Data interpolated onto angstflux
-    fangsts = zeros(nF)
-    fxsctns = zeros(nF)
+    fangsts = zeros(MAX_ANGSTS)
+    fxsctns = zeros(MAX_ANGSTS)
     
     # Output data
     tot_rates = zeros(pangstN) # Branch
@@ -157,10 +156,10 @@ function main()
                 bname1 = pname1
                 bname2 = header[5]
 
-                bnum = parse(Int, header[6])
-                bcat = parse(Int, header[7])
+                # bnum = parse(Int, header[6])
+                # bcat = parse(Int, header[7])
 
-                branch = Branch(bangstN, bangst1, bangstL, bname1, bname2, bnum, bcat, false)
+                branch = Branch(bangstN, bangst1, bangstL, bname1, bname2, 0, 0, false)
             else
                 # Read branch header
                 header = split(popfirst!(it), " "; keepempty=false)
@@ -172,10 +171,10 @@ function main()
                 bname1 = header[4]
                 bname2 = header[5]
 
-                bnum = parse(Int, header[6])
-                bcat = parse(Int, header[7])
+                # bnum = parse(Int, header[6])
+                # bcat = parse(Int, header[7])
 
-                branch = Branch(bangstN, bangst1, bangstL, bname1, bname2, bnum, bcat, false)
+                branch = Branch(bangstN, bangst1, bangstL, bname1, bname2, 0, 0, false)
 
                 # Write references for branching set to file
                 println(brnout, "0          References for Cross Section of ", lpad(bname1, 8), lpad(bname2, 8))
@@ -383,7 +382,6 @@ function main()
     #=============#
     # WRITE FILES #
     #=============#
-    #=
     write_brnout(brnout, branches, pangsts, xsctn_tbl)
 
     fmtd_num_sets = lpad(num_sets, 2) * " "^49 * lpad(parent.name1, 8)
@@ -391,7 +389,6 @@ function main()
 
     fmtd_names = join(rpad.(getproperty.(branches, :name2), 8),' ')
     println(fotout, " Lambda         ", fmtd_names) ; println(ratout, " Lambda         ", fmtd_names)
-
     for i in min_pr:max_pr 
         print(fotout, fmtfloat(angstflux[i], 7, 1), "        ")
         print(ratout, fmtfloat(angstflux[i], 7, 1), "        ")
@@ -464,7 +461,6 @@ function main()
     close(eioniz)
     close(eeout)
     close(summary)
-    =#
 end
 
 
@@ -488,6 +484,5 @@ function write_brnout(brnout::IO, bprofs::AbstractVector{Branch}, λ::AbstractVe
     nothing
 end
 
-@time main()
-
 end
+

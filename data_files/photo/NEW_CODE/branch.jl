@@ -1,4 +1,4 @@
-using DelimitedFiles, Printf
+using Printf
 
 struct Branch
     name::AbstractString
@@ -16,6 +16,7 @@ function branch()
     Hrec = open("Hrec", "r")
     _Hrec = replace(read(Hrec, String), "E 0"=>"E0")
     data::Array{Any} = readdlm(IOBuffer(_Hrec))
+
     ln::Int16 = 2
     
     angstN = data[1, 1]
@@ -151,6 +152,7 @@ function branch()
     else
         print(fort4, lpad(num_sets, 3))
         @printf(fort4, "%10i%10.2f%10.2f%8s  %8s\n", angstN, angst1, angstL, parent1, parent2)
+        println(num_sets)
         for i in 1:angstN @printf(fort4, "%10.2f%10.2e\n", angsts[i], xsctn_table[i, num_sets]) end
     end
    
