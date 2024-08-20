@@ -8,8 +8,8 @@ temp="1000.0"
 which_tab=""
 ref_list=()
 
-# input="${QUERY_STRING}"
-input="which_tab=Sol?temp=1000.0?optical_depth=0?molecule=SO2?use_electron_volts=false?use_semi_log=false?solar_activity=0.1"
+input="${QUERY_STRING}"
+# input="which_tab=Sol?temp=1000.0?optical_depth=0?molecule=S3P?use_electron_volts=false?use_semi_log=false?solar_activity=0.1"
 IFS='?' read -ra items <<< "$input"
 for item in "${items[@]}"; do
     IFS='=' read -r key val <<< "$item"
@@ -146,7 +146,7 @@ function generate_plot() {
     # Open gnuinfo file #? one line? local gnuinfo=...
     local gnuinfo="$temp_dir/gnu_$bnum.info"
     if ! touch "$gnuinfo"; then
-        echo -e "Couldn't open $gnuinfo\n" >&2
+        echo "Can't open $gnuinfo" >&2
         exit 1
     fi
     
@@ -181,7 +181,7 @@ function generate_plot() {
     elif [[ $? -ge 128 ]]; then
         echo "child died with signal $(( $? & 127 )), $(( $? & 128 )) coredump" >&2
     fi
-
+    
     if [[ -s "$gifname" ]]; then
         chmod 0644 "$gifname"
         #? parameter expansion
@@ -199,8 +199,8 @@ temp_dir="$(make_temp_directory)"
 copy_molecule "$molecule" "$temp_dir"
 copy_necessary_files "$temp_dir"
 write_input_file "$solar_activity" "$temp" "$which_tab" "$temp_dir"
-echo "$temp_dir" > "/usr/local/var/www/SwRI-phidrates/data_files/photo/NEW_CODE/store.txt" # For testing
-# run_photo_rat_jl "$molecule" "$temp_dir"
-# print_results "$molecule" "$temp_dir" "$use_semi_log"
+# echo "$temp_dir" > "/usr/local/var/www/SwRI-phidrates/data_files/photo/NEW_CODE/store.txt" # For testing
+run_photo_rat_jl "$molecule" "$temp_dir"
+print_results "$molecule" "$temp_dir" "$use_semi_log"
 
 # exit 0

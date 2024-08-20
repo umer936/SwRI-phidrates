@@ -92,9 +92,8 @@ generate_plot() {
     local use_semi_log="$2"
     local bnum="$3"
     
-    local gnuinfo
-    gnuinfo="gnu_$bnum.info"
-    if ! exec 3>"$gnuinfo"; then
+    local gnuinfo="$temp_dir/gnu_$bnum.info"
+    if ! touch "$gnuinfo"; then
         echo "Can't open $gnuinfo" >&2
         exit 1
     fi

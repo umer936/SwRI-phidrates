@@ -9,8 +9,8 @@ temp="1000.0"
 which_tab=""
 ref_list=()
 
-# input="${QUERY_STRING}"
-input="which_tab=Sol?temp=1000.0?optical_depth=0?molecule=SO2?use_electron_volts=false?use_semi_log=false?solar_activity=0.1"
+input="${QUERY_STRING}"
+# input="which_tab=Sol?temp=1000.0?optical_depth=0?molecule=SO2?use_electron_volts=false?use_semi_log=false?solar_activity=0.1"
 IFS='?' read -ra items <<< "$input"
 for item in "${items[@]}"; do
     IFS='=' read -r key val <<< "$item"
@@ -18,7 +18,6 @@ for item in "${items[@]}"; do
     declare "$key=$val"
 done
 
-#? might be problematic
 if [[ "$solar_activity" == "undefined" ]]; then
     solar_activity="0.0"
 fi
@@ -42,15 +41,12 @@ print_results() {
 
     cd "$temp_dir"
 
-    #? might not work
     url_temp_dir="${temp_dir/$reg_exp_prefix/\/phidrates_images}"
     url_temp_dir="${url_temp_dir/tmp}"
 
-    #? best way to do this?
     local branches num_branches
     generate_branches
 
-    #? consider numeric expansion thing here
     if [[ "${#branches[@]}" -gt 0 ]]; then
         for (( bnum=0 ; bnum <= num_branches ; bnum++ )); do
             if [[ "${branches[$bnum]}" = "Sigma" ]]; then
@@ -88,7 +84,6 @@ print_results() {
 function generate_branches() {
     local num_values line val0 is_header
 
-    #? use redirection instead
     input_file="$temp_dir/BrnOut"
     if [[ ! -e "$input_file" ]]; then
         echo -e "Could not open BrnOut\n" >&2
@@ -109,7 +104,6 @@ function generate_branches() {
             read_refs=0
             num_branches="${BASH_REMATCH[1]}"
             is_header=1
-        #? change this for sure
         elif [[ $is_header -eq 1 ]]; then
             is_header=0
             IFS=' ' read -ra branches <<< "$line"
@@ -142,7 +136,7 @@ function generate_plot() {
     local use_semi_log="$3"
     local bnum="$4"
     
-    # Open gnuinfo file #? one line? local gnuinfo=...
+    # Open gnuinfo file
     local gnuinfo
     gnuinfo="$temp_dir/gnu_$bnum.info"
     if ! touch "$gnuinfo"; then

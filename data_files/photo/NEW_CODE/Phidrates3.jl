@@ -35,13 +35,79 @@ const global MAX_BRANCHES::Int32 = 2000
 const global MAX_FLUX::Int32 = 1000
 const global nSA::Int32 = 162
 
+function init()
+    # Creates a temporary directory in /var/tmp (/phidrates_images is this directory's alias)
+    temp_dir = mktempdir(parent=prefix, prefix="fileXXXXXX")
+    chmod(temp_dir, 0755)
+
+    # Copies molecule data and standard data files into the supplied temp directory
+    cp("$amop_cgi_bin_dir/photo/hrecs/$molecule.dat", "$temp_dir/Hrec")
+    cp("$amop_cgi_bin_dir/photo/NEW_CODE/BBGrid.dat", "$temp_dir/BBGrid.dat")
+    cp("$amop_cgi_bin_dir/photo/NEW_CODE/PhFlux.dat", "$temp_dir/PhFlux.dat")
+
+    #! write_input_file is obsolete, since all info can be stored as variables w/o writing a file
+end
+
+function write_gnuinfo(use_semi_log, xlabel, ylabel, title, set_ytics, filename)
+    println(filename, "set terminal png size 800,600 font \"/usr/share/fonts/dejavu/DejaVuLGCSans.ttf\" 12")
+    if !use_semi_log
+        println(filename, "set logscale x")
+        println(filename, "set logscale y 10")
+        println(filename, "set format y '%g'")
+    else
+        println(filename, "set logscale y")
+    end
+
+    println(filename,
+"""
+# Line style for axes
+set style line 80 lt 0
+
+# Line style for grid
+set style line 81 lt 3  # dashed
+set style line 81 lw 0.5  # grey
+
+# set grid back linestyle 81
+# set xtics nomirror
+# set ytics nomirror
+
+#set log x
+set mxtics 10    # Makes logscale look good.
+
+# Line styles: try to pick pleasing colors, rather
+# than strictly primary colors or hard-to-see colors
+# like gnuplot's default yellow.  Make the lines thick
+# so they're easy to see in small plots in papers.
+set style line 1 lt 1
+set style line 2 lt 1
+set style line 3 lt 1
+set style line 4 lt 1
+set style line 1 lt 1 lw 6 pt 7
+set style line 2 lt 2 lw 6 pt 9
+set style line 3 lt 3 lw 6 pt 5
+set style line 4 lt 4 lw 6 pt 13
+set origin 0, 0.01
+
+set xlabel \"$xlabel\"
+set ylabel \"$ylabel\"
+set title \"$title\"
+""")
+
+
+    if set_ytics println(filename, "set mytics 5")
+    end
+end
+
+get_input_name(branch) = split(findfirst(startswith(branch), readlines("/usr/local/var/www/SwRI-phidrates/data_files/LUTOutOnly.txt")), "=")[2]
+get_output_name(branch) = split(findfirst(startswith(branch), readlines("/usr/local/var/www/SwRI-phidrates/data_files/LUTOutOnly.txt")), "=")[2]
+
 function main()
     #============#
     # INITIALIZE #
     #============#
     run(`/bin/bash /usr/local/var/www/SwRI-phidrates/data_files/bash_cross_sections_jl.cgi`)
     cd(readchomp("/usr/local/var/www/SwRI-phidrates/data_files/photo/NEW_CODE/store.txt"))
-    println(pwd())
+    # println(pwd())
     input = open("Input", "r")
     
     #=====#
@@ -96,10 +162,10 @@ function main()
 
     # Read references for parent molecule data
     println(brnout, "0          References for Cross Section of ", rpad(pname1, 8), rpad(pname2, 8))
-    while !isempty(iter.nextvalstate[1]) println(brnout, popfirst!(iter))
+    while !isempty(iter.nextvalstate[1]) println(brnout, popfirst!(iter)) # Copies info until an empty line 
     end 
     popfirst!(iter)
-
+    
     # Read wavelengths and cross sections for parent molecule
     pangsts = zeros(pangstN)
     pxsctns = zeros(pangstN)
@@ -114,6 +180,7 @@ function main()
 
     # Initialize branch data
     bxsctns = zeros(MAX_ANGSTS)
+    bangsts = zeros(MAX_ANGSTS)
 
     # Data interpolated onto angstflux
     fangsts = zeros(MAX_ANGSTS)
@@ -122,8 +189,8 @@ function main()
     # Output data
     tot_rates = zeros(pangstN) # Branch
     xsctn_tbl = zeros(pangstN, num_sets) # Branch
-    xsctn_fot = zeros(MAX_ANGSTS, num_sets) # Fotrat
-    rate_tbl = zeros(MAX_ANGSTS, num_sets) # Fotrat
+    fot_xsctn = zeros(MAX_ANGSTS, num_sets) # Fotrat
+    fot_rate = zeros(MAX_ANGSTS, num_sets) # Fotrat
     
     binned_rates = zeros(num_sets) # Convert
     binned_excess_energies = zeros(num_sets) # Convert
@@ -136,9 +203,8 @@ function main()
 
     max_bin = 0 
 
-    if !iszero(num_sets)
-        for s in 1:num_sets-1
-            println(peek(iter))
+    if num_sets > 1
+        for set in 1:num_sets-1
             header = split(popfirst!(iter), " "; keepempty=false)
 
             bangstN = parse(Int, header[1])
@@ -152,7 +218,7 @@ function main()
             # bcat = parse(Int, header[7])
 
             # branches[s] = Branch(bangstN, bangst1, bangstL, bname1, bname2, 0, 0, false)
-            branches[s] = Branch(pangstN, bangst1, bangstL, bname1, bname2, 0, 0, false)
+            branches[set] = Branch(pangstN, bangst1, bangstL, bname1, bname2, 0, 0, false)
             
             # Write references for branching set to file
             println(brnout, "0          References for Cross Section of ", lpad(bname1, 8), lpad(bname2, 8))
@@ -186,7 +252,7 @@ function main()
                         end
 
                         tot_rates[i] += prob
-                        xsctn_tbl[i, s] = prob * pxsctns[i]
+                        xsctn_tbl[i, set] = prob * pxsctns[i]
                         break
                     end
 
@@ -216,15 +282,12 @@ function main()
         bname1 = pname1
         bname2 = header[5]
 
-        # bnum = parse(Int, header[6])
-        # bcat = parse(Int, header[7])
-
         branches[num_sets] = Branch(bangstN, bangst1, bangstL, bname1, bname2, 0, 0, false)
     else
+        branches[num_sets] = Branch(pangstN, pangst1, pangstL, pname1, pname2, 0, 0, false)
+        xsctn_tbl[:, num_sets] = pxsctns
     end
 
-    println(pangstN)
-    println(pangstN)
     parent = Branch(
         pangstN, 
         pangst1, 
@@ -319,35 +382,28 @@ function main()
                         tmp_xsctn = 1.0e-35
                     end
                 end
-                xsctn_fot[n, s] = tmp_xsctn
-                rate_tbl[n, s] = tmp_xsctn * fluxes[n]
-            else
-                if fangsts[k+1] >= angstflux[n+1]
-                    tmp_xsctn = xt / (angstflux[n+1] - angstflux[n])
-                    xsctn_fot[n, s] = tmp_xsctn
-                    rate_tbl[n, s] = tmp_xsctn * fluxes[n] # can be moved to the output section as xsctn_tbl[n, s] * fluxes[n]
+                fot_xsctn[n, s] = tmp_xsctn
+                fot_rate[n, s] = tmp_xsctn * fluxes[n]
+            elseif fangsts[k+1] >= angstflux[n+1]
+                tmp_xsctn = xt / (angstflux[n+1] - angstflux[n])
+                fot_xsctn[n, s] = tmp_xsctn
+                fot_rate[n, s] = tmp_xsctn * fluxes[n]
 
-                    if tmp_xsctn > 1.0e-30
-                        last = 0 
-                    else 
-                        last += 1
-                    end
-
-                    tot_rates[s] += tmp_xsctn * fluxes[n] # can be moved to the output section val += xsctn_tbl[n, s] * fluxes[n]; print(val)
-
-                    n += 1
-                    xt = 0
+                if tmp_xsctn > 1.0e-30
+                    last = 0 
+                else 
+                    last += 1
                 end
+
+                tot_rates[s] += tmp_xsctn * fluxes[n]
+
+                n += 1
+                xt = 0
             end
         end
+
         maxN = n - last
-
-        branch = branches[s]
-
-        bangstN = branch.angstN
-        bangst1 = branch.angst1
-        bangstL = branch.angstL
-
+        
         bname1 = branch.name1
         bname2 = branch.name2
 
@@ -376,14 +432,14 @@ function main()
 
             ele_energy = ANG_EV / angL - ANG_EV / bangstL
 
-            rate = xsctn_fot[i, s] * fluxes[i]
+            rate = fot_xsctn[i, s] * fluxes[i]
 
             tot_rate += rate
             tot_energy += ele_energy * rate
 
             excess_energies[i, s] = ele_energy * rate
 
-            @printf(eioniz, " %10.2f%10.2f%10.3e%10.3e%10.3e%10.2f%10.3e\n", ang1, ang2, xsctn_fot[i, s], fluxes[i], rate, ele_energy, tot_energy)
+            @printf(eioniz, " %10.2f%10.2f%10.3e%10.3e%10.3e%10.2f%10.3e\n", ang1, ang2, fot_xsctn[i, s], fluxes[i], rate, ele_energy, tot_energy)
         end
 
         if tot_rate < 1.0e-265
@@ -396,31 +452,44 @@ function main()
         @printf(eioniz, "0%46s  Total Rate =%10.3e\n", " ", tot_rate)
         @printf(eioniz, "%43s Average Energy =%7.3f\n", " ", ave_energy)
 
-        #? eliminate tot_rate and ave_energy
         binned_rates[s] = tot_rate
         binned_excess_energies[s] = ave_energy
 
         map(en -> max(binned_rates[s] < 1.0e-265 ? 0.0 : en / tot_rate, 0), view(excess_energies, 1:maxN, s))
     end
 
-    #=============#
-    # WRITE FILES #
-    #=============#
-    println(getproperty.(branches, :name2))
-    write_brnout(brnout, parent, branches, pangsts, xsctn_tbl)
+    #===================#
+    # WRITE OUTPUT DATA #
+    #===================#
+    println(brnout, "\n0 Branching ratio for ", lpad(pname1, 8), lpad(pname2, 8), "    ", num_sets, " branches")
+    if num_sets > 1
+        print(brnout, " Lambda  Total")
+        println(brnout, lpad.(getproperty.(branches, :name2), 8)...)
+        for i in 1:pangstN
+            @printf(brnout, "%7.1f %8.2e", pangsts[i], sum(view(xsctn_tbl, i, :)))
+            for s in 1:num_sets @printf(brnout, " %8.2e", xsctn_tbl[i, s]) end
+            println(brnout)
+        end
+    else
+        println(brnout, rpad("  Lambda "*pname2, 14))
+        for i in 1:pangstN @printf(brnout, "%8.2f %9.2e\n", pangsts[i], pxsctns[i])
+        end
+    end
 
-    fmtd_num_sets = lpad(num_sets, 2) * " "^49 * lpad(parent.name1, 8)
-    println(fotout, fmtd_num_sets) ; println(ratout, fmtd_num_sets)
+    fmtd_num_sets = lpad(num_sets, 2) * " "^49 * lpad(pname1, 8)
+    println(fotout, fmtd_num_sets)
+    println(ratout, fmtd_num_sets)
 
     fmtd_names = join(rpad.(getproperty.(branches, :name2), 8),' ')
-    println(fotout, " Lambda         ", fmtd_names) ; println(ratout, " Lambda         ", fmtd_names)
+    println(fotout, " Lambda         ", fmtd_names)
+    println(ratout, " Lambda         ", fmtd_names)
 
     for i in min_pr:max_pr 
         print(fotout, fmtfloat(angstflux[i], 7, 1), "        ")
         print(ratout, fmtfloat(angstflux[i], 7, 1), "        ")
         for s in 1:num_sets
-            @printf(fotout, "%9.2e", xsctn_fot[i, s])
-            @printf(ratout, "%9.2e", rate_tbl[i, s])
+            @printf(fotout, "%9.2e", fot_xsctn[i, s])
+            @printf(ratout, "%9.2e", fot_rate[i, s])
         end
         println(fotout)
         println(ratout)
@@ -444,15 +513,14 @@ function main()
     @printf(eeout, "%7.1f\n", angstflux[max_bin+1])
 
     print(eeout, " Rate Coeffs. = ")
-    for i in 1:num_sets 
-        @printf(eeout, " %8.2e", binned_rates[i])
+    for i in 1:num_sets @printf(eeout, " %8.2e", binned_rates[i])
     end
     println(eeout)
 
     summary = open("Summary", "w+")
 
 
-    println(summary, lpad("-->"*parent.name1, 13), join(lpad.(getproperty.(branches, :name2), 8), ' '))
+    println(summary, lpad("-->"*pname1, 13), join(lpad.(getproperty.(branches, :name2), 8), ' '))
 
     print(summary, " Rate Coeffs. = ")
     for i in 1:num_sets @printf(summary, " %8.2e", binned_rates[i])
@@ -467,7 +535,6 @@ function main()
     end
     println(eeout)
     println(summary)
-    
     
     #=============#
     # CLOSE FILES #

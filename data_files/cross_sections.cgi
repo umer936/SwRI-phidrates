@@ -23,7 +23,7 @@ $which_tab = "";
 @ref_list = ();
 
 # convert variables to a value
-$input = "whichtab=Sol?temp=1000.0?optical_depth=0?molecule=H2O?use_electron_volts=false?use_semi_log=false?solar_activity=0.1"; # $ENV{'QUERY_STRING'}; # # 
+$input = "which_tab=Sol?temp=1000.0?optical_depth=0?molecule=S3P?use_electron_volts=false?use_semi_log=false?solar_activity=0.1"; # $ENV{'QUERY_STRING'}; # # 
 @items = split (/\?/, $input);
 foreach $item (@items) {
     ($key, $val) = split(/=/, $item, 2);

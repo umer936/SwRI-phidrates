@@ -11,7 +11,7 @@ make_temp_directory() {
         mkdir -p "$prefix"
     fi
 
-    temp_dir=$(mktemp -d "$prefix/fileXXXXXX" || exit 1) 
+    temp_dir=$(mktemp -d "$prefix/fileXXXXXX" || echo "Could not create temporary file at $prefix." && exit 1) 
     chmod 0755 "$temp_dir"
 
     echo "$temp_dir"
@@ -75,6 +75,7 @@ run_photo_rat() {
     # "$amop_cgi_bin_dir/photo/NEW_CODE/photo.exe"
     cd "$temp_dir"
     /usr/local/var/www/SwRI-phidrates/data_files/photo/NEW_CODE/photo.exe >&2
+    # Pipe above to stderror
 
     if [[ $? -ne 0 ]]; then
         local code=$(( $? >> 8 ))
@@ -230,7 +231,7 @@ function get_output_name() {
     echo "$(grep -m 1 "$branch=" /usr/local/var/www/SwRI-phidrates/data_files/LUTOutOnly.txt)" | cut -f 2 -d "="
 }
 
-throw2web() {
+function throw2web() {
     while getopts ":n" opt; do
         echo $opt
         case $opt in
@@ -249,10 +250,13 @@ throw2web() {
     exit $code
 }
 
-throw() {
+function throw() {
     local message="$1"
     local code=${2:-'1'}
     
     echo "$message" >&2
     exit $code
 }
+
+
+
